@@ -30,10 +30,6 @@ const About = () => {
                 <span className="text-gray-600 text-sm">Internships</span>
               </div>
               <div className="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg w-36">
-                <span className="text-3xl font-bold text-blue-600">10+</span>
-                <span className="text-gray-600 text-sm">Projects</span>
-              </div>
-              <div className="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg w-36">
                 <span className="text-3xl font-bold text-blue-600">8+</span>
                 <span className="text-gray-600 text-sm">Certifications</span>
               </div>
