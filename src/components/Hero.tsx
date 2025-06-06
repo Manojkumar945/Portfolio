@@ -79,7 +79,6 @@ const Hero = () => {
                 <img 
                   src="/WhatsApp Image 2025-05-26 at 7.29.40 AM.jpeg"
                   alt="Manoj Kumar" 
-                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white py-2 px-4 rounded-lg shadow-md">
