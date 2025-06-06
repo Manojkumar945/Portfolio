@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Manoj Kumar</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Manoj Kumar.S</h3>
             <p className="mb-4">
               App developer specializing in creating innovative and user-friendly mobile applications.
             </p>
@@ -57,7 +57,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Experience', 'Skills', 'Portfolio', 'Contact'].map((item) => (
+              {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
