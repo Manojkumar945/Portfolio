@@ -37,7 +37,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {['about', 'experience', 'skills', 'portfolio', 'contact'].map((item) => (
+          {['about', 'experience', 'skills', 'contact'].map((item) => (
             <button
               key={item}
               onClick={() => scrollTo(item)}
