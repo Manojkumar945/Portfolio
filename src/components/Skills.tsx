@@ -94,13 +94,6 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-            
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Key Strengths</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {["Problem Solving", "Team Collaboration", "Fast Learner", "Attention to Detail"].map((strength, index) => (
-                  <div key={index} className="flex items-center bg-gray-50 p-3 rounded-lg">
-                    <div className="min-w-4 h-4 w-4 bg-blue-600 rounded-full mr-3"></div>
                     <span className="text-gray-700">{strength}</span>
                   </div>
                 ))}
