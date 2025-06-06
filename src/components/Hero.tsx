@@ -83,7 +83,6 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white py-2 px-4 rounded-lg shadow-md">
-                <span className="text-blue-600 font-semibold">App Developer</span>
               </div>
             </div>
           </div>
