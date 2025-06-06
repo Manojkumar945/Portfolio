@@ -2,11 +2,11 @@ import { Code, FileCode, Database, Layout, PenTool, Trophy } from 'lucide-react'
 
 // Technical skills with proficiency levels
 const technicalSkills = [
-  { name: "HTML", proficiency: 90 },
-  { name: "Java", proficiency: 75 },
+  { name: "HTML", proficiency: 60 },
+  { name: "Java", proficiency: 50 },
   { name: "Python", proficiency: 70 },
-  { name: "Android Studio", proficiency: 85 },
-  { name: "Microsoft Excel", proficiency: 80 },
+  { name: "Android Studio", proficiency: 70 },
+  { name: "Microsoft Excel", proficiency: 75 },
   { name: "Logo Design", proficiency: 65 }
 ];
 
