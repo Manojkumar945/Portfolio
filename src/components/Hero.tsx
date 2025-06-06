@@ -27,13 +27,6 @@ const Hero = () => {
                 Contact Me
               </a>
               <a 
-                href="#portfolio" 
-                className="px-6 py-3 bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 rounded-lg transition-colors shadow-sm hover:shadow-md flex items-center gap-2"
-              >
-                <ChevronRight size={18} />
-                View My Work
-              </a>
-              <a 
                 href="/My App Developer role Resume.pdf (1).pdf" 
                 download
                 className="px-6 py-3 bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 rounded-lg transition-colors shadow-sm hover:shadow-md flex items-center gap-2"
