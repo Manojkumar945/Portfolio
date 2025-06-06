@@ -8,7 +8,7 @@ const Hero = () => {
           <div className="w-full md:w-7/12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                S. MANOJ KUMAR
+                S.MANOJ KUMAR
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-800">
