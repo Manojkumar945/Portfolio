@@ -70,7 +70,7 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Professional Experience</h2>
+          <h2 className="text-3xl font-bold mb-2">Experience</h2>
           <div className="w-20 h-1 bg-blue-600 mb-6"></div>
           <p className="text-gray-600 text-center max-w-2xl">
             My professional journey and work history
