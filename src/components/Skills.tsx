@@ -82,7 +82,7 @@ const Skills = () => {
           
           {/* Certifications */}
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-gray-800">Certifications</h2>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Certifications</h3>
             
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="space-y-4">
@@ -96,7 +96,7 @@ const Skills = () => {
             </div>
             
             <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800">Key Strengths</h2>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Key Strengths</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {["Problem Solving", "Team Collaboration", "Fast Learner", "Attention to Detail"].map((strength, index) => (
                   <div key={index} className="flex items-center bg-gray-50 p-3 rounded-lg">
