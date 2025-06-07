@@ -25,7 +25,7 @@ const Hero = () => {
             </h2>
             
             <h3 className="text-2xl md:text-3xl font-light mb-6 text-slate-300">
-              App Developer | Founder of CyberTech Guard | Placement Coordinator
+              App Developer | Founder of CyberTech Guard
             </h3>
             
             <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl">
