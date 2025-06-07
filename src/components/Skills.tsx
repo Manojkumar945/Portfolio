@@ -29,7 +29,7 @@ const skillIcons = {
   "Mobile Development": <FileCode size={24} />,
   "Data Analytics": <Database size={24} />,
   "UI/UX Design": <Layout size={24} />,
-  "Creative Design": <PenTool size={24} />,
+  "Logo Design": <Logo size={24} />,
   "Certifications": <Trophy size={24} />
 };
 
