@@ -12,7 +12,7 @@ const Hero = () => {
       ></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-16">
           <div className="w-full md:w-7/12">
             <div className="mb-6">
             </div>
