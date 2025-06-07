@@ -6,125 +6,125 @@ const experiences = [
     company: "VCZ RECRUITMENT",
     location: "Zug, Switzerland",
     period: "04/2025 - Present",
-    description: "Leading strategic marketing initiatives for a cutting-edge recruitment technology company.",
+    description: "A Company focused on Sales and Marketing Technologies.",
     achievements: [
-      "Spearheading comprehensive training programs to enhance organizational knowledge and expertise."
+      "Training Period enhances the Knowledgeable experiences."
     ]
   },
   {
-    title: "Mobile Development Intern",
+    title: "Intern",
     company: "Corizo EduTech",
     location: "Bangalore, India",
     period: "04/2025 - 05/2025",
-    description: "Specialized in innovative IT solutions with focus on advanced mobile application development.",
+    description: "A company focused on IT solutions, specializing in app development.",
     achievements: [
-      "Contributed to enterprise-level Android development projects and mobile app architecture."
+      "Participated in Android development and app development projects."
     ]
   },
   {
-    title: "Web Development Intern",
+    title: "Intern",
     company: "InternPe",
     location: "Jaipur, India",
     period: "01/2025 - 03/2025",
-    description: "Focused on comprehensive IT solutions specializing in modern web development technologies.",
+    description: "A Company focused on IT Solutions, Specializing in Web Development.",
     achievements: [
-      "Developed responsive web applications using cutting-edge frameworks and technologies."
+      "Participated in Web Development and web development projects."
     ]
   },
   {
-    title: "Android Development Intern",
+    title: "Intern",
     company: "CodTech IT Solutions",
     location: "Hyderabad, India",
     period: "01/2025 - 01/2025",
-    description: "Specialized in mobile application development with emphasis on user experience design.",
+    description: "A company focused on IT solutions, specializing in app development.",
     achievements: [
-      "Engineered Android applications with focus on performance optimization.",
-      "Collaborated on user-centric application design and development methodologies."
+      "Participated in Android development and app development projects.",
+      "Contributed to user-centric application design and development."
     ]
   },
   {
-    title: "Mobile App Development Intern",
+    title: "Intern",
     company: "Codec Technologies",
     location: "Mumbai, India",
     period: "01/2025 - 01/2025",
-    description: "Technology innovation company focusing on next-generation mobile solutions.",
+    description: "A tech company focusing on app development and technology solutions.",
     achievements: [
-      "Participated in full-stack mobile development and agile development practices.",
-      "Contributed to UI/UX design optimization for enhanced user engagement."
+      "Engaged in app development and collaborated with the development team.",
+      "Worked on UI/UX design aspects of mobile applications."
     ]
   },
   {
-    title: "Technical Development Intern",
+    title: "Intern",
     company: "NSIC Technical Services Centre",
     location: "Chennai, India",
     period: "07/2024 - 08/2024",
-    description: "Government technical services organization specializing in industrial IT solutions.",
+    description: "A company focused on IT solutions, specializing in app development.",
     achievements: [
-      "Developed Android applications for industrial automation and process optimization."
+      "Participated in Android development and app development projects."
     ]
   }
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-slate-900">
+    <section id="experience" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Professional Experience</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mb-6"></div>
-          <p className="text-slate-400 text-center max-w-2xl text-lg">
-            My journey through innovative technology companies and impactful projects
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl font-bold mb-2">Experience</h2>
+          <div className="w-20 h-1 bg-blue-600 mb-6"></div>
+          <p className="text-gray-600 text-center max-w-2xl">
+            My professional journey and work history
           </p>
         </div>
         
         <div className="relative">
           {/* Timeline Line */}
-          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-amber-400 via-orange-500 to-amber-400 opacity-30"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
           
           {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <div key={index} className={`flex flex-col lg:flex-row ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className="w-full lg:w-1/2 lg:px-8 mb-6 lg:mb-0">
-                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-2xl p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-amber-500/10 border border-slate-700/50 hover:border-amber-400/30">
-                    <div className="hidden lg:block absolute top-12 
+              <div key={index} className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                <div className="w-full md:w-1/2 md:px-8 mb-6 md:mb-0">
+                  <div className="bg-white rounded-lg shadow-md p-6 relative transition-transform hover:scale-105 hover:shadow-lg">
+                    <div className="hidden md:block absolute top-8 
                       ${index % 2 === 0 ? 'left-0 transform -translate-x-full' : 'right-0 transform translate-x-full'} 
-                      w-8 h-1 bg-gradient-to-r from-amber-400 to-orange-500"></div>
+                      w-8 h-0.5 bg-gray-200"></div>
                       
-                    <div className="hidden lg:flex absolute top-10 
-                      ${index % 2 === 0 ? 'left-0 transform -translate-x-[21px]' : 'right-0 transform translate-x-[21px]'} 
-                      w-6 h-6 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 border-4 border-slate-900 shadow-lg"></div>
+                    <div className="hidden md:flex absolute top-6 
+                      ${index % 2 === 0 ? 'left-0 transform -translate-x-[18px]' : 'right-0 transform translate-x-[18px]'} 
+                      w-4 h-4 rounded-full bg-blue-600 border-4 border-white"></div>
                       
-                    <h3 className="text-2xl font-bold mb-3 text-white">{exp.title}</h3>
-                    <div className="flex items-center text-amber-400 mb-6">
-                      <Building2 size={18} className="mr-3" />
-                      <span className="font-semibold text-lg">{exp.company}</span>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800">{exp.title}</h3>
+                    <div className="flex items-center text-blue-600 mb-4">
+                      <Building2 size={16} className="mr-2" />
+                      <span className="font-medium">{exp.company}</span>
                     </div>
                     
-                    <div className="flex flex-wrap gap-6 mb-6">
-                      <div className="flex items-center text-slate-400">
-                        <Calendar size={16} className="mr-2 text-amber-400" />
-                        <span className="font-medium">{exp.period}</span>
+                    <div className="flex flex-wrap gap-4 mb-4">
+                      <div className="flex items-center text-gray-600 text-sm">
+                        <Calendar size={14} className="mr-1" />
+                        <span>{exp.period}</span>
                       </div>
-                      <div className="flex items-center text-slate-400">
-                        <MapPin size={16} className="mr-2 text-amber-400" />
-                        <span className="font-medium">{exp.location}</span>
+                      <div className="flex items-center text-gray-600 text-sm">
+                        <MapPin size={14} className="mr-1" />
+                        <span>{exp.location}</span>
                       </div>
                     </div>
                     
-                    <p className="text-slate-300 mb-6 leading-relaxed">{exp.description}</p>
+                    <p className="text-gray-700 mb-4">{exp.description}</p>
                     
-                    <div className="space-y-3">
+                    <div>
                       {exp.achievements.map((achievement, i) => (
-                        <div key={i} className="flex items-start">
-                          <div className="mt-2 min-w-4 h-4 w-4 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mr-4 flex-shrink-0"></div>
-                          <p className="text-slate-300 leading-relaxed">{achievement}</p>
+                        <div key={i} className="flex items-start mb-2">
+                          <div className="mt-1 min-w-3 h-3 w-3 bg-blue-600 rounded-full mr-3"></div>
+                          <p className="text-gray-700">{achievement}</p>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-                <div className="hidden lg:block w-1/2"></div>
+                <div className="hidden md:block w-1/2"></div>
               </div>
             ))}
           </div>

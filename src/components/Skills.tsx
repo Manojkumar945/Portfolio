@@ -2,12 +2,12 @@ import { Code, FileCode, Database, Layout, PenTool, Trophy } from 'lucide-react'
 
 // Technical skills with proficiency levels
 const technicalSkills = [
-  { name: "HTML/CSS", proficiency: 85 },
-  { name: "Java", proficiency: 75 },
-  { name: "Python", proficiency: 80 },
-  { name: "Android Studio", proficiency: 85 },
-  { name: "Microsoft Excel", proficiency: 90 },
-  { name: "UI/UX Design", proficiency: 75 }
+  { name: "HTML", proficiency: 60 },
+  { name: "Java", proficiency: 50 },
+  { name: "Python", proficiency: 70 },
+  { name: "Android Studio", proficiency: 70 },
+  { name: "Microsoft Excel", proficiency: 75 },
+  { name: "Logo Design", proficiency: 65 }
 ];
 
 // Certifications
@@ -24,42 +24,42 @@ const certifications = [
 ];
 
 // Skill category icons
-const skillCategories = [
-  { name: "Web Development", icon: <Code size={24} />, color: "from-blue-500 to-cyan-500" },
-  { name: "Mobile Development", icon: <FileCode size={24} />, color: "from-green-500 to-emerald-500" },
-  { name: "Data Analytics", icon: <Database size={24} />, color: "from-purple-500 to-violet-500" },
-  { name: "UI/UX Design", icon: <Layout size={24} />, color: "from-pink-500 to-rose-500" },
-  { name: "Creative Design", icon: <PenTool size={24} />, color: "from-orange-500 to-red-500" },
-  { name: "Certifications", icon: <Trophy size={24} />, color: "from-amber-500 to-yellow-500" }
-];
+const skillIcons = {
+  "Web Development": <Code size={24} />,
+  "Mobile Development": <FileCode size={24} />,
+  "Data Analytics": <Database size={24} />,
+  "UI/UX Design": <Layout size={24} />,
+  "Creative Design": <PenTool size={24} />,
+  "Certifications": <Trophy size={24} />
+};
 
 const Skills = () => {
   return (
-    <section id="skills\" className="py-20 bg-slate-800">
+    <section id="skills\" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Skills & Expertise</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mb-6"></div>
-          <p className="text-slate-400 text-center max-w-2xl text-lg">
-            Technical proficiency and professional certifications that drive innovation
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl font-bold mb-2">Skills & Expertise</h2>
+          <div className="w-20 h-1 bg-blue-600 mb-6"></div>
+          <p className="text-gray-600 text-center max-w-2xl">
+            My technical skills and professional certifications
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Technical Skills */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-white">Technical Proficiency</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Technical Skills</h3>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               {technicalSkills.map((skill, index) => (
-                <div key={index} className="group">
-                  <div className="flex justify-between mb-3">
-                    <span className="font-semibold text-slate-300 group-hover:text-amber-400 transition-colors">{skill.name}</span>
-                    <span className="text-amber-400 font-bold">{skill.proficiency}%</span>
+                <div key={index}>
+                  <div className="flex justify-between mb-1">
+                    <span className="font-medium text-gray-700">{skill.name}</span>
+                    <span className="text-gray-600">{skill.proficiency}%</span>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
                     <div 
-                      className="bg-gradient-to-r from-amber-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-out shadow-lg"
+                      className="bg-blue-600 h-2.5 rounded-full transition-all duration-700 ease-out"
                       style={{ width: `${skill.proficiency}%` }}
                     ></div>
                   </div>
@@ -68,34 +68,28 @@ const Skills = () => {
             </div>
             
             {/* Skill Categories */}
-            <div className="mt-12">
-              <h4 className="text-xl font-semibold mb-6 text-white">Expertise Areas</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {skillCategories.map((category, index) => (
-                  <div key={index} className="group bg-slate-700/30 backdrop-blur-sm p-6 rounded-xl border border-slate-600/30 hover:border-amber-400/50 transition-all duration-300 transform hover:scale-105">
-                    <div className={`text-transparent bg-clip-text bg-gradient-to-r ${category.color} mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                      {category.icon}
-                    </div>
-                    <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">{category.name}</span>
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
+              {Object.entries(skillIcons).map(([category, icon], index) => (
+                <div key={index} className="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <div className="text-blue-600 mb-2">
+                    {icon}
                   </div>
-                ))}
-              </div>
+                  <span className="text-gray-800 text-center font-medium">{category}</span>
+                </div>
+              ))}
             </div>
           </div>
           
           {/* Certifications */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-white">Professional Certifications</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Certifications</h3>
             
-            <div className="bg-slate-700/20 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30">
-              <div className="space-y-4 max-h-96 overflow-y-auto custom-scrollbar">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="space-y-4">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="bg-slate-800/50 p-6 rounded-xl border border-slate-600/30 hover:border-amber-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 group">
-                    <h4 className="font-semibold text-white mb-2 group-hover:text-amber-400 transition-colors">{cert.name}</h4>
-                    <p className="text-slate-400 text-sm flex items-center">
-                      <Trophy size={14} className="mr-2 text-amber-400" />
-                      {cert.issuer}
-                    </p>
+                  <div key={index} className="bg-white p-4 rounded-md shadow-sm hover:shadow-md transition-shadow">
+                    <h4 className="font-semibold text-gray-800">{cert.name}</h4>
+                    <p className="text-gray-600 text-sm">{cert.issuer}</p>
                   </div>
                 ))}
               </div>
