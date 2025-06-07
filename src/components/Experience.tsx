@@ -3,7 +3,7 @@ import { Building2, Calendar, MapPin } from 'lucide-react';
 const experiences = [
   {
     title: "Placement Coordinator",
-    Company: "Paavai Engineering College",
+    Company: "Paavai Institutions",
     location: "Tamil Nadu, India",
     period: "09/2023 - Present",
     description: "Leading the Students as Placement support for a Skills development.",
