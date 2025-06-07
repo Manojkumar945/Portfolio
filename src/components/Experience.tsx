@@ -2,10 +2,20 @@ import { Building2, Calendar, MapPin } from 'lucide-react';
 
 const experiences = [
   {
+    title: "Placement Coordinator",
+    company: "Paavai Institutions",
+    location: "Tamil Nadu, India",
+    period: "09/2023 - Present",
+    description: "A Team Management skills obtained the new Technologies.",
+    achievements: [
+      "Coordinator role enhances the Knowledgeable experiences."
+    ]
+  },
+  {
     title: "Chief Marketing Officer",
     company: "VCZ RECRUITMENT",
     location: "Zug, Switzerland",
-    period: "04/2025 - Present",
+    period: "04/2025 - 06/2025",
     description: "A Company focused on Sales and Marketing Technologies.",
     achievements: [
       "Training Period enhances the Knowledgeable experiences."
