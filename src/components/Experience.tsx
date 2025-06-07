@@ -5,7 +5,7 @@ const experiences = [
     title: "Chief Marketing Officer",
     company: "VCZ RECRUITMENT",
     location: "Zug, Switzerland",
-    period: "04/2025 - Present",
+    period: "04/2025 - 05/2025",
     description: "Leading strategic marketing initiatives for a cutting-edge recruitment technology company.",
     achievements: [
       "Spearheading comprehensive training programs to enhance organizational knowledge and expertise."
