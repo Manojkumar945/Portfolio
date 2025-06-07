@@ -35,7 +35,7 @@ const skillIcons = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills\" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Skills & Expertise</h2>
