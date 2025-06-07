@@ -94,14 +94,8 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-                    <span className="text-gray-700">{strength}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
-      
-    </div>
+        </div>
       </div>
     </section>
   );
