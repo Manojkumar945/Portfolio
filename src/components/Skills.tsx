@@ -26,7 +26,7 @@ const certifications = [
 // Skill category icons
 const skillIcons = {
   "Web Development": <Code size={24} />,
-  "Mobile Development": <FileCode size={24} />,
+  "Application Development": <FileCode size={24} />,
   "Data Analytics": <Database size={24} />,
   "UI/UX Design": <Layout size={24} />,
   "Creative Design": <PenTool size={24} />,
