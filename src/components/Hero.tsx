@@ -17,16 +17,16 @@ const Hero = () => {
             <div className="mb-6">
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
               
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
                 S.MANOJ KUMAR
               </span>
-            </h1>
-            
-            <h2 className="text-2xl md:text-3xl font-light mb-6 text-slate-300">
-              App Developer
             </h2>
+            
+            <h3 className="text-2xl md:text-3xl font-light mb-6 text-slate-300">
+              App Developer
+            </h3>
             
             <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl">
               Crafting exceptional mobile experiences with cutting-edge technology and innovative design solutions that drive business growth.
