@@ -9,11 +9,11 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    document.title = "Manoj Kumar - App Developer";
+    document.title = "Manoj Kumar - Senior App Developer";
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans">
       <Header />
       <main>
         <Hero />

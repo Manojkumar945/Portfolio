@@ -1,4 +1,4 @@
-import { ChevronUp, Heart } from 'lucide-react';
+import { ChevronUp, Heart, Code } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -9,31 +9,33 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-slate-900 text-slate-300 relative">
       {/* Back to top button */}
       <div className="flex justify-center">
         <button 
           onClick={scrollToTop}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transform -translate-y-1/2 transition-colors shadow-lg"
+          className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white p-4 rounded-full transform -translate-y-1/2 transition-all duration-300 shadow-lg hover:shadow-amber-500/25 hover:scale-110"
           aria-label="Back to top"
         >
           <ChevronUp size={24} />
         </button>
       </div>
       
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Manoj Kumar.S</h3>
-            <p className="mb-4">
-              App developer specializing in creating innovative and user-friendly mobile applications.
+            <h3 className="text-2xl font-bold mb-6 text-white">
+              <span className="text-amber-400">Manoj</span> Kumar.S
+            </h3>
+            <p className="mb-6 text-lg leading-relaxed">
+              Senior app developer specializing in creating innovative, scalable mobile applications that drive business growth and user engagement.
             </p>
             <div className="flex space-x-4">
               <a 
                 href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="bg-slate-800 hover:bg-blue-600 p-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +46,7 @@ const Footer = () => {
                 href="https://github.com/Manojkumar945" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="bg-slate-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
                 aria-label="GitHub"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -55,15 +57,22 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-2">
-              {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
-                <li key={item}>
+            <h3 className="text-xl font-bold mb-6 text-white">Quick Navigation</h3>
+            <ul className="space-y-3">
+              {[
+                { name: 'Home', href: '#' },
+                { name: 'About', href: '#about' },
+                { name: 'Experience', href: '#experience' },
+                { name: 'Skills', href: '#skills' },
+                { name: 'Contact', href: '#contact' }
+              ].map((item) => (
+                <li key={item.name}>
                   <a 
-                    href={`#${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href={item.href}
+                    className="text-slate-400 hover:text-amber-400 transition-colors duration-300 flex items-center group"
                   >
-                    {item}
+                    <span className="w-2 h-2 bg-amber-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -71,33 +80,46 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Contact Info</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <span className="mr-3 text-gray-400">📱</span>
-                <span>+91 7806892181</span>
+            <h3 className="text-xl font-bold mb-6 text-white">Contact Information</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start group">
+                <span className="mr-3 text-amber-400 mt-1">📱</span>
+                <div>
+                  <p className="text-slate-400 group-hover:text-white transition-colors">Phone</p>
+                  <a href="tel:+917806892181" className="text-white hover:text-amber-400 transition-colors">
+                    +91 7806892181
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-gray-400">✉️</span>
-                <a href="mailto:manojk46234@gmail.com" className="hover:text-white transition-colors">
-                  manojk46234@gmail.com
-                </a>
+              <li className="flex items-start group">
+                <span className="mr-3 text-amber-400 mt-1">✉️</span>
+                <div>
+                  <p className="text-slate-400 group-hover:text-white transition-colors">Email</p>
+                  <a href="mailto:manojk46234@gmail.com" className="text-white hover:text-amber-400 transition-colors">
+                    manojk46234@gmail.com
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-gray-400">📍</span>
-                <span>Trichy, Tamil Nadu, India</span>
+              <li className="flex items-start group">
+                <span className="mr-3 text-amber-400 mt-1">📍</span>
+                <div>
+                  <p className="text-slate-400 group-hover:text-white transition-colors">Location</p>
+                  <span className="text-white">Trichy, Tamil Nadu, India</span>
+                </div>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="flex items-center justify-center gap-1">
-            &copy; {new Date().getFullYear()} Manoj Kumar. Made with <Heart size={16} className="text-red-500" /> 
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            App Developer | Mobile Technologies Specialist
-          </p>
+        <div className="mt-16 pt-8 border-t border-slate-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="flex items-center gap-2 text-slate-400">
+              &copy; {new Date().getFullYear()} Manoj Kumar. Crafted with <Heart size={16} className="text-red-500" /> and <Code size={16} className="text-amber-400" />
+            </p>
+            <p className="text-sm text-slate-500">
+              Senior App Developer | Mobile Technologies Specialist | Innovation Driver
+            </p>
+          </div>
         </div>
       </div>
     </footer>
