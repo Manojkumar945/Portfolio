@@ -110,6 +110,7 @@ const Hero = () => {
       
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-800 to-transparent"></div>
     </section>
+  )
   );
 };
 
