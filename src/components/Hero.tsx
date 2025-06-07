@@ -12,7 +12,7 @@ const Hero = () => {
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-800">
-              App Developer
+              Founder of CyberTech Guard
             </h2>
             <p className="text-lg md:text-xl text-gray-700 mb-8">
               Creating innovative mobile applications with a focus on user experience and technical excellence
