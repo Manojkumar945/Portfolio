@@ -31,8 +31,7 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center">
           <h1 className="text-xl font-bold">
-            <span className="text-amber-400">Manoj</span> 
-            <span className="text-white ml-1">Kumar</span>
+            <span className="text-amber-400">Manoj Kumar</span>
           </h1>
         </div>
 
