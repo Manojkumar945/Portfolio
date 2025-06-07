@@ -4,29 +4,26 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Background Pattern */}
-      <div 
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}
-      ></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23334155" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-7/12">
             <div className="mb-6">
+              <span className="inline-block px-4 py-2 bg-amber-400/10 text-amber-400 rounded-full text-sm font-medium border border-amber-400/20">
+                Available for Opportunities
+              </span>
             </div>
             
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
-              
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
                 S.MANOJ KUMAR
               </span>
-            </h2>
+            </h1>
             
-            <h3 className="text-2xl md:text-3xl font-light mb-6 text-slate-300">
-              Founder of CyberTech Guard
-            </h3>
+            <h2 className="text-2xl md:text-3xl font-light mb-6 text-slate-300">
+              Senior App Developer
+            </h2>
             
             <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl">
               Crafting exceptional mobile experiences with cutting-edge technology and innovative design solutions that drive business growth.
@@ -104,7 +101,7 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-amber-500 to-orange-500 py-3 px-6 rounded-xl shadow-xl">
-                <span className="text-white font-semibold">App Developer</span>
+                <span className="text-white font-semibold">5+ Years Experience</span>
               </div>
             </div>
           </div>
@@ -113,6 +110,7 @@ const Hero = () => {
       
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-800 to-transparent"></div>
     </section>
+  )
   );
 };
 
