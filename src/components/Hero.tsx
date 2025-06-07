@@ -27,7 +27,7 @@ const Hero = () => {
             </h1>
             
             <h2 className="text-2xl md:text-3xl font-light mb-6 text-slate-300">
-              Senior App Developer
+              App Developer
             </h2>
             
             <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl">
@@ -106,7 +106,7 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-amber-500 to-orange-500 py-3 px-6 rounded-xl shadow-xl">
-                <span className="text-white font-semibold">5+ Years Experience</span>
+                <span className="text-white font-semibold">App Developer</span>
               </div>
             </div>
           </div>
