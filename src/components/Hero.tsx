@@ -1,27 +1,39 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ChevronRight, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Download } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23334155" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-7/12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 bg-amber-400/10 text-amber-400 rounded-full text-sm font-medium border border-amber-400/20">
+                Available for Opportunities
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
                 MANOJ KUMAR.S
               </span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-800">
-              Founder of CyberTech Guard
+            
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-slate-300">
+              Founder of <span className="text-amber-400">CyberTech Guard</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-700 mb-8">
-              Creating innovative mobile applications with a focus on user experience and technical excellence
+            
+            <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl">
+              Creating innovative mobile applications with a focus on user experience and technical excellence. 
+              Passionate about building solutions that make a difference.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
               <a 
                 href="#contact" 
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-md hover:shadow-lg flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium"
               >
                 <Mail size={18} />
                 Contact Me
@@ -29,66 +41,69 @@ const Hero = () => {
               <a 
                 href="/My App Developer role Resume.pdf (1).pdf" 
                 download
-                className="px-6 py-3 bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 rounded-lg transition-colors shadow-sm hover:shadow-md flex items-center gap-2"
+                className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 hover:border-amber-400 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium"
               >
                 <Download size={18} />
                 Download Resume
               </a>
             </div>
             
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-2 text-gray-700">
-                <Phone size={18} className="text-blue-600" />
-                <span>+91 7806892181</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm">
+                <Phone size={18} className="text-amber-400" />
+                <span className="text-sm">+91 7806892181</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Mail size={18} className="text-blue-600" />
-                <span>manojk46234@gmail.com</span>
+              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm">
+                <Mail size={18} className="text-amber-400" />
+                <span className="text-sm">manojk46234@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <MapPin size={18} className="text-blue-600" />
-                <span>Trichy, Tamil Nadu, India</span>
+              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm">
+                <MapPin size={18} className="text-amber-400" />
+                <span className="text-sm">Trichy, Tamil Nadu</span>
               </div>
             </div>
             
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4">
               <a 
                 href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                className="p-3 bg-slate-800 hover:bg-blue-600 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin size={20} className="text-blue-600" />
+                <Linkedin size={20} className="text-slate-300 group-hover:text-white" />
               </a>
               <a 
                 href="https://github.com/Manojkumar945" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                className="p-3 bg-slate-800 hover:bg-gray-700 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
                 aria-label="GitHub Profile"
               >
-                <Github size={20} className="text-gray-800" />
+                <Github size={20} className="text-slate-300 group-hover:text-white" />
               </a>
             </div>
           </div>
           
           <div className="w-full md:w-5/12 flex justify-center">
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full blur-2xl opacity-20 scale-110"></div>
+              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-amber-400/30 shadow-2xl">
                 <img 
                   src="/WhatsApp Image 2025-05-26 at 7.29.40 AM.jpeg"
                   alt="Manoj Kumar" 
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-white py-2 px-4 rounded-lg shadow-md">
+              <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 px-4 rounded-lg shadow-lg font-medium">
+                App Developer
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-slate-800 to-transparent"></div>
     </section>
   );
 };

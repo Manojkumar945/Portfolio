@@ -35,31 +35,31 @@ const skillIcons = {
 
 const Skills = () => {
   return (
-    <section id="skills\" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-slate-800">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Skills & Expertise</h2>
-          <div className="w-20 h-1 bg-blue-600 mb-6"></div>
-          <p className="text-gray-600 text-center max-w-2xl">
+          <h2 className="text-4xl font-bold mb-4 text-white">Skills & Expertise</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mb-6"></div>
+          <p className="text-slate-400 text-center max-w-2xl text-lg">
             My technical skills and professional certifications
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Technical Skills */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Technical Skills</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-white">Technical Skills</h3>
             
             <div className="space-y-6">
               {technicalSkills.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between mb-1">
-                    <span className="font-medium text-gray-700">{skill.name}</span>
-                    <span className="text-gray-600">{skill.proficiency}%</span>
+                <div key={index} className="group">
+                  <div className="flex justify-between mb-3">
+                    <span className="font-medium text-slate-300 group-hover:text-amber-400 transition-colors">{skill.name}</span>
+                    <span className="text-amber-400 font-semibold">{skill.proficiency}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
                     <div 
-                      className="bg-blue-600 h-2.5 rounded-full transition-all duration-700 ease-out"
+                      className="bg-gradient-to-r from-amber-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-out shadow-lg"
                       style={{ width: `${skill.proficiency}%` }}
                     ></div>
                   </div>
@@ -68,13 +68,13 @@ const Skills = () => {
             </div>
             
             {/* Skill Categories */}
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
               {Object.entries(skillIcons).map(([category, icon], index) => (
-                <div key={index} className="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <div className="text-blue-600 mb-2">
+                <div key={index} className="flex flex-col items-center p-6 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600 hover:border-amber-400/30 group">
+                  <div className="text-amber-400 mb-3 group-hover:scale-110 transition-transform">
                     {icon}
                   </div>
-                  <span className="text-gray-800 text-center font-medium">{category}</span>
+                  <span className="text-slate-300 text-center font-medium text-sm group-hover:text-white transition-colors">{category}</span>
                 </div>
               ))}
             </div>
@@ -82,14 +82,14 @@ const Skills = () => {
           
           {/* Certifications */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Certifications</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-white">Certifications</h3>
             
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="space-y-4">
+            <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-8 border border-slate-600">
+              <div className="space-y-4 max-h-96 overflow-y-auto custom-scrollbar">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="bg-white p-4 rounded-md shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="font-semibold text-gray-800">{cert.name}</h4>
-                    <p className="text-gray-600 text-sm">{cert.issuer}</p>
+                  <div key={index} className="bg-slate-800 p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600 hover:border-amber-400/30 group">
+                    <h4 className="font-semibold text-white mb-2 group-hover:text-amber-400 transition-colors">{cert.name}</h4>
+                    <p className="text-slate-400 text-sm">{cert.issuer}</p>
                   </div>
                 ))}
               </div>

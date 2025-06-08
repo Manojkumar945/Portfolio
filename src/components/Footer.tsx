@@ -9,12 +9,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-slate-900 text-slate-300 border-t border-slate-700">
       {/* Back to top button */}
       <div className="flex justify-center">
         <button 
           onClick={scrollToTop}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transform -translate-y-1/2 transition-colors shadow-lg"
+          className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white p-4 rounded-full transform -translate-y-1/2 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
           aria-label="Back to top"
         >
           <ChevronUp size={24} />
@@ -25,15 +25,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Manoj Kumar.S</h3>
-            <p className="mb-4">
-              App developer specializing in creating innovative and user-friendly mobile applications.
+            <p className="mb-6 text-slate-400 leading-relaxed">
+              App developer specializing in creating innovative and user-friendly mobile applications that make a difference.
             </p>
             <div className="flex space-x-4">
               <a 
                 href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-slate-400 hover:text-amber-400 transition-colors p-2 hover:bg-slate-800 rounded-lg"
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ const Footer = () => {
                 href="https://github.com/Manojkumar945" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-slate-400 hover:text-amber-400 transition-colors p-2 hover:bg-slate-800 rounded-lg"
                 aria-label="GitHub"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -56,12 +56,12 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-slate-400 hover:text-amber-400 transition-colors hover:pl-2 duration-300"
                   >
                     {item}
                   </a>
@@ -72,30 +72,30 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Contact Info</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li className="flex items-start">
-                <span className="mr-3 text-gray-400">📱</span>
-                <span>+91 7806892181</span>
+                <span className="mr-3 text-amber-400 text-lg">📱</span>
+                <span className="text-slate-400">+91 7806892181</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-gray-400">✉️</span>
-                <a href="mailto:manojk46234@gmail.com" className="hover:text-white transition-colors">
+                <span className="mr-3 text-amber-400 text-lg">✉️</span>
+                <a href="mailto:manojk46234@gmail.com" className="text-slate-400 hover:text-amber-400 transition-colors">
                   manojk46234@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-gray-400">📍</span>
-                <span>Trichy, Tamil Nadu, India</span>
+                <span className="mr-3 text-amber-400 text-lg">📍</span>
+                <span className="text-slate-400">Trichy, Tamil Nadu, India</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="flex items-center justify-center gap-1">
+        <div className="mt-12 pt-8 border-t border-slate-700 text-center">
+          <p className="flex items-center justify-center gap-2 text-slate-400">
             &copy; {new Date().getFullYear()} Manoj Kumar. Made with <Heart size={16} className="text-red-500" /> 
           </p>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-slate-500 mt-2">
             App Developer | Mobile Technologies Specialist
           </p>
         </div>

@@ -77,58 +77,58 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-slate-900">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Experience</h2>
-          <div className="w-20 h-1 bg-blue-600 mb-6"></div>
-          <p className="text-gray-600 text-center max-w-2xl">
+          <h2 className="text-4xl font-bold mb-4 text-white">Experience</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mb-6"></div>
+          <p className="text-slate-400 text-center max-w-2xl text-lg">
             My professional journey and work history
           </p>
         </div>
         
         <div className="relative">
           {/* Timeline Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-amber-400 to-orange-500"></div>
           
           {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="w-full md:w-1/2 md:px-8 mb-6 md:mb-0">
-                  <div className="bg-white rounded-lg shadow-md p-6 relative transition-transform hover:scale-105 hover:shadow-lg">
-                    <div className="hidden md:block absolute top-8 
+                  <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl shadow-2xl p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-3xl border border-slate-600 hover:border-amber-400/30 group">
+                    <div className={`hidden md:block absolute top-10 
                       ${index % 2 === 0 ? 'left-0 transform -translate-x-full' : 'right-0 transform translate-x-full'} 
-                      w-8 h-0.5 bg-gray-200"></div>
+                      w-8 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500`}></div>
                       
-                    <div className="hidden md:flex absolute top-6 
+                    <div className={`hidden md:flex absolute top-8 
                       ${index % 2 === 0 ? 'left-0 transform -translate-x-[18px]' : 'right-0 transform translate-x-[18px]'} 
-                      w-4 h-4 rounded-full bg-blue-600 border-4 border-white"></div>
+                      w-4 h-4 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 border-4 border-slate-900 shadow-lg`}></div>
                       
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">{exp.title}</h3>
-                    <div className="flex items-center text-blue-600 mb-4">
+                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-amber-400 transition-colors">{exp.title}</h3>
+                    <div className="flex items-center text-amber-400 mb-4">
                       <Building2 size={16} className="mr-2" />
                       <span className="font-medium">{exp.company}</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-4 mb-4">
-                      <div className="flex items-center text-gray-600 text-sm">
-                        <Calendar size={14} className="mr-1" />
+                      <div className="flex items-center text-slate-400 text-sm bg-slate-800/50 px-3 py-1 rounded-full">
+                        <Calendar size={14} className="mr-2" />
                         <span>{exp.period}</span>
                       </div>
-                      <div className="flex items-center text-gray-600 text-sm">
-                        <MapPin size={14} className="mr-1" />
+                      <div className="flex items-center text-slate-400 text-sm bg-slate-800/50 px-3 py-1 rounded-full">
+                        <MapPin size={14} className="mr-2" />
                         <span>{exp.location}</span>
                       </div>
                     </div>
                     
-                    <p className="text-gray-700 mb-4">{exp.description}</p>
+                    <p className="text-slate-300 mb-6 leading-relaxed">{exp.description}</p>
                     
-                    <div>
+                    <div className="space-y-3">
                       {exp.achievements.map((achievement, i) => (
-                        <div key={i} className="flex items-start mb-2">
-                          <div className="mt-1 min-w-3 h-3 w-3 bg-blue-600 rounded-full mr-3"></div>
-                          <p className="text-gray-700">{achievement}</p>
+                        <div key={i} className="flex items-start">
+                          <div className="mt-2 min-w-2 h-2 w-2 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mr-4"></div>
+                          <p className="text-slate-300 leading-relaxed">{achievement}</p>
                         </div>
                       ))}
                     </div>
