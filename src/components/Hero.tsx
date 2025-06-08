@@ -13,7 +13,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-400">
                 MANOJ KUMAR.S
               </span>
             </h1>
