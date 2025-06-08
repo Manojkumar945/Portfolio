@@ -50,10 +50,12 @@ const Hero = () => {
                 <Phone size={18} className="text-amber-400" />
                 <span className="text-sm">+91 7806892181</span>
               </div>
+              
               <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm">
                 <Mail size={18} className="text-amber-400" />
                 <span className="text-sm">manojk46234@gmail.com</span>
               </div>
+              
               <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm">
                 <MapPin size={18} className="text-amber-400" />
                 <span className="text-sm">Trichy, Tamil Nadu</span>
