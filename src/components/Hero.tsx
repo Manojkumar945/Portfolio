@@ -11,7 +11,7 @@ const Hero = () => {
           <div className="w-full md:w-7/12">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-amber-400/10 text-amber-400 rounded-full text-sm font-medium border border-amber-400/20">
-                Available for Opportunities
+                
               </span>
             </div>
             
