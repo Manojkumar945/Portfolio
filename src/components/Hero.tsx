@@ -21,7 +21,7 @@ const Hero = () => {
             
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400">
-                MANOJ KUMAR.S
+                Manoj Kumar.S
               </span>
             </h1>
             
