@@ -25,8 +25,9 @@ const Contact = () => {
     setError('');
     
     try {
-      // Using Formspree for form submission - replace with your Formspree endpoint
-      const response = await fetch('https://formspree.io/f/manojk46234@gmail.com', {
+      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+      // Get your form ID from https://formspree.io/forms after creating a form
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const Contact = () => {
           setSubmitted(false);
         }, 5000);
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
     } catch (err) {
       setError('Failed to send message. Please try again or contact me directly via email.');
@@ -138,6 +139,24 @@ const Contact = () => {
           <div>
             <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-2xl p-8 shadow-2xl border border-slate-600/50 backdrop-blur-sm">
               <h3 className="text-xl font-semibold mb-8 text-white">Send Me a Message</h3>
+              
+              {/* Form Setup Notice */}
+              <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white p-6 rounded-xl mb-6 flex items-start shadow-lg">
+                <div className="mr-4 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium text-sm">Form Setup Required</p>
+                  <p className="text-sm mt-1 opacity-90">
+                    To enable form submissions, please replace 'YOUR_FORM_ID' in the code with your actual Formspree form ID from{' '}
+                    <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
+                      formspree.io
+                    </a>
+                  </p>
+                </div>
+              </div>
               
               {submitted ? (
                 <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 rounded-xl mb-6 flex items-center shadow-lg">
