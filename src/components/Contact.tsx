@@ -33,11 +33,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-900">
+    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-900">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-white">Contact Me</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mb-6"></div>
           <p className="text-slate-400 text-center max-w-2xl text-lg">
             Let's connect and discuss how we can work together
           </p>
@@ -59,14 +59,14 @@ const Contact = () => {
               ].map((contact, index) => (
                 <div key={index} className="flex items-start group">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-4 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-4 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <contact.icon size={20} className="text-white" />
                     </div>
                   </div>
                   <div className="ml-6">
                     <h4 className="text-lg font-medium text-white mb-2">{contact.title}</h4>
                     {contact.href ? (
-                      <a href={contact.href} className="text-slate-300 hover:text-amber-400 transition-colors text-lg">
+                      <a href={contact.href} className="text-slate-300 hover:text-cyan-400 transition-colors text-lg">
                         {contact.value}
                       </a>
                     ) : (
@@ -104,7 +104,7 @@ const Contact = () => {
           
           {/* Contact Form */}
           <div>
-            <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-8 shadow-2xl border border-slate-600">
+            <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-2xl p-8 shadow-2xl border border-slate-600/50 backdrop-blur-sm">
               <h3 className="text-xl font-semibold mb-8 text-white">Send Me a Message</h3>
               
               {submitted ? (
@@ -126,7 +126,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 backdrop-blur-sm"
                       required
                     />
                   </div>
@@ -139,7 +139,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 backdrop-blur-sm"
                       required
                     />
                   </div>
@@ -152,7 +152,7 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 backdrop-blur-sm"
                       required
                     />
                   </div>
@@ -165,14 +165,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 resize-none backdrop-blur-sm"
                       required
                     ></textarea>
                   </div>
                   
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     <Send size={18} />
                     Send Message

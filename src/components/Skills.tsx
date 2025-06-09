@@ -35,11 +35,11 @@ const skillIcons = {
 
 const Skills = () => {
   return (
-    <section id="skills\" className="py-20 bg-slate-800">
+    <section id="skills" className="py-20 bg-gradient-to-br from-indigo-900/80 via-purple-900/60 to-slate-800">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-white">Skills & Expertise</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mb-6"></div>
           <p className="text-slate-400 text-center max-w-2xl text-lg">
             My technical skills and professional certifications
           </p>
@@ -54,12 +54,12 @@ const Skills = () => {
               {technicalSkills.map((skill, index) => (
                 <div key={index} className="group">
                   <div className="flex justify-between mb-3">
-                    <span className="font-medium text-slate-300 group-hover:text-amber-400 transition-colors">{skill.name}</span>
-                    <span className="text-amber-400 font-semibold">{skill.proficiency}%</span>
+                    <span className="font-medium text-slate-300 group-hover:text-cyan-400 transition-colors">{skill.name}</span>
+                    <span className="text-cyan-400 font-semibold">{skill.proficiency}%</span>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-slate-700/50 rounded-full h-3 overflow-hidden backdrop-blur-sm">
                     <div 
-                      className="bg-gradient-to-r from-amber-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-out shadow-lg"
+                      className="bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full transition-all duration-1000 ease-out shadow-lg"
                       style={{ width: `${skill.proficiency}%` }}
                     ></div>
                   </div>
@@ -70,8 +70,8 @@ const Skills = () => {
             {/* Skill Categories */}
             <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
               {Object.entries(skillIcons).map(([category, icon], index) => (
-                <div key={index} className="flex flex-col items-center p-6 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600 hover:border-amber-400/30 group">
-                  <div className="text-amber-400 mb-3 group-hover:scale-110 transition-transform">
+                <div key={index} className="flex flex-col items-center p-6 bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600/50 hover:border-cyan-400/30 group backdrop-blur-sm">
+                  <div className="text-cyan-400 mb-3 group-hover:scale-110 transition-transform">
                     {icon}
                   </div>
                   <span className="text-slate-300 text-center font-medium text-sm group-hover:text-white transition-colors">{category}</span>
@@ -84,11 +84,11 @@ const Skills = () => {
           <div>
             <h3 className="text-2xl font-semibold mb-8 text-white">Certifications</h3>
             
-            <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-8 border border-slate-600">
+            <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-2xl p-8 border border-slate-600/50 backdrop-blur-sm">
               <div className="space-y-4 max-h-96 overflow-y-auto custom-scrollbar">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="bg-slate-800 p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600 hover:border-amber-400/30 group">
-                    <h4 className="font-semibold text-white mb-2 group-hover:text-amber-400 transition-colors">{cert.name}</h4>
+                  <div key={index} className="bg-slate-800/60 p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600/50 hover:border-cyan-400/30 group backdrop-blur-sm">
+                    <h4 className="font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">{cert.name}</h4>
                     <p className="text-slate-400 text-sm">{cert.issuer}</p>
                   </div>
                 ))}

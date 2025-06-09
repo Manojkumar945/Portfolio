@@ -9,12 +9,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t border-slate-700">
+    <footer className="bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 text-slate-300 border-t border-slate-700/50">
       {/* Back to top button */}
       <div className="flex justify-center">
         <button 
           onClick={scrollToTop}
-          className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white p-4 rounded-full transform -translate-y-1/2 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+          className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white p-4 rounded-full transform -translate-y-1/2 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
           aria-label="Back to top"
         >
           <ChevronUp size={24} />
@@ -33,7 +33,7 @@ const Footer = () => {
                 href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-amber-400 transition-colors p-2 hover:bg-slate-800 rounded-lg"
+                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 hover:bg-slate-800/50 rounded-lg backdrop-blur-sm"
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ const Footer = () => {
                 href="https://github.com/Manojkumar945" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-amber-400 transition-colors p-2 hover:bg-slate-800 rounded-lg"
+                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 hover:bg-slate-800/50 rounded-lg backdrop-blur-sm"
                 aria-label="GitHub"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ const Footer = () => {
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
-                    className="text-slate-400 hover:text-amber-400 transition-colors hover:pl-2 duration-300"
+                    className="text-slate-400 hover:text-cyan-400 transition-colors hover:pl-2 duration-300"
                   >
                     {item}
                   </a>
@@ -74,24 +74,24 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-white">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <span className="mr-3 text-amber-400 text-lg">📱</span>
+                <span className="mr-3 text-cyan-400 text-lg">📱</span>
                 <span className="text-slate-400">+91 7806892181</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-amber-400 text-lg">✉️</span>
-                <a href="mailto:manojk46234@gmail.com" className="text-slate-400 hover:text-amber-400 transition-colors">
+                <span className="mr-3 text-cyan-400 text-lg">✉️</span>
+                <a href="mailto:manojk46234@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors">
                   manojk46234@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-amber-400 text-lg">📍</span>
+                <span className="mr-3 text-cyan-400 text-lg">📍</span>
                 <span className="text-slate-400">Trichy, Tamil Nadu, India</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-slate-700 text-center">
+        <div className="mt-12 pt-8 border-t border-slate-700/50 text-center">
           <p className="flex items-center justify-center gap-2 text-slate-400">
             &copy; {new Date().getFullYear()} Manoj Kumar. Made with <Heart size={16} className="text-red-500" /> 
           </p>
