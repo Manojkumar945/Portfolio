@@ -35,7 +35,7 @@ const skillIcons = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-indigo-900/80 via-purple-900/60 to-slate-800">
+    <section id="skills\" className="py-20 bg-gradient-to-br from-indigo-900/80 via-purple-900/60 to-slate-800">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-white">Skills & Expertise</h2>
