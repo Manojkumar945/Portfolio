@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -41,6 +41,15 @@ const Hero = () => {
               >
                 <Mail size={18} />
                 Contact Me
+              </a>
+              <a 
+                href="https://linktr.ee/Manoj_18" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium"
+              >
+                <ExternalLink size={18} />
+                See My Website
               </a>
               <a 
                 href="/My App Developer role Resume.pdf (1).pdf" 
