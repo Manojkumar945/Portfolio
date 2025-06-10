@@ -188,7 +188,7 @@ const Skills = () => {
           {/* Certifications - Timeline Design */}
           <div>
             <div className="flex items-center gap-3 mb-10">
-              <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl shadow-lg">
+              <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
                 <Award size={24} className="text-white" />
               </div>
               <h3 className="text-3xl font-bold text-white">Certifications</h3>
