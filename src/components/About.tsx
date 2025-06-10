@@ -41,7 +41,7 @@ const About = () => {
               </div>
               <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-xl w-40 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 group backdrop-blur-sm">
                 <span className="text-4xl font-bold text-cyan-400 group-hover:scale-110 transition-transform">1</span>
-                <span className="text-slate-400 text-sm font-medium">Company Founded</span>
+                <span className="text-slate-400 text-sm font-medium">Company</span>
               </div>
             </div>
           </div>
