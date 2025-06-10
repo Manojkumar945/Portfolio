@@ -48,7 +48,7 @@ const About = () => {
           
           <div className="w-full md:w-1/2">
             <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 p-8 rounded-2xl shadow-2xl border border-slate-600/50 backdrop-blur-sm">
-              <h3 className="text-2xl font-semibold mb-6 text-white">Core Competencies</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-white">Key Strengths</h3>
               <div className="space-y-4">
                 {[
                   { 
