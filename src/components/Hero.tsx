@@ -74,7 +74,7 @@ const Hero = () => {
               
               <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm border border-slate-700/50">
                 <MapPin size={18} className="text-cyan-400" />
-                <span className="text-sm">Trichy, Tamil Nadu</span>
+                <span className="text-sm">Trichy, Tamil Nadu, India</span>
               </div>
             </div>
             
