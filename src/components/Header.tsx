@@ -29,7 +29,11 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between py-4">
+        {/* Logo/Name */}
         <div className="flex items-center">
+          <h1 className="text-xl md:text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300 cursor-pointer">
+            Manoj Kumar.S
+          </h1>
         </div>
 
         {/* Desktop Navigation */}
