@@ -16,7 +16,7 @@ const certifications = [
     name: "Data Analytics with Python", 
     issuer: "NPTEL Online Certifications",
     type: "Technical",
-    year: "2024",
+    year: "2025",
     icon: "📊",
     color: "from-blue-500 to-cyan-500"
   },
@@ -24,7 +24,7 @@ const certifications = [
     name: "Raspberry Pi Technical Trainer", 
     issuer: "Paavai Engineering College",
     type: "Hardware",
-    year: "2024",
+    year: "2025",
     icon: "🔧",
     color: "from-green-500 to-teal-500"
   },
