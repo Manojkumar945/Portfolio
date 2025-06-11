@@ -54,7 +54,7 @@ const Hero = () => {
                 See My Website
               </a>
               <a 
-                href="/My App Developer role Resume.pdf (1).pdf" 
+                href="/My App Developer role Resume.pdf"
                 download
                 className="px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium backdrop-blur-sm"
               >
