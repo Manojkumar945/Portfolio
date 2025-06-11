@@ -17,11 +17,13 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-7/12">
             <div className="mb-6">
+              <p className="text-2xl md:text-3xl text-slate-300 mb-2">Hi,</p>
+              <p className="text-2xl md:text-3xl text-slate-300">I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 font-semibold">Manoj Kumar</span></p>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400">
-                MANOJ KUMAR.S
+                App Developer
               </span>
             </h1>
             
