@@ -1,4 +1,4 @@
-import { ChevronUp, Heart } from 'lucide-react';
+import { ChevronUp, Heart, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -84,7 +84,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-cyan-400 text-lg">📍</span>
+                <MapPin size={18} className="mr-3 text-cyan-400 mt-1" />
                 <span className="text-slate-400">Trichy, Tamil Nadu, India</span>
               </li>
             </ul>
