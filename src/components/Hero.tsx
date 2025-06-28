@@ -152,8 +152,8 @@ const Hero = () => {
             </a>
             
             <a 
-              href="/My Resume.pdf"
-              download="Manoj_Kumar_Resume.pdf"
+              href="/My App Developer role Resume.pdf"
+              download
               className="group px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium backdrop-blur-sm relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
