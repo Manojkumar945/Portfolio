@@ -1,4 +1,5 @@
-import { Code, FileCode, Database, Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap } from 'lucide-react';
+import { Code, FileCode, Database, Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap, X, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 
 // Technical skills with proficiency levels and categories
 const technicalSkills = [
@@ -10,7 +11,7 @@ const technicalSkills = [
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "🎨", color: "from-purple-400 to-pink-500" }
 ];
 
-// Certifications with enhanced details
+// Certifications with enhanced details and certificate images
 const certifications = [
   { 
     name: "Data Analytics with Python", 
@@ -18,7 +19,9 @@ const certifications = [
     type: "Technical",
     year: "2025",
     icon: "📊",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
+    image: "/certificates/Data Analytics with Python.png",
+    description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques."
   },
   { 
     name: "Raspberry Pi Technical Trainer", 
@@ -26,7 +29,9 @@ const certifications = [
     type: "Hardware",
     year: "2025",
     icon: "🔧",
-    color: "from-green-500 to-teal-500"
+    color: "from-green-500 to-teal-500",
+    image: "/certificates/Raspberry pi Trainer Certification.png",
+    description: "Technical trainer certification for Raspberry Pi, Arduino, and IoT technologies for educational purposes."
   },
   { 
     name: "Introduction to Microsoft Excel", 
@@ -34,7 +39,9 @@ const certifications = [
     type: "Analytics",
     year: "2024",
     icon: "📈",
-    color: "from-emerald-500 to-green-500"
+    color: "from-emerald-500 to-green-500",
+    image: "/certificates/MS Excel Course Certificate.pdf.png",
+    description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management."
   },
   { 
     name: "Mobile App Development", 
@@ -42,7 +49,9 @@ const certifications = [
     type: "Development",
     year: "2024",
     icon: "📱",
-    color: "from-purple-500 to-indigo-500"
+    color: "from-purple-500 to-indigo-500",
+    image: "/certificates/MANOJ KUMAR S.pdf.png",
+    description: "Introduction to Android development covering mobile app design, development, and deployment."
   },
   { 
     name: "Global Immersion Program", 
@@ -50,7 +59,9 @@ const certifications = [
     type: "Academic",
     year: "2024",
     icon: "🌍",
-    color: "from-orange-500 to-red-500"
+    color: "from-orange-500 to-red-500",
+    image: "/certificates/DOC-20241231-WA0000..png",
+    description: "Two-week global immersion program focusing on cultural exchange and international learning."
   },
   { 
     name: "Cloud Computing", 
@@ -58,7 +69,9 @@ const certifications = [
     type: "Cloud",
     year: "2024",
     icon: "☁️",
-    color: "from-sky-500 to-blue-500"
+    color: "from-sky-500 to-blue-500",
+    image: null,
+    description: "Comprehensive course covering cloud computing concepts, services, and deployment models."
   },
   { 
     name: "Google AI-ML", 
@@ -66,7 +79,9 @@ const certifications = [
     type: "AI/ML",
     year: "2024",
     icon: "🤖",
-    color: "from-violet-500 to-purple-500"
+    color: "from-violet-500 to-purple-500",
+    image: null,
+    description: "Google AI and Machine Learning certification covering fundamentals and practical applications."
   },
   { 
     name: "Google Android Developer", 
@@ -74,7 +89,9 @@ const certifications = [
     type: "Mobile",
     year: "2024",
     icon: "🚀",
-    color: "from-green-500 to-emerald-500"
+    color: "from-green-500 to-emerald-500",
+    image: null,
+    description: "Google Android Developer certification covering app development best practices and technologies."
   },
   { 
     name: "Campus Ambassador Program", 
@@ -82,16 +99,30 @@ const certifications = [
     type: "Leadership",
     year: "2024",
     icon: "👑",
-    color: "from-yellow-500 to-orange-500"
+    color: "from-yellow-500 to-orange-500",
+    image: null,
+    description: "Leadership program representing IIM Bangalore's EXIMIUS event as campus ambassador."
   }
 ];
 
 const Skills = () => {
+  const [selectedCertificate, setSelectedCertificate] = useState<typeof certifications[0] | null>(null);
+
+  const openCertificate = (cert: typeof certifications[0]) => {
+    if (cert.image) {
+      setSelectedCertificate(cert);
+    }
+  };
+
+  const closeCertificate = () => {
+    setSelectedCertificate(null);
+  };
+
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-indigo-900/80 via-purple-900/60 to-slate-800">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Skills</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white">Skills & Certifications</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mb-6"></div>
           <p className="text-slate-400 text-center max-w-2xl text-lg">
             My technical skills and professional certifications
@@ -209,13 +240,24 @@ const Skills = () => {
                     </div>
                     
                     {/* Certification Card */}
-                    <div className="flex-1 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-slate-600/50 rounded-xl p-6 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1">
+                    <div 
+                      className={`flex-1 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-slate-600/50 rounded-xl p-6 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1 ${
+                        cert.image ? 'cursor-pointer hover:bg-slate-700/50' : ''
+                      }`}
+                      onClick={() => cert.image && openCertificate(cert)}
+                    >
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
-                          <h4 className="font-bold text-white text-lg mb-2 group-hover:text-purple-400 transition-colors">
-                            {cert.name}
-                          </h4>
+                          <div className="flex items-center gap-2 mb-2">
+                            <h4 className="font-bold text-white text-lg group-hover:text-purple-400 transition-colors">
+                              {cert.name}
+                            </h4>
+                            {cert.image && (
+                              <ExternalLink size={16} className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            )}
+                          </div>
                           <p className="text-slate-400 text-sm mb-2">{cert.issuer}</p>
+                          <p className="text-slate-300 text-xs leading-relaxed">{cert.description}</p>
                         </div>
                         <div className="flex flex-col items-end gap-2">
                           <span className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${cert.color} text-white font-medium`}>
@@ -226,9 +268,14 @@ const Skills = () => {
                       </div>
                       
                       {/* Verification Badge */}
-                      <div className="flex items-center gap-2 text-green-400">
-                        <CheckCircle size={16} />
-                        <span className="text-xs font-medium">Verified Certificate</span>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-green-400">
+                          <CheckCircle size={16} />
+                          <span className="text-xs font-medium">Verified Certificate</span>
+                        </div>
+                        {cert.image && (
+                          <span className="text-xs text-cyan-400 font-medium">Click to view certificate</span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -252,6 +299,70 @@ const Skills = () => {
           </div>
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="relative max-w-4xl max-h-[90vh] w-full bg-slate-900 rounded-2xl shadow-2xl border border-slate-600/50 overflow-hidden">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-slate-700/50 bg-gradient-to-r from-slate-800 to-slate-900">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{selectedCertificate.name}</h3>
+                <p className="text-slate-400 text-sm">{selectedCertificate.issuer} • {selectedCertificate.year}</p>
+              </div>
+              <button
+                onClick={closeCertificate}
+                className="p-2 rounded-full bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white transition-all duration-300 hover:scale-110"
+                aria-label="Close certificate"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            {/* Modal Content */}
+            <div className="p-6 overflow-auto max-h-[calc(90vh-120px)]">
+              <div className="flex flex-col items-center">
+                <img
+                  src={selectedCertificate.image!}
+                  alt={`${selectedCertificate.name} Certificate`}
+                  className="max-w-full h-auto rounded-lg shadow-lg border border-slate-600/30"
+                  style={{ maxHeight: '70vh' }}
+                />
+                
+                {/* Certificate Details */}
+                <div className="mt-6 w-full max-w-2xl">
+                  <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl p-6 border border-slate-600/30">
+                    <h4 className="text-lg font-semibold text-white mb-3">Certificate Details</h4>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">Course:</span>
+                        <span className="text-white font-medium">{selectedCertificate.name}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">Issuer:</span>
+                        <span className="text-white">{selectedCertificate.issuer}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">Type:</span>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${selectedCertificate.color} text-white`}>
+                          {selectedCertificate.type}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">Year:</span>
+                        <span className="text-white">{selectedCertificate.year}</span>
+                      </div>
+                      <div className="pt-3 border-t border-slate-600/30">
+                        <p className="text-slate-300 text-sm leading-relaxed">{selectedCertificate.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
