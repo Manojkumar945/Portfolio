@@ -21,7 +21,7 @@ const certifications = [
     icon: "📊",
     color: "from-blue-500 to-cyan-500",
     image: "/certificates/Data Analytics with Python.png",
-    description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques."
+    description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score."
   },
   { 
     name: "Raspberry Pi Technical Trainer", 
@@ -31,7 +31,7 @@ const certifications = [
     icon: "🔧",
     color: "from-green-500 to-teal-500",
     image: "/certificates/Raspberry pi Trainer Certification.png",
-    description: "Technical trainer certification for Raspberry Pi, Arduino, and IoT technologies for educational purposes."
+    description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
     name: "Introduction to Microsoft Excel", 
@@ -41,7 +41,7 @@ const certifications = [
     icon: "📈",
     color: "from-emerald-500 to-green-500",
     image: "/certificates/MS Excel Course Certificate.pdf.png",
-    description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management."
+    description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera."
   },
   { 
     name: "Mobile App Development", 
@@ -51,7 +51,7 @@ const certifications = [
     icon: "📱",
     color: "from-purple-500 to-indigo-500",
     image: "/certificates/MANOJ KUMAR S.pdf.png",
-    description: "Introduction to Android development covering mobile app design, development, and deployment."
+    description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard."
   },
   { 
     name: "Global Immersion Program", 
@@ -61,7 +61,7 @@ const certifications = [
     icon: "🌍",
     color: "from-orange-500 to-red-500",
     image: "/certificates/DOC-20241231-WA0000..png",
-    description: "Two-week global immersion program focusing on cultural exchange and international learning."
+    description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning."
   },
   { 
     name: "Cloud Computing", 
@@ -70,28 +70,28 @@ const certifications = [
     year: "2024",
     icon: "☁️",
     color: "from-sky-500 to-blue-500",
-    image: null,
-    description: "Comprehensive course covering cloud computing concepts, services, and deployment models."
+    image: "/certificates/Cloud Computing (1).pdf.png",
+    description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur."
   },
   { 
-    name: "Google AI-ML", 
+    name: "Google AI-ML Virtual Internship", 
     issuer: "AICTE Eduskills Foundation",
     type: "AI/ML",
     year: "2024",
     icon: "🤖",
     color: "from-violet-500 to-purple-500",
-    image: null,
-    description: "Google AI and Machine Learning certification covering fundamentals and practical applications."
+    image: "/certificates/Google AI-ML Certificate.pdf.png",
+    description: "10-week AI-ML Virtual Internship supported by Google for Developers, covering artificial intelligence and machine learning fundamentals."
   },
   { 
-    name: "Google Android Developer", 
+    name: "Google Android Developer Virtual Internship", 
     issuer: "AICTE Eduskills Foundation",
     type: "Mobile",
     year: "2024",
     icon: "🚀",
     color: "from-green-500 to-emerald-500",
-    image: null,
-    description: "Google Android Developer certification covering app development best practices and technologies."
+    image: "/certificates/Google Android Developer Certificate.pdf.png",
+    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
   { 
     name: "Campus Ambassador Program", 
@@ -100,8 +100,8 @@ const certifications = [
     year: "2024",
     icon: "👑",
     color: "from-yellow-500 to-orange-500",
-    image: null,
-    description: "Leadership program representing IIM Bangalore's EXIMIUS event as campus ambassador."
+    image: "/certificates/WhatsApp Image 2025-06-18 at 10.09.39 AM.jpeg",
+    description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
   }
 ];
 
@@ -125,7 +125,7 @@ const Skills = () => {
           <h2 className="text-4xl font-bold mb-4 text-white">Skills & Certifications</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mb-6"></div>
           <p className="text-slate-400 text-center max-w-2xl text-lg">
-            My technical skills and professional certifications
+            My technical skills and professional certifications with interactive certificate viewing
           </p>
         </div>
         
@@ -222,14 +222,14 @@ const Skills = () => {
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
                 <Award size={24} className="text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-white">Certifications</h3>
+              <h3 className="text-3xl font-bold text-white">Professional Certifications</h3>
             </div>
             
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-blue-500"></div>
               
-              <div className="space-y-6 max-h-[600px] overflow-y-auto custom-scrollbar pr-4">
+              <div className="space-y-6 max-h-[700px] overflow-y-auto custom-scrollbar pr-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="relative flex items-start gap-6 group">
                     {/* Timeline Dot */}
@@ -274,7 +274,10 @@ const Skills = () => {
                           <span className="text-xs font-medium">Verified Certificate</span>
                         </div>
                         {cert.image && (
-                          <span className="text-xs text-cyan-400 font-medium">Click to view certificate</span>
+                          <span className="text-xs text-cyan-400 font-medium flex items-center gap-1">
+                            <span>Click to view certificate</span>
+                            <ExternalLink size={12} />
+                          </span>
                         )}
                       </div>
                     </div>
@@ -288,11 +291,11 @@ const Skills = () => {
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="text-xl font-bold text-white mb-2">Total Certifications</h4>
-                  <p className="text-slate-400">Continuously expanding knowledge</p>
+                  <p className="text-slate-400">All certificates are clickable and viewable</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-4xl font-bold text-purple-400">{certifications.length}+</div>
-                  <div className="text-sm text-slate-400">Verified</div>
+                  <div className="text-4xl font-bold text-purple-400">{certifications.length}</div>
+                  <div className="text-sm text-slate-400">Interactive</div>
                 </div>
               </div>
             </div>
@@ -303,7 +306,7 @@ const Skills = () => {
       {/* Certificate Modal */}
       {selectedCertificate && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="relative max-w-4xl max-h-[90vh] w-full bg-slate-900 rounded-2xl shadow-2xl border border-slate-600/50 overflow-hidden">
+          <div className="relative max-w-5xl max-h-[95vh] w-full bg-slate-900 rounded-2xl shadow-2xl border border-slate-600/50 overflow-hidden">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-slate-700/50 bg-gradient-to-r from-slate-800 to-slate-900">
               <div>
@@ -320,14 +323,16 @@ const Skills = () => {
             </div>
             
             {/* Modal Content */}
-            <div className="p-6 overflow-auto max-h-[calc(90vh-120px)]">
+            <div className="p-6 overflow-auto max-h-[calc(95vh-120px)]">
               <div className="flex flex-col items-center">
-                <img
-                  src={selectedCertificate.image!}
-                  alt={`${selectedCertificate.name} Certificate`}
-                  className="max-w-full h-auto rounded-lg shadow-lg border border-slate-600/30"
-                  style={{ maxHeight: '70vh' }}
-                />
+                <div className="w-full max-w-4xl">
+                  <img
+                    src={selectedCertificate.image!}
+                    alt={`${selectedCertificate.name} Certificate`}
+                    className="w-full h-auto rounded-lg shadow-lg border border-slate-600/30"
+                    style={{ maxHeight: '75vh', objectFit: 'contain' }}
+                  />
+                </div>
                 
                 {/* Certificate Details */}
                 <div className="mt-6 w-full max-w-2xl">
