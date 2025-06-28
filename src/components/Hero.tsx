@@ -219,22 +219,6 @@ const Hero = () => {
               <Github size={24} className="text-slate-300 group-hover:text-white transition-colors relative z-10" />
             </a>
           </div>
-          
-          {/* Achievement Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-md mx-auto mb-8">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-400 mb-1">7+</div>
-              <div className="text-xs text-slate-400">Internships</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-400 mb-1">9+</div>
-              <div className="text-xs text-slate-400">Certifications</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-400 mb-1">1</div>
-              <div className="text-xs text-slate-400">Company</div>
-            </div>
-          </div>
         </div>
       </div>
       
