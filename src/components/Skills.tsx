@@ -11,7 +11,7 @@ const technicalSkills = [
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "🎨", color: "from-purple-400 to-pink-500" }
 ];
 
-// Certifications with enhanced details and certificate images - REMOVED Mobile App Development and Global Immersion Program
+// Certifications with enhanced details and certificate images - SWAPPED ORDER
 const certifications = [
   { 
     name: "Data Analytics with Python", 
@@ -42,6 +42,26 @@ const certifications = [
     color: "from-emerald-500 to-green-500",
     image: "/certificates/MS Excel Course Certificate.pdf.png",
     description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera."
+  },
+  { 
+    name: "Mobile App Development", 
+    issuer: "Infosys Springboard",
+    type: "Development",
+    year: "2024",
+    icon: "📱",
+    color: "from-purple-500 to-indigo-500",
+    image: "/certificates/MANOJ KUMAR S.pdf.png",
+    description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard."
+  },
+  { 
+    name: "Global Immersion Program", 
+    issuer: "UMPSA University Malaysia",
+    type: "Academic",
+    year: "2024",
+    icon: "🌍",
+    color: "from-orange-500 to-red-500",
+    image: "/certificates/DOC-20241231-WA0000..png",
+    description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024."
   },
   { 
     name: "Cloud Computing", 
