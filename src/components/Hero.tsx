@@ -87,8 +87,8 @@ const Hero = () => {
             <p className="text-2xl md:text-3xl text-slate-300 mb-2 animate-fade-in">
               Hello, I'm
             </p>
-            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 mb-4 animate-fade-in-up">
-              Manoj Kumar
+            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 mb-4 animate-fade-in-up leading-tight flex items-center justify-center">
+              <span className="inline-block align-baseline">Manoj Kumar</span>
             </h2>
           </div>
           
