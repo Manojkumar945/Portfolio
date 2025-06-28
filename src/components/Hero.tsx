@@ -75,11 +75,6 @@ const Hero = () => {
           <div className="w-full lg:w-7/12 text-center lg:text-left">
             {/* Greeting with enhanced animation */}
             <div className="mb-8 space-y-2">
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-400/20 rounded-full px-6 py-3 mb-4">
-                <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
-                <span className="text-slate-300 font-medium">Available for new opportunities</span>
-              </div>
-              
               <p className="text-2xl md:text-3xl text-slate-300 mb-2 animate-fade-in">
                 Hello, I'm
               </p>
