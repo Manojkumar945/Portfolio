@@ -22,7 +22,7 @@ function App() {
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 dark:from-indigo-950 dark:via-purple-900 dark:to-slate-900 light:from-blue-50 light:via-indigo-50 light:to-purple-50 text-slate-100 dark:text-slate-100 light:text-gray-900 font-sans transition-colors duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 text-slate-100 font-sans">
       <Header />
       <main>
         <Hero />
