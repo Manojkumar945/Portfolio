@@ -10,26 +10,24 @@ const About = () => {
           </p>
         </div>
         
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-full md:w-1/2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* About Me Content - Left Side */}
+          <div>
             <div className="prose prose-lg text-slate-300 space-y-6">
-              <p className="leading-relaxed">
-                I am <span className="text-cyan-400 font-semibold">Manoj Kumar S</span>, a passionate and dedicated App Developer with a strong foundation in Mobile technologies and a vision to create innovative Applications that solve real-world problems. As the <span className="text-purple-400 font-semibold">Founder of CyberTech Guard</span>, I combine technical expertise with Entrepreneurial spirit to deliver exceptional digital solutions.
+              <p className="leading-relaxed text-lg">
+                I am <span className="text-cyan-400 font-semibold">Manoj Kumar S</span>, a passionate App Developer and <span className="text-purple-400 font-semibold">Founder of CyberTech Guard</span>. Currently pursuing my Bachelor of Technology in Information Technology at Paavai Engineering College, I combine technical expertise with entrepreneurial vision.
               </p>
               
-              <p className="leading-relaxed">
-                Currently pursuing my <span className="text-cyan-400 font-semibold">Bachelor of Technology in Information Technology</span> at Paavai Engineering College, I have actively sought practical experience through multiple internships and professional roles. My journey includes working with renowned companies like <span className="text-purple-400">VCZ Recruitment (Switzerland)</span>, <span className="text-purple-400">Corizo EduTech</span>, and <span className="text-purple-400">InternPe</span>, where I've honed my skills in Android Development, Web Technologies, and Project management.
+              <p className="leading-relaxed text-lg">
+                My journey includes working with renowned companies like <span className="text-purple-400">VCZ Recruitment (Switzerland)</span>, <span className="text-purple-400">Corizo EduTech</span>, and <span className="text-purple-400">InternPe</span>. I serve as a <span className="text-cyan-400 font-semibold">Placement Coordinator</span> at Paavai Institutions and am a <span className="text-purple-400">Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
               </p>
               
-              <p className="leading-relaxed">
-                Beyond technical development, I serve as a <span className="text-cyan-400 font-semibold">Placement Coordinator</span> at Paavai Institutions and have been recognized as a <span className="text-purple-400">Campus Ambassador</span> for EXIMIUS - IIM Bangalore. My diverse experience spans from Mobile App Development to Data Analytics, Cloud Computing, and AI/ML Technologies, backed by <span className="text-cyan-400 font-semibold">8+ professional Certifications</span> from prestigious institutions.
-              </p>
-              
-              <p className="leading-relaxed">
-                My mission is to bridge the gap between innovative technology and user-centric design, creating Applications that not only function flawlessly but also provide meaningful experiences. I am committed to continuous learning, staying updated with emerging technologies, and contributing to the global tech community through impactful solutions.
+              <p className="leading-relaxed text-lg">
+                With <span className="text-cyan-400 font-semibold">9+ professional certifications</span> and expertise spanning Mobile App Development, Data Analytics, Cloud Computing, and AI/ML Technologies, I'm committed to creating applications that provide meaningful user experiences and solve real-world problems.
               </p>
             </div>
             
+            {/* Achievement Stats */}
             <div className="flex flex-wrap gap-6 mt-10">
               <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-xl w-40 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 group backdrop-blur-sm">
                 <span className="text-4xl font-bold text-cyan-400 group-hover:scale-110 transition-transform">7+</span>
@@ -46,7 +44,8 @@ const About = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2">
+          {/* Key Strengths - Right Side */}
+          <div>
             <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 p-8 rounded-2xl shadow-2xl border border-slate-600/50 backdrop-blur-sm">
               <h3 className="text-2xl font-semibold mb-6 text-white">Key Strengths</h3>
               <div className="space-y-4">
