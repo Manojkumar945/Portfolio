@@ -70,22 +70,12 @@ const Hero = () => {
               <p className="text-2xl md:text-3xl text-slate-300">I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 font-semibold">Manoj Kumar</span></p>
             </div>
             
-            <div className="mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400">
-                  {displayText}
-                  <span className="animate-pulse text-cyan-400">|</span>
-                </span>
-              </h1>
-              <div className="h-2 w-full bg-slate-800/50 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 ease-out"
-                  style={{ 
-                    width: `${(charIndex / roles[currentRoleIndex].length) * 100}%` 
-                  }}
-                ></div>
-              </div>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400">
+                {displayText}
+                <span className="animate-pulse text-cyan-400">|</span>
+              </span>
+            </h1>
             
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-slate-300">
               Founder of <span className="text-cyan-400">CyberTech Guard</span>
