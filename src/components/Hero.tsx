@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -23,13 +23,12 @@ const Hero = () => {
         const timeout = setTimeout(() => {
           setDisplayText(currentRole.slice(0, charIndex + 1));
           setCharIndex(charIndex + 1);
-        }, 100); // Typing speed
+        }, 100);
         return () => clearTimeout(timeout);
       } else {
-        // Finished typing, wait then start deleting
         const timeout = setTimeout(() => {
           setIsTyping(false);
-        }, 2000); // Pause before deleting
+        }, 2000);
         return () => clearTimeout(timeout);
       }
     } else {
@@ -37,142 +36,219 @@ const Hero = () => {
         const timeout = setTimeout(() => {
           setDisplayText(currentRole.slice(0, charIndex - 1));
           setCharIndex(charIndex - 1);
-        }, 50); // Deleting speed (faster)
+        }, 50);
         return () => clearTimeout(timeout);
       } else {
-        // Finished deleting, move to next role
         const timeout = setTimeout(() => {
           setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
           setIsTyping(true);
-        }, 500); // Pause before next role
+        }, 500);
         return () => clearTimeout(timeout);
       }
     }
   }, [currentRoleIndex, charIndex, isTyping, roles]);
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 pt-20">
-      {/* Background Pattern */}
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 pt-20 overflow-hidden">
+      {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%236366f1%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
       
-      {/* Floating geometric shapes */}
+      {/* Enhanced Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-32 left-10 w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-52 right-20 w-24 h-24 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-gradient-to-r from-indigo-400/20 to-purple-500/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-r from-emerald-400/15 to-teal-500/15 rounded-full blur-lg animate-pulse delay-3000"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-20 h-20 bg-gradient-to-r from-rose-400/15 to-orange-500/15 rounded-full blur-lg animate-pulse delay-4000"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="w-full md:w-7/12">
-            <div className="mb-8">
-              <p className="text-2xl md:text-3xl text-slate-300 mb-2">Hi,</p>
-              <p className="text-2xl md:text-3xl text-slate-300">I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 font-semibold">Manoj Kumar</span></p>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+          {/* Left Content - Enhanced */}
+          <div className="w-full lg:w-7/12 text-center lg:text-left">
+            {/* Greeting with enhanced animation */}
+            <div className="mb-8 space-y-2">
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-400/20 rounded-full px-6 py-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
+                <span className="text-slate-300 font-medium">Available for new opportunities</span>
+              </div>
+              
+              <p className="text-2xl md:text-3xl text-slate-300 mb-2 animate-fade-in">
+                Hello, I'm
+              </p>
+              <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 mb-4 animate-fade-in-up">
+                Manoj Kumar
+              </h2>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400">
-                {displayText}
-                <span className="animate-pulse text-cyan-400">|</span>
-              </span>
-            </h1>
+            {/* Dynamic Role with enhanced styling */}
+            <div className="mb-8">
+              <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400">
+                  {displayText}
+                  <span className="animate-pulse text-cyan-400 ml-1">|</span>
+                </span>
+              </h1>
+              
+              {/* Company Badge */}
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-400/30 rounded-full px-6 py-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full"></div>
+                <span className="text-slate-300 font-medium">
+                  Founder of <span className="text-cyan-400 font-semibold">CyberTech Guard</span>
+                </span>
+              </div>
+            </div>
             
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-slate-300">
-              Founder of <span className="text-cyan-400">CyberTech Guard</span>
-            </h2>
-            
-            <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl">
+            {/* Enhanced Description */}
+            <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Creating innovative mobile applications with a focus on user experience and technical excellence. 
-              Passionate about building solutions that make a difference.
+              Passionate about building solutions that make a difference in people's lives.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-8">
+            {/* Enhanced Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-center lg:justify-start">
               <a 
                 href="#contact" 
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium"
+                className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
               >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Mail size={18} />
-                Contact Me
+                <span>Contact Me</span>
               </a>
+              
               <a 
                 href="https://linktr.ee/Manoj_18" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium"
+                className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
               >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <ExternalLink size={18} />
-                See My Website
+                <span>Portfolio</span>
               </a>
+              
               <a 
                 href="/My App Developer role Resume.pdf"
                 download
-                className="px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 font-medium backdrop-blur-sm"
+                className="group px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium backdrop-blur-sm relative overflow-hidden"
               >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Download size={18} />
-                Download Resume
+                <span>Resume</span>
               </a>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm border border-slate-700/50">
-                <Phone size={18} className="text-cyan-400" />
-                <span className="text-sm">+91 7806892181</span>
+            {/* Enhanced Contact Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 p-4 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 group">
+                <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform">
+                  <Phone size={16} className="text-white" />
+                </div>
+                <span className="text-sm font-medium">+91 7806892181</span>
               </div>
               
-              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm border border-slate-700/50">
-                <Mail size={18} className="text-cyan-400" />
-                <span className="text-sm">manojk46234@gmail.com</span>
+              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 p-4 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 group">
+                <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform">
+                  <Mail size={16} className="text-white" />
+                </div>
+                <span className="text-sm font-medium">manojk46234@gmail.com</span>
               </div>
               
-              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 p-3 rounded-lg backdrop-blur-sm border border-slate-700/50">
-                <MapPin size={18} className="text-cyan-400" />
-                <span className="text-sm">Trichy, Tamil Nadu, India</span>
+              <div className="flex items-center gap-3 text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 p-4 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 group">
+                <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform">
+                  <MapPin size={16} className="text-white" />
+                </div>
+                <span className="text-sm font-medium">Trichy, Tamil Nadu</span>
               </div>
             </div>
             
-            <div className="flex gap-4">
+            {/* Enhanced Social Links */}
+            <div className="flex gap-4 justify-center lg:justify-start">
               <a 
                 href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-800/80 hover:bg-blue-600 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group backdrop-blur-sm border border-slate-700/50"
+                className="group p-4 bg-slate-800/80 hover:bg-blue-600 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm border border-slate-700/50 hover:border-blue-400/50 relative overflow-hidden"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin size={20} className="text-slate-300 group-hover:text-white" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Linkedin size={24} className="text-slate-300 group-hover:text-white transition-colors relative z-10" />
               </a>
               <a 
                 href="https://github.com/Manojkumar945" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-800/80 hover:bg-gray-700 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group backdrop-blur-sm border border-slate-700/50"
+                className="group p-4 bg-slate-800/80 hover:bg-gray-700 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm border border-slate-700/50 hover:border-gray-400/50 relative overflow-hidden"
                 aria-label="GitHub Profile"
               >
-                <Github size={20} className="text-slate-300 group-hover:text-white" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Github size={24} className="text-slate-300 group-hover:text-white transition-colors relative z-10" />
               </a>
             </div>
           </div>
           
-          <div className="w-full md:w-5/12 flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-2xl opacity-20 scale-110"></div>
-              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl">
+          {/* Right Content - Enhanced Profile Image */}
+          <div className="w-full lg:w-5/12 flex justify-center">
+            <div className="relative group">
+              {/* Enhanced background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-full blur-3xl opacity-30 scale-110 group-hover:opacity-40 transition-opacity duration-500"></div>
+              
+              {/* Profile image container */}
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400/50 to-purple-500/50 shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 via-transparent to-purple-500/20"></div>
                 <img 
                   src="/WhatsApp Image 2025-05-26 at 7.29.40 AM.jpeg"
-                  alt="Manoj Kumar" 
-                  className="w-full h-full object-cover"
+                  alt="Manoj Kumar - App Developer" 
+                  className="w-full h-full object-cover relative z-10"
                 />
+                
+                {/* Floating elements around image */}
+                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-6 rounded-xl shadow-lg font-medium animate-bounce">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-100">
+                    {displayText || "App Developer"}
+                  </span>
+                </div>
+                
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 px-4 rounded-lg shadow-lg text-sm font-medium">
+                  7+ Internships
+                </div>
+                
+                <div className="absolute top-1/2 -left-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-2 px-4 rounded-lg shadow-lg text-sm font-medium transform -rotate-12">
+                  9+ Certifications
+                </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-4 rounded-lg shadow-lg font-medium">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-100">
-                  {displayText || "App Developer"}
-                </span>
-              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute top-8 right-8 w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-ping"></div>
+              <div className="absolute bottom-12 left-8 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-ping delay-1000"></div>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-indigo-900/80 to-transparent"></div>
+      {/* Enhanced scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <button 
+          onClick={scrollToAbout}
+          className="flex flex-col items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors duration-300 group"
+          aria-label="Scroll to About section"
+        >
+          <span className="text-sm font-medium">Scroll Down</span>
+          <div className="p-2 rounded-full border border-slate-600 group-hover:border-cyan-400 transition-colors duration-300">
+            <ArrowDown size={16} className="animate-bounce" />
+          </div>
+        </button>
+      </div>
+      
+      {/* Enhanced bottom gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-indigo-900/80 to-transparent"></div>
     </section>
   );
 };
