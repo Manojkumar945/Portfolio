@@ -93,7 +93,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-slate-700/50 text-center">
           <p className="flex items-center justify-center gap-2 text-slate-400">
-            &copy; {new Date().getFullYear()} Manoj Kumar. Made with <Heart size={16} className="text-red-500" /> 
+            &copy; {new Date().getFullYear()} Manoj Kumar. All Rights reserved<Heart size={16} className="text-red-500" /> 
           </p>
           <p className="text-sm text-slate-500 mt-2">
             App Developer | Mobile Technologies Specialist
