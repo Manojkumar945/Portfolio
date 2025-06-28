@@ -11,7 +11,7 @@ const technicalSkills = [
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "🎨", color: "from-purple-400 to-pink-500" }
 ];
 
-// Certifications with enhanced details and certificate images - SWAPPED ORDER
+// Certifications with enhanced details and certificate images - SWAPPED IMAGES FOR 4TH AND 5TH POSITIONS
 const certifications = [
   { 
     name: "Data Analytics with Python", 
@@ -50,7 +50,7 @@ const certifications = [
     year: "2024",
     icon: "📱",
     color: "from-purple-500 to-indigo-500",
-    image: "/certificates/MANOJ KUMAR S.pdf.png",
+    image: "/certificates/DOC-20241231-WA0000..png",
     description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard."
   },
   { 
@@ -60,7 +60,7 @@ const certifications = [
     year: "2024",
     icon: "🌍",
     color: "from-orange-500 to-red-500",
-    image: "/certificates/DOC-20241231-WA0000..png",
+    image: "/certificates/MANOJ KUMAR S.pdf.png",
     description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024."
   },
   { 
