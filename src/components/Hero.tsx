@@ -118,16 +118,12 @@ const Hero = () => {
             
             {/* Enhanced Floating Tech Stack Elements - NO TEXT INSIDE PHOTO */}
             <div className="absolute -top-8 right-1/4 z-30 bg-slate-800/90 text-cyan-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-cyan-400/30 backdrop-blur-sm animate-float-tech">
-              Android
             </div>
             <div className="absolute top-1/2 -left-8 z-30 bg-slate-800/90 text-purple-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-purple-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '1s' }}>
-              Python
             </div>
             <div className="absolute bottom-1/4 -right-8 z-30 bg-slate-800/90 text-blue-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-blue-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '2s' }}>
-              React
             </div>
             <div className="absolute top-1/6 left-1/6 z-30 bg-slate-800/90 text-emerald-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-emerald-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '3s' }}>
-              Java
             </div>
           </div>
           
