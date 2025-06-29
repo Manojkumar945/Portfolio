@@ -122,14 +122,13 @@ const Hero = () => {
             {/* Experience Badge */}
             <div className="absolute -top-3 -left-3 z-40 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-1.5 px-3 rounded-lg shadow-xl text-xs font-semibold border border-white/20 backdrop-blur-sm group-hover:scale-110 transition-all duration-300 animate-badge-pulse" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-1">
-                <span>🚀</span>
+                <span></span>
                 <span></span>
               </div>
             </div>
             
             {/* Tech Stack Floating Elements */}
             <div className="absolute -top-6 right-1/4 z-30 bg-slate-800/90 text-cyan-400 py-1 px-2 rounded-md shadow-lg text-xs font-medium border border-cyan-400/30 backdrop-blur-sm animate-float-tech">
-              Android
             </div>
             <div className="absolute top-1/2 -left-6 z-30 bg-slate-800/90 text-purple-400 py-1 px-2 rounded-md shadow-lg text-xs font-medium border border-purple-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '1s' }}>
               Python
