@@ -225,11 +225,17 @@ const Hero = () => {
             }`}>
               Hello, I'm
             </p>
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-3 animate-fade-in-up leading-tight transition-all duration-700 ${
+            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-3 animate-fade-in-up leading-tight transition-all duration-700 tracking-wide ${
               isDarkMode 
                 ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
                 : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
-            }`}>
+            }`} style={{ 
+              fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+              letterSpacing: '0.02em',
+              textRendering: 'optimizeLegibility',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale'
+            }}>
               Manoj Kumar
             </h2>
           </div>
