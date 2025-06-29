@@ -111,107 +111,22 @@ const Hero = () => {
         }`}></div>
       </div>
       
-      {/* Massive Circular Profile Photo - Positioned in Right Corner, Moved Down */}
-      <div className="absolute top-32 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
-        <div className="relative group">
-          {/* Massive Background Effects */}
-          <div className={`absolute inset-0 rounded-full blur-3xl scale-150 opacity-80 group-hover:opacity-100 transition-all duration-700 animate-profile-glow ${
+      {/* Simple Profile Photo - Reduced Size and Simplified */}
+      <div className="absolute top-20 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
+        <div className="relative">
+          {/* Simple Profile Container - Much Smaller Size */}
+          <div className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border-2 ${
             isDarkMode 
-              ? 'bg-gradient-to-br from-cyan-400/50 via-blue-500/40 to-purple-600/50' 
-              : 'bg-gradient-to-br from-blue-400/40 via-indigo-500/30 to-purple-600/40'
-          }`}></div>
-          <div className={`absolute inset-0 rounded-full blur-2xl scale-125 opacity-60 group-hover:opacity-80 transition-all duration-500 animate-pulse delay-1000 ${
-            isDarkMode 
-              ? 'bg-gradient-to-tr from-purple-500/40 via-pink-500/30 to-cyan-400/40' 
-              : 'bg-gradient-to-tr from-purple-500/30 via-pink-500/20 to-cyan-400/30'
-          }`}></div>
-          <div className={`absolute inset-0 rounded-full blur-xl scale-110 opacity-40 group-hover:opacity-60 transition-all duration-300 animate-pulse delay-2000 ${
-            isDarkMode 
-              ? 'bg-gradient-to-bl from-indigo-500/30 via-violet-500/20 to-blue-400/30' 
-              : 'bg-gradient-to-bl from-indigo-500/20 via-violet-500/15 to-blue-400/20'
-          }`}></div>
-          
-          {/* Multiple Rotating Ring Effects */}
-          <div className={`absolute inset-0 rounded-full border-2 scale-110 animate-rotate-ring ${
-            isDarkMode 
-              ? 'border-gradient-to-r from-cyan-400/70 via-transparent to-purple-500/70' 
-              : 'border-gradient-to-r from-blue-400/70 via-transparent to-purple-500/70'
-          }`}></div>
-          <div className={`absolute inset-0 rounded-full border scale-125 animate-reverse-rotate-ring ${
-            isDarkMode 
-              ? 'border-gradient-to-l from-blue-400/50 via-transparent to-pink-400/50' 
-              : 'border-gradient-to-l from-blue-400/40 via-transparent to-pink-400/40'
-          }`}></div>
-          <div className={`absolute inset-0 rounded-full border scale-140 animate-rotate-ring ${
-            isDarkMode 
-              ? 'border-gradient-to-t from-violet-400/40 via-transparent to-cyan-400/40' 
-              : 'border-gradient-to-t from-violet-400/30 via-transparent to-cyan-400/30'
-          }`} style={{ animationDuration: '25s' }}></div>
-          
-          {/* Main Profile Container - MASSIVE CIRCULAR SIZE with Better Face Positioning */}
-          <div className={`relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[32rem] 2xl:h-[32rem] rounded-full overflow-hidden shadow-2xl group-hover:scale-105 transition-all duration-700 border-4 ${
-            isDarkMode 
-              ? 'border-gradient-to-r from-cyan-400/80 via-blue-500/80 to-purple-500/80' 
-              : 'border-gradient-to-r from-blue-400/80 via-indigo-500/80 to-purple-500/80'
+              ? 'border-cyan-400/50' 
+              : 'border-blue-400/50'
           }`}>
-            {/* Enhanced Gradient Overlay - Reduced opacity to show face better */}
-            <div className={`absolute inset-0 z-10 transition-all duration-700 ${
-              isDarkMode 
-                ? 'bg-gradient-to-br from-cyan-400/8 via-transparent via-transparent to-purple-500/8' 
-                : 'bg-gradient-to-br from-blue-400/5 via-transparent via-transparent to-purple-500/5'
-            }`}></div>
-            <div className={`absolute inset-0 z-10 transition-all duration-700 ${
-              isDarkMode 
-                ? 'bg-gradient-to-tl from-blue-500/5 via-transparent to-pink-500/5' 
-                : 'bg-gradient-to-tl from-blue-500/3 via-transparent to-pink-500/3'
-            }`}></div>
-            
-            {/* Enhanced Animated Particles */}
-            <div className="absolute inset-0 z-20">
-              <div className={`absolute top-1/4 left-1/4 w-3 h-3 rounded-full animate-particle-float opacity-80 shadow-lg ${
-                isDarkMode ? 'bg-cyan-400' : 'bg-blue-500'
-              }`}></div>
-              <div className={`absolute top-3/4 right-1/4 w-2 h-2 rounded-full animate-particle-float opacity-70 shadow-lg ${
-                isDarkMode ? 'bg-purple-400' : 'bg-purple-500'
-              }`} style={{ animationDelay: '1s' }}></div>
-              <div className={`absolute bottom-1/3 left-1/3 w-2.5 h-2.5 rounded-full animate-particle-float opacity-60 shadow-lg ${
-                isDarkMode ? 'bg-blue-400' : 'bg-indigo-500'
-              }`} style={{ animationDelay: '2s' }}></div>
-              <div className={`absolute top-1/2 right-1/3 w-2 h-2 rounded-full animate-particle-float opacity-75 shadow-lg ${
-                isDarkMode ? 'bg-pink-400' : 'bg-pink-500'
-              }`} style={{ animationDelay: '3s' }}></div>
-              <div className={`absolute top-1/6 right-1/2 w-1.5 h-1.5 rounded-full animate-particle-float opacity-65 shadow-lg ${
-                isDarkMode ? 'bg-emerald-400' : 'bg-emerald-500'
-              }`} style={{ animationDelay: '4s' }}></div>
-              <div className={`absolute bottom-1/4 right-1/6 w-2 h-2 rounded-full animate-particle-float opacity-70 shadow-lg ${
-                isDarkMode ? 'bg-violet-400' : 'bg-violet-500'
-              }`} style={{ animationDelay: '5s' }}></div>
-            </div>
-            
-            {/* Profile Image - Perfectly Circular with Better Face Positioning */}
+            {/* Profile Image - Simple and Clean */}
             <img 
               src="/WhatsApp Image 2025-06-29 at 3.24.31 PM.jpeg"
               alt="Manoj Kumar - App Developer" 
-              className="w-full h-full object-cover object-center relative z-30 group-hover:scale-110 transition-transform duration-700 rounded-full"
-              style={{
-                objectPosition: 'center center', // Center the face perfectly
-                transform: 'scale(1.05)', // Slightly zoom in to show face better
-                transformOrigin: 'center center'
-              }}
+              className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
             />
           </div>
-          
-          {/* Enhanced Outer Glow Rings */}
-          <div className={`absolute inset-0 rounded-full scale-150 blur-xl opacity-70 group-hover:opacity-90 transition-opacity duration-500 ${
-            isDarkMode 
-              ? 'bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-500/20' 
-              : 'bg-gradient-to-r from-blue-400/15 via-indigo-500/15 to-purple-500/15'
-          }`}></div>
-          <div className={`absolute inset-0 rounded-full scale-175 blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-700 ${
-            isDarkMode 
-              ? 'bg-gradient-to-l from-purple-400/15 via-pink-500/15 to-cyan-400/15' 
-              : 'bg-gradient-to-l from-purple-400/10 via-pink-500/10 to-cyan-400/10'
-          }`}></div>
         </div>
       </div>
       
