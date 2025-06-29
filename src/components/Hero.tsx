@@ -122,7 +122,7 @@ const Hero = () => {
           }`}>
             {/* Profile Image */}
             <img 
-              src="/WhatsApp Image 2025-06-29 at 3.24.31 PM.jpeg"
+              src="/My image.jpeg"
               alt="Manoj Kumar - App Developer" 
               className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
             />
