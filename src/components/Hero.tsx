@@ -111,12 +111,12 @@ const Hero = () => {
             
             {/* Profile Image - Perfectly Circular with Better Face Positioning */}
             <img 
-              src="/ed0708ed-9a52-48b4-8ee0-c332d7d1f006-removebg-preview.png"
+              src="/WhatsApp Image 2025-06-29 at 3.24.31 PM.jpeg"
               alt="Manoj Kumar - App Developer" 
-              className="w-full h-full object-cover object-top relative z-30 group-hover:scale-110 transition-transform duration-700 rounded-full"
+              className="w-full h-full object-cover object-center relative z-30 group-hover:scale-110 transition-transform duration-700 rounded-full"
               style={{
-                objectPosition: 'center 20%', // Adjust this to position face better
-                transform: 'scale(1.1)', // Slightly zoom in to show face better
+                objectPosition: 'center center', // Center the face perfectly
+                transform: 'scale(1.05)', // Slightly zoom in to show face better
                 transformOrigin: 'center center'
               }}
             />
@@ -125,21 +125,25 @@ const Hero = () => {
             <div className="absolute -top-12 left-1/4 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-cyan-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-cyan-400/40 backdrop-blur-sm animate-float-tech">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                React
               </span>
             </div>
             <div className="absolute top-1/3 -left-16 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-purple-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-purple-400/40 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '1s' }}>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+                Android
               </span>
             </div>
             <div className="absolute bottom-1/3 -right-16 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-blue-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-blue-400/40 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '2s' }}>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+                Python
               </span>
             </div>
             <div className="absolute -bottom-12 right-1/4 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-emerald-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-emerald-400/40 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '3s' }}>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                Java
               </span>
             </div>
           </div>
