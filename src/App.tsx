@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ThemeProvider } from './contexts/ThemeContext';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -21,8 +21,14 @@ function App() {
 }
 
 function AppContent() {
+  const { isDarkMode } = useTheme();
+  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 text-slate-100 font-sans">
+    <div className={`min-h-screen font-sans transition-all duration-700 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 text-slate-100' 
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+    }`}>
       <Header />
       <main>
         <Hero />

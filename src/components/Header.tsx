@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, ChevronRight, Sun, Moon, Palette } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { isHeaderLight, toggleHeaderTheme } = useTheme();
+  const { isHeaderLight, isDarkMode, toggleHeaderTheme, toggleGlobalTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,75 +63,110 @@ const Header = () => {
             </button>
           ))}
           
-          {/* Theme Toggle Button - Only for Header */}
+          {/* Global Theme Toggle Button */}
           <button
-            onClick={toggleHeaderTheme}
+            onClick={toggleGlobalTheme}
             className={`relative p-3 rounded-xl transition-all duration-500 transform hover:scale-110 group ${
-              isHeaderLight 
-                ? 'bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 text-indigo-600 shadow-lg hover:shadow-xl border border-blue-200' 
-                : 'bg-gradient-to-r from-slate-800/80 to-slate-700/80 hover:from-slate-700 hover:to-slate-600 text-yellow-400 shadow-lg hover:shadow-xl border border-slate-600/50'
+              isDarkMode 
+                ? 'bg-gradient-to-r from-slate-800/80 to-slate-700/80 hover:from-slate-700 hover:to-slate-600 text-yellow-400 shadow-lg hover:shadow-xl border border-slate-600/50' 
+                : 'bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 text-indigo-600 shadow-lg hover:shadow-xl border border-blue-200'
             }`}
-            aria-label="Toggle header theme"
-            title={`Switch header to ${isHeaderLight ? 'dark' : 'light'} mode`}
+            aria-label="Toggle global theme"
+            title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
           >
             <div className="relative w-6 h-6 overflow-hidden">
               <Sun 
                 size={24} 
                 className={`absolute inset-0 transition-all duration-500 transform ${
-                  isHeaderLight ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+                  !isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
                 }`} 
               />
               <Moon 
                 size={24} 
                 className={`absolute inset-0 transition-all duration-500 transform ${
-                  isHeaderLight ? '-rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'
+                  isDarkMode ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
                 }`} 
               />
             </div>
             
             {/* Glow effect */}
             <div className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${
-              isHeaderLight 
-                ? 'bg-blue-400/20 opacity-0 group-hover:opacity-100' 
-                : 'bg-yellow-400/20 opacity-0 group-hover:opacity-100'
+              isDarkMode 
+                ? 'bg-yellow-400/20 opacity-0 group-hover:opacity-100' 
+                : 'bg-blue-400/20 opacity-0 group-hover:opacity-100'
             }`}></div>
             
             {/* Subtle pulse animation */}
             <div className={`absolute inset-0 rounded-xl animate-pulse ${
+              isDarkMode 
+                ? 'bg-yellow-400/10' 
+                : 'bg-blue-400/10'
+            }`}></div>
+          </button>
+          
+          {/* Header Theme Toggle Button */}
+          <button
+            onClick={toggleHeaderTheme}
+            className={`relative p-3 rounded-xl transition-all duration-500 transform hover:scale-110 group ${
               isHeaderLight 
-                ? 'bg-blue-400/10' 
-                : 'bg-yellow-400/10'
+                ? 'bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 text-indigo-600 shadow-lg hover:shadow-xl border border-blue-200' 
+                : 'bg-gradient-to-r from-slate-800/80 to-slate-700/80 hover:from-slate-700 hover:to-slate-600 text-cyan-400 shadow-lg hover:shadow-xl border border-slate-600/50'
+            }`}
+            aria-label="Toggle header theme"
+            title={`Switch header to ${isHeaderLight ? 'dark' : 'light'} mode`}
+          >
+            <Palette size={24} />
+            
+            {/* Glow effect */}
+            <div className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${
+              isHeaderLight 
+                ? 'bg-blue-400/20 opacity-0 group-hover:opacity-100' 
+                : 'bg-cyan-400/20 opacity-0 group-hover:opacity-100'
             }`}></div>
           </button>
         </nav>
 
-        {/* Mobile Menu Button and Theme Toggle */}
+        {/* Mobile Menu Button and Theme Toggles */}
         <div className="md:hidden flex items-center gap-3">
-          {/* Mobile Theme Toggle - Only for Header */}
+          {/* Mobile Global Theme Toggle */}
           <button
-            onClick={toggleHeaderTheme}
+            onClick={toggleGlobalTheme}
             className={`p-2 rounded-lg transition-all duration-500 ${
-              isHeaderLight 
-                ? 'bg-blue-50 text-indigo-600 hover:bg-blue-100 border border-blue-200' 
-                : 'bg-slate-800/80 text-yellow-400 hover:bg-slate-700/80 border border-slate-600/50'
+              isDarkMode 
+                ? 'bg-slate-800/80 text-yellow-400 hover:bg-slate-700/80 border border-slate-600/50' 
+                : 'bg-blue-50 text-indigo-600 hover:bg-blue-100 border border-blue-200'
             }`}
-            aria-label="Toggle header theme"
-            title={`Switch header to ${isHeaderLight ? 'dark' : 'light'} mode`}
+            aria-label="Toggle global theme"
+            title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
           >
             <div className="relative w-5 h-5 overflow-hidden">
               <Sun 
                 size={20} 
                 className={`absolute inset-0 transition-all duration-500 transform ${
-                  isHeaderLight ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+                  !isDarkMode ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
                 }`} 
               />
               <Moon 
                 size={20} 
                 className={`absolute inset-0 transition-all duration-500 transform ${
-                  isHeaderLight ? '-rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'
+                  isDarkMode ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
                 }`} 
               />
             </div>
+          </button>
+          
+          {/* Mobile Header Theme Toggle */}
+          <button
+            onClick={toggleHeaderTheme}
+            className={`p-2 rounded-lg transition-all duration-500 ${
+              isHeaderLight 
+                ? 'bg-blue-50 text-indigo-600 hover:bg-blue-100 border border-blue-200' 
+                : 'bg-slate-800/80 text-cyan-400 hover:bg-slate-700/80 border border-slate-600/50'
+            }`}
+            aria-label="Toggle header theme"
+            title={`Switch header to ${isHeaderLight ? 'dark' : 'light'} mode`}
+          >
+            <Palette size={20} />
           </button>
           
           {/* Mobile Menu Button */}

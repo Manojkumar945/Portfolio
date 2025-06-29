@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Contact = () => {
+  const { isDarkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -65,11 +67,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900">
+    <section id="contact" className={`py-20 transition-all duration-700 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+    }`}>
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-white">Contact Me</h2>
-          <p className="text-slate-400 text-center max-w-2xl text-lg">
+          <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
+            isDarkMode ? 'text-white' : 'text-gray-900'
+          }`}>Contact Me</h2>
+          <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
+            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+          }`}>
             Let's connect and discuss how we can work together
           </p>
         </div>
@@ -77,8 +87,12 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-semibold mb-8 text-white">Get in Touch</h3>
-            <p className="text-slate-300 mb-10 leading-relaxed text-lg">
+            <h3 className={`text-2xl font-semibold mb-8 transition-colors duration-700 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>Get in Touch</h3>
+            <p className={`mb-10 leading-relaxed text-lg transition-colors duration-700 ${
+              isDarkMode ? 'text-slate-300' : 'text-gray-700'
+            }`}>
               Feel free to reach out to me for any inquiries about app development projects, collaborations, or just to say hello. I'm always open to discussing new opportunities and ideas.
             </p>
             
@@ -95,13 +109,19 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="ml-6">
-                    <h4 className="text-lg font-medium text-white mb-2">{contact.title}</h4>
+                    <h4 className={`text-lg font-medium mb-2 transition-colors duration-700 ${
+                      isDarkMode ? 'text-white' : 'text-gray-900'
+                    }`}>{contact.title}</h4>
                     {contact.href ? (
-                      <a href={contact.href} className="text-slate-300 hover:text-cyan-400 transition-colors text-lg">
+                      <a href={contact.href} className={`text-lg hover:text-cyan-400 transition-colors ${
+                        isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                      }`}>
                         {contact.value}
                       </a>
                     ) : (
-                      <p className="text-slate-300 text-lg">{contact.value}</p>
+                      <p className={`text-lg ${
+                        isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                      }`}>{contact.value}</p>
                     )}
                   </div>
                 </div>
@@ -109,13 +129,15 @@ const Contact = () => {
             </div>
             
             <div className="mt-12">
-              <h4 className="text-lg font-medium text-white mb-6">Connect with me</h4>
+              <h4 className={`text-lg font-medium mb-6 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-gray-900'
+              }`}>Connect with me</h4>
               <div className="flex gap-4">
                 <a 
                   href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-xl text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   aria-label="LinkedIn Profile"
                 >
                   <Linkedin size={20} />
@@ -124,7 +146,7 @@ const Contact = () => {
                   href="https://github.com/Manojkumar945" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gray-700 to-gray-800 p-4 rounded-xl text-white hover:from-gray-800 hover:to-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   aria-label="GitHub Profile"
                 >
                   <Github size={20} />
@@ -135,8 +157,14 @@ const Contact = () => {
           
           {/* Contact Form */}
           <div>
-            <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-2xl p-8 shadow-2xl border border-slate-600/50 backdrop-blur-sm">
-              <h3 className="text-xl font-semibold mb-8 text-white">Send Me a Message</h3>
+            <div className={`rounded-2xl p-8 shadow-2xl backdrop-blur-sm transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50' 
+                : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50'
+            }`}>
+              <h3 className={`text-xl font-semibold mb-8 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-gray-900'
+              }`}>Send Me a Message</h3>
               
               {submitted ? (
                 <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 rounded-xl mb-6 flex items-center shadow-lg">
@@ -162,56 +190,80 @@ const Contact = () => {
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-slate-300 mb-2 font-medium">Name *</label>
+                  <label htmlFor="name" className={`block mb-2 font-medium transition-colors duration-700 ${
+                    isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                  }`}>Name *</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 backdrop-blur-sm"
+                    className={`w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-slate-800/60 border border-slate-600/50 text-white placeholder-slate-400' 
+                        : 'bg-white/60 border border-gray-300/50 text-gray-900 placeholder-gray-500'
+                    }`}
                     required
                     disabled={isSubmitting}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-slate-300 mb-2 font-medium">Email *</label>
+                  <label htmlFor="email" className={`block mb-2 font-medium transition-colors duration-700 ${
+                    isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                  }`}>Email *</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 backdrop-blur-sm"
+                    className={`w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-slate-800/60 border border-slate-600/50 text-white placeholder-slate-400' 
+                        : 'bg-white/60 border border-gray-300/50 text-gray-900 placeholder-gray-500'
+                    }`}
                     required
                     disabled={isSubmitting}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-slate-300 mb-2 font-medium">Subject *</label>
+                  <label htmlFor="subject" className={`block mb-2 font-medium transition-colors duration-700 ${
+                    isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                  }`}>Subject *</label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 backdrop-blur-sm"
+                    className={`w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-slate-800/60 border border-slate-600/50 text-white placeholder-slate-400' 
+                        : 'bg-white/60 border border-gray-300/50 text-gray-900 placeholder-gray-500'
+                    }`}
                     required
                     disabled={isSubmitting}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-slate-300 mb-2 font-medium">Message *</label>
+                  <label htmlFor="message" className={`block mb-2 font-medium transition-colors duration-700 ${
+                    isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                  }`}>Message *</label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300 resize-none backdrop-blur-sm"
+                    className={`w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 resize-none backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-slate-800/60 border border-slate-600/50 text-white placeholder-slate-400' 
+                        : 'bg-white/60 border border-gray-300/50 text-gray-900 placeholder-gray-500'
+                    }`}
                     required
                     disabled={isSubmitting}
                   ></textarea>
@@ -236,8 +288,14 @@ const Contact = () => {
                 </button>
               </form>
 
-              <div className="mt-6 p-4 bg-slate-800/40 rounded-xl border border-slate-600/30">
-                <p className="text-slate-400 text-sm">
+              <div className={`mt-6 p-4 rounded-xl transition-all duration-700 ${
+                isDarkMode 
+                  ? 'bg-slate-800/40 border border-slate-600/30' 
+                  : 'bg-white/40 border border-gray-200/30'
+              }`}>
+                <p className={`text-sm ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>
                   <strong>Note:</strong> You can also reach me directly at{' '}
                   <a href="mailto:manojk46234@gmail.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                     manojk46234@gmail.com

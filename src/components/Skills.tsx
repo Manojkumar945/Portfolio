@@ -1,5 +1,6 @@
 import { Code, FileCode, Database, Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap, X, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 // Technical skills with proficiency levels and categories
 const technicalSkills = [
@@ -106,6 +107,7 @@ const certifications = [
 ];
 
 const Skills = () => {
+  const { isDarkMode } = useTheme();
   const [selectedCertificate, setSelectedCertificate] = useState<typeof certifications[0] | null>(null);
 
   const openCertificate = (cert: typeof certifications[0]) => {
@@ -119,11 +121,19 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900">
+    <section id="skills" className={`py-20 transition-all duration-700 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+    }`}>
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Skills & Certifications</h2>
-          <p className="text-slate-400 text-center max-w-2xl text-lg">
+          <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
+            isDarkMode ? 'text-white' : 'text-gray-900'
+          }`}>Skills & Certifications</h2>
+          <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
+            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+          }`}>
             My technical skills and professional certifications with interactive certificate viewing
           </p>
         </div>
@@ -135,22 +145,34 @@ const Skills = () => {
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
                 <Zap size={24} className="text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-white">Technical Skills</h3>
+              <h3 className={`text-3xl font-bold transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-gray-900'
+              }`}>Technical Skills</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {technicalSkills.map((skill, index) => (
                 <div key={index} className="group relative overflow-hidden">
-                  <div className="bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <div className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-cyan-400/50' 
+                      : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-cyan-400/50'
+                  }`}>
                     {/* Skill Header */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <span className="text-2xl">{skill.icon}</span>
                         <div>
-                          <h4 className="font-bold text-white text-lg group-hover:text-cyan-400 transition-colors">
+                          <h4 className={`font-bold text-lg group-hover:text-cyan-400 transition-colors ${
+                            isDarkMode ? 'text-white' : 'text-gray-900'
+                          }`}>
                             {skill.name}
                           </h4>
-                          <span className="text-xs text-slate-400 bg-slate-700/50 px-2 py-1 rounded-full">
+                          <span className={`text-xs px-2 py-1 rounded-full ${
+                            isDarkMode 
+                              ? 'text-slate-400 bg-slate-700/50' 
+                              : 'text-gray-600 bg-gray-100/50'
+                          }`}>
                             {skill.category}
                           </span>
                         </div>
@@ -164,7 +186,7 @@ const Skills = () => {
                     <div className="relative w-20 h-20 mx-auto mb-4">
                       <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 36 36">
                         <path
-                          className="text-slate-700"
+                          className={isDarkMode ? 'text-slate-700' : 'text-gray-300'}
                           stroke="currentColor"
                           strokeWidth="3"
                           fill="none"
@@ -200,12 +222,14 @@ const Skills = () => {
                             className={`w-2 h-2 rounded-full ${
                               i < Math.floor(skill.proficiency / 20) 
                                 ? 'bg-gradient-to-r from-cyan-400 to-blue-500' 
-                                : 'bg-slate-600'
+                                : isDarkMode ? 'bg-slate-600' : 'bg-gray-300'
                             }`}
                           />
                         ))}
                       </div>
-                      <span className="text-xs text-slate-400">
+                      <span className={`text-xs ${
+                        isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                      }`}>
                         {skill.proficiency >= 70 ? 'Expert' : skill.proficiency >= 50 ? 'Intermediate' : 'Beginner'}
                       </span>
                     </div>
@@ -221,48 +245,64 @@ const Skills = () => {
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
                 <Award size={24} className="text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-white">Professional Certifications</h3>
+              <h3 className={`text-3xl font-bold transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-gray-900'
+              }`}>Professional Certifications</h3>
             </div>
             
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-cyan-400 to-blue-500"></div>
+              <div className={`absolute left-6 top-0 bottom-0 w-0.5 transition-all duration-700 ${
+                isDarkMode 
+                  ? 'bg-gradient-to-b from-purple-400 via-cyan-400 to-blue-500' 
+                  : 'bg-gradient-to-b from-purple-500 via-blue-400 to-indigo-500'
+              }`}></div>
               
               <div className="space-y-6 max-h-[700px] overflow-y-auto custom-scrollbar pr-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="relative flex items-start gap-6 group">
                     {/* Timeline Dot */}
                     <div className="relative z-10 flex-shrink-0">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${cert.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r ${cert.color}`}>
                         <span className="text-lg">{cert.icon}</span>
                       </div>
                     </div>
                     
                     {/* Certification Card */}
                     <div 
-                      className={`flex-1 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-slate-600/50 rounded-xl p-6 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1 ${
-                        cert.image ? 'cursor-pointer hover:bg-slate-700/50' : ''
-                      }`}
+                      className={`flex-1 p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1 ${
+                        isDarkMode 
+                          ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-purple-400/50' 
+                          : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-purple-400/50'
+                      } ${cert.image ? 'cursor-pointer hover:bg-slate-700/50' : ''}`}
                       onClick={() => cert.image && openCertificate(cert)}
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <h4 className="font-bold text-white text-lg group-hover:text-purple-400 transition-colors">
+                            <h4 className={`font-bold text-lg group-hover:text-purple-400 transition-colors ${
+                              isDarkMode ? 'text-white' : 'text-gray-900'
+                            }`}>
                               {cert.name}
                             </h4>
                             {cert.image && (
                               <ExternalLink size={16} className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                             )}
                           </div>
-                          <p className="text-slate-400 text-sm mb-2">{cert.issuer}</p>
-                          <p className="text-slate-300 text-xs leading-relaxed">{cert.description}</p>
+                          <p className={`text-sm mb-2 ${
+                            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                          }`}>{cert.issuer}</p>
+                          <p className={`text-xs leading-relaxed ${
+                            isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                          }`}>{cert.description}</p>
                         </div>
                         <div className="flex flex-col items-end gap-2">
-                          <span className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${cert.color} text-white font-medium`}>
+                          <span className={`text-xs px-3 py-1 rounded-full text-white font-medium bg-gradient-to-r ${cert.color}`}>
                             {cert.type}
                           </span>
-                          <span className="text-xs text-slate-500">{cert.year}</span>
+                          <span className={`text-xs ${
+                            isDarkMode ? 'text-slate-500' : 'text-gray-500'
+                          }`}>{cert.year}</span>
                         </div>
                       </div>
                       
@@ -286,15 +326,25 @@ const Skills = () => {
             </div>
             
             {/* Certification Summary */}
-            <div className="mt-8 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl p-6 border border-purple-400/20">
+            <div className={`mt-8 rounded-2xl p-6 transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-400/20' 
+                : 'bg-gradient-to-r from-purple-100/50 to-cyan-100/50 border border-purple-300/30'
+            }`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2">Total Certifications</h4>
-                  <p className="text-slate-400">All certificates are clickable and viewable</p>
+                  <h4 className={`text-xl font-bold mb-2 transition-colors duration-700 ${
+                    isDarkMode ? 'text-white' : 'text-gray-900'
+                  }`}>Total Certifications</h4>
+                  <p className={`transition-colors duration-700 ${
+                    isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                  }`}>All certificates are clickable and viewable</p>
                 </div>
                 <div className="text-right">
                   <div className="text-4xl font-bold text-purple-400">{certifications.length}</div>
-                  <div className="text-sm text-slate-400">Interactive</div>
+                  <div className={`text-sm ${
+                    isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                  }`}>Interactive</div>
                 </div>
               </div>
             </div>
@@ -305,16 +355,32 @@ const Skills = () => {
       {/* Certificate Modal */}
       {selectedCertificate && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="relative max-w-5xl max-h-[95vh] w-full bg-slate-900 rounded-2xl shadow-2xl border border-slate-600/50 overflow-hidden">
+          <div className={`relative max-w-5xl max-h-[95vh] w-full rounded-2xl shadow-2xl overflow-hidden ${
+            isDarkMode 
+              ? 'bg-slate-900 border border-slate-600/50' 
+              : 'bg-white border border-gray-200/50'
+          }`}>
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-700/50 bg-gradient-to-r from-slate-800 to-slate-900">
+            <div className={`flex items-center justify-between p-6 border-b ${
+              isDarkMode 
+                ? 'border-slate-700/50 bg-gradient-to-r from-slate-800 to-slate-900' 
+                : 'border-gray-200/50 bg-gradient-to-r from-gray-50 to-blue-50'
+            }`}>
               <div>
-                <h3 className="text-xl font-bold text-white mb-1">{selectedCertificate.name}</h3>
-                <p className="text-slate-400 text-sm">{selectedCertificate.issuer} • {selectedCertificate.year}</p>
+                <h3 className={`text-xl font-bold mb-1 ${
+                  isDarkMode ? 'text-white' : 'text-gray-900'
+                }`}>{selectedCertificate.name}</h3>
+                <p className={`text-sm ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>{selectedCertificate.issuer} • {selectedCertificate.year}</p>
               </div>
               <button
                 onClick={closeCertificate}
-                className="p-2 rounded-full bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white transition-all duration-300 hover:scale-110"
+                className={`p-2 rounded-full transition-all duration-300 hover:scale-110 ${
+                  isDarkMode 
+                    ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white' 
+                    : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 hover:text-gray-900'
+                }`}
                 aria-label="Close certificate"
               >
                 <X size={24} />
@@ -328,36 +394,48 @@ const Skills = () => {
                   <img
                     src={selectedCertificate.image!}
                     alt={`${selectedCertificate.name} Certificate`}
-                    className="w-full h-auto rounded-lg shadow-lg border border-slate-600/30"
+                    className={`w-full h-auto rounded-lg shadow-lg ${
+                      isDarkMode ? 'border border-slate-600/30' : 'border border-gray-200/30'
+                    }`}
                     style={{ maxHeight: '75vh', objectFit: 'contain' }}
                   />
                 </div>
                 
                 {/* Certificate Details */}
                 <div className="mt-6 w-full max-w-2xl">
-                  <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl p-6 border border-slate-600/30">
-                    <h4 className="text-lg font-semibold text-white mb-3">Certificate Details</h4>
+                  <div className={`rounded-xl p-6 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-600/30' 
+                      : 'bg-gradient-to-br from-gray-50/50 to-blue-50/50 border border-gray-200/30'
+                  }`}>
+                    <h4 className={`text-lg font-semibold mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-gray-900'
+                    }`}>Certificate Details</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Course:</span>
-                        <span className="text-white font-medium">{selectedCertificate.name}</span>
+                        <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Course:</span>
+                        <span className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{selectedCertificate.name}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Issuer:</span>
-                        <span className="text-white">{selectedCertificate.issuer}</span>
+                        <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Issuer:</span>
+                        <span className={isDarkMode ? 'text-white' : 'text-gray-900'}>{selectedCertificate.issuer}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Type:</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${selectedCertificate.color} text-white`}>
+                        <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Type:</span>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${selectedCertificate.color}`}>
                           {selectedCertificate.type}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Year:</span>
-                        <span className="text-white">{selectedCertificate.year}</span>
+                        <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Year:</span>
+                        <span className={isDarkMode ? 'text-white' : 'text-gray-900'}>{selectedCertificate.year}</span>
                       </div>
-                      <div className="pt-3 border-t border-slate-600/30">
-                        <p className="text-slate-300 text-sm leading-relaxed">{selectedCertificate.description}</p>
+                      <div className={`pt-3 border-t ${
+                        isDarkMode ? 'border-slate-600/30' : 'border-gray-200/30'
+                      }`}>
+                        <p className={`text-sm leading-relaxed ${
+                          isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                        }`}>{selectedCertificate.description}</p>
                       </div>
                     </div>
                   </div>

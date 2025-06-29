@@ -1,6 +1,9 @@
 import { ChevronUp, Heart, MapPin } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Footer = () => {
+  const { isDarkMode } = useTheme();
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -9,7 +12,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 text-slate-300 border-t border-slate-700/50">
+    <footer className={`text-slate-300 transition-all duration-700 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 border-t border-slate-700/50' 
+        : 'bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 border-t border-gray-300/50 text-gray-700'
+    }`}>
       {/* Back to top button */}
       <div className="flex justify-center">
         <button 
@@ -24,8 +31,12 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Manoj Kumar.S</h3>
-            <p className="mb-6 text-slate-400 leading-relaxed">
+            <h3 className={`text-xl font-bold mb-4 transition-colors duration-700 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>Manoj Kumar.S</h3>
+            <p className={`mb-6 leading-relaxed transition-colors duration-700 ${
+              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            }`}>
               App developer specializing in creating innovative and user-friendly mobile applications that make a difference.
             </p>
             <div className="flex space-x-4">
@@ -33,7 +44,11 @@ const Footer = () => {
                 href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 hover:bg-slate-800/50 rounded-lg backdrop-blur-sm"
+                className={`p-2 rounded-lg backdrop-blur-sm transition-colors ${
+                  isDarkMode 
+                    ? 'text-slate-400 hover:text-cyan-400 hover:bg-slate-800/50' 
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/50'
+                }`}
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +59,11 @@ const Footer = () => {
                 href="https://github.com/Manojkumar945" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 hover:bg-slate-800/50 rounded-lg backdrop-blur-sm"
+                className={`p-2 rounded-lg backdrop-blur-sm transition-colors ${
+                  isDarkMode 
+                    ? 'text-slate-400 hover:text-cyan-400 hover:bg-slate-800/50' 
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/50'
+                }`}
                 aria-label="GitHub"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -55,13 +74,17 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
+            <h3 className={`text-xl font-bold mb-4 transition-colors duration-700 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>Quick Links</h3>
             <ul className="space-y-3">
               {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
-                    className="text-slate-400 hover:text-cyan-400 transition-colors hover:pl-2 duration-300"
+                    className={`hover:text-cyan-400 transition-colors hover:pl-2 duration-300 ${
+                      isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                    }`}
                   >
                     {item}
                   </a>
@@ -71,31 +94,41 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Contact Info</h3>
+            <h3 className={`text-xl font-bold mb-4 transition-colors duration-700 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <span className="mr-3 text-cyan-400 text-lg">📱</span>
-                <span className="text-slate-400">+91 7806892181</span>
+                <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>+91 7806892181</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 text-cyan-400 text-lg">✉️</span>
-                <a href="mailto:manojk46234@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                <a href="mailto:manojk46234@gmail.com" className={`hover:text-cyan-400 transition-colors ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>
                   manojk46234@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-3 text-cyan-400 mt-1" />
-                <span className="text-slate-400">Trichy, Tamil Nadu, India</span>
+                <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Trichy, Tamil Nadu, India</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-slate-700/50 text-center">
-          <p className="flex items-center justify-center gap-2 text-slate-400">
+        <div className={`mt-12 pt-8 border-t text-center transition-all duration-700 ${
+          isDarkMode ? 'border-slate-700/50' : 'border-gray-300/50'
+        }`}>
+          <p className={`flex items-center justify-center gap-2 transition-colors duration-700 ${
+            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+          }`}>
             &copy; {new Date().getFullYear()} Manoj Kumar. All Rights reserved<Heart size={16} className="text-red-500" /> 
           </p>
-          <p className="text-sm text-slate-500 mt-2">
+          <p className={`text-sm mt-2 transition-colors duration-700 ${
+            isDarkMode ? 'text-slate-500' : 'text-gray-500'
+          }`}>
             App Developer | Mobile Technologies Specialist
           </p>
         </div>

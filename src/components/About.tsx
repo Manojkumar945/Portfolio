@@ -1,10 +1,22 @@
+import { useTheme } from '../contexts/ThemeContext';
+
 const About = () => {
+  const { isDarkMode } = useTheme();
+  
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900">
+    <section id="about" className={`py-20 transition-all duration-700 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+    }`}>
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-white">About Me</h2>
-          <p className="text-slate-400 text-center max-w-2xl text-lg">
+          <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
+            isDarkMode ? 'text-white' : 'text-gray-900'
+          }`}>About Me</h2>
+          <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
+            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+          }`}>
             Passionate about creating innovative mobile solutions that transform ideas into reality
           </p>
         </div>
@@ -12,41 +24,73 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* About Me Content - Left Side */}
           <div>
-            <div className="prose prose-lg text-slate-300 space-y-6">
+            <div className={`prose prose-lg space-y-6 transition-colors duration-700 ${
+              isDarkMode ? 'text-slate-300' : 'text-gray-700'
+            }`}>
               <p className="leading-relaxed text-lg">
-                I am <span className="text-cyan-400 font-semibold">Manoj Kumar S</span>, a passionate App Developer and <span className="text-purple-400 font-semibold">Founder of CyberTech Guard</span>. Currently pursuing my Bachelor of Technology in Information Technology at Paavai Engineering College, I combine technical expertise with entrepreneurial vision.
+                I am <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Manoj Kumar S</span>, a passionate App Developer and <span className={`font-semibold ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>Founder of CyberTech Guard</span>. Currently pursuing my Bachelor of Technology in Information Technology at Paavai Engineering College, I combine technical expertise with entrepreneurial vision.
               </p>
               
               <p className="leading-relaxed text-lg">
-                My journey includes working with renowned companies like <span className="text-purple-400">VCZ Recruitment (Switzerland)</span>, <span className="text-purple-400">Corizo EduTech</span>, and <span className="text-purple-400">InternPe</span>. I serve as a <span className="text-cyan-400 font-semibold">Placement Coordinator</span> at Paavai Institutions and am a <span className="text-purple-400">Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
+                My journey includes working with renowned companies like <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>VCZ Recruitment (Switzerland)</span>, <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Corizo EduTech</span>, and <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>InternPe</span>. I serve as a <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Placement Coordinator</span> at Paavai Institutions and am a <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
               </p>
               
               <p className="leading-relaxed text-lg">
-                With <span className="text-cyan-400 font-semibold">9+ professional certifications</span> and expertise spanning Mobile App Development, Data Analytics, Cloud Computing, and AI/ML Technologies, I'm committed to creating applications that provide meaningful user experiences and solve real-world problems.
+                With <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>9+ professional certifications</span> and expertise spanning Mobile App Development, Data Analytics, Cloud Computing, and AI/ML Technologies, I'm committed to creating applications that provide meaningful user experiences and solve real-world problems.
               </p>
             </div>
             
             {/* Achievement Stats */}
             <div className="flex flex-wrap gap-6 mt-10">
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-xl w-40 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 group backdrop-blur-sm">
-                <span className="text-4xl font-bold text-cyan-400 group-hover:scale-110 transition-transform">7+</span>
-                <span className="text-slate-400 text-sm font-medium">Internships</span>
+              <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
+                  : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50 hover:border-cyan-400/50'
+              }`}>
+                <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
+                  isDarkMode ? 'text-cyan-400' : 'text-blue-600'
+                }`}>7+</span>
+                <span className={`text-sm font-medium ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>Internships</span>
               </div>
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-xl w-40 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 group backdrop-blur-sm">
-                <span className="text-4xl font-bold text-cyan-400 group-hover:scale-110 transition-transform">9+</span>
-                <span className="text-slate-400 text-sm font-medium">Certifications</span>
+              <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
+                  : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50 hover:border-cyan-400/50'
+              }`}>
+                <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
+                  isDarkMode ? 'text-cyan-400' : 'text-blue-600'
+                }`}>9+</span>
+                <span className={`text-sm font-medium ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>Certifications</span>
               </div>
-              <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-indigo-800/80 to-purple-800/80 rounded-xl w-40 border border-slate-600/50 hover:border-cyan-400/50 transition-all duration-300 group backdrop-blur-sm">
-                <span className="text-4xl font-bold text-cyan-400 group-hover:scale-110 transition-transform">1</span>
-                <span className="text-slate-400 text-sm font-medium">Company</span>
+              <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
+                  : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50 hover:border-cyan-400/50'
+              }`}>
+                <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
+                  isDarkMode ? 'text-cyan-400' : 'text-blue-600'
+                }`}>1</span>
+                <span className={`text-sm font-medium ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>Company</span>
               </div>
             </div>
           </div>
           
           {/* Key Strengths - Right Side */}
           <div>
-            <div className="bg-gradient-to-br from-indigo-800/80 to-purple-800/80 p-8 rounded-2xl shadow-2xl border border-slate-600/50 backdrop-blur-sm">
-              <h3 className="text-2xl font-semibold mb-6 text-white">Key Strengths</h3>
+            <div className={`p-8 rounded-2xl shadow-2xl backdrop-blur-sm transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50' 
+                : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50'
+            }`}>
+              <h3 className={`text-2xl font-semibold mb-6 transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-gray-900'
+              }`}>Key Strengths</h3>
               <div className="space-y-4">
                 {[
                   { 
@@ -80,12 +124,20 @@ const About = () => {
                     icon: "🎯"
                   }
                 ].map((competency, index) => (
-                  <div key={index} className="bg-slate-800/60 p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600/50 hover:border-cyan-400/30 group backdrop-blur-sm">
+                  <div key={index} className={`p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm ${
+                    isDarkMode 
+                      ? 'bg-slate-800/60 border border-slate-600/50 hover:border-cyan-400/30' 
+                      : 'bg-white/60 border border-blue-200/50 hover:border-cyan-400/30'
+                  }`}>
                     <div className="flex items-start gap-4">
                       <span className="text-2xl">{competency.icon}</span>
                       <div>
-                        <h4 className="font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">{competency.title}</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">{competency.desc}</p>
+                        <h4 className={`font-semibold mb-2 group-hover:text-cyan-400 transition-colors ${
+                          isDarkMode ? 'text-white' : 'text-gray-900'
+                        }`}>{competency.title}</h4>
+                        <p className={`text-sm leading-relaxed ${
+                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                        }`}>{competency.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -97,9 +149,17 @@ const About = () => {
         
         {/* Vision Statement */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl p-8 border border-cyan-400/20 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold mb-4 text-white">My Vision</h3>
-            <p className="text-slate-300 text-lg leading-relaxed max-w-4xl mx-auto">
+          <div className={`rounded-2xl p-8 backdrop-blur-sm transition-all duration-700 ${
+            isDarkMode 
+              ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20' 
+              : 'bg-gradient-to-r from-blue-100/50 to-purple-100/50 border border-blue-300/30'
+          }`}>
+            <h3 className={`text-2xl font-semibold mb-4 transition-colors duration-700 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>My Vision</h3>
+            <p className={`text-lg leading-relaxed max-w-4xl mx-auto transition-colors duration-700 ${
+              isDarkMode ? 'text-slate-300' : 'text-gray-700'
+            }`}>
               "To revolutionize the Mobile App Development landscape by creating innovative, user-centric Applications that seamlessly blend cutting-edge Technology with intuitive design. Through CyberTech Guard and my professional journey, I aim to contribute to a digital future where Technology serves humanity's greatest needs and aspirations."
             </p>
           </div>
