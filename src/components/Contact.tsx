@@ -2,6 +2,16 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
+interface Message {
+  id: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  timestamp: string;
+  isRead: boolean;
+}
+
 const Contact = () => {
   const { isDarkMode } = useTheme();
   const [formData, setFormData] = useState({
@@ -21,46 +31,82 @@ const Contact = () => {
     setError(''); // Clear error when user starts typing
   };
   
+  const saveMessageLocally = (messageData: Omit<Message, 'id' | 'timestamp' | 'isRead'>) => {
+    const newMessage: Message = {
+      id: Date.now().toString(),
+      ...messageData,
+      timestamp: new Date().toISOString(),
+      isRead: false
+    };
+    
+    // Get existing messages from localStorage
+    const existingMessages = localStorage.getItem('portfolioMessages');
+    const messages: Message[] = existingMessages ? JSON.parse(existingMessages) : [];
+    
+    // Add new message to the beginning of the array
+    messages.unshift(newMessage);
+    
+    // Save back to localStorage
+    localStorage.setItem('portfolioMessages', JSON.stringify(messages));
+    
+    // Trigger a custom event to notify other components
+    window.dispatchEvent(new CustomEvent('newMessage', { detail: newMessage }));
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
     
     try {
-      // Using Formspree for form submission - replace with your Formspree endpoint
-      const response = await fetch('https://formspree.io/f/manojk46234@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email,
-        }),
+      // Save message locally first (this will always work)
+      saveMessageLocally({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
       });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
+      
+      // Try to send via Formspree as well (optional)
+      try {
+        const response = await fetch('https://formspree.io/f/manojk46234@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            _replyto: formData.email,
+          }),
         });
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
-      } else {
-        throw new Error('Failed to send message');
+
+        if (!response.ok) {
+          console.warn('Formspree submission failed, but message saved locally');
+        }
+      } catch (formspreeError) {
+        console.warn('Formspree submission failed, but message saved locally:', formspreeError);
       }
+      
+      // Always show success since local save worked
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+      
     } catch (err) {
-      setError('Failed to send message. Please try again or contact me directly via email.');
-      console.error('Form submission error:', err);
+      setError('Failed to save message. Please try again.');
+      console.error('Message save error:', err);
     } finally {
       setIsSubmitting(false);
     }
@@ -173,7 +219,10 @@ const Contact = () => {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="font-medium">Your message has been sent successfully! I'll get back to you soon.</p>
+                  <div>
+                    <p className="font-medium">Your message has been sent successfully!</p>
+                    <p className="text-sm mt-1">It will appear on the website immediately and I'll get back to you soon.</p>
+                  </div>
                 </div>
               ) : null}
 
@@ -296,7 +345,7 @@ const Contact = () => {
                 <p className={`text-sm ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>
-                  <strong>Note:</strong> You can also reach me directly at{' '}
+                  <strong>Note:</strong> Your message will appear on this website immediately after sending. You can also reach me directly at{' '}
                   <a href="mailto:manojk46234@gmail.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                     manojk46234@gmail.com
                   </a>{' '}

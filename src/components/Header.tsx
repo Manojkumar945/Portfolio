@@ -48,10 +48,10 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {['about', 'experience', 'skills', 'contact'].map((item) => (
+          {['about', 'experience', 'skills', 'contact', 'messages'].map((item) => (
             <button
               key={item}
-              onClick={() => scrollTo(item)}
+              onClick={() => scrollTo(item === 'messages' ? 'messages' : item)}
               className={`capitalize font-medium relative group transition-colors duration-500 ${
                 isHeaderLight ? 'text-gray-600 hover:text-blue-600' : 'text-slate-300 hover:text-cyan-400'
               }`}
@@ -187,10 +187,10 @@ const Header = () => {
           isHeaderLight ? 'bg-white/95 backdrop-blur-md' : 'bg-indigo-950/95 backdrop-blur-md'
         }`}>
           <nav className="container mx-auto px-6 flex flex-col space-y-6 py-6">
-            {['about', 'experience', 'skills', 'contact'].map((item) => (
+            {['about', 'experience', 'skills', 'contact', 'messages'].map((item) => (
               <button
                 key={item}
-                onClick={() => scrollTo(item)}
+                onClick={() => scrollTo(item === 'messages' ? 'messages' : item)}
                 className={`flex items-center justify-between capitalize text-xl transition-colors duration-500 border-b pb-4 ${
                   isHeaderLight 
                     ? 'text-gray-600 hover:text-blue-600 border-gray-200' 
