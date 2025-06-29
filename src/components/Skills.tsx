@@ -123,7 +123,6 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-white">Skills & Certifications</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mb-6"></div>
           <p className="text-slate-400 text-center max-w-2xl text-lg">
             My technical skills and professional certifications with interactive certificate viewing
           </p>
