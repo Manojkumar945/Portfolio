@@ -138,7 +138,7 @@ const Hero = () => {
             <p className={`text-2xl md:text-3xl mb-1 animate-fade-in transition-colors duration-700 ${
               isDarkMode ? 'text-slate-300' : 'text-gray-600'
             }`}>
-              Hello, I'm
+              Hi, I'm
             </p>
             <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-3 animate-fade-in-up leading-tight transition-all duration-700 tracking-wide ${
               isDarkMode 
