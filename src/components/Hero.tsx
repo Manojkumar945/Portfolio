@@ -131,10 +131,8 @@ const Hero = () => {
             <div className="absolute -top-6 right-1/4 z-30 bg-slate-800/90 text-cyan-400 py-1 px-2 rounded-md shadow-lg text-xs font-medium border border-cyan-400/30 backdrop-blur-sm animate-float-tech">
             </div>
             <div className="absolute top-1/2 -left-6 z-30 bg-slate-800/90 text-purple-400 py-1 px-2 rounded-md shadow-lg text-xs font-medium border border-purple-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '1s' }}>
-              Python
             </div>
             <div className="absolute bottom-1/4 -right-6 z-30 bg-slate-800/90 text-blue-400 py-1 px-2 rounded-md shadow-lg text-xs font-medium border border-blue-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '2s' }}>
-              React
             </div>
           </div>
           
