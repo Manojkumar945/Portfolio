@@ -12,7 +12,7 @@ const technicalSkills = [
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "/icons8-logo-design-32.png", color: "from-purple-400 to-pink-500" }
 ];
 
-// Certifications with enhanced details and certificate images - NO ICONS
+// Certifications with enhanced details and certificate images - NO ICONS OR DOTS
 const certifications = [
   { 
     name: "Data Analytics with Python", 
@@ -238,7 +238,7 @@ const Skills = () => {
             </div>
           </div>
           
-          {/* Certifications - Timeline Design WITHOUT ICONS */}
+          {/* Certifications - Simple List Design WITHOUT Timeline or Dots */}
           <div>
             <div className="flex items-center gap-3 mb-10">
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
@@ -249,78 +249,63 @@ const Skills = () => {
               }`}>Professional Certifications</h3>
             </div>
             
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className={`absolute left-6 top-0 bottom-0 w-0.5 transition-all duration-700 ${
-                isDarkMode 
-                  ? 'bg-gradient-to-b from-purple-400 via-cyan-400 to-blue-500' 
-                  : 'bg-gradient-to-b from-purple-500 via-blue-400 to-indigo-500'
-              }`}></div>
-              
-              <div className="space-y-6 max-h-[700px] overflow-y-auto custom-scrollbar pr-4">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="relative flex items-start gap-6 group">
-                    {/* Timeline Dot - Simple colored dot without icon */}
-                    <div className="relative z-10 flex-shrink-0">
-                      <div className={`w-12 h-12 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r ${cert.color}`}>
+            <div className="space-y-6 max-h-[700px] overflow-y-auto custom-scrollbar pr-4">
+              {certifications.map((cert, index) => (
+                <div key={index} className="group">
+                  {/* Certification Card - No timeline dots */}
+                  <div 
+                    className={`p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1 ${
+                      isDarkMode 
+                        ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-purple-400/50' 
+                        : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-purple-400/50'
+                    } ${cert.image ? 'cursor-pointer hover:bg-slate-700/50' : ''}`}
+                    onClick={() => cert.image && openCertificate(cert)}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className={`font-bold text-lg group-hover:text-purple-400 transition-colors ${
+                            isDarkMode ? 'text-white' : 'text-gray-900'
+                          }`}>
+                            {cert.name}
+                          </h4>
+                          {cert.image && (
+                            <ExternalLink size={16} className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          )}
+                        </div>
+                        <p className={`text-sm mb-2 ${
+                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                        }`}>{cert.issuer}</p>
+                        <p className={`text-xs leading-relaxed ${
+                          isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                        }`}>{cert.description}</p>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <span className={`text-xs px-3 py-1 rounded-full text-white font-medium bg-gradient-to-r ${cert.color}`}>
+                          {cert.type}
+                        </span>
+                        <span className={`text-xs ${
+                          isDarkMode ? 'text-slate-500' : 'text-gray-500'
+                        }`}>{cert.year}</span>
                       </div>
                     </div>
                     
-                    {/* Certification Card */}
-                    <div 
-                      className={`flex-1 p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1 ${
-                        isDarkMode 
-                          ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-purple-400/50' 
-                          : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-purple-400/50'
-                      } ${cert.image ? 'cursor-pointer hover:bg-slate-700/50' : ''}`}
-                      onClick={() => cert.image && openCertificate(cert)}
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <h4 className={`font-bold text-lg group-hover:text-purple-400 transition-colors ${
-                              isDarkMode ? 'text-white' : 'text-gray-900'
-                            }`}>
-                              {cert.name}
-                            </h4>
-                            {cert.image && (
-                              <ExternalLink size={16} className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            )}
-                          </div>
-                          <p className={`text-sm mb-2 ${
-                            isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                          }`}>{cert.issuer}</p>
-                          <p className={`text-xs leading-relaxed ${
-                            isDarkMode ? 'text-slate-300' : 'text-gray-700'
-                          }`}>{cert.description}</p>
-                        </div>
-                        <div className="flex flex-col items-end gap-2">
-                          <span className={`text-xs px-3 py-1 rounded-full text-white font-medium bg-gradient-to-r ${cert.color}`}>
-                            {cert.type}
-                          </span>
-                          <span className={`text-xs ${
-                            isDarkMode ? 'text-slate-500' : 'text-gray-500'
-                          }`}>{cert.year}</span>
-                        </div>
+                    {/* Verification Badge */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-green-400">
+                        <CheckCircle size={16} />
+                        <span className="text-xs font-medium">Verified Certificate</span>
                       </div>
-                      
-                      {/* Verification Badge */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-green-400">
-                          <CheckCircle size={16} />
-                          <span className="text-xs font-medium">Verified Certificate</span>
-                        </div>
-                        {cert.image && (
-                          <span className="text-xs text-cyan-400 font-medium flex items-center gap-1">
-                            <span>Click to view certificate</span>
-                            <ExternalLink size={12} />
-                          </span>
-                        )}
-                      </div>
+                      {cert.image && (
+                        <span className="text-xs text-cyan-400 font-medium flex items-center gap-1">
+                          <span>Click to view certificate</span>
+                          <ExternalLink size={12} />
+                        </span>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
             
             {/* Certification Summary */}
