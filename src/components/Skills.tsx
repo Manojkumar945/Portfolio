@@ -4,9 +4,9 @@ import { useTheme } from '../contexts/ThemeContext';
 
 // Technical skills with proficiency levels and categories
 const technicalSkills = [
-  { name: "HTML", proficiency: 60, category: "Frontend", icon: "🌐", color: "from-orange-400 to-red-500" },
-  { name: "Java", proficiency: 50, category: "Backend", icon: "☕", color: "from-blue-400 to-indigo-500" },
-  { name: "Python", proficiency: 70, category: "Programming", icon: "🐍", color: "from-green-400 to-blue-500" },
+  { name: "HTML", proficiency: 60, category: "Frontend", icon: "/icons8-html-5-48.png", color: "from-orange-400 to-red-500" },
+  { name: "Java", proficiency: 50, category: "Backend", icon: "/icons8-java-48.png", color: "from-blue-400 to-indigo-500" },
+  { name: "Python", proficiency: 70, category: "Programming", icon: "/icons8-python-48.png", color: "from-green-400 to-blue-500" },
   { name: "Android Studio", proficiency: 70, category: "Mobile", icon: "📱", color: "from-green-400 to-teal-500" },
   { name: "Microsoft Excel", proficiency: 75, category: "Analytics", icon: "📊", color: "from-emerald-400 to-cyan-500" },
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "🎨", color: "from-purple-400 to-pink-500" }
@@ -161,7 +161,15 @@ const Skills = () => {
                     {/* Skill Header */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <span className="text-2xl">{skill.icon}</span>
+                        {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
+                          <img 
+                            src={skill.icon} 
+                            alt={skill.name} 
+                            className="w-8 h-8 object-contain"
+                          />
+                        ) : (
+                          <span className="text-2xl">{skill.icon}</span>
+                        )}
                         <div>
                           <h4 className={`font-bold text-lg group-hover:text-cyan-400 transition-colors ${
                             isDarkMode ? 'text-white' : 'text-gray-900'
