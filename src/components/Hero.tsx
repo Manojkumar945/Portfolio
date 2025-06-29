@@ -221,7 +221,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <Download size={18} />
               <span>Download Resume</span>
-            </div>
+            </button>
           </div>
           
           {/* Enhanced Contact Info Cards */}
