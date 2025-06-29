@@ -111,16 +111,16 @@ const Hero = () => {
         }`}></div>
       </div>
       
-      {/* Simple Profile Photo - Moved Down */}
-      <div className="absolute top-32 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
+      {/* Profile Photo - Positioned on Right */}
+      <div className="absolute top-24 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
         <div className="relative">
-          {/* Simple Profile Container - Much Smaller Size */}
+          {/* Profile Container */}
           <div className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border-2 ${
             isDarkMode 
               ? 'border-cyan-400/50' 
               : 'border-blue-400/50'
           }`}>
-            {/* Profile Image - Simple and Clean */}
+            {/* Profile Image */}
             <img 
               src="/WhatsApp Image 2025-06-29 at 3.24.31 PM.jpeg"
               alt="Manoj Kumar - App Developer" 
@@ -130,17 +130,17 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10 py-8">
-        {/* All Text Content Positioned to Left - MOVED UP */}
-        <div className="flex flex-col items-start text-left max-w-3xl">
-          {/* Greeting with enhanced animation - MOVED UP */}
-          <div className="mb-6 space-y-1">
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Main Content - Positioned Higher and to Left */}
+        <div className="flex flex-col items-start text-left max-w-3xl pt-8">
+          {/* Greeting - Moved Up */}
+          <div className="mb-4 space-y-1">
             <p className={`text-2xl md:text-3xl mb-1 animate-fade-in transition-colors duration-700 ${
               isDarkMode ? 'text-slate-300' : 'text-gray-600'
             }`}>
               Hi, I'm
             </p>
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-3 animate-fade-in-up leading-tight transition-all duration-700 tracking-wide ${
+            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-2 animate-fade-in-up leading-tight transition-all duration-700 tracking-wide ${
               isDarkMode 
                 ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
                 : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
@@ -155,9 +155,9 @@ const Hero = () => {
             </h2>
           </div>
           
-          {/* Dynamic Role with enhanced styling */}
-          <div className="mb-8">
-            <h1 className={`text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 transition-colors duration-700 ${
+          {/* Dynamic Role - Moved Up */}
+          <div className="mb-6">
+            <h1 className={`text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 transition-colors duration-700 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
               <span className={`text-transparent bg-clip-text transition-all duration-700 ${
@@ -170,8 +170,8 @@ const Hero = () => {
               </span>
             </h1>
             
-            {/* Company Badge */}
-            <div className="flex justify-start mb-8">
+            {/* Company Badge - Moved Up */}
+            <div className="flex justify-start mb-6">
               <div className={`inline-flex items-center gap-2 backdrop-blur-sm rounded-full px-6 py-3 transition-all duration-700 ${
                 isDarkMode 
                   ? 'bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border border-purple-400/30' 
@@ -191,16 +191,16 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Enhanced Description */}
-          <p className={`text-lg md:text-xl mb-10 leading-relaxed max-w-2xl transition-colors duration-700 ${
+          {/* Description - Moved Up */}
+          <p className={`text-lg md:text-xl mb-8 leading-relaxed max-w-2xl transition-colors duration-700 ${
             isDarkMode ? 'text-slate-400' : 'text-gray-600'
           }`}>
             Creating innovative mobile applications with a focus on user experience and technical excellence. 
             Passionate about building solutions that make a difference in people's lives.
           </p>
           
-          {/* Enhanced Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-start">
+          {/* Action Buttons - Moved Up */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-start">
             <a 
               href="#contact" 
               className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
@@ -239,8 +239,8 @@ const Hero = () => {
             </button>
           </div>
           
-          {/* Enhanced Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 max-w-4xl">
+          {/* Contact Info Cards - Moved Up */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-4xl">
             <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
               isDarkMode 
                 ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
@@ -275,8 +275,8 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Enhanced Social Links */}
-          <div className="flex gap-4 justify-start mb-12">
+          {/* Social Links - Moved Up */}
+          <div className="flex gap-4 justify-start mb-10">
             <a 
               href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
               target="_blank" 
