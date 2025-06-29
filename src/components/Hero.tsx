@@ -93,11 +93,11 @@ const Hero = () => {
           <div className="absolute inset-0 rounded-full border border-gradient-to-l from-blue-400/50 via-transparent to-pink-400/50 scale-125 animate-reverse-rotate-ring"></div>
           <div className="absolute inset-0 rounded-full border border-gradient-to-t from-violet-400/40 via-transparent to-cyan-400/40 scale-140 animate-rotate-ring" style={{ animationDuration: '25s' }}></div>
           
-          {/* Main Profile Container - MASSIVE CIRCULAR SIZE */}
+          {/* Main Profile Container - MASSIVE CIRCULAR SIZE with Better Face Positioning */}
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[32rem] 2xl:h-[32rem] rounded-full overflow-hidden shadow-2xl group-hover:scale-105 transition-all duration-700 border-4 border-gradient-to-r from-cyan-400/80 via-blue-500/80 to-purple-500/80">
-            {/* Enhanced Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/15 via-transparent via-transparent to-purple-500/15 z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-blue-500/10 via-transparent to-pink-500/10 z-10"></div>
+            {/* Enhanced Gradient Overlay - Reduced opacity to show face better */}
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 via-transparent via-transparent to-purple-500/8 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-tl from-blue-500/5 via-transparent to-pink-500/5 z-10"></div>
             
             {/* Enhanced Animated Particles */}
             <div className="absolute inset-0 z-20">
@@ -109,21 +109,42 @@ const Hero = () => {
               <div className="absolute bottom-1/4 right-1/6 w-2 h-2 bg-violet-400 rounded-full animate-particle-float opacity-70 shadow-lg" style={{ animationDelay: '5s' }}></div>
             </div>
             
-            {/* Profile Image - Perfectly Circular */}
+            {/* Profile Image - Perfectly Circular with Better Face Positioning */}
             <img 
               src="/ed0708ed-9a52-48b4-8ee0-c332d7d1f006-removebg-preview.png"
               alt="Manoj Kumar - App Developer" 
-              className="w-full h-full object-cover object-center relative z-30 group-hover:scale-110 transition-transform duration-700 rounded-full"
+              className="w-full h-full object-cover object-top relative z-30 group-hover:scale-110 transition-transform duration-700 rounded-full"
+              style={{
+                objectPosition: 'center 20%', // Adjust this to position face better
+                transform: 'scale(1.1)', // Slightly zoom in to show face better
+                transformOrigin: 'center center'
+              }}
             />
             
-            {/* Enhanced Floating Tech Stack Elements - NO TEXT INSIDE PHOTO */}
-            <div className="absolute -top-8 right-1/4 z-30 bg-slate-800/90 text-cyan-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-cyan-400/30 backdrop-blur-sm animate-float-tech">
+            {/* Enhanced Floating Tech Stack Elements - Positioned Outside Photo */}
+            <div className="absolute -top-12 left-1/4 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-cyan-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-cyan-400/40 backdrop-blur-sm animate-float-tech">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                React
+              </span>
             </div>
-            <div className="absolute top-1/2 -left-8 z-30 bg-slate-800/90 text-purple-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-purple-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '1s' }}>
+            <div className="absolute top-1/3 -left-16 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-purple-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-purple-400/40 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '1s' }}>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+                Android
+              </span>
             </div>
-            <div className="absolute bottom-1/4 -right-8 z-30 bg-slate-800/90 text-blue-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-blue-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '2s' }}>
+            <div className="absolute bottom-1/3 -right-16 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-blue-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-blue-400/40 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '2s' }}>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+                Python
+              </span>
             </div>
-            <div className="absolute top-1/6 left-1/6 z-30 bg-slate-800/90 text-emerald-400 py-2 px-3 rounded-md shadow-lg text-sm font-medium border border-emerald-400/30 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '3s' }}>
+            <div className="absolute -bottom-12 right-1/4 z-30 bg-gradient-to-r from-slate-800/95 to-slate-900/95 text-emerald-400 py-2 px-4 rounded-lg shadow-xl text-sm font-medium border border-emerald-400/40 backdrop-blur-sm animate-float-tech" style={{ animationDelay: '3s' }}>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                Java
+              </span>
             </div>
           </div>
           
