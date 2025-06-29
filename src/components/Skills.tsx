@@ -7,9 +7,9 @@ const technicalSkills = [
   { name: "HTML", proficiency: 60, category: "Frontend", icon: "/icons8-html-5-48.png", color: "from-orange-400 to-red-500" },
   { name: "Java", proficiency: 50, category: "Programming", icon: "/icons8-java-48.png", color: "from-blue-400 to-indigo-500" },
   { name: "Python", proficiency: 70, category: "Programming", icon: "/icons8-python-48.png", color: "from-green-400 to-blue-500" },
-  { name: "Android Studio", proficiency: 70, category: "Mobile", icon: "📱", color: "from-green-400 to-teal-500" },
-  { name: "Microsoft Excel", proficiency: 75, category: "Analytics", icon: "📊", color: "from-emerald-400 to-cyan-500" },
-  { name: "Logo Design", proficiency: 65, category: "Design", icon: "🎨", color: "from-purple-400 to-pink-500" }
+  { name: "Android Studio", proficiency: 70, category: "Mobile", icon: "/icons8-android-studio-48.png", color: "from-green-400 to-teal-500" },
+  { name: "Microsoft Excel", proficiency: 75, category: "Analytics", icon: "/icons8-ms-excel-48.png", color: "from-emerald-400 to-cyan-500" },
+  { name: "Logo Design", proficiency: 65, category: "Design", icon: "/icons8-logo-design-32.png", color: "from-purple-400 to-pink-500" }
 ];
 
 // Certifications with enhanced details and certificate images - SWAPPED IMAGES FOR 4TH AND 5TH POSITIONS
