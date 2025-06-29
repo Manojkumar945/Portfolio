@@ -70,7 +70,7 @@ const Hero = () => {
   };
 
   return (
-    <section className={`relative min-h-screen flex items-center pt-20 overflow-hidden transition-all duration-700 ${
+    <section className={`relative min-h-screen flex items-center pt-16 overflow-hidden transition-all duration-700 ${
       isDarkMode 
         ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
@@ -215,17 +215,17 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10 py-12">
-        {/* All Text Content Positioned to Left */}
+      <div className="container mx-auto px-6 relative z-10 py-8">
+        {/* All Text Content Positioned to Left - MOVED UP */}
         <div className="flex flex-col items-start text-left max-w-3xl">
-          {/* Greeting with enhanced animation */}
-          <div className="mb-8 space-y-2">
-            <p className={`text-2xl md:text-3xl mb-2 animate-fade-in transition-colors duration-700 ${
+          {/* Greeting with enhanced animation - MOVED UP */}
+          <div className="mb-6 space-y-1">
+            <p className={`text-2xl md:text-3xl mb-1 animate-fade-in transition-colors duration-700 ${
               isDarkMode ? 'text-slate-300' : 'text-gray-600'
             }`}>
               Hello, I'm
             </p>
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-up leading-tight transition-all duration-700 ${
+            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-3 animate-fade-in-up leading-tight transition-all duration-700 ${
               isDarkMode 
                 ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
                 : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
