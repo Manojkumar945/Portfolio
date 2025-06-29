@@ -115,7 +115,7 @@ const Hero = () => {
             <div className="absolute -bottom-3 -right-3 z-40 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-2xl text-xs font-bold border-2 border-white/20 backdrop-blur-sm group-hover:scale-110 transition-all duration-300 animate-badge-pulse">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
-                <span>App Developer</span>
+                <span></span>
               </div>
             </div>
             
