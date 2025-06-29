@@ -12,14 +12,13 @@ const technicalSkills = [
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "/icons8-logo-design-32.png", color: "from-purple-400 to-pink-500" }
 ];
 
-// Certifications with enhanced details and certificate images - SWAPPED IMAGES FOR 4TH AND 5TH POSITIONS
+// Certifications with enhanced details and certificate images - NO ICONS
 const certifications = [
   { 
     name: "Data Analytics with Python", 
     issuer: "NPTEL Online Certifications",
     type: "Technical",
     year: "2025",
-    icon: "📊",
     color: "from-blue-500 to-cyan-500",
     image: "/certificates/Data Analytics with Python.png",
     description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score."
@@ -29,7 +28,6 @@ const certifications = [
     issuer: "Paavai Engineering College",
     type: "Hardware",
     year: "2025",
-    icon: "🔧",
     color: "from-green-500 to-teal-500",
     image: "/certificates/Raspberry pi Trainer Certification.png",
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
@@ -39,7 +37,6 @@ const certifications = [
     issuer: "Coursera Project Network",
     type: "Analytics",
     year: "2024",
-    icon: "📈",
     color: "from-emerald-500 to-green-500",
     image: "/certificates/MS Excel Course Certificate.pdf.png",
     description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera."
@@ -49,7 +46,6 @@ const certifications = [
     issuer: "Infosys Springboard",
     type: "Development",
     year: "2024",
-    icon: "📱",
     color: "from-purple-500 to-indigo-500",
     image: "/certificates/DOC-20241231-WA0000..png",
     description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard."
@@ -59,7 +55,6 @@ const certifications = [
     issuer: "UMPSA University Malaysia",
     type: "Academic",
     year: "2024",
-    icon: "🌍",
     color: "from-orange-500 to-red-500",
     image: "/certificates/MANOJ KUMAR S.pdf.png",
     description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024."
@@ -69,7 +64,6 @@ const certifications = [
     issuer: "NPTEL Online Certifications",
     type: "Cloud",
     year: "2024",
-    icon: "☁️",
     color: "from-sky-500 to-blue-500",
     image: "/certificates/Cloud Computing (1).pdf.png",
     description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur."
@@ -79,7 +73,6 @@ const certifications = [
     issuer: "AICTE Eduskills Foundation",
     type: "AI/ML",
     year: "2024",
-    icon: "🤖",
     color: "from-violet-500 to-purple-500",
     image: "/certificates/Google AI-ML Certificate.pdf.png",
     description: "10-week AI-ML Virtual Internship supported by Google for Developers, covering artificial intelligence and machine learning fundamentals."
@@ -89,7 +82,6 @@ const certifications = [
     issuer: "AICTE Eduskills Foundation",
     type: "Mobile",
     year: "2024",
-    icon: "🚀",
     color: "from-green-500 to-emerald-500",
     image: "/certificates/Google Android Developer Certificate.pdf.png",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
@@ -99,7 +91,6 @@ const certifications = [
     issuer: "EXIMIUS - IIM Bangalore",
     type: "Leadership",
     year: "2024",
-    icon: "👑",
     color: "from-yellow-500 to-orange-500",
     image: "/certificates/WhatsApp Image 2025-06-18 at 10.09.39 AM.jpeg",
     description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
@@ -247,7 +238,7 @@ const Skills = () => {
             </div>
           </div>
           
-          {/* Certifications - Timeline Design */}
+          {/* Certifications - Timeline Design WITHOUT ICONS */}
           <div>
             <div className="flex items-center gap-3 mb-10">
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
@@ -269,10 +260,9 @@ const Skills = () => {
               <div className="space-y-6 max-h-[700px] overflow-y-auto custom-scrollbar pr-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="relative flex items-start gap-6 group">
-                    {/* Timeline Dot */}
+                    {/* Timeline Dot - Simple colored dot without icon */}
                     <div className="relative z-10 flex-shrink-0">
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r ${cert.color}`}>
-                        <span className="text-lg">{cert.icon}</span>
+                      <div className={`w-12 h-12 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r ${cert.color}`}>
                       </div>
                     </div>
                     
