@@ -111,8 +111,8 @@ const Hero = () => {
         }`}></div>
       </div>
       
-      {/* Simple Profile Photo - Reduced Size and Simplified */}
-      <div className="absolute top-20 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
+      {/* Simple Profile Photo - Moved Down */}
+      <div className="absolute top-32 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
         <div className="relative">
           {/* Simple Profile Container - Much Smaller Size */}
           <div className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border-2 ${
