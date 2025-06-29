@@ -123,7 +123,7 @@ const Hero = () => {
             <div className="absolute -top-3 -left-3 z-40 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-1.5 px-3 rounded-lg shadow-xl text-xs font-semibold border border-white/20 backdrop-blur-sm group-hover:scale-110 transition-all duration-300 animate-badge-pulse" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-1">
                 <span>🚀</span>
-                <span>Founder</span>
+                <span></span>
               </div>
             </div>
             
