@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, User, Calendar, Eye, EyeOff, Trash2, MessageSquare, Lock, Shield } from 'lucide-react';
+import { Mail, User, Calendar, Eye, EyeOff, Trash2, MessageSquare, Lock, Shield, AlertCircle } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface Message {
@@ -20,67 +20,130 @@ const MessageDisplay = () => {
   const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const [passwordError, setPasswordError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Admin password - you can change this
+  const ADMIN_PASSWORD = 'manoj2025admin';
 
   // Load messages from localStorage on component mount
   useEffect(() => {
-    const savedMessages = localStorage.getItem('portfolioMessages');
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
-    }
+    loadMessages();
 
     // Listen for new messages
     const handleNewMessage = (event: CustomEvent) => {
       const newMessage = event.detail;
-      setMessages(prev => [newMessage, ...prev]);
+      setMessages(prev => {
+        const updated = [newMessage, ...prev];
+        // Save to localStorage immediately
+        localStorage.setItem('portfolioMessages', JSON.stringify(updated));
+        return updated;
+      });
+    };
+
+    // Listen for storage changes (in case messages are added from another tab)
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === 'portfolioMessages') {
+        loadMessages();
+      }
     };
 
     window.addEventListener('newMessage', handleNewMessage as EventListener);
-    return () => window.removeEventListener('newMessage', handleNewMessage as EventListener);
+    window.addEventListener('storage', handleStorageChange);
+    
+    return () => {
+      window.removeEventListener('newMessage', handleNewMessage as EventListener);
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
+
+  const loadMessages = () => {
+    try {
+      const savedMessages = localStorage.getItem('portfolioMessages');
+      if (savedMessages) {
+        const parsedMessages = JSON.parse(savedMessages);
+        // Ensure messages is always an array
+        if (Array.isArray(parsedMessages)) {
+          setMessages(parsedMessages);
+        } else {
+          setMessages([]);
+        }
+      } else {
+        setMessages([]);
+      }
+    } catch (error) {
+      console.error('Error loading messages:', error);
+      setMessages([]);
+    }
+  };
 
   // Save messages to localStorage whenever messages change
   useEffect(() => {
-    if (messages.length > 0) {
+    try {
       localStorage.setItem('portfolioMessages', JSON.stringify(messages));
+    } catch (error) {
+      console.error('Error saving messages:', error);
     }
   }, [messages]);
 
-  const handleAdminLogin = () => {
-    // Admin password - change this to your preferred password
-    const correctPassword = 'manoj2025admin';
+  const handleAdminLogin = async () => {
+    setIsLoading(true);
+    setPasswordError('');
     
-    if (adminPassword === correctPassword) {
+    // Simulate a small delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    if (adminPassword.trim() === ADMIN_PASSWORD) {
       setIsAdminAuthenticated(true);
       setShowPasswordInput(false);
       setAdminPassword('');
       setPasswordError('');
+      // Reload messages after successful login
+      loadMessages();
     } else {
-      setPasswordError('Incorrect password. Access denied.');
+      setPasswordError('Incorrect password. Please try again.');
       setAdminPassword('');
     }
+    
+    setIsLoading(false);
   };
 
   const handleAdminLogout = () => {
     setIsAdminAuthenticated(false);
     setSelectedMessage(null);
     setPasswordError('');
+    setAdminPassword('');
+    setShowPasswordInput(false);
   };
 
   const markAsRead = (messageId: string) => {
-    setMessages(prev => 
-      prev.map(msg => 
+    setMessages(prev => {
+      const updated = prev.map(msg => 
         msg.id === messageId ? { ...msg, isRead: true } : msg
-      )
-    );
+      );
+      return updated;
+    });
   };
 
   const deleteMessage = (messageId: string) => {
-    setMessages(prev => prev.filter(msg => msg.id !== messageId));
+    setMessages(prev => {
+      const updated = prev.filter(msg => msg.id !== messageId);
+      return updated;
+    });
     setSelectedMessage(null);
   };
 
   const formatDate = (timestamp: string) => {
-    return new Date(timestamp).toLocaleString();
+    try {
+      return new Date(timestamp).toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    } catch (error) {
+      return 'Invalid date';
+    }
   };
 
   const unreadCount = messages.filter(msg => !msg.isRead).length;
@@ -104,7 +167,7 @@ const MessageDisplay = () => {
             <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
               isDarkMode ? 'text-slate-400' : 'text-gray-600'
             }`}>
-              This section is restricted to administrators only
+              Enter the admin password to view visitor messages
             </p>
           </div>
 
@@ -124,7 +187,7 @@ const MessageDisplay = () => {
                 <p className={`text-sm ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>
-                  Enter admin password to view messages
+                  Password required to access messages
                 </p>
               </div>
 
@@ -151,23 +214,32 @@ const MessageDisplay = () => {
                           ? 'bg-slate-700/60 border border-slate-600/50 text-white placeholder-slate-400' 
                           : 'bg-gray-50/60 border border-gray-300/50 text-gray-900 placeholder-gray-500'
                       }`}
-                      onKeyPress={(e) => e.key === 'Enter' && handleAdminLogin()}
+                      onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleAdminLogin()}
                       autoFocus
+                      disabled={isLoading}
                     />
                     {passwordError && (
-                      <p className="text-red-400 text-sm mt-2 flex items-center gap-2">
-                        <span>⚠️</span>
-                        {passwordError}
-                      </p>
+                      <div className="flex items-center gap-2 mt-2 text-red-400 text-sm">
+                        <AlertCircle size={16} />
+                        <span>{passwordError}</span>
+                      </div>
                     )}
                   </div>
                   
                   <div className="flex gap-3">
                     <button
                       onClick={handleAdminLogin}
-                      className="flex-1 px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
+                      disabled={isLoading || !adminPassword.trim()}
+                      className="flex-1 px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl font-medium flex items-center justify-center gap-2"
                     >
-                      Login
+                      {isLoading ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                          Verifying...
+                        </>
+                      ) : (
+                        'Login'
+                      )}
                     </button>
                     <button
                       onClick={() => {
@@ -175,6 +247,7 @@ const MessageDisplay = () => {
                         setAdminPassword('');
                         setPasswordError('');
                       }}
+                      disabled={isLoading}
                       className={`px-6 py-4 rounded-xl transition-all duration-300 font-medium ${
                         isDarkMode 
                           ? 'bg-slate-700/80 hover:bg-slate-600/80 text-white border border-slate-600' 
@@ -196,6 +269,11 @@ const MessageDisplay = () => {
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>
                   🔒 This area contains private messages from website visitors and is only accessible to the site administrator.
+                </p>
+                <p className={`text-xs text-center mt-2 font-medium ${
+                  isDarkMode ? 'text-cyan-400' : 'text-blue-600'
+                }`}>
+                  Default password: manoj2025admin
                 </p>
               </div>
             </div>
@@ -239,6 +317,16 @@ const MessageDisplay = () => {
               <span className="text-sm font-medium">Admin Mode Active</span>
             </div>
             <button
+              onClick={() => loadMessages()}
+              className={`px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+                isDarkMode 
+                  ? 'bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30' 
+                  : 'bg-cyan-100 hover:bg-cyan-200 text-cyan-700 border border-cyan-300'
+              }`}
+            >
+              Refresh Messages
+            </button>
+            <button
               onClick={handleAdminLogout}
               className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
                 isDarkMode 
@@ -281,11 +369,22 @@ const MessageDisplay = () => {
               <MessageSquare size={48} className={`mx-auto mb-4 ${
                 isDarkMode ? 'text-slate-400' : 'text-gray-400'
               }`} />
-              <p className={`text-lg ${
+              <p className={`text-lg mb-2 ${
                 isDarkMode ? 'text-slate-400' : 'text-gray-600'
               }`}>
-                No messages yet. Messages will appear here when visitors use the contact form.
+                No messages yet
               </p>
+              <p className={`text-sm ${
+                isDarkMode ? 'text-slate-500' : 'text-gray-500'
+              }`}>
+                Messages will appear here when visitors use the contact form
+              </p>
+              <button
+                onClick={() => loadMessages()}
+                className="mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 text-sm"
+              >
+                Check for Messages
+              </button>
             </div>
           ) : (
             <div className="space-y-6">
