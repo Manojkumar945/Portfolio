@@ -146,7 +146,7 @@ const Hero = () => {
                 : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
             }`} style={{ 
               fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif',
-              letterSpacing: '0.02em',
+              letterSpacing: '0.01em',
               textRendering: 'optimizeLegibility',
               WebkitFontSmoothing: 'antialiased',
               MozOsxFontSmoothing: 'grayscale',
