@@ -280,7 +280,7 @@ const Hero = () => {
               <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
                 <Mail size={16} className="text-white" />
               </div>
-              <span className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
+              <span className="text-sm font-medium flex-2 text-center">manojk46234@gmail.com</span>
             </div>
             
             <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
