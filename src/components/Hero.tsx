@@ -291,7 +291,7 @@ const Hero = () => {
               <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
                 <MapPin size={16} className="text-white" />
               </div>
-              <span className="text-sm font-medium flex-1 text-center">Trichy, Tamil Nadu</span>
+              <span className="text-sm font-medium flex-1 text-center">Trichy, Tamil Nadu, India</span>
             </div>
           </div>
           
