@@ -239,7 +239,7 @@ const Hero = () => {
               }`}></div>
               <Download size={18} />
               <span>Download Resume</span>
-            </a>
+            </button>
           </div>
           
           {/* Contact Info Cards - Moved Up */}
