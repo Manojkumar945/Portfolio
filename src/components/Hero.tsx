@@ -154,7 +154,7 @@ const Hero = () => {
               fontVariantLigatures: 'common-ligatures contextual',
               wordSpacing: '0.02em'
             }}>
-              Manoi Kumar
+              Manojjjjj Kumar
             </h2>
           </div>
           
