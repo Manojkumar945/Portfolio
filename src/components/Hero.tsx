@@ -147,7 +147,7 @@ const Hero = () => {
             }`} style={{ 
               fontFamily: '"Inter", "Segoe UI", system-ui, apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif',
               letterSpacing: '0.01em',
-        
+              textRendering: 'optimizeLegibility',
               WebkitFontSmoothing: 'antialiased',
               MozOsxFontSmoothing: 'grayscale',
               fontFeatureSettings: '"kern" 1, "liga" 1, "calt" 1',
