@@ -14,6 +14,26 @@ const About = () => {
           <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
             isDarkMode ? 'text-white' : 'text-gray-900'
           }`}>About Me</h2>
+          
+          {/* Decorative Line */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className={`h-px w-16 transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-r from-transparent to-cyan-400' 
+                : 'bg-gradient-to-r from-transparent to-blue-600'
+            }`}></div>
+            <div className={`w-3 h-3 rounded-full transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-r from-cyan-400 to-blue-500' 
+                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+            }`}></div>
+            <div className={`h-px w-16 transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-l from-transparent to-cyan-400' 
+                : 'bg-gradient-to-l from-transparent to-blue-600'
+            }`}></div>
+          </div>
+          
           <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
             isDarkMode ? 'text-slate-400' : 'text-gray-600'
           }`}>
