@@ -59,14 +59,26 @@ const Hero = () => {
   };
 
   const handleResumeDownload = () => {
-    // Create a temporary link element for download
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Manoj_Kumar_Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      // Create a temporary link element for download
+      const link = document.createElement('a');
+      link.href = '/Manoj_Kumar_Resume.pdf';
+      link.download = 'Manoj_Kumar_Resume.pdf';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Optional: Show a success message or notification
+      console.log('Resume download initiated');
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      // Fallback: Open in new tab if download fails
+      window.open('/Manoj_Kumar_Resume.pdf', '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -234,6 +246,8 @@ const Hero = () => {
                   ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400' 
                   : 'bg-white/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
               }`}
+              title="Download Manoj Kumar's Resume"
+              aria-label="Download Resume PDF"
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                 isDarkMode 
