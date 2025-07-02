@@ -140,16 +140,19 @@ const Hero = () => {
             }`}>
               Hi, I'm
             </p>
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-2 animate-fade-in-up leading-tight transition-all duration-700 tracking-wide ${
+            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-2 animate-fade-in-up leading-tight transition-all duration-700 ${
               isDarkMode 
                 ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
                 : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
             }`} style={{ 
-              fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-              letterSpacing: '0.02em',
+              fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif',
+              letterSpacing: '0.01em',
               textRendering: 'optimizeLegibility',
               WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale'
+              MozOsxFontSmoothing: 'grayscale',
+              fontFeatureSettings: '"kern" 1, "liga" 1, "calt" 1',
+              fontVariantLigatures: 'common-ligatures contextual',
+              wordSpacing: '0.02em'
             }}>
               Manoj Kumar
             </h2>
@@ -236,7 +239,7 @@ const Hero = () => {
               }`}></div>
               <Download size={18} />
               <span>Download Resume</span>
-            </button>
+            </a>
           </div>
           
           {/* Contact Info Cards - Moved Up */}
