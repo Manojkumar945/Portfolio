@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, User, Calendar, Eye, EyeOff, Trash2, MessageSquare, Lock, Shield, AlertCircle, RefreshCw } from 'lucide-react';
+import { Mail, User, Calendar, Trash2, MessageSquare, Lock, Shield, AlertCircle, RefreshCw, Database, CheckCircle } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface Message {
@@ -22,47 +22,55 @@ const MessageDisplay = () => {
   const [passwordError, setPasswordError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [debugInfo, setDebugInfo] = useState<string>('');
 
-  // Admin password - you can change this
+  // Admin password
   const ADMIN_PASSWORD = 'manoj2025admin';
 
-  // Load messages from localStorage
+  // Load messages from localStorage with comprehensive debugging
   const loadMessages = () => {
+    setIsRefreshing(true);
+    setDebugInfo('Loading messages...');
+    
     try {
-      setIsRefreshing(true);
       const savedMessages = localStorage.getItem('portfolioMessages');
-      console.log('Loading messages from localStorage:', savedMessages); // Debug log
+      console.log('🔍 Loading messages from localStorage:', savedMessages);
       
       if (savedMessages) {
         const parsedMessages = JSON.parse(savedMessages);
-        console.log('Parsed messages:', parsedMessages); // Debug log
+        console.log('📋 Parsed messages:', parsedMessages);
         
-        // Ensure messages is always an array and sort by timestamp (newest first)
         if (Array.isArray(parsedMessages)) {
+          // Sort by timestamp (newest first)
           const sortedMessages = parsedMessages.sort((a, b) => 
             new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
           );
           setMessages(sortedMessages);
-          console.log('Messages set to state:', sortedMessages); // Debug log
+          setDebugInfo(`✅ Loaded ${sortedMessages.length} messages successfully`);
+          console.log('✅ Messages loaded successfully:', sortedMessages.length);
         } else {
-          console.log('Parsed messages is not an array, setting empty array');
           setMessages([]);
+          setDebugInfo('⚠️ Invalid message format in storage');
+          console.log('⚠️ Parsed messages is not an array');
         }
       } else {
-        console.log('No saved messages found, setting empty array');
         setMessages([]);
+        setDebugInfo('📭 No messages found in storage');
+        console.log('📭 No saved messages found');
       }
     } catch (error) {
-      console.error('Error loading messages:', error);
+      console.error('❌ Error loading messages:', error);
       setMessages([]);
+      setDebugInfo(`❌ Error loading messages: ${error}`);
     } finally {
       setIsRefreshing(false);
     }
   };
 
-  // Load messages on component mount and when authenticated
+  // Initialize messages when admin authenticates
   useEffect(() => {
     if (isAdminAuthenticated) {
+      console.log('🔐 Admin authenticated, loading messages...');
       loadMessages();
     }
   }, [isAdminAuthenticated]);
@@ -70,29 +78,29 @@ const MessageDisplay = () => {
   // Listen for new messages
   useEffect(() => {
     const handleNewMessage = (event: CustomEvent) => {
-      console.log('New message received:', event.detail); // Debug log
+      console.log('📨 New message received:', event.detail);
       const newMessage = event.detail;
       
       setMessages(prev => {
         const updated = [newMessage, ...prev];
-        console.log('Updated messages after new message:', updated); // Debug log
+        console.log('📝 Updated messages after new message:', updated.length);
         
         // Save to localStorage immediately
         try {
           localStorage.setItem('portfolioMessages', JSON.stringify(updated));
-          console.log('Messages saved to localStorage'); // Debug log
+          console.log('💾 Messages saved to localStorage');
         } catch (error) {
-          console.error('Error saving messages to localStorage:', error);
+          console.error('❌ Error saving messages:', error);
         }
         
         return updated;
       });
     };
 
-    // Listen for storage changes (in case messages are added from another tab)
+    // Listen for storage changes
     const handleStorageChange = (event: StorageEvent) => {
       if (event.key === 'portfolioMessages' && isAdminAuthenticated) {
-        console.log('Storage change detected, reloading messages'); // Debug log
+        console.log('🔄 Storage change detected, reloading messages');
         loadMessages();
       }
     };
@@ -106,17 +114,17 @@ const MessageDisplay = () => {
     };
   }, [isAdminAuthenticated]);
 
-  // Save messages to localStorage whenever messages change
+  // Auto-save messages when they change
   useEffect(() => {
-    if (messages.length > 0) {
+    if (messages.length > 0 && isAdminAuthenticated) {
       try {
         localStorage.setItem('portfolioMessages', JSON.stringify(messages));
-        console.log('Messages auto-saved to localStorage:', messages.length, 'messages'); // Debug log
+        console.log('💾 Auto-saved', messages.length, 'messages');
       } catch (error) {
-        console.error('Error auto-saving messages:', error);
+        console.error('❌ Error auto-saving messages:', error);
       }
     }
-  }, [messages]);
+  }, [messages, isAdminAuthenticated]);
 
   const handleAdminLogin = async () => {
     setIsLoading(true);
@@ -130,7 +138,7 @@ const MessageDisplay = () => {
       setShowPasswordInput(false);
       setAdminPassword('');
       setPasswordError('');
-      console.log('Admin authenticated successfully'); // Debug log
+      console.log('🔐 Admin authenticated successfully');
     } else {
       setPasswordError('Incorrect password. Please try again.');
       setAdminPassword('');
@@ -145,8 +153,9 @@ const MessageDisplay = () => {
     setPasswordError('');
     setAdminPassword('');
     setShowPasswordInput(false);
-    setMessages([]); // Clear messages from state when logging out
-    console.log('Admin logged out'); // Debug log
+    setMessages([]);
+    setDebugInfo('');
+    console.log('🚪 Admin logged out');
   };
 
   const markAsRead = (messageId: string) => {
@@ -154,7 +163,7 @@ const MessageDisplay = () => {
       const updated = prev.map(msg => 
         msg.id === messageId ? { ...msg, isRead: true } : msg
       );
-      console.log('Message marked as read:', messageId); // Debug log
+      console.log('👁️ Message marked as read:', messageId);
       return updated;
     });
   };
@@ -162,7 +171,7 @@ const MessageDisplay = () => {
   const deleteMessage = (messageId: string) => {
     setMessages(prev => {
       const updated = prev.filter(msg => msg.id !== messageId);
-      console.log('Message deleted:', messageId, 'Remaining messages:', updated.length); // Debug log
+      console.log('🗑️ Message deleted:', messageId, 'Remaining:', updated.length);
       return updated;
     });
     setSelectedMessage(null);
@@ -182,24 +191,52 @@ const MessageDisplay = () => {
     }
   };
 
-  const unreadCount = messages.filter(msg => !msg.isRead).length;
-
   // Debug function to check localStorage
   const debugLocalStorage = () => {
     const savedMessages = localStorage.getItem('portfolioMessages');
-    console.log('Current localStorage content:', savedMessages);
+    console.log('🔍 Current localStorage content:', savedMessages);
+    
     if (savedMessages) {
       try {
         const parsed = JSON.parse(savedMessages);
-        console.log('Parsed localStorage messages:', parsed);
-        console.log('Number of messages in localStorage:', Array.isArray(parsed) ? parsed.length : 'Not an array');
+        console.log('📋 Parsed localStorage messages:', parsed);
+        console.log('📊 Number of messages in localStorage:', Array.isArray(parsed) ? parsed.length : 'Not an array');
+        setDebugInfo(`📊 Found ${Array.isArray(parsed) ? parsed.length : 0} messages in storage`);
       } catch (error) {
-        console.error('Error parsing localStorage messages:', error);
+        console.error('❌ Error parsing localStorage messages:', error);
+        setDebugInfo(`❌ Error parsing storage: ${error}`);
       }
     } else {
-      console.log('No messages in localStorage');
+      console.log('📭 No messages in localStorage');
+      setDebugInfo('📭 No messages found in localStorage');
     }
   };
+
+  // Create a test message for debugging
+  const createTestMessage = () => {
+    const testMessage: Message = {
+      id: Date.now().toString(),
+      name: 'Test User',
+      email: 'test@example.com',
+      subject: 'Test Message',
+      message: 'This is a test message created for debugging purposes.',
+      timestamp: new Date().toISOString(),
+      isRead: false
+    };
+
+    const existingMessages = localStorage.getItem('portfolioMessages');
+    const messages: Message[] = existingMessages ? JSON.parse(existingMessages) : [];
+    messages.unshift(testMessage);
+    
+    localStorage.setItem('portfolioMessages', JSON.stringify(messages));
+    console.log('🧪 Test message created:', testMessage);
+    setDebugInfo('🧪 Test message created successfully');
+    
+    // Reload messages
+    loadMessages();
+  };
+
+  const unreadCount = messages.filter(msg => !msg.isRead).length;
 
   // If not authenticated, show admin login
   if (!isAdminAuthenticated) {
@@ -273,17 +310,42 @@ const MessageDisplay = () => {
                     Access Admin Panel
                   </button>
                   
-                  {/* Debug button - remove in production */}
-                  <button
-                    onClick={debugLocalStorage}
-                    className={`w-full px-4 py-2 rounded-lg text-xs transition-all duration-300 ${
+                  {/* Debug Controls */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      onClick={debugLocalStorage}
+                      className={`px-3 py-2 rounded-lg text-xs transition-all duration-300 ${
+                        isDarkMode 
+                          ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-400 border border-slate-600' 
+                          : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 border border-gray-300'
+                      }`}
+                    >
+                      <Database size={14} className="inline mr-1" />
+                      Debug Storage
+                    </button>
+                    <button
+                      onClick={createTestMessage}
+                      className={`px-3 py-2 rounded-lg text-xs transition-all duration-300 ${
+                        isDarkMode 
+                          ? 'bg-green-700/50 hover:bg-green-600/50 text-green-400 border border-green-600' 
+                          : 'bg-green-100/50 hover:bg-green-200/50 text-green-600 border border-green-300'
+                      }`}
+                    >
+                      <MessageSquare size={14} className="inline mr-1" />
+                      Create Test
+                    </button>
+                  </div>
+                  
+                  {/* Debug Info Display */}
+                  {debugInfo && (
+                    <div className={`p-3 rounded-lg text-xs ${
                       isDarkMode 
-                        ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-400 border border-slate-600' 
-                        : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 border border-gray-300'
-                    }`}
-                  >
-                    Debug: Check Messages in Storage
-                  </button>
+                        ? 'bg-slate-700/30 border border-slate-600/30 text-slate-300' 
+                        : 'bg-gray-100/30 border border-gray-200/30 text-gray-700'
+                    }`}>
+                      {debugInfo}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -360,6 +422,7 @@ const MessageDisplay = () => {
                 <p className={`text-xs text-center mt-2 font-medium ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
                 }`}>
+                  Password: manoj2025admin
                 </p>
               </div>
             </div>
@@ -422,6 +485,7 @@ const MessageDisplay = () => {
               <Shield size={16} />
               <span className="text-sm font-medium">Admin Mode Active</span>
             </div>
+            
             <button
               onClick={() => {
                 loadMessages();
@@ -437,6 +501,31 @@ const MessageDisplay = () => {
               <RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />
               {isRefreshing ? 'Refreshing...' : 'Refresh Messages'}
             </button>
+            
+            <button
+              onClick={debugLocalStorage}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+                isDarkMode 
+                  ? 'bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30' 
+                  : 'bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-300'
+              }`}
+            >
+              <Database size={16} />
+              Debug Storage
+            </button>
+            
+            <button
+              onClick={createTestMessage}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+                isDarkMode 
+                  ? 'bg-green-600/20 hover:bg-green-600/30 text-green-400 border border-green-500/30' 
+                  : 'bg-green-100 hover:bg-green-200 text-green-700 border border-green-300'
+              }`}
+            >
+              <MessageSquare size={16} />
+              Create Test Message
+            </button>
+            
             <button
               onClick={handleAdminLogout}
               className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
@@ -449,6 +538,23 @@ const MessageDisplay = () => {
             </button>
           </div>
         </div>
+
+        {/* Debug Info Display */}
+        {debugInfo && (
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className={`p-4 rounded-xl ${
+              isDarkMode 
+                ? 'bg-slate-800/50 border border-slate-600/50 text-slate-300' 
+                : 'bg-white/50 border border-gray-200/50 text-gray-700'
+            }`}>
+              <div className="flex items-center gap-2 mb-2">
+                <Database size={16} className="text-cyan-400" />
+                <span className="font-medium">Debug Information</span>
+              </div>
+              <p className="text-sm">{debugInfo}</p>
+            </div>
+          </div>
+        )}
 
         {/* Messages Count */}
         <div className="text-center mb-8">
@@ -503,14 +609,11 @@ const MessageDisplay = () => {
                   {isRefreshing ? 'Checking...' : 'Check for Messages'}
                 </button>
                 <button
-                  onClick={debugLocalStorage}
-                  className={`px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-400 border border-slate-600' 
-                      : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 border border-gray-300'
-                  }`}
+                  onClick={createTestMessage}
+                  className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 text-sm flex items-center gap-2"
                 >
-                  Debug Storage
+                  <MessageSquare size={16} />
+                  Create Test Message
                 </button>
               </div>
             </div>
