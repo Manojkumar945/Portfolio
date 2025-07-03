@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, User, Calendar, Eye, EyeOff, Trash2, MessageSquare, Lock, Shield, AlertCircle } from 'lucide-react';
+import { Mail, User, Calendar, Eye, EyeOff, Trash2, MessageSquare, Lock, Shield, AlertCircle, RefreshCw } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface Message {
@@ -21,28 +21,78 @@ const MessageDisplay = () => {
   const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const [passwordError, setPasswordError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   // Admin password - you can change this
   const ADMIN_PASSWORD = 'manoj2025admin';
 
-  // Load messages from localStorage on component mount
-  useEffect(() => {
-    loadMessages();
+  // Load messages from localStorage
+  const loadMessages = () => {
+    try {
+      setIsRefreshing(true);
+      const savedMessages = localStorage.getItem('portfolioMessages');
+      console.log('Loading messages from localStorage:', savedMessages); // Debug log
+      
+      if (savedMessages) {
+        const parsedMessages = JSON.parse(savedMessages);
+        console.log('Parsed messages:', parsedMessages); // Debug log
+        
+        // Ensure messages is always an array and sort by timestamp (newest first)
+        if (Array.isArray(parsedMessages)) {
+          const sortedMessages = parsedMessages.sort((a, b) => 
+            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+          );
+          setMessages(sortedMessages);
+          console.log('Messages set to state:', sortedMessages); // Debug log
+        } else {
+          console.log('Parsed messages is not an array, setting empty array');
+          setMessages([]);
+        }
+      } else {
+        console.log('No saved messages found, setting empty array');
+        setMessages([]);
+      }
+    } catch (error) {
+      console.error('Error loading messages:', error);
+      setMessages([]);
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
 
-    // Listen for new messages
+  // Load messages on component mount and when authenticated
+  useEffect(() => {
+    if (isAdminAuthenticated) {
+      loadMessages();
+    }
+  }, [isAdminAuthenticated]);
+
+  // Listen for new messages
+  useEffect(() => {
     const handleNewMessage = (event: CustomEvent) => {
+      console.log('New message received:', event.detail); // Debug log
       const newMessage = event.detail;
+      
       setMessages(prev => {
         const updated = [newMessage, ...prev];
+        console.log('Updated messages after new message:', updated); // Debug log
+        
         // Save to localStorage immediately
-        localStorage.setItem('portfolioMessages', JSON.stringify(updated));
+        try {
+          localStorage.setItem('portfolioMessages', JSON.stringify(updated));
+          console.log('Messages saved to localStorage'); // Debug log
+        } catch (error) {
+          console.error('Error saving messages to localStorage:', error);
+        }
+        
         return updated;
       });
     };
 
     // Listen for storage changes (in case messages are added from another tab)
     const handleStorageChange = (event: StorageEvent) => {
-      if (event.key === 'portfolioMessages') {
+      if (event.key === 'portfolioMessages' && isAdminAuthenticated) {
+        console.log('Storage change detected, reloading messages'); // Debug log
         loadMessages();
       }
     };
@@ -54,34 +104,17 @@ const MessageDisplay = () => {
       window.removeEventListener('newMessage', handleNewMessage as EventListener);
       window.removeEventListener('storage', handleStorageChange);
     };
-  }, []);
-
-  const loadMessages = () => {
-    try {
-      const savedMessages = localStorage.getItem('portfolioMessages');
-      if (savedMessages) {
-        const parsedMessages = JSON.parse(savedMessages);
-        // Ensure messages is always an array
-        if (Array.isArray(parsedMessages)) {
-          setMessages(parsedMessages);
-        } else {
-          setMessages([]);
-        }
-      } else {
-        setMessages([]);
-      }
-    } catch (error) {
-      console.error('Error loading messages:', error);
-      setMessages([]);
-    }
-  };
+  }, [isAdminAuthenticated]);
 
   // Save messages to localStorage whenever messages change
   useEffect(() => {
-    try {
-      localStorage.setItem('portfolioMessages', JSON.stringify(messages));
-    } catch (error) {
-      console.error('Error saving messages:', error);
+    if (messages.length > 0) {
+      try {
+        localStorage.setItem('portfolioMessages', JSON.stringify(messages));
+        console.log('Messages auto-saved to localStorage:', messages.length, 'messages'); // Debug log
+      } catch (error) {
+        console.error('Error auto-saving messages:', error);
+      }
     }
   }, [messages]);
 
@@ -97,8 +130,7 @@ const MessageDisplay = () => {
       setShowPasswordInput(false);
       setAdminPassword('');
       setPasswordError('');
-      // Reload messages after successful login
-      loadMessages();
+      console.log('Admin authenticated successfully'); // Debug log
     } else {
       setPasswordError('Incorrect password. Please try again.');
       setAdminPassword('');
@@ -113,6 +145,8 @@ const MessageDisplay = () => {
     setPasswordError('');
     setAdminPassword('');
     setShowPasswordInput(false);
+    setMessages([]); // Clear messages from state when logging out
+    console.log('Admin logged out'); // Debug log
   };
 
   const markAsRead = (messageId: string) => {
@@ -120,6 +154,7 @@ const MessageDisplay = () => {
       const updated = prev.map(msg => 
         msg.id === messageId ? { ...msg, isRead: true } : msg
       );
+      console.log('Message marked as read:', messageId); // Debug log
       return updated;
     });
   };
@@ -127,6 +162,7 @@ const MessageDisplay = () => {
   const deleteMessage = (messageId: string) => {
     setMessages(prev => {
       const updated = prev.filter(msg => msg.id !== messageId);
+      console.log('Message deleted:', messageId, 'Remaining messages:', updated.length); // Debug log
       return updated;
     });
     setSelectedMessage(null);
@@ -147,6 +183,23 @@ const MessageDisplay = () => {
   };
 
   const unreadCount = messages.filter(msg => !msg.isRead).length;
+
+  // Debug function to check localStorage
+  const debugLocalStorage = () => {
+    const savedMessages = localStorage.getItem('portfolioMessages');
+    console.log('Current localStorage content:', savedMessages);
+    if (savedMessages) {
+      try {
+        const parsed = JSON.parse(savedMessages);
+        console.log('Parsed localStorage messages:', parsed);
+        console.log('Number of messages in localStorage:', Array.isArray(parsed) ? parsed.length : 'Not an array');
+      } catch (error) {
+        console.error('Error parsing localStorage messages:', error);
+      }
+    } else {
+      console.log('No messages in localStorage');
+    }
+  };
 
   // If not authenticated, show admin login
   if (!isAdminAuthenticated) {
@@ -212,12 +265,26 @@ const MessageDisplay = () => {
               </div>
 
               {!showPasswordInput ? (
-                <button
-                  onClick={() => setShowPasswordInput(true)}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-medium"
-                >
-                  Access Admin Panel
-                </button>
+                <div className="space-y-4">
+                  <button
+                    onClick={() => setShowPasswordInput(true)}
+                    className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-medium"
+                  >
+                    Access Admin Panel
+                  </button>
+                  
+                  {/* Debug button - remove in production */}
+                  <button
+                    onClick={debugLocalStorage}
+                    className={`w-full px-4 py-2 rounded-lg text-xs transition-all duration-300 ${
+                      isDarkMode 
+                        ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-400 border border-slate-600' 
+                        : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 border border-gray-300'
+                    }`}
+                  >
+                    Debug: Check Messages in Storage
+                  </button>
+                </div>
               ) : (
                 <div className="space-y-4">
                   <div>
@@ -293,6 +360,7 @@ const MessageDisplay = () => {
                 <p className={`text-xs text-center mt-2 font-medium ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
                 }`}>
+                  Password: manoj2025admin
                 </p>
               </div>
             </div>
@@ -348,7 +416,7 @@ const MessageDisplay = () => {
 
         {/* Admin Controls */}
         <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap justify-center">
             <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${
               isDarkMode ? 'bg-green-600/20 text-green-400 border border-green-500/30' : 'bg-green-100 text-green-700 border border-green-300'
             }`}>
@@ -356,14 +424,19 @@ const MessageDisplay = () => {
               <span className="text-sm font-medium">Admin Mode Active</span>
             </div>
             <button
-              onClick={() => loadMessages()}
-              className={`px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+              onClick={() => {
+                loadMessages();
+                debugLocalStorage();
+              }}
+              disabled={isRefreshing}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
                 isDarkMode 
                   ? 'bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30' 
                   : 'bg-cyan-100 hover:bg-cyan-200 text-cyan-700 border border-cyan-300'
               }`}
             >
-              Refresh Messages
+              <RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />
+              {isRefreshing ? 'Refreshing...' : 'Refresh Messages'}
             </button>
             <button
               onClick={handleAdminLogout}
@@ -413,17 +486,34 @@ const MessageDisplay = () => {
               }`}>
                 No messages yet
               </p>
-              <p className={`text-sm ${
+              <p className={`text-sm mb-4 ${
                 isDarkMode ? 'text-slate-500' : 'text-gray-500'
               }`}>
                 Messages will appear here when visitors use the contact form
               </p>
-              <button
-                onClick={() => loadMessages()}
-                className="mt-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 text-sm"
-              >
-                Check for Messages
-              </button>
+              <div className="flex gap-3 justify-center">
+                <button
+                  onClick={() => {
+                    loadMessages();
+                    debugLocalStorage();
+                  }}
+                  disabled={isRefreshing}
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 text-sm flex items-center gap-2"
+                >
+                  <RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />
+                  {isRefreshing ? 'Checking...' : 'Check for Messages'}
+                </button>
+                <button
+                  onClick={debugLocalStorage}
+                  className={`px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-400 border border-slate-600' 
+                      : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 border border-gray-300'
+                  }`}
+                >
+                  Debug Storage
+                </button>
+              </div>
             </div>
           ) : (
             <div className="space-y-6">
