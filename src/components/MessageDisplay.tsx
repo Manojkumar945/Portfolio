@@ -422,6 +422,7 @@ const MessageDisplay = () => {
                 <p className={`text-xs text-center mt-2 font-medium ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
                 }`}>
+                  Password: manoj2025admin
                 </p>
               </div>
             </div>
