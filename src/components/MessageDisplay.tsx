@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, User, Calendar, Trash2, MessageSquare, Lock, Shield, AlertCircle, RefreshCw, Database, CheckCircle } from 'lucide-react';
+import { Mail, User, Calendar, Eye, EyeOff, Trash2, MessageSquare, Lock, Shield, AlertCircle, RefreshCw } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface Message {
@@ -10,6 +10,8 @@ interface Message {
   message: string;
   timestamp: string;
   isRead: boolean;
+  ipAddress?: string;
+  userAgent?: string;
 }
 
 const MessageDisplay = () => {
@@ -22,85 +24,32 @@ const MessageDisplay = () => {
   const [passwordError, setPasswordError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [debugInfo, setDebugInfo] = useState<string>('');
 
-  // Admin password
+  // Admin password - you can change this
   const ADMIN_PASSWORD = 'manoj2025admin';
 
-  // Load messages from localStorage with comprehensive debugging
-  const loadMessages = () => {
-    setIsRefreshing(true);
-    setDebugInfo('Loading messages...');
-    
-    try {
-      const savedMessages = localStorage.getItem('portfolioMessages');
-      console.log('🔍 Loading messages from localStorage:', savedMessages);
-      
-      if (savedMessages) {
-        const parsedMessages = JSON.parse(savedMessages);
-        console.log('📋 Parsed messages:', parsedMessages);
-        
-        if (Array.isArray(parsedMessages)) {
-          // Sort by timestamp (newest first)
-          const sortedMessages = parsedMessages.sort((a, b) => 
-            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-          );
-          setMessages(sortedMessages);
-          setDebugInfo(`✅ Loaded ${sortedMessages.length} messages successfully`);
-          console.log('✅ Messages loaded successfully:', sortedMessages.length);
-        } else {
-          setMessages([]);
-          setDebugInfo('⚠️ Invalid message format in storage');
-          console.log('⚠️ Parsed messages is not an array');
-        }
-      } else {
-        setMessages([]);
-        setDebugInfo('📭 No messages found in storage');
-        console.log('📭 No saved messages found');
-      }
-    } catch (error) {
-      console.error('❌ Error loading messages:', error);
-      setMessages([]);
-      setDebugInfo(`❌ Error loading messages: ${error}`);
-    } finally {
-      setIsRefreshing(false);
-    }
-  };
-
-  // Initialize messages when admin authenticates
+  // Load messages from localStorage on component mount
   useEffect(() => {
-    if (isAdminAuthenticated) {
-      console.log('🔐 Admin authenticated, loading messages...');
-      loadMessages();
-    }
-  }, [isAdminAuthenticated]);
+    loadMessages();
 
-  // Listen for new messages
-  useEffect(() => {
+    // Listen for new messages
     const handleNewMessage = (event: CustomEvent) => {
-      console.log('📨 New message received:', event.detail);
       const newMessage = event.detail;
-      
       setMessages(prev => {
+        // Check if message already exists to prevent duplicates
+        const exists = prev.some(msg => msg.id === newMessage.id);
+        if (exists) return prev;
+        
         const updated = [newMessage, ...prev];
-        console.log('📝 Updated messages after new message:', updated.length);
-        
         // Save to localStorage immediately
-        try {
-          localStorage.setItem('portfolioMessages', JSON.stringify(updated));
-          console.log('💾 Messages saved to localStorage');
-        } catch (error) {
-          console.error('❌ Error saving messages:', error);
-        }
-        
+        saveMessagesToStorage(updated);
         return updated;
       });
     };
 
-    // Listen for storage changes
+    // Listen for storage changes (in case messages are added from another tab)
     const handleStorageChange = (event: StorageEvent) => {
-      if (event.key === 'portfolioMessages' && isAdminAuthenticated) {
-        console.log('🔄 Storage change detected, reloading messages');
+      if (event.key === 'portfolioMessages') {
         loadMessages();
       }
     };
@@ -112,19 +61,53 @@ const MessageDisplay = () => {
       window.removeEventListener('newMessage', handleNewMessage as EventListener);
       window.removeEventListener('storage', handleStorageChange);
     };
-  }, [isAdminAuthenticated]);
+  }, []);
 
-  // Auto-save messages when they change
-  useEffect(() => {
-    if (messages.length > 0 && isAdminAuthenticated) {
-      try {
-        localStorage.setItem('portfolioMessages', JSON.stringify(messages));
-        console.log('💾 Auto-saved', messages.length, 'messages');
-      } catch (error) {
-        console.error('❌ Error auto-saving messages:', error);
-      }
+  const saveMessagesToStorage = (messagesToSave: Message[]) => {
+    try {
+      localStorage.setItem('portfolioMessages', JSON.stringify(messagesToSave));
+      // Also save to a backup key for extra persistence
+      localStorage.setItem('portfolioMessagesBackup', JSON.stringify(messagesToSave));
+    } catch (error) {
+      console.error('Error saving messages:', error);
     }
-  }, [messages, isAdminAuthenticated]);
+  };
+
+  const loadMessages = () => {
+    try {
+      let savedMessages = localStorage.getItem('portfolioMessages');
+      
+      // If main storage is empty, try backup
+      if (!savedMessages) {
+        savedMessages = localStorage.getItem('portfolioMessagesBackup');
+      }
+      
+      if (savedMessages) {
+        const parsedMessages = JSON.parse(savedMessages);
+        // Ensure messages is always an array and sort by timestamp (newest first)
+        if (Array.isArray(parsedMessages)) {
+          const sortedMessages = parsedMessages.sort((a, b) => 
+            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+          );
+          setMessages(sortedMessages);
+        } else {
+          setMessages([]);
+        }
+      } else {
+        setMessages([]);
+      }
+    } catch (error) {
+      console.error('Error loading messages:', error);
+      setMessages([]);
+    }
+  };
+
+  // Save messages to localStorage whenever messages change
+  useEffect(() => {
+    if (messages.length > 0) {
+      saveMessagesToStorage(messages);
+    }
+  }, [messages]);
 
   const handleAdminLogin = async () => {
     setIsLoading(true);
@@ -138,7 +121,8 @@ const MessageDisplay = () => {
       setShowPasswordInput(false);
       setAdminPassword('');
       setPasswordError('');
-      console.log('🔐 Admin authenticated successfully');
+      // Reload messages after successful login
+      loadMessages();
     } else {
       setPasswordError('Incorrect password. Please try again.');
       setAdminPassword('');
@@ -153,9 +137,13 @@ const MessageDisplay = () => {
     setPasswordError('');
     setAdminPassword('');
     setShowPasswordInput(false);
-    setMessages([]);
-    setDebugInfo('');
-    console.log('🚪 Admin logged out');
+  };
+
+  const handleRefreshMessages = async () => {
+    setIsRefreshing(true);
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Show loading for better UX
+    loadMessages();
+    setIsRefreshing(false);
   };
 
   const markAsRead = (messageId: string) => {
@@ -163,18 +151,47 @@ const MessageDisplay = () => {
       const updated = prev.map(msg => 
         msg.id === messageId ? { ...msg, isRead: true } : msg
       );
-      console.log('👁️ Message marked as read:', messageId);
+      return updated;
+    });
+  };
+
+  const markAllAsRead = () => {
+    setMessages(prev => {
+      const updated = prev.map(msg => ({ ...msg, isRead: true }));
       return updated;
     });
   };
 
   const deleteMessage = (messageId: string) => {
-    setMessages(prev => {
-      const updated = prev.filter(msg => msg.id !== messageId);
-      console.log('🗑️ Message deleted:', messageId, 'Remaining:', updated.length);
-      return updated;
-    });
-    setSelectedMessage(null);
+    if (confirm('Are you sure you want to permanently delete this message? This action cannot be undone.')) {
+      setMessages(prev => {
+        const updated = prev.filter(msg => msg.id !== messageId);
+        return updated;
+      });
+      setSelectedMessage(null);
+    }
+  };
+
+  const deleteAllMessages = () => {
+    if (confirm('Are you sure you want to delete ALL messages? This action cannot be undone and will permanently remove all visitor messages.')) {
+      setMessages([]);
+      localStorage.removeItem('portfolioMessages');
+      localStorage.removeItem('portfolioMessagesBackup');
+      setSelectedMessage(null);
+    }
+  };
+
+  const exportMessages = () => {
+    const dataStr = JSON.stringify(messages, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `portfolio-messages-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   const formatDate = (timestamp: string) => {
@@ -184,59 +201,31 @@ const MessageDisplay = () => {
         month: 'short',
         day: 'numeric',
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        second: '2-digit'
       });
     } catch (error) {
       return 'Invalid date';
     }
   };
 
-  // Debug function to check localStorage
-  const debugLocalStorage = () => {
-    const savedMessages = localStorage.getItem('portfolioMessages');
-    console.log('🔍 Current localStorage content:', savedMessages);
-    
-    if (savedMessages) {
-      try {
-        const parsed = JSON.parse(savedMessages);
-        console.log('📋 Parsed localStorage messages:', parsed);
-        console.log('📊 Number of messages in localStorage:', Array.isArray(parsed) ? parsed.length : 'Not an array');
-        setDebugInfo(`📊 Found ${Array.isArray(parsed) ? parsed.length : 0} messages in storage`);
-      } catch (error) {
-        console.error('❌ Error parsing localStorage messages:', error);
-        setDebugInfo(`❌ Error parsing storage: ${error}`);
-      }
-    } else {
-      console.log('📭 No messages in localStorage');
-      setDebugInfo('📭 No messages found in localStorage');
+  const getRelativeTime = (timestamp: string) => {
+    try {
+      const now = new Date();
+      const messageTime = new Date(timestamp);
+      const diffInMinutes = Math.floor((now.getTime() - messageTime.getTime()) / (1000 * 60));
+      
+      if (diffInMinutes < 1) return 'Just now';
+      if (diffInMinutes < 60) return `${diffInMinutes} minutes ago`;
+      if (diffInMinutes < 1440) return `${Math.floor(diffInMinutes / 60)} hours ago`;
+      return `${Math.floor(diffInMinutes / 1440)} days ago`;
+    } catch (error) {
+      return 'Unknown time';
     }
   };
 
-  // Create a test message for debugging
-  const createTestMessage = () => {
-    const testMessage: Message = {
-      id: Date.now().toString(),
-      name: 'Test User',
-      email: 'test@example.com',
-      subject: 'Test Message',
-      message: 'This is a test message created for debugging purposes.',
-      timestamp: new Date().toISOString(),
-      isRead: false
-    };
-
-    const existingMessages = localStorage.getItem('portfolioMessages');
-    const messages: Message[] = existingMessages ? JSON.parse(existingMessages) : [];
-    messages.unshift(testMessage);
-    
-    localStorage.setItem('portfolioMessages', JSON.stringify(messages));
-    console.log('🧪 Test message created:', testMessage);
-    setDebugInfo('🧪 Test message created successfully');
-    
-    // Reload messages
-    loadMessages();
-  };
-
   const unreadCount = messages.filter(msg => !msg.isRead).length;
+  const totalMessages = messages.length;
 
   // If not authenticated, show admin login
   if (!isAdminAuthenticated) {
@@ -253,7 +242,7 @@ const MessageDisplay = () => {
             </div>
             <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
-            }`}>Admin Access Required</h2>
+            }`}>Admin Access Portal</h2>
             
             {/* Decorative Line */}
             <div className="flex items-center gap-4 mb-6">
@@ -277,7 +266,7 @@ const MessageDisplay = () => {
             <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
               isDarkMode ? 'text-slate-400' : 'text-gray-600'
             }`}>
-              Enter the admin password to view visitor messages
+              Secure access to view all visitor messages and portfolio interactions
             </p>
           </div>
 
@@ -293,60 +282,21 @@ const MessageDisplay = () => {
                 }`} />
                 <h3 className={`text-xl font-bold mb-2 ${
                   isDarkMode ? 'text-white' : 'text-gray-900'
-                }`}>Admin Login</h3>
+                }`}>Admin Authentication</h3>
                 <p className={`text-sm ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>
-                  Password required to access messages
+                  Enter password to access visitor messages and analytics
                 </p>
               </div>
 
               {!showPasswordInput ? (
-                <div className="space-y-4">
-                  <button
-                    onClick={() => setShowPasswordInput(true)}
-                    className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-medium"
-                  >
-                    Access Admin Panel
-                  </button>
-                  
-                  {/* Debug Controls */}
-                  <div className="grid grid-cols-2 gap-2">
-                    <button
-                      onClick={debugLocalStorage}
-                      className={`px-3 py-2 rounded-lg text-xs transition-all duration-300 ${
-                        isDarkMode 
-                          ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-400 border border-slate-600' 
-                          : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 border border-gray-300'
-                      }`}
-                    >
-                      <Database size={14} className="inline mr-1" />
-                      Debug Storage
-                    </button>
-                    <button
-                      onClick={createTestMessage}
-                      className={`px-3 py-2 rounded-lg text-xs transition-all duration-300 ${
-                        isDarkMode 
-                          ? 'bg-green-700/50 hover:bg-green-600/50 text-green-400 border border-green-600' 
-                          : 'bg-green-100/50 hover:bg-green-200/50 text-green-600 border border-green-300'
-                      }`}
-                    >
-                      <MessageSquare size={14} className="inline mr-1" />
-                      Create Test
-                    </button>
-                  </div>
-                  
-                  {/* Debug Info Display */}
-                  {debugInfo && (
-                    <div className={`p-3 rounded-lg text-xs ${
-                      isDarkMode 
-                        ? 'bg-slate-700/30 border border-slate-600/30 text-slate-300' 
-                        : 'bg-gray-100/30 border border-gray-200/30 text-gray-700'
-                    }`}>
-                      {debugInfo}
-                    </div>
-                  )}
-                </div>
+                <button
+                  onClick={() => setShowPasswordInput(true)}
+                  className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-medium"
+                >
+                  Access Admin Dashboard
+                </button>
               ) : (
                 <div className="space-y-4">
                   <div>
@@ -384,7 +334,7 @@ const MessageDisplay = () => {
                       {isLoading ? (
                         <>
                           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                          Verifying...
+                          Authenticating...
                         </>
                       ) : (
                         'Login'
@@ -417,11 +367,12 @@ const MessageDisplay = () => {
                 <p className={`text-xs text-center ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>
-                  🔒 This area contains private messages from website visitors and is only accessible to the site administrator.
+                  🔒 This portal provides access to all visitor messages, contact form submissions, and portfolio analytics. All data is securely stored and never automatically deleted.
                 </p>
                 <p className={`text-xs text-center mt-2 font-medium ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
                 }`}>
+                  Messages are permanently stored until manually removed
                 </p>
               </div>
             </div>
@@ -431,7 +382,7 @@ const MessageDisplay = () => {
     );
   }
 
-  // Admin authenticated - show messages
+  // Admin authenticated - show messages dashboard
   return (
     <section className={`py-20 transition-all duration-700 ${
       isDarkMode 
@@ -471,112 +422,110 @@ const MessageDisplay = () => {
           <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
             isDarkMode ? 'text-slate-400' : 'text-gray-600'
           }`}>
-            Messages from website visitors
+            Complete overview of all visitor messages and portfolio interactions
           </p>
         </div>
 
         {/* Admin Controls */}
-        <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-4 flex-wrap justify-center">
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-              isDarkMode ? 'bg-green-600/20 text-green-400 border border-green-500/30' : 'bg-green-100 text-green-700 border border-green-300'
-            }`}>
-              <Shield size={16} />
-              <span className="text-sm font-medium">Admin Mode Active</span>
-            </div>
-            
-            <button
-              onClick={() => {
-                loadMessages();
-                debugLocalStorage();
-              }}
-              disabled={isRefreshing}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
-                isDarkMode 
-                  ? 'bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30' 
-                  : 'bg-cyan-100 hover:bg-cyan-200 text-cyan-700 border border-cyan-300'
-              }`}
-            >
-              <RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />
-              {isRefreshing ? 'Refreshing...' : 'Refresh Messages'}
-            </button>
-            
-            <button
-              onClick={debugLocalStorage}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
-                isDarkMode 
-                  ? 'bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30' 
-                  : 'bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-300'
-              }`}
-            >
-              <Database size={16} />
-              Debug Storage
-            </button>
-            
-            <button
-              onClick={createTestMessage}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
-                isDarkMode 
-                  ? 'bg-green-600/20 hover:bg-green-600/30 text-green-400 border border-green-500/30' 
-                  : 'bg-green-100 hover:bg-green-200 text-green-700 border border-green-300'
-              }`}
-            >
-              <MessageSquare size={16} />
-              Create Test Message
-            </button>
-            
-            <button
-              onClick={handleAdminLogout}
-              className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
-                isDarkMode 
-                  ? 'bg-slate-700/80 hover:bg-slate-600/80 text-white border border-slate-600' 
-                  : 'bg-gray-200/80 hover:bg-gray-300/80 text-gray-900 border border-gray-300'
-              }`}
-            >
-              Logout
-            </button>
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+            isDarkMode ? 'bg-green-600/20 text-green-400 border border-green-500/30' : 'bg-green-100 text-green-700 border border-green-300'
+          }`}>
+            <Shield size={16} />
+            <span className="text-sm font-medium">Admin Mode Active</span>
           </div>
+          
+          <button
+            onClick={handleRefreshMessages}
+            disabled={isRefreshing}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+              isDarkMode 
+                ? 'bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30' 
+                : 'bg-cyan-100 hover:bg-cyan-200 text-cyan-700 border border-cyan-300'
+            }`}
+          >
+            <RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />
+            {isRefreshing ? 'Refreshing...' : 'Refresh Messages'}
+          </button>
+          
+          {totalMessages > 0 && (
+            <>
+              <button
+                onClick={markAllAsRead}
+                className={`px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+                  isDarkMode 
+                    ? 'bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30' 
+                    : 'bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-300'
+                }`}
+              >
+                Mark All Read
+              </button>
+              
+              <button
+                onClick={exportMessages}
+                className={`px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
+                  isDarkMode 
+                    ? 'bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30' 
+                    : 'bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-300'
+                }`}
+              >
+                Export Data
+              </button>
+              
+              <button
+                onClick={deleteAllMessages}
+                className="px-4 py-2 rounded-xl transition-all duration-300 font-medium text-sm bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-500/30"
+              >
+                Delete All
+              </button>
+            </>
+          )}
+          
+          <button
+            onClick={handleAdminLogout}
+            className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium ${
+              isDarkMode 
+                ? 'bg-slate-700/80 hover:bg-slate-600/80 text-white border border-slate-600' 
+                : 'bg-gray-200/80 hover:bg-gray-300/80 text-gray-900 border border-gray-300'
+            }`}
+          >
+            Logout
+          </button>
         </div>
 
-        {/* Debug Info Display */}
-        {debugInfo && (
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className={`p-4 rounded-xl ${
-              isDarkMode 
-                ? 'bg-slate-800/50 border border-slate-600/50 text-slate-300' 
-                : 'bg-white/50 border border-gray-200/50 text-gray-700'
-            }`}>
-              <div className="flex items-center gap-2 mb-2">
-                <Database size={16} className="text-cyan-400" />
-                <span className="font-medium">Debug Information</span>
-              </div>
-              <p className="text-sm">{debugInfo}</p>
-            </div>
-          </div>
-        )}
-
-        {/* Messages Count */}
-        <div className="text-center mb-8">
-          <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl backdrop-blur-sm ${
+        {/* Messages Statistics */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
+          <div className={`text-center p-6 rounded-xl backdrop-blur-sm ${
             isDarkMode 
               ? 'bg-slate-800/50 border border-slate-600/50' 
               : 'bg-white/50 border border-gray-200/50'
           }`}>
-            <MessageSquare size={20} className="text-cyan-400" />
-            <span className={isDarkMode ? 'text-white' : 'text-gray-900'}>
-              Total Messages: {messages.length}
-            </span>
-            {unreadCount > 0 && (
-              <span className="px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm rounded-full animate-pulse">
-                {unreadCount} unread
-              </span>
-            )}
+            <div className="text-3xl font-bold text-cyan-400 mb-2">{totalMessages}</div>
+            <div className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>Total Messages</div>
+          </div>
+          
+          <div className={`text-center p-6 rounded-xl backdrop-blur-sm ${
+            isDarkMode 
+              ? 'bg-slate-800/50 border border-slate-600/50' 
+              : 'bg-white/50 border border-gray-200/50'
+          }`}>
+            <div className="text-3xl font-bold text-orange-400 mb-2">{unreadCount}</div>
+            <div className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>Unread Messages</div>
+          </div>
+          
+          <div className={`text-center p-6 rounded-xl backdrop-blur-sm ${
+            isDarkMode 
+              ? 'bg-slate-800/50 border border-slate-600/50' 
+              : 'bg-white/50 border border-gray-200/50'
+          }`}>
+            <div className="text-3xl font-bold text-green-400 mb-2">{totalMessages - unreadCount}</div>
+            <div className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>Read Messages</div>
           </div>
         </div>
 
         {/* Messages List */}
-        <div className="max-w-4xl mx-auto">
-          {messages.length === 0 ? (
+        <div className="max-w-6xl mx-auto">
+          {totalMessages === 0 ? (
             <div className={`text-center py-12 rounded-2xl backdrop-blur-sm ${
               isDarkMode 
                 ? 'bg-slate-800/50 border border-slate-600/50' 
@@ -588,33 +537,19 @@ const MessageDisplay = () => {
               <p className={`text-lg mb-2 ${
                 isDarkMode ? 'text-slate-400' : 'text-gray-600'
               }`}>
-                No messages yet
+                No messages received yet
               </p>
               <p className={`text-sm mb-4 ${
                 isDarkMode ? 'text-slate-500' : 'text-gray-500'
               }`}>
-                Messages will appear here when visitors use the contact form
+                Messages from the contact form will appear here automatically
               </p>
-              <div className="flex gap-3 justify-center">
-                <button
-                  onClick={() => {
-                    loadMessages();
-                    debugLocalStorage();
-                  }}
-                  disabled={isRefreshing}
-                  className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 text-sm flex items-center gap-2"
-                >
-                  <RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />
-                  {isRefreshing ? 'Checking...' : 'Check for Messages'}
-                </button>
-                <button
-                  onClick={createTestMessage}
-                  className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 text-sm flex items-center gap-2"
-                >
-                  <MessageSquare size={16} />
-                  Create Test Message
-                </button>
-              </div>
+              <button
+                onClick={handleRefreshMessages}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 text-sm font-medium"
+              >
+                Check for New Messages
+              </button>
             </div>
           ) : (
             <div className="space-y-6">
@@ -625,7 +560,7 @@ const MessageDisplay = () => {
                     isDarkMode 
                       ? 'bg-slate-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
                       : 'bg-white/80 border border-gray-200/50 hover:border-cyan-400/50'
-                  } ${!message.isRead ? 'ring-2 ring-cyan-400/30' : ''}`}
+                  } ${!message.isRead ? 'ring-2 ring-cyan-400/30 shadow-lg' : ''}`}
                   onClick={() => {
                     setSelectedMessage(message);
                     if (!message.isRead) {
@@ -635,8 +570,12 @@ const MessageDisplay = () => {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg">
-                        <User size={16} className="text-white" />
+                      <div className={`p-3 rounded-lg ${
+                        !message.isRead 
+                          ? 'bg-gradient-to-r from-cyan-500 to-blue-500' 
+                          : 'bg-gradient-to-r from-gray-500 to-gray-600'
+                      }`}>
+                        <User size={20} className="text-white" />
                       </div>
                       <div>
                         <h3 className={`font-bold text-lg ${
@@ -649,11 +588,19 @@ const MessageDisplay = () => {
                         }`}>
                           {message.email}
                         </p>
+                        <p className={`text-xs mt-1 ${
+                          isDarkMode ? 'text-slate-500' : 'text-gray-500'
+                        }`}>
+                          {getRelativeTime(message.timestamp)}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       {!message.isRead && (
-                        <span className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"></span>
+                        <div className="flex items-center gap-2">
+                          <span className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"></span>
+                          <span className="text-xs font-medium text-cyan-400">NEW</span>
+                        </div>
                       )}
                       <div className="text-right">
                         <p className={`text-xs ${
@@ -665,9 +612,7 @@ const MessageDisplay = () => {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          if (confirm('Are you sure you want to delete this message?')) {
-                            deleteMessage(message.id);
-                          }
+                          deleteMessage(message.id);
                         }}
                         className="p-2 text-red-400 hover:text-red-300 transition-colors hover:bg-red-500/10 rounded-lg"
                         title="Delete message"
@@ -688,29 +633,39 @@ const MessageDisplay = () => {
                   <p className={`leading-relaxed ${
                     isDarkMode ? 'text-slate-300' : 'text-gray-700'
                   }`}>
-                    {message.message.length > 150 
-                      ? `${message.message.substring(0, 150)}...` 
+                    {message.message.length > 200 
+                      ? `${message.message.substring(0, 200)}...` 
                       : message.message
                     }
                   </p>
                   
                   <div className="flex items-center justify-between mt-4">
-                    <div className="flex items-center gap-2">
-                      <Calendar size={14} className="text-cyan-400" />
-                      <span className={`text-xs ${
-                        isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                      }`}>
-                        {formatDate(message.timestamp)}
-                      </span>
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={14} className="text-cyan-400" />
+                        <span className={`text-xs ${
+                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                        }`}>
+                          {formatDate(message.timestamp)}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Mail size={14} className="text-cyan-400" />
+                        <span className={`text-xs ${
+                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                        }`}>
+                          ID: {message.id.slice(-8)}
+                        </span>
+                      </div>
                     </div>
-                    <span className={`text-xs px-3 py-1 rounded-full ${
+                    <span className={`text-xs px-3 py-1 rounded-full font-medium ${
                       message.isRead 
                         ? isDarkMode 
                           ? 'bg-slate-700/50 text-slate-400' 
                           : 'bg-gray-100/50 text-gray-600'
-                        : 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 font-medium'
+                        : 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 animate-pulse'
                     }`}>
-                      {message.isRead ? 'Read' : 'New'}
+                      {message.isRead ? 'Read' : 'Unread'}
                     </span>
                   </div>
                 </div>
@@ -722,7 +677,7 @@ const MessageDisplay = () => {
         {/* Message Detail Modal */}
         {selectedMessage && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-            <div className={`relative max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden ${
+            <div className={`relative max-w-4xl w-full max-h-[90vh] rounded-2xl shadow-2xl overflow-hidden ${
               isDarkMode 
                 ? 'bg-slate-900 border border-slate-600/50' 
                 : 'bg-white border border-gray-200/50'
@@ -733,7 +688,7 @@ const MessageDisplay = () => {
                   ? 'border-slate-700/50 bg-gradient-to-r from-slate-800 to-slate-900' 
                   : 'border-gray-200/50 bg-gradient-to-r from-gray-50 to-blue-50'
               }`}>
-                <div>
+                <div className="flex-1">
                   <h3 className={`text-xl font-bold mb-1 ${
                     isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}>
@@ -743,6 +698,11 @@ const MessageDisplay = () => {
                     isDarkMode ? 'text-slate-400' : 'text-gray-600'
                   }`}>
                     From: {selectedMessage.name} ({selectedMessage.email})
+                  </p>
+                  <p className={`text-xs mt-1 ${
+                    isDarkMode ? 'text-slate-500' : 'text-gray-500'
+                  }`}>
+                    Message ID: {selectedMessage.id} • {formatDate(selectedMessage.timestamp)}
                   </p>
                 </div>
                 <button
@@ -758,30 +718,74 @@ const MessageDisplay = () => {
               </div>
               
               {/* Modal Content */}
-              <div className="p-6">
-                <div className="mb-4">
-                  <span className={`text-xs px-3 py-1 rounded-full ${
-                    isDarkMode ? 'bg-slate-700/50 text-slate-400' : 'bg-gray-100/50 text-gray-600'
-                  }`}>
-                    {formatDate(selectedMessage.timestamp)}
-                  </span>
-                </div>
-                <div className={`p-4 rounded-xl leading-relaxed ${
+              <div className="p-6 overflow-auto max-h-[calc(90vh-200px)]">
+                <div className={`p-6 rounded-xl leading-relaxed text-lg ${
                   isDarkMode 
-                    ? 'bg-slate-800/50 text-slate-300' 
-                    : 'bg-gray-50/50 text-gray-700'
+                    ? 'bg-slate-800/50 text-slate-300 border border-slate-600/30' 
+                    : 'bg-gray-50/50 text-gray-700 border border-gray-200/30'
                 }`}>
                   {selectedMessage.message}
                 </div>
                 
-                <div className="flex justify-end mt-6">
+                {/* Message Metadata */}
+                <div className={`mt-6 p-4 rounded-xl ${
+                  isDarkMode 
+                    ? 'bg-slate-800/30 border border-slate-600/30' 
+                    : 'bg-gray-50/30 border border-gray-200/30'
+                }`}>
+                  <h4 className={`text-sm font-semibold mb-3 ${
+                    isDarkMode ? 'text-white' : 'text-gray-900'
+                  }`}>Message Details</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Sender:</span>
+                      <span className={`ml-2 font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {selectedMessage.name}
+                      </span>
+                    </div>
+                    <div>
+                      <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Email:</span>
+                      <span className={`ml-2 font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {selectedMessage.email}
+                      </span>
+                    </div>
+                    <div>
+                      <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Received:</span>
+                      <span className={`ml-2 font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {formatDate(selectedMessage.timestamp)}
+                      </span>
+                    </div>
+                    <div>
+                      <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Status:</span>
+                      <span className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${
+                        selectedMessage.isRead 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : 'bg-cyan-500/20 text-cyan-400'
+                      }`}>
+                        {selectedMessage.isRead ? 'Read' : 'Unread'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-end gap-3 mt-6">
                   <button
                     onClick={() => {
-                      if (confirm('Are you sure you want to delete this message?')) {
-                        deleteMessage(selectedMessage.id);
-                      }
+                      navigator.clipboard.writeText(
+                        `From: ${selectedMessage.name} (${selectedMessage.email})\nSubject: ${selectedMessage.subject}\nDate: ${formatDate(selectedMessage.timestamp)}\n\nMessage:\n${selectedMessage.message}`
+                      );
                     }}
-                    className="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl"
+                    className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl font-medium ${
+                      isDarkMode 
+                        ? 'bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30' 
+                        : 'bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-300'
+                    }`}
+                  >
+                    Copy Message
+                  </button>
+                  <button
+                    onClick={() => deleteMessage(selectedMessage.id)}
+                    className="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl font-medium"
                   >
                     <Trash2 size={16} />
                     Delete Message
