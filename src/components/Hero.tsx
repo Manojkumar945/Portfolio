@@ -125,9 +125,7 @@ const Hero = () => {
       <div className="hero-container">
         {/* Profile Hero Section */}
         <div className="profile-hero-section">
-          {/* Profile Photo with Enhanced Design */}
-          <div className="profile-photo-container">
-            <div className="profile-photo-wrapper">              
+          {/* Profile Photo with Enhanced Design */}            
               {/* Profile Image */}
               <div className="profile-image-container">
                 <img 
