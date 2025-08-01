@@ -127,11 +127,7 @@ const Hero = () => {
         <div className="profile-hero-section">
           {/* Profile Photo with Enhanced Design */}
           <div className="profile-photo-container">
-            <div className="profile-photo-wrapper">
-              {/* Animated Ring */}
-              <div className="profile-ring animate-rotate-ring"></div>
-              <div className="profile-ring-reverse animate-reverse-rotate-ring"></div>
-              
+            <div className="profile-photo-wrapper">              
               {/* Profile Image */}
               <div className="profile-image-container">
                 <img 
