@@ -80,7 +80,7 @@ const Hero = () => {
   };
 
   return (
-    <section className={`relative min-h-screen flex items-center pt-16 overflow-hidden transition-all duration-700 ${
+    <section className={`relative min-h-screen overflow-hidden transition-all duration-700 ${
       isDarkMode 
         ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
@@ -121,28 +121,66 @@ const Hero = () => {
         }`}></div>
       </div>
       
-      {/* Profile Photo - Positioned on Right */}
-      <div className="absolute top-24 right-4 md:right-8 lg:right-12 xl:right-16 z-20">
-        <div className="relative">
-          {/* Profile Container */}
-          <div className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border-2 ${
-            isDarkMode 
-              ? 'border-cyan-400/50' 
-              : 'border-blue-400/50'
-          }`}>
-            {/* Profile Image */}
-            <img 
-              src="/My image.jpeg"
-              alt="Manoj Kumar - App Developer" 
-              className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
-            />
+      {/* Responsive Hero Container */}
+      <div className="hero-container">
+        {/* Profile Hero Section */}
+        <div className="profile-hero-section">
+          {/* Profile Photo with Enhanced Design */}
+          <div className="profile-photo-container">
+            <div className="profile-photo-wrapper">
+              {/* Animated Ring */}
+              <div className="profile-ring animate-rotate-ring"></div>
+              <div className="profile-ring-reverse animate-reverse-rotate-ring"></div>
+              
+              {/* Profile Image */}
+              <div className="profile-image-container">
+                <img 
+                  src="/My image.jpeg"
+                  alt="Manoj Kumar - App Developer" 
+                  className="profile-image"
+                />
+                
+                {/* Status Indicator */}
+                <div className="status-indicator">
+                  <div className="status-dot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Profile Info */}
+          <div className="profile-info">
+            <div className="profile-badge">
+              <span className="badge-dot"></span>
+              <span className="badge-text">Available for Work</span>
+            </div>
+            
+            <h1 className="profile-name">Manoj Kumar</h1>
+            <div className="profile-role">
+              <span className="role-text">
+                {displayText}
+                <span className="cursor-blink">|</span>
+              </span>
+            </div>
+            
+            <p className="profile-description">
+              Creating innovative mobile applications with focus on user experience and technical excellence
+            </p>
+            
+            {/* Quick Actions */}
+            <div className="profile-actions">
+              <a href="#contact" className="action-btn primary">
+                <span>Get In Touch</span>
+              </a>
+              <button onClick={handleResumeDownload} className="action-btn secondary">
+                <span>View Resume</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Main Content - Positioned Higher and to Left */}
-        <div className="flex flex-col items-start text-left max-w-3xl pt-8">
+        
+        {/* Main Content Section - Desktop Only */}
+        <div className="main-content-section">
           {/* Greeting - Moved Up */}
           <div className="mb-4 space-y-1">
             <p className={`text-2xl md:text-3xl mb-1 animate-fade-in transition-colors duration-700 ${
