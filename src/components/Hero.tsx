@@ -164,6 +164,8 @@ const Hero = () => {
                 <span>View Resume</span>
               </button>
             </div>
+          </div>
+        </div>
         
         {/* Main Content Section - Desktop Only */}
         <div className="main-content-section">
