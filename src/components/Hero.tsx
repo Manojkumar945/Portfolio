@@ -135,9 +135,6 @@ const Hero = () => {
                 />
                 
                 </div>
-              </div>
-            </div>
-          </div>
           
           {/* Profile Info */}
           <div className="profile-info">
