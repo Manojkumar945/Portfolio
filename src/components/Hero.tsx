@@ -155,23 +155,24 @@ const Hero = () => {
                 {displayText}
                 <span className="cursor-blink">|</span>
               </span>
-            </div>
-            
-            <p className="profile-description">
-              Creating innovative mobile applications with focus on user experience and technical excellence
-            </p>
-            
-            {/* Quick Actions */}
-            <div className="profile-actions">
-              <a href="#contact" className="action-btn primary">
-                <span>Get In Touch</span>
-              </a>
-              <button onClick={handleResumeDownload} className="action-btn secondary">
-                <span>View Resume</span>
-              </button>
+          {/* Profile Photo with Enhanced Design */}
+          <div className="profile-photo-container">
+            <div className="profile-photo-wrapper">
+              {/* Profile Image */}
+              <div className="profile-image-container">
+                <img 
+                  src="/My image.jpeg"
+                  alt="Manoj Kumar - App Developer" 
+                  className="profile-image"
+                />
+                
+                {/* Status Indicator */}
+                <div className="status-indicator">
+                  <div className="status-dot"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         
         {/* Main Content Section - Desktop Only */}
         <div className="main-content-section">
