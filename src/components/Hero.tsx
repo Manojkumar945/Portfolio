@@ -155,6 +155,9 @@ const Hero = () => {
                 {displayText}
                 <span className="cursor-blink">|</span>
               </span>
+            </div>
+          </div>
+          
           {/* Profile Photo with Enhanced Design */}
           <div className="profile-photo-container">
             <div className="profile-photo-wrapper">
@@ -173,6 +176,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
         
         {/* Main Content Section - Desktop Only */}
         <div className="main-content-section">
