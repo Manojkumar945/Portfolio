@@ -134,9 +134,6 @@ const Hero = () => {
                   className="profile-image"
                 />
                 
-                {/* Status Indicator */}
-                <div className="status-indicator">
-                  <div className="status-dot"></div>
                 </div>
               </div>
             </div>
