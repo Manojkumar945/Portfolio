@@ -138,7 +138,6 @@ const Hero = () => {
           
           {/* Profile Info */}
           <div className="profile-info">
-            <div className="profile-badge">
               
             </div>
             
