@@ -138,7 +138,9 @@ const Hero = () => {
           
           {/* Profile Info */}
           <div className="profile-info">
-              
+            <div className="profile-badge">
+              <span className="badge-dot"></span>
+              <span className="badge-text">Founder of CyberTech Guard</span>
             </div>
             
             <h1 className="profile-name">Manoj Kumar</h1>
