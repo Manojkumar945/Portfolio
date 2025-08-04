@@ -130,7 +130,7 @@ const Hero = () => {
               <div className="profile-image-container">
                 <img 
                   src="/My image.jpeg"
-                  alt="Manoj Kumar - App Developer" 
+                  alt="Manoj Kumar - Portfolio" 
                   className="profile-image"
                 />
                 
