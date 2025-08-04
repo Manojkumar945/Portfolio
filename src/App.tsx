@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    document.title = "Manoj Kumar - App Developer";
+    document.title = "Manoj Kumar - Portfolio";
   }, []);
 
   return (
