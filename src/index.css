@@ -304,20 +304,25 @@ html {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
   padding: 1rem;
+  padding-top: 6rem;
   z-index: 10;
 }
 
-/* Mobile-first approach: Center positioning */
+/* Desktop-only approach: Corner positioning */
 .profile-hero-section {
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  max-width: 20rem;
+  z-index: 20;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 28rem;
-  width: 100%;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -325,7 +330,6 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
-  position: relative;
   overflow: hidden;
 }
 
@@ -544,6 +548,141 @@ html {
 
 /* Main Content Section - Hidden on mobile */
 .main-content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 60%;
+  padding-top: 2rem;
+  margin-right: 22rem; /* Space for fixed profile section */
+}
+
+/* Remove mobile-specific styles */
+@media (max-width: 768px) {
+  .main-content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 60%;
+    padding-top: 2rem;
+    margin-right: 22rem;
+  }
+  
+  .profile-hero-section {
+    position: fixed;
+    top: 6rem;
+    right: 2rem;
+    max-width: 20rem;
+    z-index: 20;
+    margin: 0;
+  }
+}
+
+/* Tablet and Desktop Styles - Apply to all screen sizes */
+@media (min-width: 1px) {
+  .hero-container {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2rem;
+    padding-top: 6rem;
+  }
+  
+  .profile-hero-section {
+    position: fixed;
+    top: 6rem;
+    right: 2rem;
+    max-width: 20rem;
+    z-index: 20;
+    margin: 0;
+  }
+  
+  .profile-photo-wrapper {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .profile-image-container {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .profile-name {
+    font-size: 1.75rem;
+  }
+  
+  .profile-role {
+    font-size: 1.125rem;
+  }
+  
+  .profile-description {
+    font-size: 0.8rem;
+    max-width: 18rem;
+  }
+  
+  .action-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+    min-width: 7rem;
+  }
+  
+  .main-content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 60%;
+    padding-top: 2rem;
+    margin-right: 22rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1024px) {
+  .profile-hero-section {
+    right: 3rem;
+    max-width: 22rem;
+  }
+  
+  .main-content-section {
+    margin-right: 25rem;
+  }
+  
+  .profile-photo-wrapper {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .profile-image-container {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-role {
+    font-size: 1.25rem;
+  }
+  
+  .profile-description {
+    font-size: 0.875rem;
+    max-width: 20rem;
+  }
+}
+
+/* Extra Large Desktop Styles */
+@media (min-width: 1280px) {
+  .profile-hero-section {
+    right: 4rem;
+    max-width: 24rem;
+  }
+  
+  .main-content-section {
+    margin-right: 28rem;
+  }
+}
   display: flex;
   flex-direction: column;
   align-items: flex-start;

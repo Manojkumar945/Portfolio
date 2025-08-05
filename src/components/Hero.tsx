@@ -123,7 +123,7 @@ const Hero = () => {
       
       {/* Responsive Hero Container */}
       <div className="hero-container">
-        {/* Profile Hero Section */}
+        {/* Profile Hero Section - Always in corner */}
         <div className="profile-hero-section">
           {/* Profile Photo with Enhanced Design */}            
               {/* Profile Image */}
@@ -167,7 +167,7 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Main Content Section - Desktop Only */}
+        {/* Main Content Section - Always visible */}
         <div className="main-content-section">
           {/* Greeting - Moved Up */}
           <div className="mb-4 space-y-1">
