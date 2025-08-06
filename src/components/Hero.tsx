@@ -328,7 +328,7 @@ const Hero = () => {
           }`}
           aria-label="Scroll to About section"
         >
-          <span className="text-sm font-medium">Scroll Down</span>
+          <span className="text-sm font-medium"></span>
           <div className={`p-2 rounded-full border transition-colors duration-300 ${
             isDarkMode 
               ? 'border-slate-600 group-hover:border-cyan-400' 
