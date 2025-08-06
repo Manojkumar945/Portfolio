@@ -672,15 +672,6 @@ html {
     margin-right: 28rem;
   }
 }
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  max-width: 60%;
-  padding-top: 2rem;
-  margin-right: 22rem; /* Space for fixed profile section */
-}
-
 /* Dark mode adjustments */
 .dark .profile-hero-section {
   background: rgba(15, 23, 42, 0.8);
