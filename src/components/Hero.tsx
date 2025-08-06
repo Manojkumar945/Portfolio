@@ -123,50 +123,6 @@ const Hero = () => {
       
       {/* Responsive Hero Container */}
       <div className="hero-container">
-        {/* Profile Hero Section - Always in corner */}
-        <div className="profile-hero-section">
-          {/* Profile Photo with Enhanced Design */}            
-              {/* Profile Image */}
-              <div className="profile-image-container">
-                <img 
-                  src="/My image.jpeg"
-                  alt="Manoj Kumar - Portfolio" 
-                  className="profile-image"
-                />
-                
-                </div>
-          
-          {/* Profile Info */}
-          <div className="profile-info">
-            <div className="profile-badge">
-              <span className="badge-dot"></span>
-              <span className="badge-text">Founder of CyberTech Guard</span>
-            </div>
-            
-            <h1 className="profile-name">Manoj Kumar</h1>
-            <div className="profile-role">
-              <span className="role-text">
-                {displayText}
-                <span className="cursor-blink">|</span>
-              </span>
-            </div>
-            
-            <p className="profile-description">
-              Creating innovative mobile applications with focus on user experience and technical excellence
-            </p>
-            
-            {/* Quick Actions */}
-            <div className="profile-actions">
-              <a href="#contact" className="action-btn primary">
-                <span>Get In Touch</span>
-              </a>
-              <button onClick={handleResumeDownload} className="action-btn secondary">
-                <span>View Resume</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        
         {/* Main Content Section - Always visible */}
         <div className="main-content-section">
           {/* Greeting - Moved Up */}
