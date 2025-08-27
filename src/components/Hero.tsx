@@ -337,8 +337,6 @@ const Hero = () => {
                     }`}>
                     </div>
                   </div>
-                  
-                  {/* Professional Status Badge */}
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 animate-badge-pulse">
                     <div className={`px-6 py-3 rounded-full text-sm font-bold shadow-xl backdrop-blur-sm ${
                       isDarkMode 
