@@ -293,8 +293,6 @@ const Hero = () => {
                     isDarkMode ? 'border-purple-400/20' : 'border-purple-400/20'
                   }`}></div>
                 </div>
-                
-                {/* Main Photo Container */}
                 <div className="relative z-10">
                   <div className={`w-80 h-80 md:w-96 md:h-96 rounded-full p-2 transition-all duration-700 animate-profile-glow ${
                     isDarkMode 
