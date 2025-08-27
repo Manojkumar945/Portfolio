@@ -309,8 +309,6 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  
-                  {/* Floating Tech Badges */}
                   <div className="absolute -top-4 -right-4 animate-float-tech">
                     <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
                       isDarkMode 
