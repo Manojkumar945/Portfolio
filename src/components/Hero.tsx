@@ -278,11 +278,8 @@ const Hero = () => {
                 </a>
               </div>
             </div>
-            
-            {/* Right Side - Professional Photo */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Animated Background Rings */}
                 <div className="absolute inset-0 animate-rotate-ring">
                   <div className={`w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-dashed transition-all duration-700 ${
                     isDarkMode ? 'border-cyan-400/30' : 'border-blue-400/30'
