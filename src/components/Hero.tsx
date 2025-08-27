@@ -326,7 +326,6 @@ const Hero = () => {
                         ? 'bg-gradient-to-r from-purple-500/90 to-indigo-600/90 text-white border border-purple-400/30' 
                         : 'bg-gradient-to-r from-purple-500/90 to-indigo-600/90 text-white border border-purple-400/30'
                     }`}>
-                      Android
                     </div>
                   </div>
                   
@@ -336,7 +335,6 @@ const Hero = () => {
                         ? 'bg-gradient-to-r from-emerald-500/90 to-teal-600/90 text-white border border-emerald-400/30' 
                         : 'bg-gradient-to-r from-emerald-500/90 to-teal-600/90 text-white border border-emerald-400/30'
                     }`}>
-                      Python
                     </div>
                   </div>
                   
@@ -347,7 +345,6 @@ const Hero = () => {
                         ? 'bg-gradient-to-r from-indigo-600/95 to-purple-700/95 text-white border border-indigo-400/50' 
                         : 'bg-gradient-to-r from-indigo-600/95 to-purple-700/95 text-white border border-indigo-400/50'
                     }`}>
-                      🚀 Available for Projects
                     </div>
                   </div>
                 </div>
