@@ -275,70 +275,7 @@ const Hero = () => {
                       ? 'text-slate-300 group-hover:text-white' 
                       : 'text-gray-700 group-hover:text-white'
                   }`} />
-                </a>
-              </div>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute inset-0 animate-rotate-ring">
-                  <div className={`w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-dashed transition-all duration-700 ${
-                    isDarkMode ? 'border-cyan-400/30' : 'border-blue-400/30'
-                  }`}></div>
-                </div>
-                <div className="absolute inset-4 animate-reverse-rotate-ring">
-                  <div className={`w-72 h-72 md:w-80 md:h-80 rounded-full border border-dotted transition-all duration-700 ${
-                    isDarkMode ? 'border-purple-400/20' : 'border-purple-400/20'
-                  }`}></div>
-                </div>
-                <div className="relative z-10">
-                  <div className={`w-80 h-80 md:w-96 md:h-96 rounded-full p-2 transition-all duration-700 animate-profile-glow ${
-                    isDarkMode 
-                      ? 'bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600' 
-                      : 'bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700'
-                  }`}>
-                    <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-2xl">
-                      <img
-                        src="/My image copy.jpeg"
-                        alt="Manoj Kumar - Professional Photo"
-                        className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute -top-4 -right-4 animate-float-tech">
-                    <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
-                      isDarkMode 
-                        ? 'bg-gradient-to-r from-cyan-500/90 to-blue-600/90 text-white border border-cyan-400/30' 
-                        : 'bg-gradient-to-r from-blue-500/90 to-indigo-600/90 text-white border border-blue-400/30'
-                    }`}>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute -bottom-6 -left-6 animate-float-tech" style={{ animationDelay: '1s' }}>
-                    <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
-                      isDarkMode 
-                        ? 'bg-gradient-to-r from-purple-500/90 to-indigo-600/90 text-white border border-purple-400/30' 
-                        : 'bg-gradient-to-r from-purple-500/90 to-indigo-600/90 text-white border border-purple-400/30'
-                    }`}>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute top-1/2 -right-8 animate-float-tech" style={{ animationDelay: '2s' }}>
-                    <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
-                      isDarkMode 
-                        ? 'bg-gradient-to-r from-emerald-500/90 to-teal-600/90 text-white border border-emerald-400/30' 
-                        : 'bg-gradient-to-r from-emerald-500/90 to-teal-600/90 text-white border border-emerald-400/30'
-                    }`}>
-                    </div>
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 animate-badge-pulse">
-                    <div className={`px-6 py-3 rounded-full text-sm font-bold shadow-xl backdrop-blur-sm ${
-                      isDarkMode 
-                        ? 'bg-gradient-to-r from-indigo-600/95 to-purple-700/95 text-white border border-indigo-400/50' 
-                        : 'bg-gradient-to-r from-indigo-600/95 to-purple-700/95 text-white border border-indigo-400/50'
-                    }`}>
-                    </div>
-                  </div>
-                </div>
+                
                 
                 {/* Floating Particles */}
                 <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-particle-float opacity-70"></div>
