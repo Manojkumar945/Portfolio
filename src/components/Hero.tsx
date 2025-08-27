@@ -317,7 +317,6 @@ const Hero = () => {
                         ? 'bg-gradient-to-r from-cyan-500/90 to-blue-600/90 text-white border border-cyan-400/30' 
                         : 'bg-gradient-to-r from-blue-500/90 to-indigo-600/90 text-white border border-blue-400/30'
                     }`}>
-                      React
                     </div>
                   </div>
                   
