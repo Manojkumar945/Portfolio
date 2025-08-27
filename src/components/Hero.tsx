@@ -58,23 +58,19 @@ const Hero = () => {
 
   const handleResumeDownload = () => {
     try {
-      // Create a temporary link element for download
       const link = document.createElement('a');
       link.href = '/Manoj_Kumar_Resume.pdf';
       link.download = 'Manoj_Kumar_Resume.pdf';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       
-      // Append to body, click, and remove
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       
-      // Optional: Show a success message or notification
       console.log('Resume download initiated');
     } catch (error) {
       console.error('Error downloading resume:', error);
-      // Fallback: Open in new tab if download fails
       window.open('/Manoj_Kumar_Resume.pdf', '_blank', 'noopener,noreferrer');
     }
   };
@@ -121,126 +117,253 @@ const Hero = () => {
         }`}></div>
       </div>
       
-      {/* Responsive Hero Container */}
-      <div className="hero-container">
-        {/* Main Content Section - Always visible */}
-        <div className="main-content-section">
-          {/* Greeting - Moved Up */}
-          <div className="mb-4 space-y-1">
-            <p className={`text-2xl md:text-3xl mb-1 animate-fade-in transition-colors duration-700 ${
-              isDarkMode ? 'text-slate-300' : 'text-gray-600'
-            }`}>
-              Hi, I'm
-            </p>
-            <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-2 animate-fade-in-up transition-all duration-700 ${
-              isDarkMode 
-                ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
-                : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
-            }`} style={{ 
-              fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif',
-              letterSpacing: '0.005em',
-              lineHeight: '1.1',
-              textRendering: 'optimizeLegibility',
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale',
-              fontFeatureSettings: '"kern" 1, "liga" 1, "calt" 1',
-              fontVariantLigatures: 'common-ligatures contextual',
-              wordSpacing: '0.05em',
-              paddingBottom: '0.1em',
-              overflow: 'visible'
-            }}>
-              Manoj Kumar
-            </h2>
-          </div>
-          
-          {/* Dynamic Role - Moved Up */}
-          <div className="mb-6">
-            <h1 className={`text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 transition-colors duration-700 ${
-              isDarkMode ? 'text-white' : 'text-gray-900'
-            }`}>
-              <span className={`text-transparent bg-clip-text transition-all duration-700 ${
-                isDarkMode 
-                  ? 'bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
-                  : 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
-              }`}>
-                {displayText}
-                <span className={`animate-pulse ml-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>|</span>
-              </span>
-            </h1>
+      {/* Hero Container */}
+      <div className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Company Badge - Moved Up */}
-            <div className="flex justify-start mb-6">
-              <div className={`inline-flex items-center gap-2 backdrop-blur-sm rounded-full px-6 py-3 transition-all duration-700 ${
-                isDarkMode 
-                  ? 'bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border border-purple-400/30' 
-                  : 'bg-gradient-to-r from-purple-100/80 to-indigo-100/80 border border-purple-300/50'
-              }`}>
-                <div className={`w-2 h-2 rounded-full transition-all duration-700 ${
-                  isDarkMode 
-                    ? 'bg-gradient-to-r from-purple-400 to-indigo-400' 
-                    : 'bg-gradient-to-r from-purple-500 to-indigo-500'
-                }`}></div>
-                <span className={`font-medium transition-colors duration-700 ${
-                  isDarkMode ? 'text-slate-300' : 'text-gray-700'
+            {/* Left Side - Content */}
+            <div className="text-center lg:text-left space-y-8">
+              {/* Greeting */}
+              <div className="space-y-2">
+                <p className={`text-2xl md:text-3xl animate-fade-in transition-colors duration-700 ${
+                  isDarkMode ? 'text-slate-300' : 'text-gray-600'
                 }`}>
-                  Founder of <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>CyberTech Guard</span>
-                </span>
+                  Hi, I'm
+                </p>
+                <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold animate-fade-in-up transition-all duration-700 ${
+                  isDarkMode 
+                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
+                }`} style={{ 
+                  fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif',
+                  letterSpacing: '0.005em',
+                  lineHeight: '1.1',
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  fontFeatureSettings: '"kern" 1, "liga" 1, "calt" 1',
+                  fontVariantLigatures: 'common-ligatures contextual',
+                  wordSpacing: '0.05em',
+                  paddingBottom: '0.1em',
+                  overflow: 'visible'
+                }}>
+                  Manoj Kumar
+                </h2>
+              </div>
+              
+              {/* Dynamic Role */}
+              <div>
+                <h1 className={`text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 transition-colors duration-700 ${
+                  isDarkMode ? 'text-white' : 'text-gray-900'
+                }`}>
+                  <span className={`text-transparent bg-clip-text transition-all duration-700 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
+                      : 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
+                  }`}>
+                    {displayText}
+                    <span className={`animate-pulse ml-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>|</span>
+                  </span>
+                </h1>
+                
+                {/* Company Badge */}
+                <div className="flex justify-center lg:justify-start mb-6">
+                  <div className={`inline-flex items-center gap-2 backdrop-blur-sm rounded-full px-6 py-3 transition-all duration-700 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border border-purple-400/30' 
+                      : 'bg-gradient-to-r from-purple-100/80 to-indigo-100/80 border border-purple-300/50'
+                  }`}>
+                    <div className={`w-2 h-2 rounded-full transition-all duration-700 ${
+                      isDarkMode 
+                        ? 'bg-gradient-to-r from-purple-400 to-indigo-400' 
+                        : 'bg-gradient-to-r from-purple-500 to-indigo-500'
+                    }`}></div>
+                    <span className={`font-medium transition-colors duration-700 ${
+                      isDarkMode ? 'text-slate-300' : 'text-gray-700'
+                    }`}>
+                      Founder of <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>CyberTech Guard</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Description */}
+              <p className={`text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 transition-colors duration-700 ${
+                isDarkMode ? 'text-slate-400' : 'text-gray-600'
+              }`}>
+                Creating innovative mobile applications with a focus on user experience and technical excellence. 
+                Passionate about building solutions that make a difference in people's lives.
+              </p>
+              
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a 
+                  href="#contact" 
+                  className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Mail size={18} />
+                  <span>Contact Me</span>
+                </a>
+                
+                <a 
+                  href="https://linktr.ee/Manoj_18" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <ExternalLink size={18} />
+                  <span>My Website</span>
+                </a>
+                
+                <button 
+                  onClick={handleResumeDownload}
+                  className={`group px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium backdrop-blur-sm relative overflow-hidden ${
+                    isDarkMode 
+                      ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400' 
+                      : 'bg-white/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
+                  }`}
+                  title="Download Manoj Kumar's Resume"
+                  aria-label="Download Resume PDF"
+                >
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-cyan-400/10 to-transparent' 
+                      : 'bg-gradient-to-r from-blue-400/10 to-transparent'
+                  }`}></div>
+                  <Download size={18} />
+                  <span>Download Resume</span>
+                </button>
+              </div>
+              
+              {/* Social Links */}
+              <div className="flex gap-4 justify-center lg:justify-start">
+                <a 
+                  href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`group p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm relative overflow-hidden ${
+                    isDarkMode 
+                      ? 'bg-slate-800/80 hover:bg-blue-600 border border-slate-700/50 hover:border-blue-400/50' 
+                      : 'bg-white/80 hover:bg-blue-600 border border-gray-200/50 hover:border-blue-400/50'
+                  }`}
+                  aria-label="LinkedIn Profile"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Linkedin size={24} className={`transition-colors relative z-10 ${
+                    isDarkMode 
+                      ? 'text-slate-300 group-hover:text-white' 
+                      : 'text-gray-700 group-hover:text-white'
+                  }`} />
+                </a>
+                <a 
+                  href="https://github.com/Manojkumar945" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`group p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm relative overflow-hidden ${
+                    isDarkMode 
+                      ? 'bg-slate-800/80 hover:bg-gray-700 border border-slate-700/50 hover:border-gray-400/50' 
+                      : 'bg-white/80 hover:bg-gray-700 border border-gray-200/50 hover:border-gray-400/50'
+                  }`}
+                  aria-label="GitHub Profile"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Github size={24} className={`transition-colors relative z-10 ${
+                    isDarkMode 
+                      ? 'text-slate-300 group-hover:text-white' 
+                      : 'text-gray-700 group-hover:text-white'
+                  }`} />
+                </a>
+              </div>
+            </div>
+            
+            {/* Right Side - Professional Photo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Animated Background Rings */}
+                <div className="absolute inset-0 animate-rotate-ring">
+                  <div className={`w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-dashed transition-all duration-700 ${
+                    isDarkMode ? 'border-cyan-400/30' : 'border-blue-400/30'
+                  }`}></div>
+                </div>
+                <div className="absolute inset-4 animate-reverse-rotate-ring">
+                  <div className={`w-72 h-72 md:w-80 md:h-80 rounded-full border border-dotted transition-all duration-700 ${
+                    isDarkMode ? 'border-purple-400/20' : 'border-purple-400/20'
+                  }`}></div>
+                </div>
+                
+                {/* Main Photo Container */}
+                <div className="relative z-10">
+                  <div className={`w-80 h-80 md:w-96 md:h-96 rounded-full p-2 transition-all duration-700 animate-profile-glow ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600' 
+                      : 'bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700'
+                  }`}>
+                    <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-2xl">
+                      <img
+                        src="/My image copy.jpeg"
+                        alt="Manoj Kumar - Professional Photo"
+                        className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Floating Tech Badges */}
+                  <div className="absolute -top-4 -right-4 animate-float-tech">
+                    <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-gradient-to-r from-cyan-500/90 to-blue-600/90 text-white border border-cyan-400/30' 
+                        : 'bg-gradient-to-r from-blue-500/90 to-indigo-600/90 text-white border border-blue-400/30'
+                    }`}>
+                      React
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -bottom-6 -left-6 animate-float-tech" style={{ animationDelay: '1s' }}>
+                    <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-gradient-to-r from-purple-500/90 to-indigo-600/90 text-white border border-purple-400/30' 
+                        : 'bg-gradient-to-r from-purple-500/90 to-indigo-600/90 text-white border border-purple-400/30'
+                    }`}>
+                      Android
+                    </div>
+                  </div>
+                  
+                  <div className="absolute top-1/2 -right-8 animate-float-tech" style={{ animationDelay: '2s' }}>
+                    <div className={`px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-gradient-to-r from-emerald-500/90 to-teal-600/90 text-white border border-emerald-400/30' 
+                        : 'bg-gradient-to-r from-emerald-500/90 to-teal-600/90 text-white border border-emerald-400/30'
+                    }`}>
+                      Python
+                    </div>
+                  </div>
+                  
+                  {/* Professional Status Badge */}
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 animate-badge-pulse">
+                    <div className={`px-6 py-3 rounded-full text-sm font-bold shadow-xl backdrop-blur-sm ${
+                      isDarkMode 
+                        ? 'bg-gradient-to-r from-indigo-600/95 to-purple-700/95 text-white border border-indigo-400/50' 
+                        : 'bg-gradient-to-r from-indigo-600/95 to-purple-700/95 text-white border border-indigo-400/50'
+                    }`}>
+                      🚀 Available for Projects
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Floating Particles */}
+                <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-particle-float opacity-70"></div>
+                <div className="absolute top-20 right-16 w-1 h-1 bg-purple-400 rounded-full animate-particle-float opacity-60" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute bottom-20 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full animate-particle-float opacity-80" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute bottom-32 right-8 w-1 h-1 bg-indigo-400 rounded-full animate-particle-float opacity-50" style={{ animationDelay: '3s' }}></div>
               </div>
             </div>
           </div>
           
-          {/* Description - Moved Up */}
-          <p className={`text-lg md:text-xl mb-8 leading-relaxed max-w-2xl transition-colors duration-700 ${
-            isDarkMode ? 'text-slate-400' : 'text-gray-600'
-          }`}>
-            Creating innovative mobile applications with a focus on user experience and technical excellence. 
-            Passionate about building solutions that make a difference in people's lives.
-          </p>
-          
-          {/* Action Buttons - Moved Up */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-start">
-            <a 
-              href="#contact" 
-              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Mail size={18} />
-              <span>Contact Me</span>
-            </a>
-            
-            <a 
-              href="https://linktr.ee/Manoj_18" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <ExternalLink size={18} />
-              <span>My Website</span>
-            </a>
-            
-            <button 
-              onClick={handleResumeDownload}
-              className={`group px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium backdrop-blur-sm relative overflow-hidden ${
-                isDarkMode 
-                  ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400' 
-                  : 'bg-white/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
-              }`}
-              title="Download Manoj Kumar's Resume"
-              aria-label="Download Resume PDF"
-            >
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                isDarkMode 
-                  ? 'bg-gradient-to-r from-cyan-400/10 to-transparent' 
-                  : 'bg-gradient-to-r from-blue-400/10 to-transparent'
-              }`}></div>
-              <Download size={18} />
-              <span>Download Resume</span>
-            </button>
-          </div>
-          
-          {/* Contact Info Cards - Moved Up with Perfect Center Alignment */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-4xl">
+          {/* Contact Info Cards - Below the main content */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
             <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
               isDarkMode 
                 ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
@@ -260,7 +383,7 @@ const Hero = () => {
               <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
                 <Mail size={16} className="text-white" />
               </div>
-              <span className="text-sm font-medium flex-2 text-center">manojk46234@gmail.com</span>
+              <span className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
             </div>
             
             <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
@@ -273,46 +396,6 @@ const Hero = () => {
               </div>
               <span className="text-sm font-medium flex-1 text-center">Trichy, Tamil Nadu, India</span>
             </div>
-          </div>
-          
-          {/* Social Links - Moved Up */}
-          <div className="flex gap-4 justify-start mb-10">
-            <a 
-              href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`group p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm relative overflow-hidden ${
-                isDarkMode 
-                  ? 'bg-slate-800/80 hover:bg-blue-600 border border-slate-700/50 hover:border-blue-400/50' 
-                  : 'bg-white/80 hover:bg-blue-600 border border-gray-200/50 hover:border-blue-400/50'
-              }`}
-              aria-label="LinkedIn Profile"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Linkedin size={24} className={`transition-colors relative z-10 ${
-                isDarkMode 
-                  ? 'text-slate-300 group-hover:text-white' 
-                  : 'text-gray-700 group-hover:text-white'
-              }`} />
-            </a>
-            <a 
-              href="https://github.com/Manojkumar945" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`group p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm relative overflow-hidden ${
-                isDarkMode 
-                  ? 'bg-slate-800/80 hover:bg-gray-700 border border-slate-700/50 hover:border-gray-400/50' 
-                  : 'bg-white/80 hover:bg-gray-700 border border-gray-200/50 hover:border-gray-400/50'
-              }`}
-              aria-label="GitHub Profile"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Github size={24} className={`transition-colors relative z-10 ${
-                isDarkMode 
-                  ? 'text-slate-300 group-hover:text-white' 
-                  : 'text-gray-700 group-hover:text-white'
-              }`} />
-            </a>
           </div>
         </div>
       </div>
