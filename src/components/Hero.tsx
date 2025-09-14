@@ -276,21 +276,6 @@ const Hero = () => {
                       : 'text-gray-700 group-hover:text-white'
                   }`} />
                 </a>
-            <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
-              isDarkMode 
-                ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
-                : 'text-gray-700 bg-white/50 hover:bg-white/70 border border-gray-200/50 hover:border-blue-400/50'
-            }`}>
-              <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
-                <Phone size={16} className="text-white" />
-              </div>
-              <span className="text-sm font-medium flex-1 text-center">+91 7806892181</span>
-            </div>
-            
-            <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
-              isDarkMode 
-                ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
-                : 'text-gray-700 bg-white/50 hover:bg-white/70 border border-gray-200/50 hover:border-blue-400/50'
             }`}>
               <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
                 <Mail size={16} className="text-white" />
@@ -298,7 +283,7 @@ const Hero = () => {
               <span className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
             </div>
             
-            <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
+            <div className={\`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
               isDarkMode 
                 ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
                 : 'text-gray-700 bg-white/50 hover:bg-white/70 border border-gray-200/50 hover:border-blue-400/50'
@@ -317,14 +302,6 @@ const Hero = () => {
             <div className="absolute bottom-20 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full animate-particle-float opacity-80" style={{ animationDelay: '2s' }}></div>
             <div className="absolute bottom-32 right-8 w-1 h-1 bg-indigo-400 rounded-full animate-particle-float opacity-50" style={{ animationDelay: '3s' }}></div>
           </div>
-          
-          {/* Floating Particles */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-particle-float opacity-70"></div>
-            <div className="absolute top-20 right-16 w-1 h-1 bg-purple-400 rounded-full animate-particle-float opacity-60" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-20 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full animate-particle-float opacity-80" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute bottom-32 right-8 w-1 h-1 bg-indigo-400 rounded-full animate-particle-float opacity-50" style={{ animationDelay: '3s' }}></div>
-          </div>
         </div>
       </div>
       
@@ -332,7 +309,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <button 
           onClick={scrollToAbout}
-          className={`flex flex-col items-center gap-2 transition-colors duration-300 group ${
+          className={\`flex flex-col items-center gap-2 transition-colors duration-300 group ${
             isDarkMode 
               ? 'text-slate-400 hover:text-cyan-400' 
               : 'text-gray-500 hover:text-blue-600'
@@ -340,7 +317,7 @@ const Hero = () => {
           aria-label="Scroll to About section"
         >
           <span className="text-sm font-medium"></span>
-          <div className={`p-2 rounded-full border transition-colors duration-300 ${
+          <div className={\`p-2 rounded-full border transition-colors duration-300 ${
             isDarkMode 
               ? 'border-slate-600 group-hover:border-cyan-400' 
               : 'border-gray-400 group-hover:border-blue-600'
@@ -351,7 +328,7 @@ const Hero = () => {
       </div>
       
       {/* Enhanced bottom gradient */}
-      <div className={`absolute bottom-0 left-0 right-0 h-32 transition-all duration-700 ${
+      <div className={\`absolute bottom-0 left-0 right-0 h-32 transition-all duration-700 ${
         isDarkMode 
           ? 'bg-gradient-to-t from-indigo-900/80 to-transparent' 
           : 'bg-gradient-to-t from-blue-100/80 to-transparent'
