@@ -159,8 +159,8 @@ const Hero = () => {
                 }`}>
                   <span className={`text-transparent bg-clip-text transition-all duration-700 ${
                     isDarkMode 
-                      ? 'bg-gradient-to-r from-white-300 via-blue-400 to-purple-400' 
-                      : 'bg-gradient-to-r from-white-600 via-indigo-600 to-purple-600'
+                      ? 'bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
+                      : 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
                   }`}>
                     {displayText}
                     <span className={`animate-pulse ml-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>|</span>
@@ -212,7 +212,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium relative overflow-hidden"
-                >
+                ></a>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <ExternalLink size={18} />
                   <span>My Website</span>
