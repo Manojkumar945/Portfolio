@@ -159,7 +159,7 @@ const Hero = () => {
                 }`}>
                   <span className={`text-transparent bg-clip-text transition-all duration-700 ${
                     isDarkMode 
-                      ? 'bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400' 
+                      ? 'bg-gradient-to-r from-white-300 via-blue-400 to-purple-400' 
                       : 'bg-gradient-to-r from-white-600 via-indigo-600 to-purple-600'
                   }`}>
                     {displayText}
