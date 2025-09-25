@@ -48,15 +48,7 @@ const About = () => {
               isDarkMode ? 'text-slate-300' : 'text-gray-700'
             }`}>
               <p className="leading-relaxed text-lg">
-                I am <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Manoj Kumar S</span>, a passionate App Developer and <span className={`font-semibold ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>Founder of CyberTech Guard</span>. Currently pursuing my Bachelor of Technology in Information Technology at Paavai Engineering College, I combine technical expertise with entrepreneurial vision.
-              </p>
-              
-              <p className="leading-relaxed text-lg">
-                My journey includes working with renowned companies like <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>VCZ Recruitment (Switzerland)</span>, <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Corizo EduTech</span>, and <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>InternPe</span>. I serve as a <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Placement Coordinator</span> at Paavai Institutions and am a <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
-              </p>
-              
-              <p className="leading-relaxed text-lg">
-                With <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>9+ professional certifications</span> and expertise spanning Mobile App Development, Data Analytics, Cloud Computing, and AI/ML Technologies, I'm committed to creating applications that provide meaningful user experiences and solve real-world problems.
+                I’m Manoj Kumar S, a Placement Coordinator at Paavai Institutions, Founder of CyberTech Guard, and a passionate App Developer pursuing B.Tech in IT at Paavai Engineering College. With experience at Corizo EduTech and InternPe, I also serve as a Campus Ambassador for EXIMIUS – IIM Bangalore. Backed by 9+ certifications, my expertise spans Mobile App Development, Data Analytics, Cloud Computing, and AI/ML, driving me to build impactful applications that solve real-world problems.
               </p>
             </div>
             
