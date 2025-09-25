@@ -52,7 +52,7 @@ const About = () => {
               </p>
              
               <p className="leading-relaxed text-lg">
-                My journey includes working with renowned companies like <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>VCZ Recruitment (Switzerland)</span>, <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Corizo EduTech</span>, and <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>InternPe</span>. I serve as a <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Placement Coordinator</span> at Paavai Institutions and am a <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
+                My journey includes working with renowned companies like <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>NSIC Technical Services Centre</span>, <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Corizo EduTech</span> and <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>InternPe</span>. I serve as a <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Placement Coordinator</span> at Paavai Institutions and am a <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
               </p>
               
               <p className="leading-relaxed text-lg">
