@@ -59,8 +59,8 @@ const Hero = () => {
   const handleResumeDownload = () => {
     try {
       const link = document.createElement('a');
-      link.href = '/Manoj_Kumar_Resume.pdf';
-      link.download = 'Manoj_Kumar_Resume.pdf';
+      link.href = '/Manoj Kumar Resume Final2025 (1).pdf';
+      link.download = 'Manoj Kumar Resume Final2025 (1).pdf';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       
@@ -71,7 +71,7 @@ const Hero = () => {
       console.log('Resume download initiated');
     } catch (error) {
       console.error('Error downloading resume:', error);
-      window.open('/Manoj_Kumar_Resume.pdf', '_blank', 'noopener,noreferrer');
+      window.open('/Manoj Kumar Resume Final2025 (1).pdf', '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -225,7 +225,7 @@ const Hero = () => {
                       ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400' 
                       : 'bg-white/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
                   }`}
-                  title="Download Manoj Kumar's Resume"
+                  title="Download Manoj Kumar Resume Final2025 (1)"
                   aria-label="Download Resume PDF"
                 >
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
