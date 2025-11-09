@@ -14,13 +14,13 @@ const technicalSkills = [
 
 // Certifications with enhanced details and certificate images - NO ICONS OR DOTS
 const certifications = [
-  { 
-    name: "Data Analytics with Python", 
+  {
+    name: "Data Analytics with Python",
     issuer: "NPTEL Online Certifications",
     type: "Technical",
     year: "2025",
     color: "from-blue-500 to-cyan-500",
-    image: "/certificates/Data Analytics with Python.png",
+    image: "/certificates/Data Analytics with Python copy.png",
     description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score."
   },
   { 
