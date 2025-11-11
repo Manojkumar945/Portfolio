@@ -1,16 +1,18 @@
-import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Eye, ExternalLink, ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import ResumeViewer from './ResumeViewer';
 
 const Hero = () => {
   const { isDarkMode } = useTheme();
-  
+  const [isResumeViewerOpen, setIsResumeViewerOpen] = useState(false);
+
   const roles = [
     "App Developer",
-    "UI & UX Designer", 
+    "UI & UX Designer",
     "Web Developer"
   ];
-  
+
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
@@ -56,23 +58,8 @@ const Hero = () => {
     }
   };
 
-  const handleResumeDownload = () => {
-    try {
-      const link = document.createElement('a');
-      link.href = '/Manoj Kumar Resume Final2025 (1).pdf';
-      link.download = 'Manoj Kumar Resume Final2025 (1).pdf';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      console.log('Resume download initiated');
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      window.open('/Manoj Kumar Resume Final2025 (1).pdf', '_blank', 'noopener,noreferrer');
-    }
+  const handleResumeView = () => {
+    setIsResumeViewerOpen(true);
   };
 
   return (
@@ -218,23 +205,23 @@ const Hero = () => {
                   <span>My Website</span>
                 </a>
                 
-                <button 
-                  onClick={handleResumeDownload}
+                <button
+                  onClick={handleResumeView}
                   className={`group px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium backdrop-blur-sm relative overflow-hidden ${
-                    isDarkMode 
-                      ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400' 
+                    isDarkMode
+                      ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400'
                       : 'bg-white/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
                   }`}
-                  title="Download Manoj Kumar Resume Final2025 (1)"
-                  aria-label="Download Resume PDF"
+                  title="View resume"
+                  aria-label="View Resume PDF"
                 >
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    isDarkMode 
-                      ? 'bg-gradient-to-r from-cyan-400/10 to-transparent' 
+                    isDarkMode
+                      ? 'bg-gradient-to-r from-cyan-400/10 to-transparent'
                       : 'bg-gradient-to-r from-blue-400/10 to-transparent'
                   }`}></div>
-                  <Download size={18} />
-                  <span>Download Resume</span>
+                  <Eye size={18} />
+                  <span>View Resume</span>
                 </button>
               </div>
               
@@ -368,10 +355,17 @@ const Hero = () => {
       
       {/* Enhanced bottom gradient */}
       <div className={`absolute bottom-0 left-0 right-0 h-32 transition-all duration-700 ${
-        isDarkMode 
-          ? 'bg-gradient-to-t from-indigo-900/80 to-transparent' 
+        isDarkMode
+          ? 'bg-gradient-to-t from-indigo-900/80 to-transparent'
           : 'bg-gradient-to-t from-blue-100/80 to-transparent'
       }`}></div>
+
+      <ResumeViewer
+        isOpen={isResumeViewerOpen}
+        onClose={() => setIsResumeViewerOpen(false)}
+        resumeUrl="/Manoj Kumar Resume Final 2025.pdf"
+        resumeName="Manoj Kumar Resume Final 2025.pdf"
+      />
     </section>
   );
 };
