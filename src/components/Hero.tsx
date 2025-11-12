@@ -228,7 +228,7 @@ const Hero = () => {
               {/* Social Links */}
               <div className="flex gap-4 justify-center lg:justify-start">
                 <a 
-                  href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
+                  href="https://linkedin.com/in/manoj-kumar-s-4a57a325b" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={`group p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm relative overflow-hidden ${
