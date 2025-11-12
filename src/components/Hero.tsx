@@ -228,15 +228,11 @@ const Hero = () => {
               {/* Social Links */}
               <div className="flex gap-4 justify-center lg:justify-start">
                 <a 
-                  href="https://linkedin.com/in/manoj-kumar-s-4a57a325b" 
+                  href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`group p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm relative overflow-hidden ${
-                    isDarkMode 
-                      ? 'bg-slate-800/80 hover:bg-blue-600 border border-slate-700/50 hover:border-blue-400/50' 
-                      : 'bg-white/80 hover:bg-blue-600 border border-gray-200/50 hover:border-blue-400/50'
-                  }`}
-                  aria-label="LinkedIn Profile"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  aria-label="LinkedIn Profile""
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <Linkedin size={24} className={`transition-colors relative z-10 ${
