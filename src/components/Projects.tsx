@@ -13,7 +13,7 @@ const projects: Project[] = [
     technologies: ["Visual Studio", "AI", "Firebase", "IoT", "Cloud"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945"
+      github: "https://github.com/Manojkumar945/Stress-Detector"
     }
   },
   {
