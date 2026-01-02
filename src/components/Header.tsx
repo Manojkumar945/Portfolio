@@ -48,7 +48,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {['about', 'experience', 'skills', 'contact'].map((item) => (
+          {['about', 'experience', 'skills', 'projects', 'contact'].map((item) => (
             <button
               key={item}
               onClick={() => scrollTo(item)}
@@ -187,7 +187,7 @@ const Header = () => {
           isHeaderLight ? 'bg-white/95 backdrop-blur-md' : 'bg-indigo-950/95 backdrop-blur-md'
         }`}>
           <nav className="container mx-auto px-6 flex flex-col space-y-6 py-6">
-            {['about', 'experience', 'skills', 'contact'].map((item) => (
+            {['about', 'experience', 'skills', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollTo(item)}

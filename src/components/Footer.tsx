@@ -78,7 +78,7 @@ const Footer = () => {
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About', 'Experience', 'Skills', 'Contact'].map((item) => (
+              {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
