@@ -8,7 +8,7 @@ const projects: Project[] = [
     id: 1,
     title: "Brainwave Monitoring & Stress Alert System with AI Smart Therapy",
     category: "Healthcare",
-    image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/5831257/pexels-photo-5831257.jpeg",
     description: "A comprehensive cybersecurity mobile application providing real-time threat detection, secure browsing, and device protection. Built with Android Studio and integrated with modern security APIs.",
     technologies: ["Visual Studio", "AI", "Firebase", "IoT", "Cloud"],
     links: {
