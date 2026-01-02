@@ -226,7 +226,7 @@ const Hero = () => {
               </div>
               
               {/* Social Links */}
-              <div className="flex gap-4 justify-center lg:justify-start">
+              <div className="flex gap-4">
                 <a 
                   href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                   target="_blank" 
