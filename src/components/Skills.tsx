@@ -20,7 +20,7 @@ const certifications = [
     type: "Technical",
     year: "2025",
     color: "from-blue-500 to-cyan-500",
-    image: "https://certificates/Data Analytics with Python copy.png",
+    image: "/certificates/Data Analytics with Python copy.png",
     description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score."
   },
   { 
@@ -29,7 +29,7 @@ const certifications = [
     type: "Hardware",
     year: "2025",
     color: "from-green-500 to-teal-500",
-    image: "https://certificates/Raspberry pi Trainer Certification.png",
+    image: "/certificates/Raspberry pi Trainer Certification.png",
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
