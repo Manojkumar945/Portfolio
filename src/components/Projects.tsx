@@ -6,11 +6,11 @@ import type { Project } from '../types/types';
 const projects: Project[] = [
   {
     id: 1,
-    title: "CyberTech Guard",
-    category: "Mobile App",
+    title: "Brainwave Monitoring & Stress Alert System with AI Smart Therapy",
+    category: "Healthcare",
     image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "A comprehensive cybersecurity mobile application providing real-time threat detection, secure browsing, and device protection. Built with Android Studio and integrated with modern security APIs.",
-    technologies: ["Android Studio", "Java", "Firebase", "Material Design"],
+    technologies: ["Visual Studio", "AI", "Firebase", "IoT", "Cloud"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
       github: "https://github.com/Manojkumar945"
@@ -18,11 +18,11 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "E-Commerce Mobile App",
-    category: "Mobile App",
+    title: "Personal Portfolio",
+    category: "AI",
     image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "A full-featured e-commerce mobile application with user authentication, product catalog, shopping cart, and secure payment integration. Focused on smooth user experience and modern design patterns.",
-    technologies: ["Android Studio", "Java", "SQLite", "Payment Gateway APIs"],
+    technologies: ["AI", "HTML", "CSS", "JavaScript", "React Native", "JSON", "Git"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
       github: "https://github.com/Manojkumar945"
@@ -30,47 +30,11 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Weather Forecast App",
-    category: "Mobile App",
+    title: "Travel Route Planner",
+    category: "Front End",
     image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Real-time weather application with location-based forecasts, interactive maps, and detailed weather metrics. Features beautiful UI/UX with smooth animations and transitions.",
-    technologies: ["Android Studio", "Weather API", "Google Maps API", "Material Design"],
-    links: {
-      demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945"
-    }
-  },
-  {
-    id: 4,
-    title: "Task Manager Pro",
-    category: "Productivity",
-    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Advanced task management application with project tracking, team collaboration, deadline reminders, and productivity analytics. Designed for both personal and professional use.",
-    technologies: ["Android Studio", "Firebase", "Material Design", "Push Notifications"],
-    links: {
-      demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945"
-    }
-  },
-  {
-    id: 5,
-    title: "Fitness Tracker",
-    category: "Health & Fitness",
-    image: "https://images.pexels.com/photos/4164763/pexels-photo-4164763.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Comprehensive fitness tracking app with workout plans, calorie counter, progress tracking, and health insights. Integrates with wearable devices for real-time health monitoring.",
-    technologies: ["Android Studio", "Health APIs", "SQLite", "Charts Library"],
-    links: {
-      demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945"
-    }
-  },
-  {
-    id: 6,
-    title: "Social Connect",
-    category: "Social Media",
-    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Modern social networking app with real-time messaging, media sharing, user profiles, and social feeds. Built with focus on privacy and user engagement.",
-    technologies: ["Android Studio", "Firebase", "Real-time Database", "Image Processing"],
+    technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Route Analysis"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
       github: "https://github.com/Manojkumar945"
@@ -78,7 +42,7 @@ const projects: Project[] = [
   }
 ];
 
-const categories = ["All", "Mobile App", "Productivity", "Health & Fitness", "Social Media"];
+const categories = ["All", "Healthcare", "AI", "Front End"];
 
 const Projects = () => {
   const { isDarkMode } = useTheme();
