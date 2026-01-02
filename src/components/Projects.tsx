@@ -20,7 +20,7 @@ const projects: Project[] = [
     id: 2,
     title: "Personal Portfolio",
     category: "AI",
-    image: "https://media.licdn.com/dms/image/v2/D5612AQFa61WMBK_RZw/article-cover_image-shrink_720_1280/B56Ze.bqwTGQAM-/0/1751246614456?e=1762387200&v=beta&t=NsCSziT_1Kynde7yHpuKsUKtFSnpiTJyqvth6WR80kQ",
+    image: "https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg",
     description: "A full-featured e-commerce mobile application with user authentication, product catalog, shopping cart, and secure payment integration. Focused on smooth user experience and modern design patterns.",
     technologies: ["AI", "HTML", "CSS", "JavaScript", "React Native", "JSON", "Git"],
     links: {
