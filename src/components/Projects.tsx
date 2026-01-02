@@ -20,7 +20,7 @@ const projects: Project[] = [
     id: 2,
     title: "Personal Portfolio",
     category: "AI",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://www.istockphoto.com/photo/hacker-in-hoodie-using-laptop-with-digital-code-data-errors-and-cyber-attack-gm2232814466-648349190",
     description: "A full-featured e-commerce mobile application with user authentication, product catalog, shopping cart, and secure payment integration. Focused on smooth user experience and modern design patterns.",
     technologies: ["AI", "HTML", "CSS", "JavaScript", "React Native", "JSON", "Git"],
     links: {
