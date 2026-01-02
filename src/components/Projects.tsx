@@ -32,7 +32,7 @@ const projects: Project[] = [
     id: 3,
     title: "Travel Route Planner",
     category: "Front End",
-    image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
     description: "Real-time weather application with location-based forecasts, interactive maps, and detailed weather metrics. Features beautiful UI/UX with smooth animations and transitions.",
     technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Route Analysis"],
     links: {
