@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Personal Portfolio",
     category: "AI",
     image: "https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg",
-    description: "A full-featured e-commerce mobile application with user authentication, product catalog, shopping cart, and secure payment integration. Focused on smooth user experience and modern design patterns.",
+    description: "A personal portfolio website is a curated, online showcase of your best work, skills, and professional story, acting as a dynamic, visual resume to attract clients, employers, or collaborators by demonstrating your expertise, personality, and capabilities beyond static text. It's a centralized digital space to display projects (often with visuals, videos, and case studies) alongside your bio, contact info, and unique professional brand, helping you stand out in your industry.",
     technologies: ["AI", "HTML", "CSS", "JavaScript", "React Native", "JSON", "Git"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
