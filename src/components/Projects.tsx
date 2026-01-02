@@ -6,35 +6,71 @@ import type { Project } from '../types/types';
 const projects: Project[] = [
   {
     id: 1,
-    title: "Brainwave Monitoring & Stress Alert System with AI Smart Therapy",
-    category: "Healthcare",
-    image: "https://images.pexels.com/photos/5831257/pexels-photo-5831257.jpeg",
-    description: "A Brainwave Monitoring & Stress Alert System with AI Smart Therapy is an advanced digital health solution that uses wearable Electroencephalography (EEG) sensors to track real-time brain activity and physiological signals, detect elevated stress levels, issue timely alerts, and provide personalized, AI-driven therapeutic interventions.",
-    technologies: ["Visual Studio", "AI", "Firebase", "IoT", "Cloud"],
+    title: "CyberTech Guard",
+    category: "Mobile App",
+    image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "A comprehensive cybersecurity mobile application providing real-time threat detection, secure browsing, and device protection. Built with Android Studio and integrated with modern security APIs.",
+    technologies: ["Android Studio", "Java", "Firebase", "Material Design"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945/Stress-Detector"
+      github: "https://github.com/Manojkumar945"
     }
   },
   {
     id: 2,
-    title: "Personal Portfolio",
-    category: "AI",
-    image: "https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg",
-    description: "A personal portfolio website is a curated, online showcase of your best work, skills, and professional story, acting as a dynamic, visual resume to attract clients, employers, or collaborators by demonstrating your expertise, personality, and capabilities beyond static text. It's a centralized digital space to display projects (often with visuals, videos, and case studies) alongside your bio, contact info, and unique professional brand, helping you stand out in your industry.",
-    technologies: ["AI", "HTML", "CSS", "JavaScript", "React Native", "JSON", "Git"],
+    title: "E-Commerce Mobile App",
+    category: "Mobile App",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "A full-featured e-commerce mobile application with user authentication, product catalog, shopping cart, and secure payment integration. Focused on smooth user experience and modern design patterns.",
+    technologies: ["Android Studio", "Java", "SQLite", "Payment Gateway APIs"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945/Portfolio"
+      github: "https://github.com/Manojkumar945"
     }
   },
   {
     id: 3,
-    title: "Travel Route Planner",
-    category: "Front End",
-    image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-    description: "A Travel Route Planner website helps users create efficient and personalized travel itineraries by optimizing routes between multiple destinations, suggesting points of interest, and managing logistics like transport and accommodation, often using AI to tailor plans to user preferences for driving, transit, biking, or walking. These platforms consolidate bookings, offer real-time alerts, allow for collaboration, and can be customized for single trips or complex multi-stop journeys, saving time and reducing planning stress.",
-    technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Route Analysis"],
+    title: "Weather Forecast App",
+    category: "Mobile App",
+    image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Real-time weather application with location-based forecasts, interactive maps, and detailed weather metrics. Features beautiful UI/UX with smooth animations and transitions.",
+    technologies: ["Android Studio", "Weather API", "Google Maps API", "Material Design"],
+    links: {
+      demo: "https://linktr.ee/Manoj_18",
+      github: "https://github.com/Manojkumar945"
+    }
+  },
+  {
+    id: 4,
+    title: "Task Manager Pro",
+    category: "Productivity",
+    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Advanced task management application with project tracking, team collaboration, deadline reminders, and productivity analytics. Designed for both personal and professional use.",
+    technologies: ["Android Studio", "Firebase", "Material Design", "Push Notifications"],
+    links: {
+      demo: "https://linktr.ee/Manoj_18",
+      github: "https://github.com/Manojkumar945"
+    }
+  },
+  {
+    id: 5,
+    title: "Fitness Tracker",
+    category: "Health & Fitness",
+    image: "https://images.pexels.com/photos/4164763/pexels-photo-4164763.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Comprehensive fitness tracking app with workout plans, calorie counter, progress tracking, and health insights. Integrates with wearable devices for real-time health monitoring.",
+    technologies: ["Android Studio", "Health APIs", "SQLite", "Charts Library"],
+    links: {
+      demo: "https://linktr.ee/Manoj_18",
+      github: "https://github.com/Manojkumar945"
+    }
+  },
+  {
+    id: 6,
+    title: "Social Connect",
+    category: "Social Media",
+    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Modern social networking app with real-time messaging, media sharing, user profiles, and social feeds. Built with focus on privacy and user engagement.",
+    technologies: ["Android Studio", "Firebase", "Real-time Database", "Image Processing"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
       github: "https://github.com/Manojkumar945"
@@ -42,7 +78,7 @@ const projects: Project[] = [
   }
 ];
 
-const categories = ["All", "Healthcare", "AI", "Front End"];
+const categories = ["All", "Mobile App", "Productivity", "Health & Fitness", "Social Media"];
 
 const Projects = () => {
   const { isDarkMode } = useTheme();
