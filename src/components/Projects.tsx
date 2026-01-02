@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "Travel Route Planner",
     category: "Front End",
     image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-    description: "Real-time weather application with location-based forecasts, interactive maps, and detailed weather metrics. Features beautiful UI/UX with smooth animations and transitions.",
+    description: "A Travel Route Planner website helps users create efficient and personalized travel itineraries by optimizing routes between multiple destinations, suggesting points of interest, and managing logistics like transport and accommodation, often using AI to tailor plans to user preferences for driving, transit, biking, or walking. These platforms consolidate bookings, offer real-time alerts, allow for collaboration, and can be customized for single trips or complex multi-stop journeys, saving time and reducing planning stress.",
     technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Route Analysis"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
