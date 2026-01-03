@@ -224,7 +224,7 @@ const Hero = () => {
                   <span>View Resume</span>
                 </button>
               </div>
-              
+
             
             {/* Right Side - Profile Image & Contact Info */}
             <div className="flex flex-col items-center space-y-8">
