@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "Travel Route Planner",
     category: "Front End",
     image: "https://images.pexels.com/photos/13062236/pexels-photo-13062236.jpeg",
-    description: "Real-time weather application with location-based forecasts, interactive maps, and detailed weather metrics. Features beautiful UI/UX with smooth animations and transitions.",
+    description: "A journey planner, trip planner, or route planner is a specialized search engine used to find an optimal means of travelling between two or more given locations, sometimes using more than one transport mode. Searches may be optimized on different criteria, for example fastest, shortest, fewest changes, cheapest.",
     technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Google Maps API"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
