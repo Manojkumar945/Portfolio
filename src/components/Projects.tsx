@@ -25,7 +25,7 @@ const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript", "React Native", "JSON", "Visual Studio"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
-      github: "https://github.com/Manojkumar945"
+      github: "https://github.com/Manojkumar945/Portfolio"
     }
   },
   {
