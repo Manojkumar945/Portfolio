@@ -9,7 +9,7 @@ const projects: Project[] = [
     title: "Brainwave Monitoring & Stress Alert System with AI Smart Therapy",
     category: "Healthcare",
     image: "https://images.pexels.com/photos/5831257/pexels-photo-5831257.jpeg",
-    description: "A comprehensive cybersecurity mobile application providing real-time threat detection, secure browsing, and device protection. Built with Android Studio and integrated with modern security APIs.",
+    description: "The Brainwave Monitoring & Stress Alert System with AI Smart Therapy is an intelligent healthcare solution designed to detect and manage stress in real time. The system uses an EEG-based brainwave sensor to continuously monitor neural signals and analyze them using artificial intelligence algorithms. Based on the detected brainwave patterns, the user’s mental state is classified into normal, stress, or anxiety levels.",
     technologies: ["HTML", "CSS", "JavaScript", "Visual Studio", "Firebase", "AI", "IoT", "Cloud"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
