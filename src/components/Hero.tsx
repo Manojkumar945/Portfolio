@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, Eye, ExternalLink, ArrowDown } from 'lucide-react';
+import { Mail, MapPin, Eye, ExternalLink, ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import ResumeViewer from './ResumeViewer';
@@ -224,8 +224,8 @@ const Hero = () => {
                   <span>View Resume</span>
                 </button>
               </div>
+            </div>
 
-            
             {/* Right Side - Profile Image & Contact Info */}
             <div className="flex flex-col items-center space-y-8">
               {/* Profile Image */}
