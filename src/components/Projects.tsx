@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Personal Portfolio",
     category: "AI",
     image: "https://images.pexels.com/photos/1006293/pexels-photo-1006293.jpeg",
-    description: "A full-featured e-commerce mobile application with user authentication, product catalog, shopping cart, and secure payment integration. Focused on smooth user experience and modern design patterns.",
+    description: "A portfolio website shows your best work all in one place. It helps teachers, jobs, or schools learn more about you. A personal academic website can help you get noticed and trusted online.",
     technologies: ["HTML", "CSS", "JavaScript", "React Native", "JSON", "Visual Studio"],
     links: {
       demo: "https://linktr.ee/Manoj_18",
