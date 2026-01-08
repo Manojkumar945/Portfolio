@@ -29,7 +29,7 @@ const certifications = [
     type: "Hardware",
     year: "2025",
     color: "from-green-500 to-teal-500",
-    image: "/certificates/Raspberry pi Trainer Certification.png",
+    image: "public/certificates/raspberry_pi_trainer_certification.png",
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
