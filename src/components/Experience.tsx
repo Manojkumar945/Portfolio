@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const experiences = [
   {
-    title: "Placement Coordinator",
+    title: "Placement Coordinator - Full Time",
     company: "Paavai Institutions",
     location: "Tamil Nadu, India",
     period: "09/2023 - Present",
@@ -13,7 +13,7 @@ const experiences = [
     ]
   },
   {
-    title: "Chief Marketing Officer",
+    title: "Chief Marketing Officer - Remote",
     company: "VCZ RECRUITMENT",
     location: "Zug, Switzerland",
     period: "04/2025 - 06/2025",
@@ -23,7 +23,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern",
+    title: "Intern - Hybrid",
     company: "Corizo EduTech",
     location: "Bangalore, India",
     period: "04/2025 - 05/2025",
@@ -33,7 +33,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern",
+    title: "Intern - Hybrid",
     company: "InternPe",
     location: "Jaipur, India",
     period: "01/2025 - 03/2025",
@@ -43,7 +43,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern",
+    title: "Intern - Hybrid",
     company: "CodTech IT Solutions",
     location: "Hyderabad, India",
     period: "01/2025 - 01/2025",
@@ -54,7 +54,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern",
+    title: "Intern - Hybrid",
     company: "Codec Technologies",
     location: "Mumbai, India",
     period: "01/2025 - 01/2025",
@@ -65,7 +65,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern",
+    title: "Intern - On-Site",
     company: "NSIC Technical Services Centre",
     location: "Chennai, India",
     period: "07/2024 - 08/2024",
