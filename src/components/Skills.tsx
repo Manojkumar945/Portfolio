@@ -47,7 +47,7 @@ const certifications = [
     type: "Development",
     year: "2024",
     color: "from-purple-500 to-indigo-500",
-    image: "/certificates/DOC-20241231-WA0000..png",
+    image: "public/certificates/infosys_certificate.png",
     description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard."
   },
   { 
