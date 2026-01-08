@@ -56,7 +56,7 @@ const certifications = [
     type: "Academic",
     year: "2024",
     color: "from-orange-500 to-red-500",
-    image: "/certificates/MANOJ KUMAR S.pdf.png",
+    image: "public/certificates/umpsa_certificate.png",
     description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024."
   },
   { 
