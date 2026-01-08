@@ -12,7 +12,7 @@ const projects: Project[] = [
     description: "The Brainwave Monitoring & Stress Alert System with AI Smart Therapy is an intelligent healthcare solution designed to detect and manage stress in real time. The system uses an EEG-based brainwave sensor to continuously monitor neural signals and analyze them using artificial intelligence algorithms. Based on the detected brainwave patterns, the user’s mental state is classified into normal, stress, or anxiety levels.",
     technologies: ["HTML", "CSS", "JavaScript", "Visual Studio", "Firebase", "AI", "IoT", "Cloud"],
     links: {
-      demo: "https://linktr.ee/Manoj_18",
+      demo: "https://www.linkedin.com/posts/manoj-kumar-s-4a57a325b_ai-iot-eeg-activity-7415068410612727808-9o0O?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEACxP0B6cQCl5LaoYEHYyLK3VyNtqBZu-o",
       github: "https://github.com/Manojkumar945/Stress-Detector"
     }
   },
