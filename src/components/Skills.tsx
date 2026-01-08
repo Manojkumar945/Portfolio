@@ -38,7 +38,7 @@ const certifications = [
     type: "Analytics",
     year: "2024",
     color: "from-emerald-500 to-green-500",
-    image: "/certificates/MS Excel Course Certificate.pdf.png",
+    image: "public/certificates/ms_excel_course_certificate.pdf.png",
     description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera."
   },
   { 
