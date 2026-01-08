@@ -74,7 +74,7 @@ const certifications = [
     type: "AI/ML",
     year: "2024",
     color: "from-violet-500 to-purple-500",
-    image: "/certificates/Google AI-ML Certificate.pdf.png",
+    image: "public/certificates/google_ai-ml_certificate.pdf.png",
     description: "10-week AI-ML Virtual Internship supported by Google for Developers, covering artificial intelligence and machine learning fundamentals."
   },
   { 
