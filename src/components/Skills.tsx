@@ -20,7 +20,7 @@ const certifications = [
     type: "Technical",
     year: "2025",
     color: "from-blue-500 to-cyan-500",
-    image: "/home/project/public/data_analytics_with_python.png",
+    image: "public/data_analytics_with_python.png",
     description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score."
   },
   { 
