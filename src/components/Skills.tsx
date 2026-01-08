@@ -9,7 +9,7 @@ const technicalSkills = [
   { name: "Python", proficiency: 75, category: "Programming", icon: "/icons8-python-48.png", color: "from-green-400 to-blue-500" },
   { name: "Android Studio", proficiency: 60, category: "Mobile", icon: "/icons8-android-studio-48.png", color: "from-green-400 to-teal-500" },
   { name: "Microsoft Excel", proficiency: 75, category: "Analytics", icon: "/icons8-ms-excel-48.png", color: "from-emerald-400 to-cyan-500" },
-  { name: "Logo Design", proficiency: 65, category: "Design", icon: "/icons8-logo-design-32.png", color: "from-purple-400 to-pink-500" }
+  { name: "Logo Design", proficiency: 65, category: "Design", icon: "/icons8-logo-design-32 copy.png", color: "from-purple-400 to-pink-500" }
 ];
 
 // Certifications with enhanced details and certificate images - NO ICONS OR DOTS
