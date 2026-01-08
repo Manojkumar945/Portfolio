@@ -83,7 +83,7 @@ const certifications = [
     type: "Mobile",
     year: "2024",
     color: "from-green-500 to-emerald-500",
-    image: "/certificates/Google Android Developer Certificate.pdf.png",
+    image: "public/certificates/google_android_developer_certificate.pdf.png",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
   { 
