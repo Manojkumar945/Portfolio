@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const experiences = [
   {
-    title: "Placement Coordinator - Full Time",
+    title: "Placement Coordinator",
     company: "Paavai Institutions",
     location: "Tamil Nadu, India",
     period: "09/2023 - Present",
@@ -13,9 +13,9 @@ const experiences = [
     ]
   },
   {
-    title: "Chief Marketing Officer - Remote",
+    title: "Chief Marketing Officer",
     company: "VCZ RECRUITMENT",
-    location: "Zug, Switzerland",
+    location: "Remote",
     period: "04/2025 - 06/2025",
     description: "A Company focused on Sales and Marketing Technologies.",
     achievements: [
@@ -23,7 +23,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern - Hybrid",
+    title: "Android Developer Intern",
     company: "Corizo EduTech",
     location: "Bangalore, India",
     period: "04/2025 - 05/2025",
@@ -33,9 +33,9 @@ const experiences = [
     ]
   },
   {
-    title: "Intern - Hybrid",
+    title: "Web Developer Intern",
     company: "InternPe",
-    location: "Jaipur, India",
+    location: "Remote",
     period: "01/2025 - 03/2025",
     description: "A Company focused on IT Solutions, Specializing in Web Development.",
     achievements: [
@@ -43,9 +43,9 @@ const experiences = [
     ]
   },
   {
-    title: "Intern - Hybrid",
+    title: "App Developer Intern",
     company: "CodTech IT Solutions",
-    location: "Hyderabad, India",
+    location: "Remote",
     period: "01/2025 - 01/2025",
     description: "A company focused on IT solutions, specializing in app development.",
     achievements: [
@@ -54,9 +54,9 @@ const experiences = [
     ]
   },
   {
-    title: "Intern - Hybrid",
+    title: "App Developer Intern",
     company: "Codec Technologies",
-    location: "Mumbai, India",
+    location: "Remote",
     period: "01/2025 - 01/2025",
     description: "A tech company focusing on app development and technology solutions.",
     achievements: [
@@ -65,7 +65,7 @@ const experiences = [
     ]
   },
   {
-    title: "Intern - On-Site",
+    title: "Android App Developer Intern",
     company: "NSIC Technical Services Centre",
     location: "Chennai, India",
     period: "07/2024 - 08/2024",
