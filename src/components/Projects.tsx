@@ -36,7 +36,7 @@ const projects: Project[] = [
     description: "A journey planner, trip planner, or route planner is a specialized search engine used to find an optimal means of travelling between two or more given locations, sometimes using more than one transport mode. Searches may be optimized on different criteria, for example fastest, shortest, fewest changes, cheapest.",
     technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Google Maps API"],
     links: {
-      demo: "https://linktr.ee/Manoj_18",
+      demo: "https://www.linkedin.com/posts/manoj-kumar-s-4a57a325b_better-planning-makes-better-journeys-activity-7350575570084130816-UDIw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEACxP0B6cQCl5LaoYEHYyLK3VyNtqBZu-o",
       github: "https://github.com/Manojkumar945"
     }
   }
