@@ -92,7 +92,7 @@ const certifications = [
     type: "Leadership",
     year: "2024",
     color: "from-yellow-500 to-orange-500",
-    image: "/certificates/WhatsApp Image 2025-06-18 at 10.09.39 AM.jpeg",
+    image: "public/eximius_campus_ambassador.jpeg",
     description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
   }
 ];
