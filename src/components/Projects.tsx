@@ -24,7 +24,7 @@ const projects: Project[] = [
     description: "A portfolio website shows your best work all in one place. It helps teachers, jobs, or schools learn more about you. A personal academic website can help you get noticed and trusted online.",
     technologies: ["HTML", "CSS", "JavaScript", "React Native", "JSON", "Visual Studio"],
     links: {
-      demo: "https://linktr.ee/Manoj_18",
+      demo: "https://www.linkedin.com/posts/manoj-kumar-s-4a57a325b_tech-projects-passion-activity-7345142738931040257-yAGL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEACxP0B6cQCl5LaoYEHYyLK3VyNtqBZu-o",
       github: "https://github.com/Manojkumar945/Portfolio"
     }
   },
