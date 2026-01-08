@@ -13,7 +13,7 @@ const ResumeManager = ({ isOpen, onClose, onResumeChange }: ResumeManagerProps) 
   const [selectedResume, setSelectedResume] = useState('');
 
   const availableResumes = [
-    { url: 'https://Manoj Kumar Resume Final 2025.pdf', name: 'Manoj Kumar Resume Final 2025' },
+    { url: 'https://Resume Final.pdf', name: 'Resume Final' },
   ];
 
   const handleSelectResume = (resume: typeof availableResumes[0]) => {
