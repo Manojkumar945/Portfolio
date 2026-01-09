@@ -20,7 +20,7 @@ const certifications = [
     type: "Technical",
     year: "2025",
     color: "from-blue-500 to-cyan-500",
-    image: "public/data_analytics_with_python.png",
+    image: "/data_analytics_with_python.png",
     description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score."
   },
   { 
@@ -29,7 +29,7 @@ const certifications = [
     type: "Hardware",
     year: "2025",
     color: "from-green-500 to-teal-500",
-    image: "public/certificates/raspberry_pi_trainer_certification.png",
+    image: "/certificates/raspberry_pi_trainer_certification.png",
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
@@ -38,7 +38,7 @@ const certifications = [
     type: "Analytics",
     year: "2024",
     color: "from-emerald-500 to-green-500",
-    image: "public/certificates/ms_excel_course_certificate.pdf.png",
+    image: "/certificates/ms_excel_course_certificate.pdf.png",
     description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera."
   },
   { 
@@ -47,7 +47,7 @@ const certifications = [
     type: "Development",
     year: "2024",
     color: "from-purple-500 to-indigo-500",
-    image: "public/certificates/infosys_certificate.png",
+    image: "/certificates/infosys_certificate.png",
     description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard."
   },
   { 
@@ -56,7 +56,7 @@ const certifications = [
     type: "Academic",
     year: "2024",
     color: "from-orange-500 to-red-500",
-    image: "public/certificates/umpsa_certificate.png",
+    image: "/certificates/umpsa_certificate.png",
     description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024."
   },
   { 
@@ -65,7 +65,7 @@ const certifications = [
     type: "Cloud",
     year: "2024",
     color: "from-sky-500 to-blue-500",
-    image: "public/certificates/cloud_computing_(1).pdf.png",
+    image: "/certificates/cloud_computing_(1).pdf.png",
     description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur."
   },
   { 
@@ -74,7 +74,7 @@ const certifications = [
     type: "AI/ML",
     year: "2024",
     color: "from-violet-500 to-purple-500",
-    image: "public/certificates/google_ai-ml_certificate.pdf.png",
+    image: "/certificates/google_ai-ml_certificate.pdf.png",
     description: "10-week AI-ML Virtual Internship supported by Google for Developers, covering artificial intelligence and machine learning fundamentals."
   },
   { 
@@ -83,7 +83,7 @@ const certifications = [
     type: "Mobile",
     year: "2024",
     color: "from-green-500 to-emerald-500",
-    image: "public/certificates/google_android_developer_certificate.pdf.png",
+    image: "/certificates/google_android_developer_certificate.pdf.png",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
   { 
@@ -92,7 +92,7 @@ const certifications = [
     type: "Leadership",
     year: "2024",
     color: "from-yellow-500 to-orange-500",
-    image: "public/eximius_campus_ambassador.jpeg",
+    image: "/eximius_campus_ambassador.jpeg",
     description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
   }
 ];
