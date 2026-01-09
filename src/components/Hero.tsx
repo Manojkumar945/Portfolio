@@ -241,7 +241,7 @@ const Hero = () => {
                     : 'border-blue-400/50 shadow-2xl shadow-blue-400/20'
                 }`}>
                   <img 
-                    src="/img_5167.jpg" 
+                    src="/img_5167 copy.jpg" 
                     alt="Manoj Kumar - App Developer & UI/UX Designer" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
