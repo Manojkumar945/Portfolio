@@ -325,7 +325,7 @@ const Projects = () => {
                     className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-xl transition-all duration-300 font-medium shadow-lg hover:shadow-xl"
                   >
                     <ExternalLink size={20} />
-                    <span>View Live Demo</span>
+                    <span>View Demo Video</span>
                   </a>
                   <a
                     href={selectedProject.links.github}
