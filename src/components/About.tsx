@@ -101,34 +101,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Side - Profile Image & Contact Info */}
-            <div className="flex flex-col items-center space-y-8">
-              {/* Profile Image */}
-              <div className="relative group">
-                <div className={`absolute -inset-4 rounded-full blur-xl transition-all duration-700 ${
-                  isDarkMode 
-                    ? 'bg-gradient-to-r from-cyan-400/30 via-blue-500/30 to-purple-500/30' 
-                    : 'bg-gradient-to-r from-blue-400/40 via-indigo-500/40 to-purple-500/40'
-                }`}></div>
-                <div className={`relative w-80 h-80 rounded-full overflow-hidden border-4 transition-all duration-700 ${
-                  isDarkMode 
-                    ? 'border-cyan-400/50 shadow-2xl shadow-cyan-400/20' 
-                    : 'border-blue-400/50 shadow-2xl shadow-blue-400/20'
-                }`}>
-                  <img 
-                    src="/img_5167.jpg" 
-                    alt="Manoj Kumar - App Developer & UI/UX Designer" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className={`absolute inset-0 transition-opacity duration-700 ${
-                    isDarkMode 
-                      ? 'bg-gradient-to-t from-indigo-900/20 to-transparent' 
-                      : 'bg-gradient-to-t from-blue-900/10 to-transparent'
-                  }`}></div>
-                </div>
-              </div>
-              
           {/* Key Strengths - Right Side */}
           <div>
             <div className={`p-8 rounded-2xl shadow-2xl backdrop-blur-sm transition-all duration-700 ${
