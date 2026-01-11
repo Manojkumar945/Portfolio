@@ -13,6 +13,26 @@ const experiences = [
     ]
   },
   {
+    title: "Android Developer Intern",
+    company: "Inspire AI",
+    location: "Bangalore, India",
+    period: "06/2025 - 09/2025",
+    description: "A company focused on IT solutions, specializing in app development.",
+    achievements: [
+      "Participated in Android development and app development projects."
+    ]
+  },
+  {
+    title: "Python Developer Intern",
+    company: "The Developers Arena",
+    location: "Pune, India",
+    period: "04/2025 - 10/2025",
+    description: "A company focused on IT solutions, specializing in app development.",
+    achievements: [
+      "Participated in Android development and app development projects."
+    ]
+  },
+  {
     title: "Chief Marketing Officer",
     company: "VCZ RECRUITMENT",
     location: "Remote",
