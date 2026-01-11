@@ -96,7 +96,7 @@ const certifications = [
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
   { 
-    name: "Workshop", 
+    name: "Technical Workshop", 
     issuer: "Way2me",
     type: "Blockchain",
     year: "2024",
