@@ -145,7 +145,7 @@ const Skills = () => {
           <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
             isDarkMode ? 'text-slate-400' : 'text-gray-600'
           }`}>
-            My technical skills and professional certifications with interactive certificate viewing
+            My technical skills and professional certifications with interactive certificate showcase
           </p>
         </div>
         
