@@ -100,7 +100,7 @@ const certifications = [
     issuer: "Way2me",
     type: "Blockchain",
     year: "2024",
-    color: "from-green-500 to-emerald-500",
+    color: "from-red-500 to-orange-500",
     image: "/certificates/google_android_developer_certificate.pdf.png",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
