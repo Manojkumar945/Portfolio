@@ -21,7 +21,7 @@ const certifications = [
     year: "2025",
     color: "from-sky-500 to-blue-500",
     image: "/conference_certificate.pdf.png",
-    description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur."
+    description: "Participated in National Conference on Recent Trends in Artificial Intelligence & Data Science (NCRTAD 25)."
   },
   {
     name: "Data Analytics with Python",
