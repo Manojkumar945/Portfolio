@@ -136,7 +136,7 @@ const certifications = [
     issuer: "Coimbatore Institute of Technology",
     type: "Paper Presentation",
     year: "2024",
-    color: "from-lime-500 to-grey-500",
+    color: "from-lime-500 to-lime-500",
     image: "/certificates/google_android_developer_certificate.pdf.png",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
