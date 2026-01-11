@@ -42,22 +42,22 @@ const certifications = [
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
-    name: "30 days Masterclass", 
+    name: "30 days Masterclass in FullStack Web Development", 
     issuer: "Pantech AI",
     type: "Development",
     year: "2025",
     color: "from-pink-500 to-pink-500",
     image: "/manoj_kumar.s.png",
-    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+    description: "Successfully completed an intensive full stack web development masterclass covering front-end and back-end technologies."
   },
   { 
-    name: "AI Tools Workshop", 
+    name: "AI Tools & ChatGPT Workshop", 
     issuer: "be10x",
     type: "AI Tools",
     year: "2025",
     color: "from-red-500 to-red-500",
     image: "/ai_tools_workshop_certificate.jpg",
-    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+    description: "Completed an AI tools and ChatGPT workshop focused on rapid presentation creation, data analysis, and coding productivity."
   },
   { 
     name: "Introduction to Microsoft Excel", 
@@ -132,13 +132,13 @@ const certifications = [
     description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
   },
   { 
-    name: "National Level Technical Symposium", 
+    name: "PINNACLE-24 National Level Technical Symposium", 
     issuer: "Coimbatore Institute of Technology",
     type: "Paper Presentation",
     year: "2024",
     color: "from-lime-500 to-lime-500",
     image: "/symposium_certificate.png",
-    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+    description: "Participated in a national-level technical symposium organized by the ECE Association and IETE Students’ Forum."
   },
 ];
 
