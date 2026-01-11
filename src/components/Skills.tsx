@@ -46,7 +46,7 @@ const certifications = [
     issuer: "Pantech AI",
     type: "Development",
     year: "2025",
-    color: "from-green-500 to-emerald-500",
+    color: "from-pink-500 to-pink-500",
     image: "/manoj_kumar.s.png",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
