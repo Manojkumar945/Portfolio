@@ -21,7 +21,7 @@ const certifications = [
     year: "2025",
     color: "from-sky-500 to-blue-500",
     image: "/conference_certificate.pdf.png",
-    description: "Participated in National Conference on Recent Trends in Artificial Intelligence & Data Science (NCRTAD 25)."
+    description: "Participated in National Conference on Recent Trends in Artificial Intelligence & Data Science (NCRTAD-25)."
   },
   {
     name: "Data Analytics with Python",
