@@ -27,9 +27,9 @@ const experiences = [
     company: "The Developers Arena",
     location: "Pune, India",
     period: "04/2025 - 10/2025",
-    description: "A company focused on IT solutions, specializing in app development.",
+    description: "Completed a 6-month internship focused on Python development and project execution.",
     achievements: [
-      "Participated in Android development and app development projects."
+      "Successfully delivered all project requirements with recognized technical excellence."
     ]
   },
   {
