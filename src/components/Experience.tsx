@@ -25,7 +25,7 @@ const experiences = [
   {
     title: "Python Developer Intern",
     company: "The Developers Arena",
-    location: "Pune, India",
+    location: "Remote",
     period: "04/2025 - 10/2025",
     description: "Completed a 6-month internship focused on Python development and project execution.",
     achievements: [
