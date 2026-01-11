@@ -7,7 +7,7 @@ const technicalSkills = [
   { name: "HTML", proficiency: 70, category: "Frontend", icon: "/icons8-html5-48.png", color: "from-orange-400 to-red-500" },
   { name: "Java", proficiency: 60, category: "Programming", icon: "/icons8-java-94.png", color: "from-blue-400 to-indigo-500" },
   { name: "Python", proficiency: 75, category: "Backend", icon: "/icons8-python-48 copy.png", color: "from-green-400 to-blue-500" },
-  { name: "", proficiency: 60, category: "Mobile App", icon: "/icons8-android-studio-48.png", color: "from-green-400 to-teal-500" },
+  { name: "Android Studio ", proficiency: 60, category: "Mobile App", icon: "/icons8-android-studio-48.png", color: "from-green-400 to-teal-500" },
   { name: "Microsoft Excel", proficiency: 75, category: "Analytics", icon: "/icons8-ms-excel-48.png", color: "from-emerald-400 to-cyan-500" },
   { name: "Logo Design", proficiency: 65, category: "Design", icon: "/icons8-logo-design-32 copy.png", color: "from-purple-400 to-pink-500" }
 ];
