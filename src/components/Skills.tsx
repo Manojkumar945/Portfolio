@@ -99,6 +99,7 @@ const certifications = [
     name: "Technical Workshop", 
     issuer: "Way2me",
     type: "Blockchain",
+    type: "Cloud Computing",
     year: "2024",
     color: "from-green-500 to-emerald-500",
     image: "/certificates/google_android_developer_certificate.pdf.png",
