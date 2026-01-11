@@ -52,11 +52,11 @@ const About = () => {
               </p>
              
               <p className="leading-relaxed text-lg">
-                My journey includes working with renowned companies like <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>NSIC Technical Services Centre</span>, <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Corizo EduTech</span> and <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>InternPe</span>. I serve as a <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Placement Coordinator</span> at Paavai Institutions and am a <span className={isDarkMode ? 'text-purple-400' : 'text-purple-600'}>Campus Ambassador</span> for EXIMIUS - IIM Bangalore.
+                I served as a <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Placement Coordinator</span> at Paavai Institutions and am a <span className={`font-semibold ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>Developer</span> of my final year Project. I aim to work in a dynamic organization where I can enhance my technical expertise, collaborate effectively with teams and create meaningful impact through technology.
               </p>
               
               <p className="leading-relaxed text-lg">
-                With <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>9+ professional certifications</span> and expertise spanning Mobile App Development, Data Analytics, Cloud Computing, and AI/ML Technologies, I'm committed to creating applications that provide meaningful user experiences and solve real-world problems.
+                My career objective is to grow as a skilled software professional by continuously learning new technologies and contributing to the development of innovative, user-centric solutions. With <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>14+ professional certifications</span> and expertise spanning the Technologies. I'm committed to creating applications that provide meaningful user experiences and solve real-world problems.
               </p>
             </div>
             
@@ -96,7 +96,7 @@ const About = () => {
                 }`}>1</span>
                 <span className={`text-sm font-medium ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                }`}>Company</span>
+                }`}>Startup Company</span>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ const About = () => {
             <p className={`text-lg leading-relaxed max-w-4xl mx-auto transition-colors duration-700 ${
               isDarkMode ? 'text-slate-300' : 'text-gray-700'
             }`}>
-              "To revolutionize the Mobile App Development landscape by creating innovative, user-centric Applications that seamlessly blend cutting-edge Technology with intuitive design. Through CyberTech Guard and my professional journey, I aim to contribute to a digital future where Technology serves humanity's greatest needs and aspirations."
+              "I aspire to contribute to organizations that value innovation, teamwork, and continuous learning, where I can apply my knowledge to build scalable and impactful digital products. Through consistent effort and hands-on experience, I envision growing into a responsible technologist who delivers high-quality solutions aligned with business and user needs."
             </p>
           </div>
         </div>
