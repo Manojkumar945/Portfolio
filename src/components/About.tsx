@@ -96,7 +96,7 @@ const About = () => {
                 }`}>1</span>
                 <span className={`text-sm font-medium ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                }`}>Company</span>
+                }`}>Startup</span>
               </div>
             </div>
           </div>
