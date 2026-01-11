@@ -119,7 +119,7 @@ const certifications = [
     type: "Blockchain",
     year: "2024",
     color: "from-red-500 to-orange-500",
-    image: "/certificates/google_android_developer_certificate.pdf.png",
+    image: "/blockchain_and_cloud_computing_workshop_certificate.jpg",
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
   { 
