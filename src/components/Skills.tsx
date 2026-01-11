@@ -96,6 +96,15 @@ const certifications = [
     description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
   },
   { 
+    name: "Workshop", 
+    issuer: "Way2me",
+    type: "Blockchain",
+    year: "2024",
+    color: "from-green-500 to-emerald-500",
+    image: "/certificates/google_android_developer_certificate.pdf.png",
+    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+  },
+  { 
     name: "Campus Ambassador Program", 
     issuer: "EXIMIUS - IIM Bangalore",
     type: "Leadership",
@@ -103,7 +112,16 @@ const certifications = [
     color: "from-yellow-500 to-orange-500",
     image: "/eximius_campus_ambassador.jpeg",
     description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
-  }
+  },
+  { 
+    name: "National Level Technical Symposium", 
+    issuer: "Coimbatore Institute of Technology",
+    type: "Paper Presentation",
+    year: "2024",
+    color: "from-green-500 to-emerald-500",
+    image: "/certificates/google_android_developer_certificate.pdf.png",
+    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+  },
 ];
 
 const Skills = () => {
