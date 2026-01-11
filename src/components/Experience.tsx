@@ -17,7 +17,7 @@ const experiences = [
     company: "Inspire AI",
     location: "Bangalore, India",
     period: "06/2025 - 09/2025",
-    description: "A company focused on IT solutions, specializing in app development.",
+    description: "Completed a Full Stack Web Development internship with hands-on experience in front-end and back-end technologies.",
     achievements: [
       "Participated in Android development and app development projects."
     ]
