@@ -347,7 +347,7 @@ const Skills = () => {
                   <div className="text-4xl font-bold text-purple-400">{certifications.length}</div>
                   <div className={`text-sm ${
                     isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                  }`}>Interactive</div>
+                  }`}>Certificates</div>
                 </div>
               </div>
             </div>
