@@ -101,71 +101,33 @@ const About = () => {
             </div>
           </div>
 
-          {/* Key Strengths - Right Side */}
-          <div>
-            <div className={`p-8 rounded-2xl shadow-2xl backdrop-blur-sm transition-all duration-700 ${
-              isDarkMode 
-                ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50' 
-                : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50'
-            }`}>
-              <h3 className={`text-2xl font-semibold mb-6 transition-colors duration-700 ${
-                isDarkMode ? 'text-white' : 'text-gray-900'
-              }`}>Key Strengths</h3>
-              <div className="space-y-4">
-                {[
-                  { 
-                    title: "Mobile App Development", 
-                    desc: "Expert in Android Studio with hands-on experience in creating user-centric mobile applications",
-                    icon: "📱"
-                  },
-                  { 
-                    title: "Leadership & Management", 
-                    desc: "Proven leadership as Founder of CyberTech Guard and Placement Coordinator role",
-                    icon: "👥"
-                  },
-                  { 
-                    title: "Data Analytics & AI", 
-                    desc: "Certified in Python data analytics, cloud computing, and Google AI-ML technologies",
-                    icon: "📊"
-                  },
-                  { 
-                    title: "International Exposure", 
-                    desc: "Global perspective through Switzerland internship and Malaysia university program",
-                    icon: "🌍"
-                  },
-                  { 
-                    title: "Technical Innovation", 
-                    desc: "Continuous learning mindset with expertise in emerging technologies and frameworks",
-                    icon: "⚡"
-                  },
-                  { 
-                    title: "Problem-Solving Excellence", 
-                    desc: "Strong analytical abilities with focus on creating solutions that make real impact",
-                    icon: "🎯"
-                  }
-                ].map((competency, index) => (
-                  <div key={index} className={`p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm ${
+          {/* Right Side - Profile Image & Contact Info */}
+            <div className="flex flex-col items-center space-y-8">
+              {/* Profile Image */}
+              <div className="relative group">
+                <div className={`absolute -inset-4 rounded-full blur-xl transition-all duration-700 ${
+                  isDarkMode 
+                    ? 'bg-gradient-to-r from-cyan-400/30 via-blue-500/30 to-purple-500/30' 
+                    : 'bg-gradient-to-r from-blue-400/40 via-indigo-500/40 to-purple-500/40'
+                }`}></div>
+                <div className={`relative w-80 h-80 rounded-full overflow-hidden border-4 transition-all duration-700 ${
+                  isDarkMode 
+                    ? 'border-cyan-400/50 shadow-2xl shadow-cyan-400/20' 
+                    : 'border-blue-400/50 shadow-2xl shadow-blue-400/20'
+                }`}>
+                  <img 
+                    src="/img_5167_(1) copy.jpg" 
+                    alt="Manoj Kumar - App Developer & UI/UX Designer" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className={`absolute inset-0 transition-opacity duration-700 ${
                     isDarkMode 
-                      ? 'bg-slate-800/60 border border-slate-600/50 hover:border-cyan-400/30' 
-                      : 'bg-white/60 border border-blue-200/50 hover:border-cyan-400/30'
-                  }`}>
-                    <div className="flex items-start gap-4">
-                      <span className="text-2xl">{competency.icon}</span>
-                      <div>
-                        <h4 className={`font-semibold mb-2 group-hover:text-cyan-400 transition-colors ${
-                          isDarkMode ? 'text-white' : 'text-gray-900'
-                        }`}>{competency.title}</h4>
-                        <p className={`text-sm leading-relaxed ${
-                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                        }`}>{competency.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                      ? 'bg-gradient-to-t from-indigo-900/20 to-transparent' 
+                      : 'bg-gradient-to-t from-blue-900/10 to-transparent'
+                  }`}></div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
         
         {/* Vision Statement */}
         <div className="mt-16 text-center">
