@@ -9,7 +9,7 @@ const Hero = () => {
 
   const roles = [
     "App Developer",
-    "UI & UX Designer",
+    "UI/UX Designer",
     "Web Developer"
   ];
 
