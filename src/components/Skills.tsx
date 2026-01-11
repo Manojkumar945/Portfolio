@@ -42,6 +42,15 @@ const certifications = [
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
+    name: "30 days Masterclass", 
+    issuer: "Pantech AI",
+    type: "Development",
+    year: "2025",
+    color: "from-green-500 to-emerald-500",
+    image: "/manoj_kumar.s.png",
+    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+  },
+  { 
     name: "AI Tools Workshop", 
     issuer: "be10x",
     type: "AI Tools",
