@@ -42,6 +42,15 @@ const certifications = [
     description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students."
   },
   { 
+    name: "AI Tools Workshop", 
+    issuer: "be10x",
+    type: "AI Tools",
+    year: "2025",
+    color: "from-red-500 to-emerald-500",
+    image: "/certificates/google_android_developer_certificate.pdf.png",
+    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+  },
+  { 
     name: "Introduction to Microsoft Excel", 
     issuer: "Coursera Project Network",
     type: "Analytics",
