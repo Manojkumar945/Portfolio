@@ -180,7 +180,7 @@ const About = () => {
             <p className={`text-lg leading-relaxed max-w-4xl mx-auto transition-colors duration-700 ${
               isDarkMode ? 'text-slate-300' : 'text-gray-700'
             }`}>
-              "I aspire to contribute to organizations that value innovation, teamwork, and continuous learning, where I can apply my knowledge to build scalable and impactful digital products. Through consistent effort and hands-on experience, I envision growing into a responsible technologist who delivers high-quality solutions aligned with business and user needs."
+              "I aspire to contribute to organizations that value innovation, teamwork and continuous learning, where I can apply my knowledge to build scalable and impactful digital products. Through consistent effort and hands-on experience, I envision growing into a responsible technologist who delivers high-quality solutions aligned with business and user needs."
             </p>
           </div>
         </div>
