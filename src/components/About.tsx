@@ -114,19 +114,9 @@ const About = () => {
               <div className="space-y-4">
                 {[
                   { 
-                    title: "Mobile App Development", 
-                    desc: "Expert in Android Studio with hands-on experience in creating user-centric mobile applications",
-                    icon: "📱"
-                  },
-                  { 
                     title: "Leadership & Management", 
                     desc: "Proven leadership as Founder of CyberTech Guard and Placement Coordinator role",
                     icon: "👥"
-                  },
-                  { 
-                    title: "Data Analytics & AI", 
-                    desc: "Certified in Python data analytics, cloud computing, and Google AI-ML technologies",
-                    icon: "📊"
                   },
                   { 
                     title: "International Exposure", 
