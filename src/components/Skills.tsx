@@ -14,6 +14,15 @@ const technicalSkills = [
 
 // Certifications with enhanced details and certificate images - NO ICONS OR DOTS
 const certifications = [
+  { 
+    name: "National Conference", 
+    issuer: "Bannari Amman Institute of Technology",
+    type: "Recent Trends",
+    year: "2025",
+    color: "from-sky-500 to-blue-500",
+    image: "/certificates/cloud_computing_(1).pdf.png",
+    description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur."
+  },
   {
     name: "Data Analytics with Python",
     issuer: "NPTEL Online Certifications",
