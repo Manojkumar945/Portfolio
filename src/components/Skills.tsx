@@ -15,13 +15,13 @@ const technicalSkills = [
 // Certifications with enhanced details and certificate images - NO ICONS OR DOTS
 const certifications = [
   { 
-    name: "National Conference", 
+    name: "National Conference (NCRTAD-25)", 
     issuer: "Bannari Amman Institute of Technology",
     type: "Recent Trends",
     year: "2025",
     color: "from-purple-500 to-indigo-500",
     image: "/conference_certificate.png",
-    description: "Participated in National Conference on Recent Trends in Artificial Intelligence & Data Science (NCRTAD-25)."
+    description: "Presented a research paper titled “Brainwave Monitoring and Stress Alert System with AI Smart Therapy” at a National-level AI and Data Science Conference."
   },
   {
     name: "Data Analytics with Python",
