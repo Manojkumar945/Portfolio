@@ -81,7 +81,7 @@ const About = () => {
               }`}>
                 <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
-                }`}>9+</span>
+                }`}>14+</span>
                 <span className={`text-sm font-medium ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>Certifications</span>
