@@ -132,6 +132,11 @@ const About = () => {
                     title: "Problem-Solving Excellence", 
                     desc: "Strong analytical abilities with focus on creating solutions that make real impact",
                     icon: "🎯"
+                  },
+                  { 
+                    title: "Data Analytics & AI", 
+                    desc: "Certified in Python data analytics, cloud computing, and Google AI-ML technologies",
+                    icon: "📊"
                   }
                 ].map((competency, index) => (
                   <div key={index} className={`p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm ${
