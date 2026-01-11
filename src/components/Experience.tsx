@@ -13,7 +13,7 @@ const experiences = [
     ]
   },
   {
-    title: "Android Developer Intern",
+    title: "FullStack Developer Intern",
     company: "Inspire AI",
     location: "Bangalore, India",
     period: "06/2025 - 09/2025",
