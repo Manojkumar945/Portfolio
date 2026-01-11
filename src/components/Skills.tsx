@@ -120,7 +120,7 @@ const certifications = [
     year: "2024",
     color: "from-red-500 to-orange-500",
     image: "/blockchain_and_cloud_computing_workshop_certificate.jpg",
-    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices."
+    description: "Actively participated in a three-day workshop on Blockchain and Cloud Computing, gaining practical insights into emerging technologies."
   },
   { 
     name: "Campus Ambassador Program", 
