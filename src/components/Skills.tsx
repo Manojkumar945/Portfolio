@@ -20,7 +20,7 @@ const certifications = [
     type: "Recent Trends",
     year: "2025",
     color: "from-sky-500 to-blue-500",
-    image: "/conference_certificate.pdf.png",
+    image: "/conference_certificate.png",
     description: "Participated in National Conference on Recent Trends in Artificial Intelligence & Data Science (NCRTAD-25)."
   },
   {
