@@ -175,14 +175,6 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Description */}
-              <p className={`text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 transition-colors duration-700 ${
-                isDarkMode ? 'text-slate-400' : 'text-gray-600'
-              }`}>
-                Creating innovative mobile applications with a focus on user experience and technical excellence. 
-                Passionate about building solutions that make a difference in people's lives.
-              </p>
-              
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a 
