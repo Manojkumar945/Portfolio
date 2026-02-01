@@ -175,32 +175,14 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="mt-12">
-              <h4 className={`text-lg font-medium mb-6 transition-colors duration-700 ${
-                isDarkMode ? 'text-white' : 'text-gray-900'
-              }`}>Connect with me</h4>
-              <div className="flex gap-4">
-                <a 
-                  href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a 
-                  href="https://github.com/Manojkumar945" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  aria-label="GitHub Profile"
-                >
-                  <Github size={20} />
-                </a>
-              </div>
-            </div>
-          </div>
+              {/* Description */}
+              <p className={`text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 transition-colors duration-700 ${
+                isDarkMode ? 'text-slate-400' : 'text-gray-600'
+              }`}>
+                Creating innovative mobile applications with a focus on user experience and technical excellence. 
+                Passionate about building solutions that make a difference in people's lives.
+              </p>
+              
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a 
