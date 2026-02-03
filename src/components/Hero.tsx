@@ -267,16 +267,6 @@ const Hero = () => {
                   <span className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
                 </div>
                 
-                <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
-                  isDarkMode 
-                    ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
-                    : 'text-gray-700 bg-white/50 hover:bg-white/70 border border-gray-200/50 hover:border-blue-400/50'
-                }`}>
-                  <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
-                    <MapPin size={16} className="text-white" />
-                  </div>
-                  <span className="text-sm font-medium flex-1 text-center">Trichy, Tamil Nadu, India</span>
-                </div>
               </div>
               
               {/* Social Media Icons */}
