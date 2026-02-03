@@ -1,4 +1,4 @@
-import { Mail, MapPin, Eye, ExternalLink, ArrowDown } from 'lucide-react';
+import { Mail, MapPin, Eye, ExternalLink, ArrowDown, Linkedin, Github } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import ResumeViewer from './ResumeViewer';
@@ -279,6 +279,43 @@ const Hero = () => {
                 </div>
               </div>
               
+              {/* Social Media Icons */}
+              <div className="flex justify-center gap-4">
+                <a
+                  href="https://www.linkedin.com/in/manoj-kumar-a81239289/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 rounded-lg transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group ${
+                    isDarkMode
+                      ? 'bg-slate-800/60 hover:bg-slate-700/80 border border-slate-700/50 hover:border-cyan-400/50'
+                      : 'bg-white/60 hover:bg-white/80 border border-gray-200/50 hover:border-blue-400/50'
+                  }`}
+                  title="LinkedIn"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin size={24} className={`transition-colors duration-300 ${
+                    isDarkMode ? 'text-slate-300 group-hover:text-cyan-400' : 'text-gray-700 group-hover:text-blue-600'
+                  }`} />
+                </a>
+
+                <a
+                  href="https://github.com/Manoj-18"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 rounded-lg transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group ${
+                    isDarkMode
+                      ? 'bg-slate-800/60 hover:bg-slate-700/80 border border-slate-700/50 hover:border-cyan-400/50'
+                      : 'bg-white/60 hover:bg-white/80 border border-gray-200/50 hover:border-blue-400/50'
+                  }`}
+                  title="GitHub"
+                  aria-label="GitHub Profile"
+                >
+                  <Github size={24} className={`transition-colors duration-300 ${
+                    isDarkMode ? 'text-slate-300 group-hover:text-cyan-400' : 'text-gray-700 group-hover:text-blue-600'
+                  }`} />
+                </a>
+              </div>
+
               {/* Floating Particles */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-particle-float opacity-70"></div>
