@@ -291,21 +291,14 @@ const Hero = () => {
                   <Linkedin size={20} />
                 </a>
 
-                <a
-                  href="https://github.com/Manojkumar945"
-                  target="_blank"
+                <a 
+                  href="https://github.com/Manojkumar945" 
+                  target="_blank" 
                   rel="noopener noreferrer"
-                  className={`p-3 rounded-lg transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group ${
-                    isDarkMode
-                      ? 'bg-slate-800/60 hover:bg-slate-700/80 border border-slate-700/50 hover:border-cyan-400/50'
-                      : 'bg-white/60 hover:bg-white/80 border border-gray-200/50 hover:border-blue-400/50'
-                  }`}
-                  title="GitHub"
+                  className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   aria-label="GitHub Profile"
                 >
-                  <Github size={24} className={`transition-colors duration-300 ${
-                    isDarkMode ? 'text-slate-300 group-hover:text-cyan-400' : 'text-gray-700 group-hover:text-blue-600'
-                  }`} />
+                  <Github size={20} />
                 </a>
               </div>
 
