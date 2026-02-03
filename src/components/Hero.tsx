@@ -270,7 +270,7 @@ const Hero = () => {
               </div>
               
               {/* Social Media Icons */}
-              <div className="flex justify-center gap-4">
+              <div className="flex gap-4">
                <a 
                   href="https://linkedin.com/in/manoj-kumar-4a57a325b" 
                   target="_blank" 
