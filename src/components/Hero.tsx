@@ -282,7 +282,7 @@ const Hero = () => {
               {/* Social Media Icons */}
               <div className="flex justify-center gap-4">
                 <a
-                  href="https://www.linkedin.com/in/manoj-kumar-a81239289/"
+                  href="https://linkedin.com/in/manoj-kumar-4a57a325b"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`p-3 rounded-lg transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group ${
