@@ -299,7 +299,7 @@ const Hero = () => {
                 </a>
 
                 <a
-                  href="https://github.com/Manoj-18"
+                  href="https://github.com/Manojkumar945"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`p-3 rounded-lg transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group ${
