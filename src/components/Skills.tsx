@@ -157,12 +157,48 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className={`py-20 transition-all duration-700 ${
-      isDarkMode 
-        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
+    <section id="skills" className={`relative py-20 transition-all duration-700 overflow-hidden ${
+      isDarkMode
+        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
     }`}>
-      <div className="container mx-auto px-6">
+      {/* Animated Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`absolute top-20 left-10 w-32 h-32 rounded-full blur-3xl animate-pulse transition-all duration-700 ${
+          isDarkMode
+            ? 'bg-gradient-to-r from-cyan-400/20 to-blue-500/20'
+            : 'bg-gradient-to-r from-blue-400/30 to-indigo-500/30'
+        }`} style={{ animation: 'float 6s ease-in-out infinite' }}></div>
+
+        <div className={`absolute top-1/3 right-20 w-40 h-40 rounded-full blur-3xl animate-pulse transition-all duration-700 ${
+          isDarkMode
+            ? 'bg-gradient-to-r from-purple-400/20 to-pink-500/20'
+            : 'bg-gradient-to-r from-purple-400/30 to-pink-500/30'
+        }`} style={{ animation: 'float 8s ease-in-out infinite 1s' }}></div>
+
+        <div className={`absolute bottom-32 left-1/4 w-36 h-36 rounded-full blur-3xl animate-pulse transition-all duration-700 ${
+          isDarkMode
+            ? 'bg-gradient-to-r from-indigo-400/20 to-purple-500/20'
+            : 'bg-gradient-to-r from-indigo-400/30 to-purple-500/30'
+        }`} style={{ animation: 'float 7s ease-in-out infinite 2s' }}></div>
+
+        <div className={`absolute bottom-1/4 right-1/3 w-28 h-28 rounded-full blur-2xl animate-pulse transition-all duration-700 ${
+          isDarkMode
+            ? 'bg-gradient-to-r from-emerald-400/15 to-teal-500/15'
+            : 'bg-gradient-to-r from-emerald-400/25 to-teal-500/25'
+        }`} style={{ animation: 'float 5s ease-in-out infinite 3s' }}></div>
+
+        <style>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(-40px) translateX(-10px); }
+            75% { transform: translateY(-20px) translateX(10px); }
+          }
+        `}</style>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center mb-16">
           <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
             isDarkMode ? 'text-white' : 'text-gray-900'
