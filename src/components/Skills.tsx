@@ -1,4 +1,4 @@
-import { Code, FileCode, Database, Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap, X, ExternalLink } from 'lucide-react';
+import { Code, FileCode, Database, Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap, X, ExternalLink, Medal } from 'lucide-react';
 import { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -131,15 +131,27 @@ const certifications = [
     image: "/eximius_campus_ambassador.jpeg",
     description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024."
   },
-  { 
-    name: "PINNACLE-24 National Level Technical Symposium", 
+  {
+    name: "PINNACLE-24 National Level Technical Symposium",
     issuer: "Coimbatore Institute of Technology",
     type: "Paper Presentation",
     year: "2024",
     color: "from-lime-500 to-lime-500",
     image: "/symposium_certificate.png",
-    description: "Participated in a national-level technical symposium organized by the ECE Association and IETE Students’ Forum."
+    description: "Participated in a national-level technical symposium organized by the ECE Association and IETE Students' Forum."
   },
+];
+
+const awards = [
+  {
+    title: "Techfinix-25 Project Expo Winner",
+    organization: "Paavai Engineering College",
+    project: "Brainwave Monitoring & Stress Alert System",
+    prize: "12,500 Rupees",
+    year: "2025",
+    color: "from-yellow-500 to-orange-500",
+    icon: "🏆"
+  }
 ];
 
 const Skills = () => {
@@ -431,6 +443,117 @@ const Skills = () => {
                   }`}>Certificates</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Awards & Achievements Section */}
+        <div className="mt-20 border-t pt-20 border-opacity-20" style={{borderColor: isDarkMode ? 'rgba(100, 116, 139, 0.3)' : 'rgba(59, 130, 246, 0.3)'}}>
+          <div className="flex flex-col items-center mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl shadow-lg">
+                <Trophy size={28} className="text-white" />
+              </div>
+              <h2 className={`text-4xl font-bold transition-colors duration-700 ${
+                isDarkMode ? 'text-white' : 'text-gray-900'
+              }`}>Awards & Achievements</h2>
+            </div>
+
+            {/* Decorative Line */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className={`h-px w-16 transition-all duration-700 ${
+                isDarkMode
+                  ? 'bg-gradient-to-r from-transparent to-yellow-400'
+                  : 'bg-gradient-to-r from-transparent to-orange-500'
+              }`}></div>
+              <div className={`w-3 h-3 rounded-full transition-all duration-700 ${
+                isDarkMode
+                  ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                  : 'bg-gradient-to-r from-orange-500 to-yellow-500'
+              }`}></div>
+              <div className={`h-px w-16 transition-all duration-700 ${
+                isDarkMode
+                  ? 'bg-gradient-to-l from-transparent to-yellow-400'
+                  : 'bg-gradient-to-l from-transparent to-orange-500'
+              }`}></div>
+            </div>
+
+            <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
+              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            }`}>
+              Recognition and awards for innovative projects and contributions
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {awards.map((award, index) => (
+                <div key={index} className="group">
+                  <div className={`p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group-hover:transform group-hover:-translate-y-2 ${
+                    isDarkMode
+                      ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-yellow-400/50'
+                      : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-yellow-400/50'
+                  }`}>
+                    <div className="flex items-start gap-6">
+                      {/* Icon */}
+                      <div className={`text-5xl flex-shrink-0 p-4 rounded-xl bg-gradient-to-r ${award.color} bg-opacity-20`}>
+                        {award.icon}
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h3 className={`text-2xl font-bold group-hover:text-yellow-400 transition-colors mb-1 ${
+                              isDarkMode ? 'text-white' : 'text-gray-900'
+                            }`}>
+                              {award.title}
+                            </h3>
+                            <p className={`text-sm font-semibold mb-2 ${
+                              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                            }`}>
+                              {award.organization}
+                            </p>
+                          </div>
+                          <span className={`text-xs px-4 py-2 rounded-full text-white font-semibold bg-gradient-to-r ${award.color} flex-shrink-0`}>
+                            {award.year}
+                          </span>
+                        </div>
+
+                        {/* Project Details */}
+                        <div className="space-y-3 mb-4">
+                          <div>
+                            <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${
+                              isDarkMode ? 'text-slate-500' : 'text-gray-500'
+                            }`}>Project</p>
+                            <p className={`text-lg font-semibold ${
+                              isDarkMode ? 'text-cyan-400' : 'text-blue-600'
+                            }`}>
+                              {award.project}
+                            </p>
+                          </div>
+                          <div>
+                            <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${
+                              isDarkMode ? 'text-slate-500' : 'text-gray-500'
+                            }`}>Cash Prize</p>
+                            <p className={`text-xl font-bold ${
+                              isDarkMode ? 'text-yellow-400' : 'text-orange-600'
+                            }`}>
+                              ₹{award.prize}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Award Badge */}
+                        <div className="flex items-center gap-2 text-green-400">
+                          <Medal size={18} />
+                          <span className="text-sm font-medium">Official Award Winner</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
