@@ -461,22 +461,22 @@ const Skills = () => {
 
             {/* Decorative Line */}
             <div className="flex items-center gap-4 mb-6">
-              <div className={`h-px w-16 transition-all duration-700 ${
-                isDarkMode
-                  ? 'bg-gradient-to-r from-transparent to-yellow-400'
-                  : 'bg-gradient-to-r from-transparent to-orange-500'
-              }`}></div>
-              <div className={`w-3 h-3 rounded-full transition-all duration-700 ${
-                isDarkMode
-                  ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                  : 'bg-gradient-to-r from-orange-500 to-yellow-500'
-              }`}></div>
-              <div className={`h-px w-16 transition-all duration-700 ${
-                isDarkMode
-                  ? 'bg-gradient-to-l from-transparent to-yellow-400'
-                  : 'bg-gradient-to-l from-transparent to-orange-500'
-              }`}></div>
-            </div>
+            <div className={`h-px w-16 transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-r from-transparent to-cyan-400' 
+                : 'bg-gradient-to-r from-transparent to-blue-600'
+            }`}></div>
+            <div className={`w-3 h-3 rounded-full transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-r from-cyan-400 to-blue-500' 
+                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+            }`}></div>
+            <div className={`h-px w-16 transition-all duration-700 ${
+              isDarkMode 
+                ? 'bg-gradient-to-l from-transparent to-cyan-400' 
+                : 'bg-gradient-to-l from-transparent to-blue-600'
+            }`}></div>
+          </div>
 
             <p className={`text-center max-w-2xl text-lg transition-colors duration-700 ${
               isDarkMode ? 'text-slate-400' : 'text-gray-600'
@@ -539,7 +539,7 @@ const Skills = () => {
                             <p className={`text-xl font-bold ${
                               isDarkMode ? 'text-yellow-400' : 'text-orange-600'
                             }`}>
-                              ₹{award.prize}
+                              ₹ {award.prize}
                             </p>
                           </div>
                         </div>
