@@ -264,9 +264,11 @@ const Hero = () => {
                   <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
                     <Mail size={16} className="text-white" />
                   </div>
-                  <span <a href="mailto:manojk46234@gmail.com" className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
+                  <a href="mailto:manojk46234@gmail.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                  <span className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
+                  </a>
                 </div>
-                
+              
               </div>
               
               {/* Social Media Icons */}
