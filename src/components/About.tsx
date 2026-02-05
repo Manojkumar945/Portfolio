@@ -115,7 +115,7 @@ const About = () => {
                   : 'border-blue-400/50 shadow-blue-400/20'
               }`}>
                 <img
-                  src="/img_5227.png"
+                  src="/img_5168.jpg"
                   alt="Manoj Kumar - Professional Portrait"
                   className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
