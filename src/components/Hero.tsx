@@ -65,7 +65,7 @@ const Hero = () => {
   return (
     <section className={`relative min-h-screen overflow-hidden transition-all duration-700 ${
       isDarkMode 
-        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
+        ? 'bg-gradient-to-br from-indigo-950 via-yellow-900 to-slate-900' 
         : 'bg-gradient-to-br from-grey-50 via-indigo-50 to-yellow-50'
     }`}>
       {/* Enhanced Background Pattern */}
