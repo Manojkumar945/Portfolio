@@ -491,8 +491,8 @@ const Skills = () => {
                 <div key={index} className="group">
                   <div className={`p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group-hover:transform group-hover:-translate-y-2 ${
                     isDarkMode
-                      ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-yellow-400/50'
-                      : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-yellow-400/50'
+                      ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-cyan-400/50'
+                      : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-blue-400/50'
                   }`}>
                     <div className="flex items-start gap-6">
                       {/* Icon */}
