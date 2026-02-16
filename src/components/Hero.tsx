@@ -66,7 +66,7 @@ const Hero = () => {
     <section className={`relative min-h-screen overflow-hidden transition-all duration-700 ${
       isDarkMode 
         ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
-        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+        : 'bg-gradient-to-br from-grey-50 via-indigo-50 to-yellow-50'
     }`}>
       {/* Enhanced Background Pattern */}
       <div className={`absolute inset-0 opacity-50 transition-opacity duration-700 ${
