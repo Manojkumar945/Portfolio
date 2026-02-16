@@ -451,7 +451,7 @@ const Skills = () => {
         <div className="mt-20 border-t pt-20 border-opacity-20" style={{borderColor: isDarkMode ? 'rgba(100, 116, 139, 0.3)' : 'rgba(59, 130, 246, 0.3)'}}>
           <div className="flex flex-col items-center mb-16">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl shadow-lg">
+              <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
                 <Trophy size={28} className="text-white" />
               </div>
               <h2 className={`text-4xl font-bold transition-colors duration-700 ${
