@@ -218,7 +218,7 @@ const Hero = () => {
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                     isDarkMode
                       ? 'bg-gradient-to-r from-cyan-400/10 to-transparent'
-                      : 'bg-gradient-to-r from-orange-400/10 to-transparent'
+                      : 'bg-gradient-to-r from-blue-400/10 to-transparent'
                   }`}></div>
                   <Eye size={18} />
                   <span>View Resume</span>
