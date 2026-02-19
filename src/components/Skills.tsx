@@ -147,9 +147,9 @@ const awards = [
     title: "Techfinix-25 Project Expo Winner",
     organization: "Paavai Engineering College",
     project: "Brainwave Monitoring & Stress Alert System",
-    prize: "12,500 Rupees",
+    prize: "12.5k Rupees",
     year: "2025",
-    color: "from-yellow-500 to-orange-500",
+    color: "from-cyan-500 to-blue-500",
     icon: "🏆"
   }
 ];
