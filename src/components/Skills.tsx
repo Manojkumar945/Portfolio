@@ -150,6 +150,7 @@ const awards = [
     prize: "12.5k Rupees",
     year: "2025",
     color: "from-cyan-500 to-blue-500",
+    image: "/Symposium_Certificate.png",
     icon: "🏆"
   }
 ];
