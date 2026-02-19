@@ -527,7 +527,7 @@ const Skills = () => {
                               isDarkMode ? 'text-slate-500' : 'text-gray-500'
                             }`}>Project</p>
                             <p className={`text-lg font-semibold ${
-                              isDarkMode ? 'text-red-400' : 'text-red-600'
+                              isDarkMode ? 'text-dark red-400' : 'text-dark red-600'
                             }`}>
                               {award.project}
                             </p>
