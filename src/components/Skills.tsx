@@ -137,7 +137,7 @@ const certifications = [
     type: "Paper Presentation",
     year: "2024",
     color: "from-lime-500 to-lime-500",
-    image: "Symposium_Certificate.png",
+    image: "/Symposium_Certificate.png",
     description: "Participated in a national-level technical symposium organized by the ECE Association and IETE Students' Forum."
   },
 ];
