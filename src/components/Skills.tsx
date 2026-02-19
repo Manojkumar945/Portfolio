@@ -504,7 +504,7 @@ const Skills = () => {
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-3">
                           <div>
-                            <h3 className={`text-2xl font-bold group-hover:text-blue-400 transition-colors mb-1 ${
+                            <h3 className={`text-2xl font-bold group-hover:text-cyan-400 transition-colors mb-1 ${
                               isDarkMode ? 'text-white' : 'text-gray-900'
                             }`}>
                               {award.title}
