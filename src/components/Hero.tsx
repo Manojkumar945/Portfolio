@@ -315,7 +315,6 @@ const Hero = () => {
               ? 'text-slate-400 hover:text-cyan-400' 
               : 'text-gray-500 hover:text-blue-600'
           }`}
-          aria-label="Scroll to About section"
         >
           <span className="text-sm font-medium"></span>
           <div className={`p-2 rounded-full border transition-colors duration-300 ${
