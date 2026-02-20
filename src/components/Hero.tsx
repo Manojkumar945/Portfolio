@@ -120,7 +120,7 @@ const Hero = () => {
                 </p>
                 <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold animate-fade-in-up transition-all duration-700 ${
                   isDarkMode 
-                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white-400 to-indigo-400' 
+                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white-400 to-blue-400' 
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
                 }`} style={{ 
                   fontFamily: '"Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif',
