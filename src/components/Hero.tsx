@@ -255,7 +255,7 @@ const Hero = () => {
               </div>
               
               {/* Contact Info Cards */}
-              <div className="space-y-4 w-full max-w-sm">
+              <div className="flex gap-4">
                 <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group ${
                   isDarkMode 
                     ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
