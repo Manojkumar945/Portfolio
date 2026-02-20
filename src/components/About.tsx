@@ -88,8 +88,8 @@ const About = () => {
               </div>
               <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
                 isDarkMode 
-                  ? 'bg-gradient-to-br from-transparent-800/80 to-transparent-800/80 border border-slate-600/50 hover:border-transparent-400/50' 
-                  : 'bg-gradient-to-br from-transparent-100/80 to-transparent-100/80 border border-transparent-200/50 hover:border-transparent-400/50'
+                  ? 'bg-gradient-to-br from-purple-800/80 to-purple-800/80 border border-slate-600/50 hover:border-purple-400/50' 
+                  : 'bg-gradient-to-br from-purple-100/80 to-purple-100/80 border border-purple-200/50 hover:border-purple-400/50'
               }`}>
               </div>
             </div>
