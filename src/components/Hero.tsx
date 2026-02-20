@@ -293,7 +293,13 @@ const Hero = () => {
                 </a>
               </div>
 
-              
+              {/* Floating Particles */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-particle-float opacity-70"></div>
+                <div className="absolute top-20 right-16 w-1 h-1 bg-purple-400 rounded-full animate-particle-float opacity-60" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute bottom-20 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full animate-particle-float opacity-80" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute bottom-32 right-8 w-1 h-1 bg-indigo-400 rounded-full animate-particle-float opacity-50" style={{ animationDelay: '3s' }}></div>
+              </div>
             </div>
           </div>
         </div>
