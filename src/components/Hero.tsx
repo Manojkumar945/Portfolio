@@ -63,7 +63,7 @@ const Hero = () => {
   };
 
   return (
-    className={`relative min-h-screen overflow-hidden transition-all duration-700 ${
+    <section className={`relative min-h-screen overflow-hidden transition-all duration-700 ${
       isDarkMode 
         ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900' 
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
@@ -311,6 +311,7 @@ const Hero = () => {
         resumeUrl="/resume.pdf"
         resumeName="Resume"
       />
+    </section>
   );
 };
 
