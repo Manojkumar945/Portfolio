@@ -215,7 +215,7 @@ const Hero = () => {
                   title="View resume"
                   aria-label="View Resume PDF"
                 >
-                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ${
                     isDarkMode
                       ? 'bg-gradient-to-r from-cyan-400/10 to-transparent'
                       : 'bg-gradient-to-r from-blue-400/10 to-transparent'
