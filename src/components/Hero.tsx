@@ -261,7 +261,7 @@ const Hero = () => {
                     ? 'text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-cyan-400/50' 
                     : 'text-gray-700 bg-white/50 hover:bg-white/70 border border-gray-200/50 hover:border-blue-400/50'
                 }`}>
-                  <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                  <div className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     <Mail size={16} className="text-white" />
                   </div>
                   <a href="mailto:manojk46234@gmail.com">
