@@ -86,7 +86,6 @@ const About = () => {
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>Certifications</span>
               </div>
-              
             </div>
           </div>
 
