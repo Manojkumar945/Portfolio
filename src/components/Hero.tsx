@@ -305,19 +305,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-      {/* Enhanced scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <button 
-          onClick={scrollToAbout}
-          className={`flex flex-col items-center gap-2 transition-colors duration-300 group ${
-            isDarkMode 
-              ? 'text-slate-400 hover:text-cyan-400' 
-              : 'text-gray-500 hover:text-blue-600'
-          }`}
-        >
-        </button>
-      </div>
 
       <ResumeViewer
         isOpen={isResumeViewerOpen}
