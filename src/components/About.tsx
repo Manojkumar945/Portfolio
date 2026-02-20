@@ -56,7 +56,7 @@ const About = () => {
               </p>
               
               <p className="leading-relaxed text-lg">
-                My career objective is to grow as a skilled software professional by continuously learning new technologies and contributing to the development of innovative, user-centric solutions. With <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>14+ professional certifications</span> and expertise spanning the Technologies.
+                My career objective is to grow as a skilled software professional by continuously learning new technologies and contributing to the development of innovative, user-centric solutions.
               </p>
             </div>
             
