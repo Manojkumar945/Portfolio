@@ -268,7 +268,6 @@ const Hero = () => {
                   <span className="text-sm font-medium flex-1 text-center">manojk46234@gmail.com</span>
                   </a>
                 </div>
-              
               </div>
               
               {/* Social Media Icons */}
