@@ -318,13 +318,6 @@ const Hero = () => {
         >
         </button>
       </div>
-      
-      {/* Enhanced bottom gradient */}
-      <div className={`absolute bottom-0 left-0 right-0 h-32 transition-all duration-700 ${
-        isDarkMode
-          ? 'bg-gradient-to-t from-indigo-900/80 to-transparent'
-          : 'bg-gradient-to-t from-blue-100/80 to-transparent'
-      }`}></div>
 
       <ResumeViewer
         isOpen={isResumeViewerOpen}
