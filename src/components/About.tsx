@@ -88,9 +88,15 @@ const About = () => {
               </div>
               <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
                 isDarkMode 
-                  ? 'bg-gradient-to-br from-purple-800/80 to-purple-800/80 border border-slate-600/50 hover:border-purple-400/50' 
-                  : 'bg-gradient-to-br from-purple-100/80 to-purple-100/80 border border-purple-200/50 hover:border-purple-400/50'
+                  ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
+                  : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50 hover:border-cyan-400/50'
               }`}>
+                <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
+                  isDarkMode ? 'text-cyan-400' : 'text-blue-600'
+                }`}>1</span>
+                <span className={`text-sm font-medium ${
+                  isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                }`}>Startup</span>
               </div>
             </div>
           </div>
