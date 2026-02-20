@@ -316,14 +316,6 @@ const Hero = () => {
               : 'text-gray-500 hover:text-blue-600'
           }`}
         >
-          <span className="text-sm font-medium"></span>
-          <div className={`p-2 rounded-full border transition-colors duration-300 ${
-            isDarkMode 
-              ? 'border-slate-600 group-hover:border-cyan-400' 
-              : 'border-gray-400 group-hover:border-blue-600'
-          }`}>
-            <ArrowDown size={16} className="animate-bounce" />
-          </div>
         </button>
       </div>
       
