@@ -149,7 +149,6 @@ const awards = [
     project: "Brainwave Monitoring & Stress Alert System with AI Smart Therapy",
     prize: "12.5k Rupees",
     year: "2025",
-    color: "from-white-500 to-gray-500",
     icon: "🏆"
   }
 ];
