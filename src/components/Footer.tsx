@@ -33,7 +33,7 @@ const Footer = () => {
           <div>
             <h3 className={`text-xl font-bold mb-4 transition-colors duration-700 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
-            }`}>Manoj Kumar.S</h3>
+            }`}>Manoj Kumar. S</h3>
             <p className={`mb-6 leading-relaxed transition-colors duration-700 ${
               isDarkMode ? 'text-slate-400' : 'text-gray-600'
             }`}>
