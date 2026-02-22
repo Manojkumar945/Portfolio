@@ -114,7 +114,7 @@ const Hero = () => {
               {/* Greeting */}
               <div className="space-y-2">
                 <p className={`text-2xl md:text-3xl animate-fade-in transition-colors duration-700 ${
-                  isDarkMode ? 'text-slate-300' : 'text-gray-600'
+                  isDarkMode ? 'text-slate-300' : 'text-white-600'
                 }`}>
                   Hi, I'm
                 </p>
