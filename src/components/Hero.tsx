@@ -210,15 +210,15 @@ const Hero = () => {
                   className={`group px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 font-medium backdrop-blur-sm relative overflow-hidden ${
                     isDarkMode
                       ? 'bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600 hover:border-cyan-400'
-                      : 'bg-green/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
+                      : 'bg-white/80 hover:bg-white/90 text-gray-900 border border-gray-300 hover:border-blue-400'
                   }`}
                   title="View resume"
                   aria-label="View Resume PDF"
                 >
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ${
                     isDarkMode
-                      ? 'bg-gradient-to-r from-cyan-400/10 to-blue'
-                      : 'bg-gradient-to-r from-blue-400/10 to-indigo'
+                      ? 'bg-gradient-to-r from-cyan-400/10 to-transparent'
+                      : 'bg-gradient-to-r from-blue-400/10 to-transparent'
                   }`}></div>
                   <Eye size={18} />
                   <span>View Resume</span>
