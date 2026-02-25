@@ -291,16 +291,6 @@ const Hero = () => {
                 >
                   <Github size={20} />
                 </a>
-
-               <a 
-                  href="https://leetcode.com/u/Manojsadha" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-black-600 to-black-700 hover:from-black-700 hover:to-black-800 p-4 rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  aria-label="LeetCode Profile"
-                >
-                  <Leetcode size={20} />
-                </a>
               </div>
 
               {/* Floating Particles */}
