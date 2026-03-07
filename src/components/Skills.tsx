@@ -323,41 +323,6 @@ const Skills = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Second Row (Alternating direction) */}
-              <div>
-                <div className="flex gap-8 carousel-track-alt">
-                  {[...technicalSkills.slice().reverse(), ...technicalSkills.slice().reverse()].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0">
-                      <div className="flex flex-col items-center gap-3 group">
-                        <div className={`w-20 h-20 rounded-2xl p-3 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
-                          isDarkMode
-                            ? 'bg-slate-700/50 group-hover:bg-slate-600'
-                            : 'bg-gray-100/50 group-hover:bg-gray-200'
-                        }`}>
-                          {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
-                            <img
-                              src={skill.icon}
-                              alt={skill.name}
-                              className="w-16 h-16 object-contain"
-                            />
-                          ) : (
-                            <span className="text-4xl">{skill.icon}</span>
-                          )}
-                        </div>
-                        <div className="text-center">
-                          <p className={`text-xs font-semibold ${
-                            isDarkMode ? 'text-white' : 'text-gray-900'
-                          }`}>{skill.name}</p>
-                          <p className={`text-xs ${
-                            isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                          }`}>{skill.proficiency}%</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
           
