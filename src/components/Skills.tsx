@@ -1,4 +1,4 @@
-import { Code, FileCode, Database, Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap, X, ExternalLink, Medal } from 'lucide-react';
+import { Code, FileCode, Database, LayoutGrid as Layout, PenTool, Trophy, Star, Award, CheckCircle, Zap, X, ExternalLink, Medal } from 'lucide-react';
 import { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 
