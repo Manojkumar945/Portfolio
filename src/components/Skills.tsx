@@ -254,96 +254,75 @@ const Skills = () => {
               }`}>Technical Skills</h3>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-6">
               {technicalSkills.map((skill, index) => (
-                <div key={index} className="group relative overflow-hidden">
-                  <div className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
+                <div key={index} className="group relative">
+                  <div className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl ${
                     isDarkMode
                       ? 'bg-slate-800/80'
                       : 'bg-white/80'
                   }`}>
                     {/* Skill Header */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="flex-shrink-0">
                         {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
-                          <img 
-                            src={skill.icon} 
-                            alt={skill.name} 
-                            className="w-8 h-8 object-contain"
+                          <img
+                            src={skill.icon}
+                            alt={skill.name}
+                            className="w-12 h-12 object-contain"
                           />
                         ) : (
-                          <span className="text-2xl">{skill.icon}</span>
+                          <span className="text-3xl">{skill.icon}</span>
                         )}
-                        <div>
-                          <h4 className={`font-bold text-lg group-hover:text-cyan-400 transition-colors ${
-                            isDarkMode ? 'text-white' : 'text-gray-900'
-                          }`}>
-                            {skill.name}
-                          </h4>
-                          <span className={`text-xs px-2 py-1 rounded-full ${
-                            isDarkMode 
-                              ? 'text-slate-400 bg-slate-700/50' 
-                              : 'text-gray-600 bg-gray-100/50'
-                          }`}>
-                            {skill.category}
-                          </span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-bold text-lg group-hover:text-cyan-400 transition-colors ${
+                          isDarkMode ? 'text-white' : 'text-gray-900'
+                        }`}>
+                          {skill.name}
+                        </h4>
+                        <span className={`text-xs px-2 py-1 rounded-full inline-block ${
+                          isDarkMode
+                            ? 'text-slate-400 bg-slate-700/50'
+                            : 'text-gray-600 bg-gray-100/50'
+                        }`}>
+                          {skill.category}
+                        </span>
+                        <div className="text-right mt-2">
+                          <div className="text-2xl font-bold text-cyan-400">{skill.proficiency}%</div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-cyan-400">{skill.proficiency}%</div>
-                      </div>
                     </div>
-                    
-                    {/* Circular Progress */}
-                    <div className="relative w-20 h-20 mx-auto mb-4">
-                      <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 36 36">
-                        <path
-                          className={isDarkMode ? 'text-slate-700' : 'text-gray-300'}
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          fill="none"
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path
-                          className={`bg-gradient-to-r ${skill.color}`}
-                          stroke="url(#gradient)"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          fill="none"
-                          strokeDasharray={`${skill.proficiency}, 100`}
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <defs>
-                          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#06b6d4" />
-                            <stop offset="100%" stopColor="#3b82f6" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Star size={16} className="text-cyan-400" />
-                      </div>
-                    </div>
-                    
-                    {/* Proficiency Level */}
-                    <div className="text-center">
-                      <div className="flex justify-center gap-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <div
-                            key={i}
-                            className={`w-2 h-2 rounded-full ${
-                              i < Math.floor(skill.proficiency / 20) 
-                                ? 'bg-gradient-to-r from-cyan-400 to-blue-500' 
-                                : isDarkMode ? 'bg-slate-600' : 'bg-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className={`text-xs ${
-                        isDarkMode ? 'text-slate-400' : 'text-gray-600'
+
+                    {/* Progress Bar */}
+                    <div className="mt-4">
+                      <div className={`h-2 rounded-full overflow-hidden ${
+                        isDarkMode ? 'bg-slate-700' : 'bg-gray-200'
                       }`}>
-                        {skill.proficiency >= 70 ? 'Expert' : skill.proficiency >= 50 ? 'Intermediate' : 'Beginner'}
-                      </span>
+                        <div
+                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-500`}
+                          style={{ width: `${skill.proficiency}%` }}
+                        />
+                      </div>
+                      <div className="flex justify-between items-center mt-2">
+                        <span className={`text-xs ${
+                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                        }`}>
+                          {skill.proficiency >= 70 ? 'Expert' : skill.proficiency >= 50 ? 'Intermediate' : 'Beginner'}
+                        </span>
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <div
+                              key={i}
+                              className={`w-2 h-2 rounded-full ${
+                                i < Math.floor(skill.proficiency / 20)
+                                  ? 'bg-gradient-to-r from-cyan-400 to-blue-500'
+                                  : isDarkMode ? 'bg-slate-600' : 'bg-gray-300'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
