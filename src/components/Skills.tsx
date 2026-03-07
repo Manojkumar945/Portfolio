@@ -219,6 +219,12 @@ const Skills = () => {
               }`}>Technical Skills</h3>
             </div>
 
+            {/* Carousel Container */}
+            <div className={`relative w-full py-12 px-4 rounded-2xl backdrop-blur-sm overflow-hidden ${
+              isDarkMode
+                ? 'bg-slate-800/80'
+                : 'bg-white/80'
+            }`}>
               {/* Animated Track */}
               <style>{`
                 @keyframes scroll-left {
