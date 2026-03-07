@@ -243,7 +243,7 @@ const Skills = () => {
         </div>
         
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
-          {/* Technical Skills - Card-based Design */}
+          {/* Technical Skills - Carousel with Moving Logos */}
           <div>
             <div className="flex items-center gap-3 mb-10">
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
@@ -253,80 +253,111 @@ const Skills = () => {
                 isDarkMode ? 'text-white' : 'text-gray-900'
               }`}>Technical Skills</h3>
             </div>
-            
-            <div className="space-y-6">
-              {technicalSkills.map((skill, index) => (
-                <div key={index} className="group relative">
-                  <div className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl ${
-                    isDarkMode
-                      ? 'bg-slate-800/80'
-                      : 'bg-white/80'
-                  }`}>
-                    {/* Skill Header */}
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className="flex-shrink-0">
-                        {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
-                          <img
-                            src={skill.icon}
-                            alt={skill.name}
-                            className="w-12 h-12 object-contain"
-                          />
-                        ) : (
-                          <span className="text-3xl">{skill.icon}</span>
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className={`font-bold text-lg group-hover:text-cyan-400 transition-colors ${
-                          isDarkMode ? 'text-white' : 'text-gray-900'
-                        }`}>
-                          {skill.name}
-                        </h4>
-                        <span className={`text-xs px-2 py-1 rounded-full inline-block ${
-                          isDarkMode
-                            ? 'text-slate-400 bg-slate-700/50'
-                            : 'text-gray-600 bg-gray-100/50'
-                        }`}>
-                          {skill.category}
-                        </span>
-                        <div className="text-right mt-2">
-                          <div className="text-2xl font-bold text-cyan-400">{skill.proficiency}%</div>
-                        </div>
-                      </div>
-                    </div>
 
-                    {/* Progress Bar */}
-                    <div className="mt-4">
-                      <div className={`h-2 rounded-full overflow-hidden ${
-                        isDarkMode ? 'bg-slate-700' : 'bg-gray-200'
-                      }`}>
-                        <div
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-500`}
-                          style={{ width: `${skill.proficiency}%` }}
-                        />
-                      </div>
-                      <div className="flex justify-between items-center mt-2">
-                        <span className={`text-xs ${
-                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            {/* Carousel Container */}
+            <div className={`relative w-full py-12 px-4 rounded-2xl backdrop-blur-sm overflow-hidden ${
+              isDarkMode
+                ? 'bg-slate-800/80'
+                : 'bg-white/80'
+            }`}>
+              {/* Animated Track */}
+              <style>{`
+                @keyframes scroll-left {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-100%); }
+                }
+
+                @keyframes scroll-right {
+                  0% { transform: translateX(-100%); }
+                  100% { transform: translateX(0); }
+                }
+
+                .carousel-track {
+                  animation: scroll-left 20s linear infinite;
+                }
+
+                .carousel-track:hover {
+                  animation-play-state: paused;
+                }
+
+                .carousel-track-alt {
+                  animation: scroll-right 20s linear infinite;
+                }
+
+                .carousel-track-alt:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
+
+              {/* First Row */}
+              <div className="mb-8">
+                <div className="flex gap-8 carousel-track">
+                  {[...technicalSkills, ...technicalSkills].map((skill, index) => (
+                    <div key={index} className="flex-shrink-0">
+                      <div className="flex flex-col items-center gap-3 group">
+                        <div className={`w-20 h-20 rounded-2xl p-3 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
+                          isDarkMode
+                            ? 'bg-slate-700/50 group-hover:bg-slate-600'
+                            : 'bg-gray-100/50 group-hover:bg-gray-200'
                         }`}>
-                          {skill.proficiency >= 70 ? 'Expert' : skill.proficiency >= 50 ? 'Intermediate' : 'Beginner'}
-                        </span>
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`w-2 h-2 rounded-full ${
-                                i < Math.floor(skill.proficiency / 20)
-                                  ? 'bg-gradient-to-r from-cyan-400 to-blue-500'
-                                  : isDarkMode ? 'bg-slate-600' : 'bg-gray-300'
-                              }`}
+                          {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
+                            <img
+                              src={skill.icon}
+                              alt={skill.name}
+                              className="w-16 h-16 object-contain"
                             />
-                          ))}
+                          ) : (
+                            <span className="text-4xl">{skill.icon}</span>
+                          )}
+                        </div>
+                        <div className="text-center">
+                          <p className={`text-xs font-semibold ${
+                            isDarkMode ? 'text-white' : 'text-gray-900'
+                          }`}>{skill.name}</p>
+                          <p className={`text-xs ${
+                            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                          }`}>{skill.proficiency}%</p>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Second Row (Alternating direction) */}
+              <div>
+                <div className="flex gap-8 carousel-track-alt">
+                  {[...technicalSkills.slice().reverse(), ...technicalSkills.slice().reverse()].map((skill, index) => (
+                    <div key={index} className="flex-shrink-0">
+                      <div className="flex flex-col items-center gap-3 group">
+                        <div className={`w-20 h-20 rounded-2xl p-3 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
+                          isDarkMode
+                            ? 'bg-slate-700/50 group-hover:bg-slate-600'
+                            : 'bg-gray-100/50 group-hover:bg-gray-200'
+                        }`}>
+                          {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
+                            <img
+                              src={skill.icon}
+                              alt={skill.name}
+                              className="w-16 h-16 object-contain"
+                            />
+                          ) : (
+                            <span className="text-4xl">{skill.icon}</span>
+                          )}
+                        </div>
+                        <div className="text-center">
+                          <p className={`text-xs font-semibold ${
+                            isDarkMode ? 'text-white' : 'text-gray-900'
+                          }`}>{skill.name}</p>
+                          <p className={`text-xs ${
+                            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                          }`}>{skill.proficiency}%</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           
