@@ -219,41 +219,6 @@ const Skills = () => {
               }`}>Technical Skills</h3>
             </div>
 
-            {/* Carousel Container */}
-            <div className={`relative w-full py-12 px-4 rounded-2xl backdrop-blur-sm overflow-hidden ${
-              isDarkMode
-                ? 'bg-slate-800/80'
-                : 'bg-white/80'
-            }`}>
-              {/* Animated Track */}
-              <style>{`
-                @keyframes scroll-left {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(-100%); }
-                }
-
-                @keyframes scroll-right {
-                  0% { transform: translateX(-100%); }
-                  100% { transform: translateX(0); }
-                }
-
-                .carousel-track {
-                  animation: scroll-left 20s linear infinite;
-                }
-
-                .carousel-track:hover {
-                  animation-play-state: paused;
-                }
-
-                .carousel-track-alt {
-                  animation: scroll-right 20s linear infinite;
-                }
-
-                .carousel-track-alt:hover {
-                  animation-play-state: paused;
-                }
-              `}</style>
-
               {/* First Row */}
               <div className="mb-8">
                 <div className="flex gap-8 carousel-track">
