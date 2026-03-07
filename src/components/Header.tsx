@@ -42,7 +42,7 @@ const Header = () => {
           <h1 className={`text-xl md:text-2xl font-bold transition-colors duration-500 cursor-pointer ${
             isHeaderLight ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-cyan-400'
           }`}>
-            My Portfolio
+            Portfolio
           </h1>
         </div>
 
