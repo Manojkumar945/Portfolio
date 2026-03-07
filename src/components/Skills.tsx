@@ -258,9 +258,9 @@ const Skills = () => {
               {technicalSkills.map((skill, index) => (
                 <div key={index} className="group relative overflow-hidden">
                   <div className={`p-6 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
-                    isDarkMode 
-                      ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-cyan-400/50' 
-                      : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-cyan-400/50'
+                    isDarkMode
+                      ? 'bg-slate-800/80'
+                      : 'bg-white/80'
                   }`}>
                     {/* Skill Header */}
                     <div className="flex items-center justify-between mb-4">
@@ -366,12 +366,12 @@ const Skills = () => {
               {certifications.map((cert, index) => (
                 <div key={index} className="group">
                   {/* Certification Card - No timeline dots */}
-                  <div 
+                  <div
                     className={`p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-xl group-hover:transform group-hover:-translate-y-1 ${
-                      isDarkMode 
-                        ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-purple-400/50' 
-                        : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-purple-400/50'
-                    } ${cert.image ? 'cursor-pointer hover:bg-slate-700/50' : ''}`}
+                      isDarkMode
+                        ? 'bg-slate-800/80'
+                        : 'bg-white/80'
+                    } ${cert.image ? 'cursor-pointer' : ''}`}
                     onClick={() => cert.image && openCertificate(cert)}
                   >
                     <div className="flex items-start justify-between mb-3">
@@ -423,9 +423,9 @@ const Skills = () => {
             
             {/* Certification Summary */}
             <div className={`mt-8 rounded-2xl p-6 transition-all duration-700 ${
-              isDarkMode 
-                ? 'bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-400/20' 
-                : 'bg-gradient-to-r from-purple-100/50 to-cyan-100/50 border border-purple-300/30'
+              isDarkMode
+                ? 'bg-slate-800/80'
+                : 'bg-white/80'
             }`}>
               <div className="flex items-center justify-between">
                 <div>
@@ -491,8 +491,8 @@ const Skills = () => {
                 <div key={index} className="group">
                   <div className={`p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group-hover:transform group-hover:-translate-y-2 ${
                     isDarkMode
-                      ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-600/50 hover:border-cyan-400/50'
-                      : 'bg-gradient-to-br from-white/90 to-blue-50/90 border border-blue-200/50 hover:border-blue-400/50'
+                      ? 'bg-slate-800/80'
+                      : 'bg-white/80'
                   }`}>
                     <div className="flex items-start gap-6">
                       {/* Icon */}
@@ -563,15 +563,15 @@ const Skills = () => {
       {selectedCertificate && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
           <div className={`relative max-w-5xl max-h-[95vh] w-full rounded-2xl shadow-2xl overflow-hidden ${
-            isDarkMode 
-              ? 'bg-slate-900 border border-slate-600/50' 
-              : 'bg-white border border-gray-200/50'
+            isDarkMode
+              ? 'bg-slate-900'
+              : 'bg-white'
           }`}>
             {/* Modal Header */}
-            <div className={`flex items-center justify-between p-6 border-b ${
-              isDarkMode 
-                ? 'border-slate-700/50 bg-gradient-to-r from-slate-800 to-slate-900' 
-                : 'border-gray-200/50 bg-gradient-to-r from-gray-50 to-blue-50'
+            <div className={`flex items-center justify-between p-6 ${
+              isDarkMode
+                ? 'bg-slate-800'
+                : 'bg-gray-50'
             }`}>
               <div>
                 <h3 className={`text-xl font-bold mb-1 ${
@@ -601,9 +601,7 @@ const Skills = () => {
                   <img
                     src={selectedCertificate.image!}
                     alt={`${selectedCertificate.name} Certificate`}
-                    className={`w-full h-auto rounded-lg shadow-lg ${
-                      isDarkMode ? 'border border-slate-600/30' : 'border border-gray-200/30'
-                    }`}
+                    className="w-full h-auto rounded-lg shadow-lg"
                     style={{ maxHeight: '75vh', objectFit: 'contain' }}
                   />
                 </div>
@@ -611,9 +609,9 @@ const Skills = () => {
                 {/* Certificate Details */}
                 <div className="mt-6 w-full max-w-2xl">
                   <div className={`rounded-xl p-6 ${
-                    isDarkMode 
-                      ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-600/30' 
-                      : 'bg-gradient-to-br from-gray-50/50 to-blue-50/50 border border-gray-200/30'
+                    isDarkMode
+                      ? 'bg-slate-800/50'
+                      : 'bg-gray-50/50'
                   }`}>
                     <h4 className={`text-lg font-semibold mb-3 ${
                       isDarkMode ? 'text-white' : 'text-gray-900'
@@ -637,9 +635,7 @@ const Skills = () => {
                         <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>Year:</span>
                         <span className={isDarkMode ? 'text-white' : 'text-gray-900'}>{selectedCertificate.year}</span>
                       </div>
-                      <div className={`pt-3 border-t ${
-                        isDarkMode ? 'border-slate-600/30' : 'border-gray-200/30'
-                      }`}>
+                      <div className="pt-3">
                         <p className={`text-sm leading-relaxed ${
                           isDarkMode ? 'text-slate-300' : 'text-gray-700'
                         }`}>{selectedCertificate.description}</p>
