@@ -173,7 +173,13 @@ const Skills = () => {
       isDarkMode
         ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
-    }`}>Skills & Certifications</h2>
+    }`}>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col items-center mb-16">
+          <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
+            isDarkMode ? 'text-white' : 'text-gray-900'
+          }`}>Skills & Certifications</h2>
           
           {/* Decorative Line */}
           <div className="flex items-center gap-4 mb-6">
