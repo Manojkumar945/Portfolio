@@ -89,30 +89,44 @@ const About = () => {
             </div>
           </div>
 
-          {/* Professional Photo - Right Side */}
+          {/* Professional Photo - Right Side with Hexagonal Border */}
           <div className="flex justify-center items-center">
-            <div className="relative group">
-              <div className={`absolute -inset-4 rounded-2xl blur-xl transition-all duration-700 ${
+            <div className="relative group w-80 h-96">
+              <style>{`
+                @keyframes glow-pulse {
+                  0%, 100% { filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.6)); }
+                  50% { filter: drop-shadow(0 0 40px rgba(34, 211, 238, 1)); }
+                }
+                .hexagon-border {
+                  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                  animation: glow-pulse 3s ease-in-out infinite;
+                }
+              `}</style>
+
+              <div className={`absolute -inset-6 blur-2xl transition-all duration-700 ${
                 isDarkMode
-                  ? 'bg-gradient-to-r from-cyan-400/30 via-blue-500/30 to-purple-500/30'
-                  : 'bg-gradient-to-r from-blue-400/40 via-indigo-500/40 to-purple-500/40'
+                  ? 'bg-gradient-to-r from-cyan-400/40 via-blue-500/40 to-cyan-400/40'
+                  : 'bg-gradient-to-r from-cyan-400/50 via-blue-500/50 to-cyan-400/50'
               }`}></div>
-              <div className={`relative rounded-2xl overflow-hidden border-4 transition-all duration-700 shadow-2xl ${
-                isDarkMode
-                  ? 'border-cyan-400/50 shadow-cyan-400/20'
-                  : 'border-blue-400/50 shadow-blue-400/20'
-              }`}>
-                <img
-                  src="/img_5168.jpg"
-                  alt="Manoj Kumar - Professional Portrait"
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className={`absolute inset-0 transition-opacity duration-700 ${
+
+              <div className="relative w-full h-full">
+                <div className={`hexagon-border w-full h-full border-4 transition-all duration-700 overflow-hidden ${
                   isDarkMode
-                    ? 'bg-gradient-to-t from-indigo-900/20 to-transparent'
-                    : 'bg-gradient-to-t from-blue-900/10 to-transparent'
-                }`}></div>
+                    ? 'border-cyan-400'
+                    : 'border-cyan-400'
+                }`}>
+                  <img
+                    src="/img_5168.jpg"
+                    alt="Manoj Kumar - Professional Portrait"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className={`absolute inset-0 transition-opacity duration-700 ${
+                    isDarkMode
+                      ? 'bg-gradient-to-t from-slate-900/30 to-transparent'
+                      : 'bg-gradient-to-t from-slate-900/20 to-transparent'
+                  }`}></div>
+                </div>
               </div>
             </div>
           </div>
