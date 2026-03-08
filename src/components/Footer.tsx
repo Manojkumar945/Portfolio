@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <footer className={`text-slate-300 transition-all duration-700 ${
       isDarkMode 
-        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 border-t border-slate-700/50' 
-        : 'bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 border-t border-gray-300/50 text-gray-700'
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
     }`}>
       {/* Back to top button */}
       <div className="flex justify-center">
