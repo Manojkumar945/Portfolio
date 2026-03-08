@@ -45,8 +45,8 @@ const WallOfFame = () => {
   return (
     <section id="wall-of-fame" className={`py-20 transition-all duration-700 ${
       isDarkMode
-        ? 'bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900'
-        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
     }`}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
