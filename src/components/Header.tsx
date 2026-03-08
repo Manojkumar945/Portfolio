@@ -30,7 +30,7 @@ const Header = () => {
         scrolled 
           ? isHeaderLight 
             ? 'bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200/50' 
-            : 'bg-gradient-to-br from-gray-50-950/95 backdrop-blur-md shadow-xl border-b border-slate-700/50'
+            : 'bg-indigo-950/95 backdrop-blur-md shadow-xl border-b border-slate-700/50'
           : isHeaderLight
             ? 'bg-white/20 backdrop-blur-sm'
             : 'bg-transparent'
