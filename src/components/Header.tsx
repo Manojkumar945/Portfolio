@@ -32,7 +32,7 @@ const Header = () => {
             ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
             : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
           : isHeaderLight
-            ? 'bg-white/20 backdrop-blur-sm'
+            ? 'bg-transparent/20 backdrop-blur-sm'
             : 'bg-transparent'
       }`}
     >
