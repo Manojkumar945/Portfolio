@@ -97,7 +97,7 @@ const About = () => {
                   0%, 100% { filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.6)); }
                   50% { filter: drop-shadow(0 0 40px rgba(34, 211, 238, 1)); }
                 }
-                .square-border {
+                .pentagon-border {
                   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
                   animation: glow-pulse 3s ease-in-out infinite;
                 }
