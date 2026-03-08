@@ -220,11 +220,7 @@ const Skills = () => {
             </div>
 
             {/* Carousel Container */}
-            <div className={`relative w-full py-12 px-4 rounded-2xl backdrop-blur-sm overflow-hidden ${
-              isDarkMode
-                ? 'bg-slate-800/80'
-                : 'bg-white/80'
-            }`}>
+            <div className="relative w-full py-12 overflow-hidden">
               {/* Animated Track */}
               <style>{`
                 @keyframes scroll-left {
@@ -232,61 +228,42 @@ const Skills = () => {
                   100% { transform: translateX(-100%); }
                 }
 
-                @keyframes scroll-right {
-                  0% { transform: translateX(-100%); }
-                  100% { transform: translateX(0); }
-                }
-
                 .carousel-track {
-                  animation: scroll-left 20s linear infinite;
+                  animation: scroll-left 30s linear infinite;
                 }
 
                 .carousel-track:hover {
                   animation-play-state: paused;
                 }
-
-                .carousel-track-alt {
-                  animation: scroll-right 20s linear infinite;
-                }
-
-                .carousel-track-alt:hover {
-                  animation-play-state: paused;
-                }
               `}</style>
 
-              {/* First Row */}
-              <div className="mb-8">
-                <div className="flex gap-8 carousel-track">
-                  {[...technicalSkills, ...technicalSkills].map((skill, index) => (
-                    <div key={index} className="flex-shrink-0">
-                      <div className="flex flex-col items-center gap-3 group">
-                        <div className={`w-20 h-20 rounded-2xl p-3 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
-                          isDarkMode
-                            ? 'bg-slate-700/50 group-hover:bg-slate-600'
-                            : 'bg-gray-100/50 group-hover:bg-gray-200'
-                        }`}>
-                          {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
-                            <img
-                              src={skill.icon}
-                              alt={skill.name}
-                              className="w-16 h-16 object-contain"
-                            />
-                          ) : (
-                            <span className="text-4xl">{skill.icon}</span>
-                          )}
-                        </div>
-                        <div className="text-center">
-                          <p className={`text-xs font-semibold ${
-                            isDarkMode ? 'text-white' : 'text-gray-900'
-                          }`}>{skill.name}</p>
-                          <p className={`text-xs ${
-                            isDarkMode ? 'text-slate-400' : 'text-gray-600'
-                          }`}>{skill.proficiency}%</p>
-                        </div>
+              {/* Logo Row */}
+              <div className="flex gap-12 carousel-track">
+                {technicalSkills.map((skill, index) => (
+                  <div key={index} className="flex-shrink-0">
+                    <div className="flex flex-col items-center gap-3 group">
+                      <div className="w-20 h-20 p-3 transition-all duration-300 hover:scale-110 flex items-center justify-center">
+                        {typeof skill.icon === 'string' && skill.icon.startsWith('/') ? (
+                          <img
+                            src={skill.icon}
+                            alt={skill.name}
+                            className="w-16 h-16 object-contain"
+                          />
+                        ) : (
+                          <span className="text-4xl">{skill.icon}</span>
+                        )}
+                      </div>
+                      <div className="text-center">
+                        <p className={`text-xs font-semibold ${
+                          isDarkMode ? 'text-white' : 'text-gray-900'
+                        }`}>{skill.name}</p>
+                        <p className={`text-xs ${
+                          isDarkMode ? 'text-slate-400' : 'text-gray-600'
+                        }`}>{skill.proficiency}%</p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
