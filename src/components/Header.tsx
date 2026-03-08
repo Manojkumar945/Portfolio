@@ -29,8 +29,8 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
           ? isHeaderLight 
-            ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
-        : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
+            ? 'bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200/50' 
+            : 'bg-indigo-950/95 backdrop-blur-md shadow-xl border-b border-slate-700/50'
           : isHeaderLight
             ? 'bg-white/20 backdrop-blur-sm'
             : 'bg-transparent'
