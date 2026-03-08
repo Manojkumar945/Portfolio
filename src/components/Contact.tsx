@@ -225,8 +225,8 @@ const Contact = () => {
           <div>
             <div className={`rounded-2xl p-8 shadow-2xl backdrop-blur-sm transition-all duration-700 ${
               isDarkMode 
-                ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50' 
-                : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50'
+                ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
             }`}>
               <h3 className={`text-xl font-semibold mb-8 transition-colors duration-700 ${
                 isDarkMode ? 'text-white' : 'text-gray-900'
