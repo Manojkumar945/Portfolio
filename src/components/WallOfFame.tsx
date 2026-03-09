@@ -6,9 +6,9 @@ const WallOfFame = () => {
   const fameItems = [
     {
       id: 1,
-      title: 'Innovation Leader',
+      title: 'UMPSA Memories',
       image: 'public/UMPSA_Memories.jpg',
-      year: '2025'
+      year: '2024'
     },
     {
       id: 2,
