@@ -7,7 +7,7 @@ const WallOfFame = () => {
     {
       id: 1,
       title: 'UMPSA Memories',
-      image: 'public/UMPSA_Memories.jpg',
+      image: '/UMPSA_Memories.jpg',
       year: '2024'
     },
     {
