@@ -3,6 +3,16 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const experiences = [
   {
+    title: "Full Stack Developer - Java",
+    company: "Gradtwin",
+    location: "Chennai, India",
+    period: "03/2026 - Present",
+    description: "A Team Management skills obtained the new Technologies.",
+    achievements: [
+      "Coordinator role enhances the Knowledgeable experiences."
+    ]
+  },
+  {
     title: "Placement Coordinator",
     company: "Paavai Institutions",
     location: "Tamil Nadu, India",
