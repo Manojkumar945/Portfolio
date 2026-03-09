@@ -7,7 +7,7 @@ const WallOfFame = () => {
     {
       id: 1,
       title: 'Innovation Leader',
-      image: '',
+      image: '//UMPSA_Memories.jpg',
       year: '2025'
     },
     {
