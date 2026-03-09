@@ -7,7 +7,7 @@ const WallOfFame = () => {
     {
       id: 1,
       title: 'Innovation Leader',
-      image: 'https://images.pexels.com/photos/3727512/pexels-photo-3727512.jpeg?w=400&h=300&fit=crop',
+      image: '',
       year: '2025'
     },
     {
