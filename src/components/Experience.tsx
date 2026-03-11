@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const experiences = [
   {
-    title: "Full Stack Developer - Java",
+    title: "Java Full Stack Developer Intern",
     company: "Gradtwin",
     location: "Chennai, India",
     period: "03/2026 - Present",
