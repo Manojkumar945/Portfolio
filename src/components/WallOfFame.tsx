@@ -21,24 +21,6 @@ const WallOfFame = () => {
       title: 'Development Star',
       image: 'https://images.pexels.com/photos/3747517/pexels-photo-3747517.jpeg?w=400&h=300&fit=crop',
       year: '2024'
-    },
-    {
-      id: 4,
-      title: 'Problem Solver',
-      image: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?w=400&h=300&fit=crop',
-      year: '2025'
-    },
-    {
-      id: 5,
-      title: 'Creative Mind',
-      image: 'https://images.pexels.com/photos/3857671/pexels-photo-3857671.jpeg?w=400&h=300&fit=crop',
-      year: '2024'
-    },
-    {
-      id: 6,
-      title: 'Team Player',
-      image: 'https://images.pexels.com/photos/3776969/pexels-photo-3776969.jpeg?w=400&h=300&fit=crop',
-      year: '2025'
     }
   ];
 
