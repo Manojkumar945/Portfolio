@@ -7,9 +7,9 @@ const experiences = [
     company: "Gradtwin",
     location: "Chennai, India",
     period: "03/2026 - Present",
-    description: "A Team Management skills obtained the new Technologies.",
+    description: "Completed a Full Stack Web Development internship with hands-on experience in front-end and back-end technologies.",
     achievements: [
-      "Coordinator role enhances the Knowledgeable experiences."
+      "Successfully delivered assigned projects, demonstrating continuous skill development and practical implementation."
     ]
   },
   {
