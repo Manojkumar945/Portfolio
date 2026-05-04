@@ -126,12 +126,6 @@ const WallOfFame = () => {
           caption: 'Networking with industry leaders — invaluable connections made.',
           date: 'May 2024',
         },
-        {
-          id: 5,
-          image: '/Tech_Session.jpeg',
-          caption: 'Certificate ceremony — hard work officially recognized! 🏆',
-          date: 'May 2024',
-        },
       ],
     },
   ];
