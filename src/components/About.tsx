@@ -42,7 +42,7 @@ const About = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:auto-rows-max">
-          {/* About Me Content - Left Side (Mobile: order-2, Desktop: order-1) */}
+          {/* About Me Content - Left Side */}
           <div className="lg:order-1 order-2">
             <div className={`prose prose-lg space-y-6 transition-colors duration-700 ${
               isDarkMode ? 'text-slate-300' : 'text-gray-700'
@@ -60,36 +60,37 @@ const About = () => {
               </p>
             </div>
             
-            {/* Achievement Stats */}
-            <div className="flex flex-wrap gap-6 mt-10">
-              <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
+            {/* Achievement Stats — always side by side, responsive sizing */}
+            <div className="flex flex-row gap-4 mt-10">
+              <div className={`flex flex-col items-center justify-center p-4 sm:p-6 rounded-xl flex-1 transition-all duration-300 group backdrop-blur-sm ${
                 isDarkMode 
                   ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
                   : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50 hover:border-cyan-400/50'
               }`}>
-                <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
+                <span className={`text-3xl sm:text-4xl font-bold group-hover:scale-110 transition-transform ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
                 }`}>7+</span>
-                <span className={`text-sm font-medium ${
+                <span className={`text-xs sm:text-sm font-medium mt-1 text-center ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>Internships</span>
               </div>
-              <div className={`flex flex-col items-center justify-center p-6 rounded-xl w-40 transition-all duration-300 group backdrop-blur-sm ${
+
+              <div className={`flex flex-col items-center justify-center p-4 sm:p-6 rounded-xl flex-1 transition-all duration-300 group backdrop-blur-sm ${
                 isDarkMode 
                   ? 'bg-gradient-to-br from-indigo-800/80 to-purple-800/80 border border-slate-600/50 hover:border-cyan-400/50' 
                   : 'bg-gradient-to-br from-blue-100/80 to-purple-100/80 border border-blue-200/50 hover:border-cyan-400/50'
               }`}>
-                <span className={`text-4xl font-bold group-hover:scale-110 transition-transform ${
+                <span className={`text-3xl sm:text-4xl font-bold group-hover:scale-110 transition-transform ${
                   isDarkMode ? 'text-cyan-400' : 'text-blue-600'
                 }`}>14+</span>
-                <span className={`text-sm font-medium ${
+                <span className={`text-xs sm:text-sm font-medium mt-1 text-center ${
                   isDarkMode ? 'text-slate-400' : 'text-gray-600'
                 }`}>Certifications</span>
               </div>
             </div>
           </div>
 
-          {/* Professional Photo - Right Side with ID Card / Lanyard Style (Mobile: order-1, Desktop: order-2) */}
+          {/* Professional Photo - Right Side with ID Card / Lanyard Style */}
           <div className="flex justify-center items-start pt-8 lg:order-2 order-1 lg:pt-8 pt-0">
             <style>{`
               @keyframes card-sway {
@@ -119,15 +120,12 @@ const About = () => {
 
                 {/* Clip / Hook */}
                 <div className="relative flex flex-col items-center">
-                  {/* Clip ring */}
                   <div className={`w-5 h-5 rounded-full border-4 transition-colors duration-700 ${
                     isDarkMode ? 'border-gray-400 bg-transparent' : 'border-gray-700 bg-transparent'
                   }`}></div>
-                  {/* Clip body */}
                   <div className={`w-4 h-6 rounded-b-full border-4 border-t-0 mt-0.5 transition-colors duration-700 ${
                     isDarkMode ? 'border-gray-400' : 'border-gray-700'
                   }`}></div>
-                  {/* Clip pin */}
                   <div className={`w-1.5 h-4 rounded-full -mt-1 transition-colors duration-700 ${
                     isDarkMode ? 'bg-gray-400' : 'bg-gray-700'
                   }`}></div>
@@ -146,14 +144,12 @@ const About = () => {
                     : '0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(6,182,212,0.15)'
                   }}
                 >
-                  {/* Card top hole for lanyard */}
                   <div className="flex justify-center pt-3 pb-1">
                     <div className={`w-6 h-3 rounded-full border-2 transition-colors duration-700 ${
                       isDarkMode ? 'border-slate-500 bg-slate-900' : 'border-gray-300 bg-gray-100'
                     }`}></div>
                   </div>
 
-                  {/* Photo area */}
                   <div className="px-4 pb-2">
                     <div className="relative overflow-hidden rounded-xl h-64 w-full">
                       <img
@@ -169,7 +165,6 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* Card info strip */}
                   <div className={`mx-4 mb-4 rounded-xl px-3 py-3 text-center transition-all duration-700 ${
                     isDarkMode
                       ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/20'
