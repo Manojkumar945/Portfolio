@@ -473,6 +473,7 @@ const Skills = () => {
                   >
                     <img
                       src="/Placement_Coordinators_Group_Photo.jpeg"
+                      src="/Coordinator_ID.jpeg"
                       alt="Placement Coordinators Group Photo"
                       className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{ maxHeight: '320px' }}
