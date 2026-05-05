@@ -13,16 +13,6 @@ const experiences = [
     ]
   },
   {
-    title: "Placement Coordinator",
-    company: "Paavai Institutions",
-    location: "Tamil Nadu, India",
-    period: "09/2023 - Present",
-    description: "A Team Management skills obtained the new Technologies.",
-    achievements: [
-      "Coordinator role enhances the Knowledgeable experiences."
-    ]
-  },
-  {
     title: "FullStack Developer Intern",
     company: "Inspire AI",
     location: "Bangalore, India",
@@ -119,7 +109,7 @@ const Experience = () => {
         <div className="flex flex-col items-center mb-12">
           <h2 className={`text-4xl font-bold mb-4 transition-colors duration-700 ${
             isDarkMode ? 'text-white' : 'text-gray-900'
-          }`}>Experience</h2>
+          }`}>Work Experience</h2>
           
           {/* Decorative Line */}
           <div className="flex items-center gap-4 mb-6">
