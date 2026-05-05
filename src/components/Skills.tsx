@@ -284,7 +284,7 @@ const Skills = () => {
                       DOI: 10.36548/jismac.2026.1.002 | Published: 09 March 2026
                     </p>
                     <div className="mb-4">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Research Paper</p>
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Paper Title</p>
                       <p className={`text-sm font-semibold leading-snug ${dm ? 'text-purple-400' : 'text-purple-600'}`}>
                         Brainwave Monitoring and Stress Alert System with AI Smart Therapy
                       </p>
