@@ -70,13 +70,13 @@ const WallOfFame = () => {
       memories: [
         {
           id: 1,
-          image: '/Batu_Caves.jpeg',
+          image: '/BC1.jpeg',
           caption: 'The iconic 272 steps — the climb was worth every breath! 🏔️',
           date: 'Feb 2024',
         },
         {
           id: 2,
-          image: '/Batu_Caves.jpeg',
+          image: '/BC2.jpeg',
           caption: 'The magnificent Lord Murugan statue standing tall in gold.',
           date: 'Feb 2024',
         },
@@ -84,12 +84,6 @@ const WallOfFame = () => {
           id: 3,
           image: '/Batu_Caves.jpeg',
           caption: 'Inside the cave temple — ancient, mystical, and awe-inspiring.',
-          date: 'Feb 2024',
-        },
-        {
-          id: 4,
-          image: '/Batu_Caves.jpeg',
-          caption: 'Rainbow staircase — the most colorful climb in Malaysia! 🌈',
           date: 'Feb 2024',
         },
       ],
