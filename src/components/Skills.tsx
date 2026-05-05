@@ -252,10 +252,10 @@ const Skills = () => {
                               <div key={i} className="w-full h-px bg-white" style={{ marginTop: `${12 + i * 12}px` }} />
                             ))}
                           </div>
-                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">Rs</div>
+                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
-                            <div className="text-white text-2xl font-black">12,500</div>
+                            <div className="text-white text-2xl font-black">12.5k</div>
                           </div>
                         </div>
                       </div>
