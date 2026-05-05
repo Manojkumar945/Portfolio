@@ -36,6 +36,7 @@ const certifications = [
 const Skills = () => {
   const { isDarkMode } = useTheme();
   const [selectedCertificate, setSelectedCertificate] = useState<typeof certifications[0] | null>(null);
+  const [placementLightbox, setPlacementLightbox] = useState(false);
 
   const openCertificate = (cert: typeof certifications[0]) => {
     if (cert.image) setSelectedCertificate(cert);
@@ -215,8 +216,9 @@ const Skills = () => {
                       <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 flex-shrink-0 mt-1">2025</span>
                     </div>
 
-                    <p className={`text-sm mb-5 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College</p>
+                    <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College</p>
 
+                    {/* Project */}
                     <div className="mb-4">
                       <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Project</p>
                       <p className={`text-sm font-semibold leading-snug ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>
@@ -224,15 +226,25 @@ const Skills = () => {
                       </p>
                     </div>
 
-                    {/* Cash Prize — left aligned, prominent */}
-                    <div className="mb-5">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-2 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Cash Prize</p>
-                      <div className="flex items-center gap-3">
-                        <span className={`text-3xl sm:text-4xl font-black ${isDarkMode ? 'text-yellow-400' : 'text-orange-500'}`}>Rs. 12,500</span>
-                        <span className={`text-xs px-2 py-1 rounded-full font-semibold ${isDarkMode ? 'bg-yellow-400/10 text-yellow-400 border border-yellow-400/20' : 'bg-orange-100 text-orange-600'}`}>
-                          1st Place
-                        </span>
-                      </div>
+                    {/* Description */}
+                    <p className={`text-sm leading-relaxed mb-4 ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>
+                      Won 1st place at Techfinix-25, a national-level Project Expo organized by Paavai Engineering College. The project demonstrated real-time brainwave monitoring using EEG sensors combined with AI-driven stress classification, impressing judges with its innovation, technical depth, and real-world healthcare application.
+                    </p>
+
+                    {/* Key highlights */}
+                    <div className="mb-4 space-y-2">
+                      <p className={`text-xs font-medium uppercase tracking-wide ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Highlights</p>
+                      {[
+                        "Competed against 50+ teams across departments",
+                        "Demonstrated live EEG-based stress detection",
+                        "AI-powered real-time mental health classification",
+                        "Received appreciation from industry judges",
+                      ].map((point, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isDarkMode ? 'bg-cyan-400' : 'bg-blue-500'}`} />
+                          <span className={`text-xs leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>{point}</span>
+                        </div>
+                      ))}
                     </div>
 
                     <div className="flex items-center gap-2 text-green-400">
@@ -281,68 +293,79 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* ── Award 2: Placement Coordinator — Left: content + stats, Right: group photo ── */}
+            {/* ── Award 2: Placement Coordinator — full width card, center image ── */}
             <div className="group">
               <div className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-1 ${
                 isDarkMode ? 'bg-slate-800/80' : 'bg-white/80'
               }`}>
-                <div className="flex flex-col sm:flex-row">
+                <div className="p-5 sm:p-8">
+                  {/* Title + Year */}
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      Placement Student Coordinator
+                    </h3>
+                    <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">
+                      3 Years
+                    </span>
+                  </div>
 
-                  {/* Left — details */}
-                  <div className="flex-1 p-5 sm:p-8">
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                        Placement Student Coordinator
-                      </h3>
-                      <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">
-                        2023 - 2026
-                      </span>
+                  <p className={`text-sm font-semibold mb-0.5 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>
+                    Department of Information Technology
+                  </p>
+                  <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+                    Paavai Engineering College, Namakkal
+                  </p>
+
+                  <p className={`text-sm leading-relaxed mb-5 ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>
+                    Served as the Student Placement Coordinator for the Department of IT, actively bridging students and recruiters. Organized placement drives, mock interviews, and resume workshops to prepare students for industry opportunities. Successfully facilitated campus recruitment for multiple batches achieving a strong placement rate through consistent coordination and leadership.
+                  </p>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
+                    <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                      <Clock size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
+                      <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>3</p>
+                      <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Years</p>
                     </div>
-
-                    <p className={`text-sm font-semibold mb-0.5 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>
-                      Department of Information Technology
-                    </p>
-                    <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-                      Paavai Engineering College, Namakkal
-                    </p>
-
-                    <p className={`text-sm leading-relaxed mb-5 ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>
-                      Served as the Student Placement Coordinator for the Department of IT, actively bridging students and recruiters. Organized placement drives, mock interviews, and resume workshops to prepare students for industry opportunities. Successfully facilitated campus recruitment for multiple batches achieving a strong placement rate through consistent coordination and leadership.
-                    </p>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
-                      <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                        <Clock size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
-                        <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>3</p>
-                        <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Years</p>
-                      </div>
-                      <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                        <TrendingUp size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
-                        <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>80.3%</p>
-                        <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Placement</p>
-                      </div>
-                      <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                        <Users size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
-                        <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>IT</p>
-                        <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Dept.</p>
-                      </div>
+                    <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                      <TrendingUp size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
+                      <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>80.3%</p>
+                      <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Placement</p>
                     </div>
-
-                    <div className="flex items-center gap-2 text-green-400">
-                      <Medal size={16} />
-                      <span className="text-xs sm:text-sm font-medium">Leadership Role</span>
+                    <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                      <Users size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
+                      <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>IT</p>
+                      <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Dept.</p>
                     </div>
                   </div>
 
-                  {/* Right — Group Photo */}
-                  <div className="sm:w-64 overflow-hidden rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl flex-shrink-0">
+                  {/* Leadership badge */}
+                  <div className="flex items-center gap-2 text-green-400 mb-6">
+                    <Medal size={16} />
+                    <span className="text-xs sm:text-sm font-medium">Leadership Role</span>
+                  </div>
+
+                  {/* Center image — clickable lightbox */}
+                  <div
+                    className="relative rounded-xl overflow-hidden cursor-zoom-in mx-auto"
+                    style={{ maxHeight: '320px' }}
+                    onClick={() => setPlacementLightbox(true)}
+                  >
                     <img
-                      src="/Placement_Coordinators_Group_Photo.jpeg" 
+                      src="/Placement_Coordinators_Group_Photo.jpeg"
                       alt="Placement Coordinators Group Photo"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      style={{ minHeight: '260px', maxHeight: '400px' }}
+                      className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      style={{ maxHeight: '320px' }}
                     />
+                    {/* Overlay hint */}
+                    <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/60 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                        </svg>
+                        Click to expand
+                      </div>
+                    </div>
                   </div>
 
                 </div>
