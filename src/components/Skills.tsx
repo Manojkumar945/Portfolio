@@ -16,7 +16,14 @@ const technicalSkills = [
 ];
 
 const certifications = [
-  { name: "Journal Publication Certificate", issuer: "IRO Journal", type: "Research Paper", year: "2026", color: "from-blue-500 to-indigo-500", image: "/publication-jismac.2026.1.002.png", description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." },
+  { 
+   name: "Journal Publication Certificate", 
+   issuer: "IRO Journal", 
+   type: "Research Paper",
+   year: "2026", 
+    color: "from-blue-500 to-indigo-500", 
+    image: "/publication-jismac.2026.1.002.png", 
+    description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." },
   { name: "National Conference (NCRTAD-25)", issuer: "Bannari Amman Institute of Technology", type: "Recent Trends", year: "2025", color: "from-purple-500 to-indigo-500", image: "/conference_certificate.png", description: "Presented a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at a National-level AI and Data Science Conference." },
   { name: "Data Analytics with Python", issuer: "NPTEL Online Certifications", type: "Technical", year: "2025", color: "from-blue-500 to-cyan-500", image: "/data_analytics_with_python.png", description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score." },
   { name: "Raspberry Pi Technical Trainer", issuer: "Paavai Engineering College", type: "Hardware", year: "2025", color: "from-green-500 to-teal-500", image: "/certificates/raspberry_pi_trainer_certification.png", description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students." },
