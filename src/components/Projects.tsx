@@ -11,7 +11,14 @@ const projects: Project[] = [
     image: "/Gemini_Generated_Image_clwlteclwlteclwl.png",
     images: [
       "/EEG_Board_Setup.jpg",
-      "/EEG_Headband.jpg"
+      "/EEG_Headband.jpg",
+      "/Pro1.png",
+      "/Pro2.png",
+      "/Pro3.png",
+      "/Pro4.png",
+      "/Pro5.png",
+      "/Pro6.png",
+      "/Pro7.png"
     ],
     description: "The Brainwave Monitoring & Stress Alert System with AI Smart Therapy is an intelligent healthcare solution designed to detect and manage stress in real time. The system uses an EEG-based brainwave sensor to continuously monitor neural signals and analyze them using artificial intelligence algorithms. Based on the detected brainwave patterns, the user's mental state is classified into normal, stress, or anxiety levels.",
     technologies: ["HTML", "CSS", "JavaScript", "Visual Studio", "Firebase", "AI", "IoT", "Cloud"],
