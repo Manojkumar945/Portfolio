@@ -471,7 +471,7 @@ const Skills = () => {
                     style={{ maxHeight: '320px' }}
                     onClick={() => setPlacementLightbox(true)}
                   >
-                    <images
+                    <img
                       src="/Placement_Coordinators_Group_Photo.jpeg"
                       src="/Coordinator_ID.jpeg"
                       alt="Placement Coordinators Group Photo"
