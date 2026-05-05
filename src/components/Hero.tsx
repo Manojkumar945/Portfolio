@@ -76,7 +76,7 @@ const Hero = () => {
                 }`}>
                   Hi, I'm
                 </p>
-                <h2 className={`text-4xl md:text-6xl lg:text-7xl font-bold animate-fade-in-up transition-all duration-700 ${
+                <h2 className={`text-4xl md:text-6xl lg:text-8xl font-bold animate-fade-in-up transition-all duration-700 ${
                   isDarkMode 
                     ? 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-blue-400 to-cyan-400' 
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
