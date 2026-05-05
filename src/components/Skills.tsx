@@ -272,7 +272,7 @@ const Skills = () => {
                   <div className="flex-1 p-5 sm:p-8">
                     <div className="flex items-start justify-between gap-3 mb-2">
                       <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${dm ? 'text-white' : 'text-gray-900'}`}>
-                        Journal Publication Certificate
+                        Journal Publication
                       </h3>
                       <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 flex-shrink-0 mt-1">2026</span>
                     </div>
