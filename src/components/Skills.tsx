@@ -340,7 +340,7 @@ const Skills = () => {
 
                     {/* Project */}
                     <div className="mb-4">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Project</p>
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Project Title</p>
                       <p className={`text-sm font-semibold leading-snug ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>
                         Brainwave Monitoring & Stress Alert System with AI Smart Therapy
                       </p>
