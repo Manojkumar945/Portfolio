@@ -17,27 +17,140 @@ const technicalSkills = [
 
 const certifications = [
   { 
-   name: "Journal Publication Certificate", 
-   issuer: "IRO Journal", 
-   type: "Research Paper",
-   year: "2026", 
+    name: "Journal Publication Certificate", 
+    issuer: "IRO Journal", 
+    type: "Research Paper", 
+    year: "2026", 
     color: "from-blue-500 to-indigo-500", 
     image: "/publication-jismac.2026.1.002.png", 
-    description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." },
-  { name: "National Conference (NCRTAD-25)", issuer: "Bannari Amman Institute of Technology", type: "Recent Trends", year: "2025", color: "from-purple-500 to-indigo-500", image: "/conference_certificate.png", description: "Presented a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at a National-level AI and Data Science Conference." },
-  { name: "Data Analytics with Python", issuer: "NPTEL Online Certifications", type: "Technical", year: "2025", color: "from-blue-500 to-cyan-500", image: "/data_analytics_with_python.png", description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score." },
-  { name: "Raspberry Pi Technical Trainer", issuer: "Paavai Engineering College", type: "Hardware", year: "2025", color: "from-green-500 to-teal-500", image: "/certificates/raspberry_pi_trainer_certification.png", description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students." },
-  { name: "30 days Masterclass in FullStack Web Development", issuer: "Pantech AI", type: "Development", year: "2025", color: "from-pink-500 to-pink-500", image: "/manoj_kumar.s.png", description: "Successfully completed an intensive full stack web development masterclass covering front-end and back-end technologies." },
-  { name: "AI Tools & ChatGPT Workshop", issuer: "be10x", type: "AI Tools", year: "2025", color: "from-red-500 to-red-500", image: "/ai_tools_workshop_certificate.jpg", description: "Completed an AI tools and ChatGPT workshop focused on rapid presentation creation, data analysis, and coding productivity." },
-  { name: "Introduction to Microsoft Excel", issuer: "Coursera Project Network", type: "Analytics", year: "2024", color: "from-emerald-500 to-green-500", image: "/certificates/ms_excel_course_certificate.pdf.png", description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera." },
-  { name: "Mobile App Development", issuer: "Infosys Springboard", type: "Development", year: "2024", color: "from-purple-500 to-indigo-500", image: "/certificates/infosys_certificate.png", description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard." },
-  { name: "Global Immersion Program", issuer: "UMPSA University Malaysia", type: "Academic", year: "2024", color: "from-orange-500 to-red-500", image: "/certificates/umpsa_certificate.png", description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024." },
-  { name: "Cloud Computing", issuer: "NPTEL Online Certifications", type: "Cloud", year: "2024", color: "from-sky-500 to-blue-500", image: "/certificates/cloud_computing_(1).pdf.png", description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur." },
-  { name: "Google AI-ML Virtual Internship", issuer: "AICTE Eduskills Foundation", type: "AI/ML", year: "2024", color: "from-violet-500 to-purple-500", image: "/certificates/google_ai-ml_certificate.pdf.png", description: "10-week AI-ML Virtual Internship supported by Google for Developers, covering artificial intelligence and machine learning fundamentals." },
-  { name: "Google Android Developer Virtual Internship", issuer: "AICTE Eduskills Foundation", type: "Mobile", year: "2024", color: "from-green-500 to-emerald-500", image: "/certificates/google_android_developer_certificate.pdf.png", description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices." },
-  { name: "Technical Workshop", issuer: "Way2me", type: "Blockchain", year: "2024", color: "from-red-500 to-orange-500", image: "/blockchain_and_cloud_computing_workshop_certificate.jpg", description: "Actively participated in a three-day workshop on Blockchain and Cloud Computing, gaining practical insights into emerging technologies." },
-  { name: "Campus Ambassador Program", issuer: "EXIMIUS - IIM Bangalore", type: "Leadership", year: "2024", color: "from-yellow-500 to-orange-500", image: "/eximius_campus_ambassador.jpeg", description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024." },
-  { name: "PINNACLE-24 National Level Technical Symposium", issuer: "Coimbatore Institute of Technology", type: "Paper Presentation", year: "2024", color: "from-lime-500 to-lime-500", image: "/Symposium_Certificate.png", description: "Participated in a national-level technical symposium organized by the ECE Association and IETE Students Forum." },
+    description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." 
+  },
+  { 
+    name: "National Conference (NCRTAD-25)", 
+    issuer: "Bannari Amman Institute of Technology", 
+    type: "Recent Trends", 
+    year: "2025", 
+    color: "from-purple-500 to-indigo-500", 
+    image: "/conference_certificate.png", 
+    description: "Presented a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at a National-level AI and Data Science Conference." 
+  },
+  { 
+    name: "Data Analytics with Python", 
+    issuer: "NPTEL Online Certifications", 
+    type: "Technical", 
+    year: "2025", 
+    color: "from-blue-500 to-cyan-500", 
+    image: "/data_analytics_with_python.png", 
+    description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score." 
+  },
+  { 
+    name: "Raspberry Pi Technical Trainer", 
+    issuer: "Paavai Engineering College", 
+    type: "Hardware", 
+    year: "2025", 
+    color: "from-green-500 to-teal-500", 
+    image: "/certificates/raspberry_pi_trainer_certification.png", 
+    description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students." 
+  },
+  { 
+    name: "30 days Masterclass in FullStack Web Development", 
+    issuer: "Pantech AI", 
+    type: "Development", 
+    year: "2025", 
+    color: "from-pink-500 to-pink-500", 
+    image: "/manoj_kumar.s.png", 
+    description: "Successfully completed an intensive full stack web development masterclass covering front-end and back-end technologies." 
+  },
+  { 
+    name: "AI Tools & ChatGPT Workshop", 
+    issuer: "be10x", 
+    type: "AI Tools", 
+    year: "2025", 
+    color: "from-red-500 to-red-500", 
+    image: "/ai_tools_workshop_certificate.jpg", 
+    description: "Completed an AI tools and ChatGPT workshop focused on rapid presentation creation, data analysis, and coding productivity." 
+  },
+  { 
+    name: "Introduction to Microsoft Excel", 
+    issuer: "Coursera Project Network", 
+    type: "Analytics", 
+    year: "2024", 
+    color: "from-emerald-500 to-green-500", 
+    image: "/certificates/ms_excel_course_certificate.pdf.png", 
+    description: "Project-based learning covering Excel fundamentals, data analysis, and spreadsheet management through Coursera." 
+  },
+  { 
+    name: "Mobile App Development", 
+    issuer: "Infosys Springboard", 
+    type: "Development", 
+    year: "2024", 
+    color: "from-purple-500 to-indigo-500", 
+    image: "/certificates/infosys_certificate.png", 
+    description: "Introduction to Android development covering mobile app design, development, and deployment through Infosys Springboard." 
+  },
+  { 
+    name: "Global Immersion Program", 
+    issuer: "UMPSA University Malaysia", 
+    type: "Academic", 
+    year: "2024", 
+    color: "from-orange-500 to-red-500", 
+    image: "/certificates/umpsa_certificate.png", 
+    description: "Two-week global immersion program at Universiti Malaysia Pahang focusing on cultural exchange and international learning from November 14-27, 2024." 
+  },
+  { 
+    name: "Cloud Computing", 
+    issuer: "NPTEL Online Certifications", 
+    type: "Cloud", 
+    year: "2024", 
+    color: "from-sky-500 to-blue-500", 
+    image: "/certificates/cloud_computing_(1).pdf.png", 
+    description: "Comprehensive course covering cloud computing concepts, services, and deployment models with 55% consolidated score from IIT Kharagpur." 
+  },
+  { 
+    name: "Google AI-ML Virtual Internship", 
+    issuer: "AICTE Eduskills Foundation", 
+    type: "AI/ML", 
+    year: "2024", 
+    color: "from-violet-500 to-purple-500", 
+    image: "/certificates/google_ai-ml_certificate.pdf.png", 
+    description: "10-week AI-ML Virtual Internship supported by Google for Developers, covering artificial intelligence and machine learning fundamentals." 
+  },
+  { 
+    name: "Google Android Developer Virtual Internship", 
+    issuer: "AICTE Eduskills Foundation", 
+    type: "Mobile", 
+    year: "2024", 
+    color: "from-green-500 to-emerald-500", 
+    image: "/certificates/google_android_developer_certificate.pdf.png", 
+    description: "10-week Android Developer Virtual Internship supported by Google for Developers, covering mobile app development best practices." 
+  },
+  { 
+    name: "Technical Workshop", 
+    issuer: "Way2me", 
+    type: "Blockchain", 
+    year: "2024", 
+    color: "from-red-500 to-orange-500", 
+    image: "/blockchain_and_cloud_computing_workshop_certificate.jpg", 
+    description: "Actively participated in a three-day workshop on Blockchain and Cloud Computing, gaining practical insights into emerging technologies." 
+  },
+  { 
+    name: "Campus Ambassador Program", 
+    issuer: "EXIMIUS - IIM Bangalore", 
+    type: "Leadership", 
+    year: "2024", 
+    color: "from-yellow-500 to-orange-500", 
+    image: "/eximius_campus_ambassador.jpeg", 
+    description: "Campus Ambassador for EXIMIUS 2024 at IIM Bangalore, contributing to making the event a success in June and July 2024." 
+  },
+  { 
+    name: "PINNACLE-24 National Level Technical Symposium", 
+    issuer: "Coimbatore Institute of Technology", 
+    type: "Paper Presentation", 
+    year: "2024", 
+    color: "from-lime-500 to-lime-500", 
+    image: "/Symposium_Certificate.png", 
+    description: "Participated in a national-level technical symposium organized by the ECE Association and IETE Students Forum." 
+  },
 ];
 
 const Skills = () => {
