@@ -284,7 +284,7 @@ const Skills = () => {
                       DOI: 10.36548/jismac.2026.1.002 | Published: 09 March 2026
                     </p>
                     <div className="mb-4">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Research Paper</p>
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Paper Title</p>
                       <p className={`text-sm font-semibold leading-snug ${dm ? 'text-purple-400' : 'text-purple-600'}`}>
                         Brainwave Monitoring and Stress Alert System with AI Smart Therapy
                       </p>
@@ -305,7 +305,7 @@ const Skills = () => {
                     </p>
                     <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>85%+</p>
+                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>Open Access</p>
                         <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Accuracy</p>
                       </div>
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
