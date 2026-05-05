@@ -392,18 +392,19 @@ const Skills = () => {
                             ))}
                           </div>
                           {/* Rupee symbol */}
-                          <div className="text-5xl">🏆</div>
-
-                      <div className="text-center">
-                        <p className={`text-xs font-bold ${isDarkMode ? 'text-yellow-400' : 'text-orange-600'}`}>Prize Money</p>
-                        <p className={`text-xs ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Techfinix-25</p>
-                      </div>
                           <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
                             <div className="text-white text-2xl font-black">12,500</div>
+                          </div>
                         </div>
                       </div>
+
+                      <div className="text-5xl">🏆</div>
+
+                      <div className="text-center">
+                        <p className={`text-xs font-bold ${isDarkMode ? 'text-yellow-400' : 'text-orange-600'}`}>Prize Money</p>
+                        <p className={`text-xs ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Techfinix-25</p>
                       </div>
                     </div>
                   </div>
