@@ -255,7 +255,7 @@ const Skills = () => {
                           <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
-                            <div className="text-white text-2xl font-black">12.5k</div>
+                            <div className="text-white text-2xl font-black">12,500</div>
                           </div>
                         </div>
                       </div>
