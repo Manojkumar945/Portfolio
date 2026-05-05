@@ -247,6 +247,10 @@ const Skills = () => {
                       ))}
                     </div>
 
+                    <p className={`text-xs mb-3 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>
+                      📅 Event Date: 08 November 2025
+                    </p>
+
                     <div className="flex items-center gap-2 text-green-400">
                       <Medal size={16} />
                       <span className="text-xs sm:text-sm font-medium">Official Award Winner</span>
@@ -257,34 +261,32 @@ const Skills = () => {
                   <div className={`sm:w-52 flex items-center justify-center p-6 ${
                     isDarkMode ? 'bg-gradient-to-br from-slate-700/60 to-slate-800/60' : 'bg-gradient-to-br from-yellow-50 to-orange-50'
                   }`}>
-                    <div className="flex flex-col items-center gap-4">
+                    <div className="flex flex-col items-center gap-3">
+                      {/* Cup icon on top */}
+                      <div className="text-5xl">🏆</div>
+
+                      {/* Prize Money label */}
+                      <div className="text-center">
+                        <p className={`text-sm font-bold ${isDarkMode ? 'text-yellow-400' : 'text-orange-600'}`}>Prize Money</p>
+                        <p className={`text-xs font-semibold ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Techfinix - 25</p>
+                      </div>
+
                       {/* Stacked money bills */}
                       <div className="relative">
-                        {/* Bottom shadow bills */}
                         <div className="absolute -bottom-2 -right-2 w-36 h-20 rounded-xl bg-green-800/30" />
                         <div className="absolute -bottom-1 -right-1 w-36 h-20 rounded-xl bg-green-700/40" />
-                        {/* Main bill */}
                         <div className="relative w-36 h-20 rounded-xl bg-gradient-to-br from-green-400 to-green-600 shadow-xl flex flex-col items-center justify-center overflow-hidden">
-                          {/* Bill texture lines */}
                           <div className="absolute inset-0 opacity-10">
                             {[...Array(6)].map((_, i) => (
                               <div key={i} className="w-full h-px bg-white" style={{ marginTop: `${12 + i * 12}px` }} />
                             ))}
                           </div>
-                          {/* Rupee symbol */}
                           <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
                             <div className="text-white text-2xl font-black">12,500</div>
                           </div>
                         </div>
-                      </div>
-
-                      <div className="text-5xl">🏆</div>
-
-                      <div className="text-center">
-                        <p className={`text-xs font-bold ${isDarkMode ? 'text-yellow-400' : 'text-orange-600'}`}>Prize Money</p>
-                        <p className={`text-xs ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Techfinix-25</p>
                       </div>
                     </div>
                   </div>
@@ -293,7 +295,107 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* ── Award 2: Placement Coordinator — full width card, center image ── */}
+            {/* ── Award 3: Journal Publication ── */}
+            <div className="group">
+              <div className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-1 ${
+                isDarkMode ? 'bg-slate-800/80' : 'bg-white/80'
+              }`}>
+                <div className="flex flex-col sm:flex-row">
+
+                  {/* Left — details */}
+                  <div className="flex-1 p-5 sm:p-8">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        Journal Publication Certificate
+                      </h3>
+                      <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 flex-shrink-0 mt-1">2026</span>
+                    </div>
+
+                    <p className={`text-sm font-semibold mb-0.5 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>
+                      Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)
+                    </p>
+                    <p className={`text-sm mb-1 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+                      IRO Journal — ISSN: 2582-1369
+                    </p>
+                    <p className={`text-xs mb-4 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>
+                      DOI: 10.36548/jismac.2026.1.002 &nbsp;|&nbsp; Published: 09 March 2026
+                    </p>
+
+                    {/* Paper title */}
+                    <div className="mb-4">
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Research Paper</p>
+                      <p className={`text-sm font-semibold leading-snug ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+                        Brainwave Monitoring and Stress Alert System with AI Smart Therapy
+                      </p>
+                    </div>
+
+                    {/* Authors */}
+                    <div className="mb-4">
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>Authors</p>
+                      <p className={`text-xs leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>
+                        Babylatha M., <span className={`font-semibold ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Manoj Kumar S.</span>, Ganapathy R., Giribalan G.
+                      </p>
+                      <p className={`text-xs mt-0.5 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>
+                        Department of Information Technology, Paavai Engineering College, Namakkal, Tamil Nadu, India.
+                      </p>
+                    </div>
+
+                    {/* Abstract summary */}
+                    <p className={`text-sm leading-relaxed mb-4 ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>
+                      Published a research paper presenting a wearable EEG-based stress monitoring system integrating AI and IoT to classify five mental states in real time. The system uses MLP and CNN models achieving above 85% classification accuracy with 2-3s alert latency, automatically activating smart therapy upon stress detection.
+                    </p>
+
+                    {/* Key stats */}
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
+                      <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                        <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>85%+</p>
+                        <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Accuracy</p>
+                      </div>
+                      <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                        <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>2-3s</p>
+                        <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Alert Latency</p>
+                      </div>
+                      <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                        <p className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Vol.8</p>
+                        <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Issue 1, 2026</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-green-400">
+                      <Medal size={16} />
+                      <span className="text-xs sm:text-sm font-medium">Peer-Reviewed Publication</span>
+                    </div>
+                  </div>
+
+                  {/* Right — Journal cover visual */}
+                  <div className={`sm:w-52 flex flex-col items-center justify-center p-6 gap-4 ${
+                    isDarkMode ? 'bg-gradient-to-br from-blue-900/40 to-indigo-900/40' : 'bg-gradient-to-br from-blue-50 to-indigo-50'
+                  }`}>
+                    {/* Journal icon */}
+                    <div className="text-5xl">📄</div>
+
+                    <div className="text-center">
+                      <p className={`text-xs font-bold uppercase tracking-wide ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`}>Published</p>
+                      <p className={`text-xs font-semibold mt-0.5 ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>JISMAC Journal</p>
+                      <p className={`text-xs mt-0.5 ${isDarkMode ? 'text-slate-500' : 'text-gray-400'}`}>March 2026</p>
+                    </div>
+
+                    {/* Open Access badge */}
+                    <div className={`text-center px-3 py-2 rounded-xl w-full ${isDarkMode ? 'bg-green-500/10 border border-green-400/20' : 'bg-green-50 border border-green-200'}`}>
+                      <p className="text-xs font-bold text-green-400">Open Access</p>
+                      <p className={`text-xs mt-0.5 ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>CC BY-NC 4.0</p>
+                    </div>
+
+                    {/* Pages info */}
+                    <div className={`text-center px-3 py-2 rounded-xl w-full ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-white border border-gray-200'}`}>
+                      <p className={`text-xs font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>Pages 15 – 39</p>
+                      <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>25 Pages</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
             <div className="group">
               <div className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-1 ${
                 isDarkMode ? 'bg-slate-800/80' : 'bg-white/80'
