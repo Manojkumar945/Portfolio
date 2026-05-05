@@ -440,7 +440,7 @@ const Skills = () => {
                     Served as the Student Placement Coordinator for the Department of IT, actively bridging students and recruiters. Organized placement drives, mock interviews, and resume workshops to prepare students for industry opportunities. Successfully facilitated campus recruitment for multiple batches achieving a strong placement rate through consistent coordination and leadership.
                   </p>
 
-                  {/* Stats */}
+                  {/* Stats */} 
                   <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
                     <div className={`rounded-xl p-2 sm:p-3 text-center ${isDarkMode ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                       <Clock size={14} className={`mx-auto mb-1 ${isDarkMode ? 'text-cyan-400' : 'text-blue-500'}`} />
@@ -469,7 +469,7 @@ const Skills = () => {
                   <div
                     className="relative rounded-xl overflow-hidden cursor-zoom-in mx-auto"
                     style={{ maxHeight: '320px' }}
-                    onClick={() => setPlacementLightbox(placementGroupPhot)}
+                    onClick={() => setPlacementLightbox()}
                   >
                     <img
                       src="/Placement_Coordinators_Group_Photo.jpeg"
