@@ -36,25 +36,25 @@ const WallOfFame = () => {
       memories: [
         {
           id: 1,
-          image: '/UMPSA_Memories.jpg',
+          image: '/UMPSA1.jpeg',
           caption: 'First day at UMPSA campus — full of excitement and new beginnings!',
           date: 'Jan 2024',
         },
         {
           id: 2,
-          image: '/UMPSA_Memories.jpg',
+          image: '/UMPSA2.jpeg',
           caption: 'Group project sessions — teamwork makes the dream work 💪',
           date: 'Mar 2024',
         },
         {
           id: 3,
-          image: '/UMPSA_Memories.jpg',
+          image: '/UMPSA3.jpeg',
           caption: 'Campus walk at golden hour — serenity in every step.',
           date: 'May 2024',
         },
         {
           id: 4,
-          image: '/UMPSA_Memories.jpg',
+          image: '/UMPSA4.jpeg',
           caption: 'Farewell gathering with amazing friends — bonds for life.',
           date: 'Jul 2024',
         },
