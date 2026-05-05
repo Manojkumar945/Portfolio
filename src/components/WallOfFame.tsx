@@ -42,19 +42,19 @@ const WallOfFame = () => {
         },
         {
           id: 2,
-          image: '/UMPSA2.jpeg',
+          image: '/UMPSA4.jpeg',
           caption: 'Group project sessions — teamwork makes the dream work 💪',
           date: 'Nov 2024',
         },
         {
           id: 3,
-          image: '/UMPSA3.jpeg',
+          image: '/UMPSA2.jpeg',
           caption: 'Campus walk at golden hour — serenity in every step.',
           date: 'Nov 2024',
         },
         {
           id: 4,
-          image: '/UMPSA4.jpeg',
+          image: '/UMPSA3.jpeg',
           caption: 'Farewell gathering with amazing friends — bonds for life.',
           date: 'Nov 2024',
         },
