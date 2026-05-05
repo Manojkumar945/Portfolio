@@ -384,7 +384,7 @@ const Skills = () => {
                     <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                       <TrendingUp size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
                       <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>80.3%</p>
-                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Placement %</p>
+                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Placement Acheived</p>
                     </div>
                     <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                       <Users size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
