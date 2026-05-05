@@ -372,7 +372,7 @@ const Skills = () => {
                     <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${dm ? 'text-white' : 'text-gray-900'}`}>
                       Placement Student Coordinator
                     </h3>
-                    <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">3 Years</span>
+                    <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">2023 - 2026</span>
                   </div>
                   <p className={`text-sm font-semibold mb-0.5 ${dm ? 'text-cyan-400' : 'text-blue-600'}`}>Department of Information Technology</p>
                   <p className={`text-sm mb-4 ${dm ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College, Namakkal</p>
