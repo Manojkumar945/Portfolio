@@ -305,7 +305,7 @@ const Skills = () => {
                       Placement Student Coordinator
                     </h3>
                     <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">
-                      3 Years
+                      2023 - 2026
                     </span>
                   </div>
 
