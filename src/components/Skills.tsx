@@ -218,7 +218,7 @@ const Skills = () => {
                     <div className="mb-4 space-y-2">
                       <p className={`text-xs font-medium uppercase tracking-wide ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Highlights</p>
                       {[
-                        "Competed against 50+ teams across departments",
+                        "Competed against 40+ teams across departments",
                         "Demonstrated live EEG-based stress detection",
                         "AI-powered real-time mental health classification",
                         "Received appreciation from industry judges",
