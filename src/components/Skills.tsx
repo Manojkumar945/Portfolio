@@ -207,7 +207,7 @@ const Skills = () => {
                     <p className={`text-sm mb-1 ${dm ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College</p>
                     <p className={`text-xs mb-4 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Event Date: 08 November 2025</p>
                     <div className="mb-4">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Project</p>
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Project Titl</p>
                       <p className={`text-sm font-semibold leading-snug ${dm ? 'text-purple-400' : 'text-purple-600'}`}>
                         Brainwave Monitoring & Stress Alert System with AI Smart Therapy
                       </p>
@@ -252,7 +252,7 @@ const Skills = () => {
                               <div key={i} className="w-full h-px bg-white" style={{ marginTop: `${12 + i * 12}px` }} />
                             ))}
                           </div>
-                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">Rs</div>
+                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
                             <div className="text-white text-2xl font-black">12,500</div>
