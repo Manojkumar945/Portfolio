@@ -93,7 +93,7 @@ const Hero = () => {
                   paddingBottom: '0.1em',
                   overflow: 'visible'
                 }}>
-                  Manoj Kumar
+                  Manoj Kumar 
                 </h2>
               </div>
               
