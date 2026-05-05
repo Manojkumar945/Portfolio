@@ -62,7 +62,11 @@ const projects: Project[] = [
     category: "Front End",
     image: "https://images.pexels.com/photos/13062236/pexels-photo-13062236.jpeg",
     images: [
-      "https://images.pexels.com/photos/13062236/pexels-photo-13062236.jpeg",
+      "/TRP1.png",
+      "/TRP2.png",
+      "/TRP3.png",
+      "/TRP4.png",
+      "/TRP5.png"
     ],
     description: "A journey planner, trip planner, or route planner is a specialized search engine used to find an optimal means of travelling between two or more given locations, sometimes using more than one transport mode. Searches may be optimized on different criteria, for example fastest, shortest, fewest changes, cheapest.",
     technologies: ["Visual Studio", "HTML", "CSS", "JavaScript", "Google Maps API"],
