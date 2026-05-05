@@ -338,7 +338,7 @@ const Skills = () => {
                   {/* Right — Group Photo */}
                   <div className="sm:w-64 overflow-hidden rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl flex-shrink-0">
                     <img
-                      src="/Placement_Coordinators_Group_Photo.jpeg"
+                      src="/Placement_Coordinators_Group_Photo.jpeg" 
                       alt="Placement Coordinators Group Photo"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{ minHeight: '260px', maxHeight: '400px' }}
