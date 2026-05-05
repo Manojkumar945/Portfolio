@@ -26,7 +26,9 @@ const projects: Project[] = [
     category: "AI",
     image: "/Portfolio_Thumbnail.png",
     images: [
-      "/Portfolio_Thumbnail.png",
+      "/Port1.png",
+      "/Port2.png",
+      "/Port3.png",
     ],
     description: "A portfolio website shows your best work all in one place. It helps teachers, jobs, or schools learn more about you. A personal academic website can help you get noticed and trusted online.",
     technologies: ["HTML", "CSS", "JavaScript", "React Native", "JSON", "Visual Studio"],
