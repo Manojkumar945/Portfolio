@@ -22,7 +22,7 @@ const certifications = [
     type: "Research Paper", 
     year: "2026", 
     color: "from-blue-500 to-indigo-500", 
-    image: "/publication-jismac.2026.1.002.png", 
+    image: "/publication-jismac.2026.1.002.png",
     description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." 
   },
   { 
