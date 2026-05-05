@@ -306,7 +306,7 @@ const Skills = () => {
                     <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                         <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>Open Access</p>
-                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Accuracy</p>
+                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>CC BY-NC 4.0</p>
                       </div>
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                         <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>25 Pages</p>
