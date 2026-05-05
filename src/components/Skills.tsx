@@ -16,7 +16,7 @@ const technicalSkills = [
 ];
 
 const certifications = [
-  { name: "Journal Publication Certificate", issuer: "IRO Journal", type: "Research Paper", year: "2026", color: "from-blue-500 to-indigo-500", image: "/publication-jismac.2026.1.002.png", description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." }, 
+  { name: "Journal Publication Certificate", issuer: "IRO Journal", type: "Research Paper", year: "2026", color: "from-blue-500 to-indigo-500", image: "/publication-jismac.2026.1.002.png", description: "Published a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at Journal of IoT in Social, Mobile, Analytics and Cloud (JISMAC)." },
   { name: "National Conference (NCRTAD-25)", issuer: "Bannari Amman Institute of Technology", type: "Recent Trends", year: "2025", color: "from-purple-500 to-indigo-500", image: "/conference_certificate.png", description: "Presented a research paper titled Brainwave Monitoring and Stress Alert System with AI Smart Therapy at a National-level AI and Data Science Conference." },
   { name: "Data Analytics with Python", issuer: "NPTEL Online Certifications", type: "Technical", year: "2025", color: "from-blue-500 to-cyan-500", image: "/data_analytics_with_python.png", description: "Comprehensive course covering Python programming for data analysis, statistics, and visualization techniques with 54% consolidated score." },
   { name: "Raspberry Pi Technical Trainer", issuer: "Paavai Engineering College", type: "Hardware", year: "2025", color: "from-green-500 to-teal-500", image: "/certificates/raspberry_pi_trainer_certification.png", description: "Technical trainer certification for latest tools including Chatbot, Raspberry Pi, and Arduino technologies for first-year students." },
@@ -207,7 +207,7 @@ const Skills = () => {
                     <p className={`text-sm mb-1 ${dm ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College</p>
                     <p className={`text-xs mb-4 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Event Date: 08 November 2025</p>
                     <div className="mb-4">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Project Titl</p>
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Project</p>
                       <p className={`text-sm font-semibold leading-snug ${dm ? 'text-purple-400' : 'text-purple-600'}`}>
                         Brainwave Monitoring & Stress Alert System with AI Smart Therapy
                       </p>
@@ -252,7 +252,7 @@ const Skills = () => {
                               <div key={i} className="w-full h-px bg-white" style={{ marginTop: `${12 + i * 12}px` }} />
                             ))}
                           </div>
-                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
+                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">Rs</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
                             <div className="text-white text-2xl font-black">12,500</div>
@@ -272,7 +272,7 @@ const Skills = () => {
                   <div className="flex-1 p-5 sm:p-8">
                     <div className="flex items-start justify-between gap-3 mb-2">
                       <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${dm ? 'text-white' : 'text-gray-900'}`}>
-                        Journal Publication
+                        Journal Publication Certificate
                       </h3>
                       <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 flex-shrink-0 mt-1">2026</span>
                     </div>
@@ -284,7 +284,7 @@ const Skills = () => {
                       DOI: 10.36548/jismac.2026.1.002 | Published: 09 March 2026
                     </p>
                     <div className="mb-4">
-                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Paper Title</p>
+                      <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Research Paper</p>
                       <p className={`text-sm font-semibold leading-snug ${dm ? 'text-purple-400' : 'text-purple-600'}`}>
                         Brainwave Monitoring and Stress Alert System with AI Smart Therapy
                       </p>
@@ -305,12 +305,12 @@ const Skills = () => {
                     </p>
                     <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>Open Access</p>
-                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>CC BY-NC 4.0</p>
+                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>85%+</p>
+                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Accuracy</p>
                       </div>
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>25 Pages</p>
-                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Pages 15-39</p>
+                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>2-3s</p>
+                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Alert Latency</p>
                       </div>
                       <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                         <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>Vol.8</p>
@@ -343,7 +343,7 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  {/* Right — journal visual */}
+                  {/* Right — journal visual with buttons */}
                   <div className={`sm:w-52 flex flex-col items-center justify-center p-6 gap-4 ${dm ? 'bg-gradient-to-br from-blue-900/40 to-indigo-900/40' : 'bg-gradient-to-br from-blue-50 to-indigo-50'}`}>
                     <div className="text-5xl">📄</div>
                     <div className="text-center">
@@ -351,14 +351,28 @@ const Skills = () => {
                       <p className={`text-xs font-semibold mt-0.5 ${dm ? 'text-slate-300' : 'text-gray-700'}`}>JISMAC Journal</p>
                       <p className={`text-xs mt-0.5 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>March 2026</p>
                     </div>
-                    <div className={`text-center px-3 py-2 rounded-xl w-full ${dm ? 'bg-green-500/10 border border-green-400/20' : 'bg-green-50 border border-green-200'}`}>
-                      <p className="text-xs font-bold text-green-400">Open Access</p>
-                      <p className={`text-xs mt-0.5 ${dm ? 'text-slate-400' : 'text-gray-500'}`}>CC BY-NC 4.0</p>
-                    </div>
-                    <div className={`text-center px-3 py-2 rounded-xl w-full ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-white border border-gray-200'}`}>
-                      <p className={`text-xs font-semibold ${dm ? 'text-white' : 'text-gray-800'}`}>Pages 15 - 39</p>
-                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>25 Pages</p>
-                    </div>
+
+                    {/* View Journal button */}
+                    <a
+                      href="https://irojournals.com/iroismac/article/view/8/1/2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 w-full px-3 py-2 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition-all shadow hover:shadow-lg"
+                    >
+                      <ExternalLink size={12} />
+                      View Journal
+                    </a>
+
+                    {/* View PDF button */}
+                    <button
+                      onClick={() => setPdfViewer(true)}
+                      className={`flex items-center justify-center gap-1.5 w-full px-3 py-2 rounded-lg text-xs font-semibold transition-all shadow hover:shadow-lg ${dm ? 'bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-500' : 'bg-white hover:bg-gray-50 text-gray-700 border border-gray-200'}`}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      View PDF
+                    </button>
                   </div>
                 </div>
               </div>
@@ -372,7 +386,7 @@ const Skills = () => {
                     <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${dm ? 'text-white' : 'text-gray-900'}`}>
                       Placement Student Coordinator
                     </h3>
-                    <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">2023 - 2026</span>
+                    <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">3 Years</span>
                   </div>
                   <p className={`text-sm font-semibold mb-0.5 ${dm ? 'text-cyan-400' : 'text-blue-600'}`}>Department of Information Technology</p>
                   <p className={`text-sm mb-4 ${dm ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College, Namakkal</p>
@@ -388,7 +402,7 @@ const Skills = () => {
                     <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                       <TrendingUp size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
                       <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>80.3%</p>
-                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Placement %</p>
+                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Placement</p>
                     </div>
                     <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
                       <Users size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
