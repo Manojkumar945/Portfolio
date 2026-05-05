@@ -402,7 +402,6 @@ const Skills = () => {
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
                             <div className="text-white text-2xl font-black">12,500</div>
-                          </div>
                         </div>
                       </div>
                       </div>
