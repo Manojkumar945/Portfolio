@@ -37,6 +37,7 @@ const Skills = () => {
   const { isDarkMode } = useTheme();
   const [selectedCertificate, setSelectedCertificate] = useState<typeof certifications[0] | null>(null);
   const [placementLightbox, setPlacementLightbox] = useState(false);
+  const [pdfViewer, setPdfViewer] = useState(false);
 
   const openCertificate = (cert: typeof certifications[0]) => {
     if (cert.image) setSelectedCertificate(cert);
@@ -361,13 +362,36 @@ const Skills = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-green-400">
-                      <Medal size={16} />
-                      <span className="text-xs sm:text-sm font-medium">Peer-Reviewed Publication</span>
+                    <div className="flex flex-wrap items-center gap-3 mt-2">
+                      <div className="flex items-center gap-2 text-green-400">
+                        <Medal size={16} />
+                        <span className="text-xs sm:text-sm font-medium">Peer-Reviewed Publication</span>
+                      </div>
+                      {/* Journal link */}
+                      <a
+                        href="https://irojournals.com/iroismac/article/view/8/1/2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 shadow hover:shadow-lg"
+                      >
+                        <ExternalLink size={12} />
+                        View Journal
+                      </a>
+                      {/* PDF button */}
+                      <button
+                        onClick={() => setPdfViewer(true)}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 shadow hover:shadow-lg ${
+                          isDarkMode
+                            ? 'bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-500'
+                            : 'bg-white hover:bg-gray-50 text-gray-700 border border-gray-200'
+                        }`}
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        View PDF
+                      </button>
                     </div>
-                  </div>
-
-                  {/* Right — Journal cover visual */}
                   <div className={`sm:w-52 flex flex-col items-center justify-center p-6 gap-4 ${
                     isDarkMode ? 'bg-gradient-to-br from-blue-900/40 to-indigo-900/40' : 'bg-gradient-to-br from-blue-50 to-indigo-50'
                   }`}>
@@ -539,6 +563,64 @@ const Skills = () => {
             style={{ maxWidth: '95vw', maxHeight: '95vh', objectFit: 'contain', display: 'block' }}
             onClick={(e) => e.stopPropagation()}
           />
+        </div>
+      )}
+
+      {/* ── PDF Viewer Modal ── */}
+      {pdfViewer && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(6px)' }}
+          onClick={() => setPdfViewer(false)}
+        >
+          <div
+            className={`relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col`}
+            style={{ height: '90vh' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className={`flex items-center justify-between px-5 py-3 flex-shrink-0 ${isDarkMode ? 'bg-slate-800' : 'bg-gray-100'}`}>
+              <div className="flex items-center gap-3">
+                <svg className={`w-5 h-5 ${isDarkMode ? 'text-cyan-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <div>
+                  <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Brainwave Monitoring and Stress Alert System with AI Smart Therapy
+                  </p>
+                  <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>
+                    JISMAC Journal — March 2026 — Vol. 8, Issue 1, Pages 15–39
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://irojournals.com/iroismac/article/view/8/1/2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition-all"
+                >
+                  <ExternalLink size={12} />
+                  Open in Browser
+                </a>
+                <button
+                  onClick={() => setPdfViewer(false)}
+                  className={`p-1.5 rounded-lg transition-colors ${isDarkMode ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'}`}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* PDF iframe */}
+            <div className="flex-1 bg-gray-200">
+              <iframe
+                src="/Published_Journal.pdf"
+                className="w-full h-full border-0"
+                title="Published Journal PDF"
+              />
+            </div>
+          </div>
         </div>
       )}
     </section>
