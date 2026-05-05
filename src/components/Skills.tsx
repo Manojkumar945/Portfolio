@@ -469,7 +469,7 @@ const Skills = () => {
                   <div
                     className="relative rounded-xl overflow-hidden cursor-zoom-in mx-auto"
                     style={{ maxHeight: '320px' }}
-                    onClick={() => setPlacementLightbox(true)}
+                    onClick={() => setPlacementLightbox()}
                   >
                     <img
                       src="/Placement_Coordinators_Group_Photo.jpeg"
