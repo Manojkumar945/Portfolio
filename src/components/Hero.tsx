@@ -176,41 +176,40 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Right Side - Profile Image + Mail attached + gap + Social Icons */}
+            {/* Right Side - Profile Image + Mail Badge + Social Icons */}
             <div className="flex flex-col items-center">
 
-              {/* Profile Image + Mail Card stacked tightly, moved up */}
-              <div className="flex flex-col items-center -mt-10">
+              {/* Profile Image + Mail Badge below — separate, touching */}
+              <div className="flex flex-col items-center w-full max-w-sm mx-auto -mt-16">
+                
                 {/* Profile Image */}
-                <div className="relative group flex items-center justify-center">
-                  <div className="relative max-w-sm mx-auto">
-                    <img
-                      src="/Profile_image.png"
-                      alt="Manoj Kumar - App Developer & UI/UX Designer"
-                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl"
-                      loading="lazy"
-                    />
-                  </div>
+                <div className="relative group w-full">
+                  <img
+                    src="/Profile_image_1.png"
+                    alt="Manoj Kumar - App Developer & UI/UX Designer"
+                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl"
+                    loading="lazy"
+                  />
                 </div>
 
-                {/* Mail Card — attached directly below image, slight overlap */}
-                <div className="-mt-6 relative z-10 w-full max-w-xs px-4">
-                  <div className={`flex items-center gap-3 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 group w-full ${
+                {/* Mail Badge — directly below image, no gap */}
+                <div className="w-full px-4 -mt-3 relative z-10">
+                  <div className={`flex items-center justify-center gap-3 p-3 rounded-xl ... ${
                     isDarkMode 
-                      ? 'text-slate-300 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/50 hover:border-cyan-400/50' 
-                      : 'text-gray-700 bg-white/80 hover:bg-white/90 border border-gray-200/50 hover:border-blue-400/50'
+                      ? 'text-slate-300 bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700/60 hover:border-cyan-400/50' 
+                      : 'text-gray-700 bg-white/90 hover:bg-white border border-gray-200/70 hover:border-blue-400/50'
                   }`}>
-                    <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                    <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg ...">
                       <Mail size={16} className="text-white" />
                     </div>
-                    <a href="mailto:manojk46234@gmail.com" className="flex-1 min-w-0">
-                      <span className="text-sm font-medium block truncate">manojk46234@gmail.com</span>
+                    <a href="mailto:manojk46234@gmail.com">
+                      <span className="text-sm font-medium">manojk46234@gmail.com</span>
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* Gap between mail and social icons */}
+              {/* Social Icons */}
               <div className="mt-6 flex gap-4">
                 <a 
                   href="https://linkedin.com/in/manoj-kumar-s-4a57a325b" 

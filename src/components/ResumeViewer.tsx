@@ -12,6 +12,15 @@ interface ResumeViewerProps {
 const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerProps) => {
   const { isDarkMode } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile
+    const checkMobile = () => {
+      setIsMobile(/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent));
+    };
+    checkMobile();
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -20,7 +29,6 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
     } else {
       document.body.style.overflow = 'unset';
     }
-
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -28,11 +36,8 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
+      if (e.key === 'Escape' && isOpen) onClose();
     };
-
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isOpen, onClose]);
@@ -46,16 +51,22 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.error('Error downloading resume:', error);
       window.open(resumeUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
+    if (e.target === e.currentTarget) onClose();
   };
+
+  // Use Google Docs viewer for mobile (renders PDF inline without download prompt)
+  const absoluteResumeUrl = resumeUrl.startsWith('http')
+    ? resumeUrl
+    : `${window.location.origin}${resumeUrl}`;
+
+  const viewerSrc = isMobile
+    ? `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(absoluteResumeUrl)}`
+    : `${resumeUrl}#toolbar=1&navpanes=0&scrollbar=1`;
 
   if (!isOpen) return null;
 
@@ -121,9 +132,7 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
         {isLoading && (
           <div
             className={`absolute inset-0 flex items-center justify-center z-40 rounded-b-2xl ${
-              isDarkMode
-                ? 'bg-slate-900/50'
-                : 'bg-white/50'
+              isDarkMode ? 'bg-slate-900/50' : 'bg-white/50'
             }`}
           >
             <div className="flex flex-col items-center gap-3">
@@ -133,11 +142,7 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
                   isDarkMode ? 'text-cyan-400' : 'text-blue-500'
                 }`}
               />
-              <p
-                className={`text-sm font-medium ${
-                  isDarkMode ? 'text-slate-300' : 'text-gray-600'
-                }`}
-              >
+              <p className={`text-sm font-medium ${isDarkMode ? 'text-slate-300' : 'text-gray-600'}`}>
                 Loading resume...
               </p>
             </div>
@@ -147,38 +152,14 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
         {/* PDF Viewer */}
         <div className="flex-1 overflow-hidden">
           <iframe
-            src={`${resumeUrl}#toolbar=1&navpanes=0&scrollbar=1`}
+            key={viewerSrc}
+            src={viewerSrc}
             title="Resume PDF"
             className="w-full h-full border-none"
             onLoad={() => setIsLoading(false)}
             onError={() => setIsLoading(false)}
+            allow="autoplay"
           />
-          <noscript>
-            <object
-              data={resumeUrl}
-              type="application/pdf"
-              className="w-full h-full"
-            >
-              <p
-                className={`p-6 text-center ${
-                  isDarkMode ? 'text-slate-300' : 'text-gray-600'
-                }`}
-              >
-                Unable to display PDF.
-                <a
-                  href={resumeUrl}
-                  download={resumeName}
-                  className={`ml-2 underline transition-colors ${
-                    isDarkMode
-                      ? 'text-cyan-400 hover:text-cyan-300'
-                      : 'text-blue-500 hover:text-blue-600'
-                  }`}
-                >
-                  Download instead
-                </a>
-              </p>
-            </object>
-          </noscript>
         </div>
 
         {/* Footer */}
@@ -189,7 +170,7 @@ const ResumeViewer = ({ isOpen, onClose, resumeUrl, resumeName }: ResumeViewerPr
               : 'bg-gray-50 border-gray-200/50 text-gray-600'
           }`}
         >
-          Press ESC to close | Use your browser's print function to save
+          {isMobile ? 'Pinch to zoom | Download button above to save' : 'Press ESC to close | Use your browser\'s print function to save'}
         </div>
       </div>
     </div>

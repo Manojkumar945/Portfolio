@@ -28,7 +28,7 @@ const WallOfFame = () => {
   const fameItems: FameItem[] = [
     {
       id: 1,
-      title: 'UMPSA Memories',
+      title: 'UMPSA - Malaysia',
       coverImage: '/UMPSA_Memories.jpg',
       year: '2024',
       location: 'Universiti Malaysia Pahang Al-Sultan Abdullah',
@@ -36,7 +36,7 @@ const WallOfFame = () => {
       memories: [
         {
           id: 1,
-          image: '/UMPSA1.jpeg',
+          image: '/UMPSA_Memories.jpg',
           caption: 'First day at UMPSA campus — full of excitement and new beginnings!',
           date: 'Nov 2024',
         },
@@ -90,16 +90,16 @@ const WallOfFame = () => {
     },
     {
       id: 3,
-      title: 'Tech Session',
-      coverImage: '/Tech_Session.jpeg',
+      title: 'College Memories',
+      coverImage: '/Isha_Gang.jpeg',
       year: '2024',
       location: 'Tech Hub, Malaysia',
       description: 'Deep dives into the world of technology — workshops, hackathons, and knowledge-sharing sessions that sparked innovation.',
       memories: [
         {
           id: 1,
-          image: '/TS1.jpeg',
-          caption: 'Hackathon kickoff — 48 hours of pure coding adrenaline! ⚡',
+          image: '/Isha_Gang.jpeg',
+          caption: 'Our gang together — memories that last a lifetime! 🎓',
           date: 'Jul 2024',
         },
         {
@@ -116,7 +116,7 @@ const WallOfFame = () => {
         },
         {
           id: 4,
-          image: '/TS4.jpeg',
+          image: '/Tech_Session.jpeg',
           caption: 'Networking with industry leaders — invaluable connections made.',
           date: 'Aug 2024',
         },
@@ -265,7 +265,7 @@ const WallOfFame = () => {
                     {/* Memory count badge */}
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                       <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
+                        <path d="M4 3a2 2 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
                       </svg>
                       <span className="text-xs text-cyan-300 font-semibold">
                         {item.memories.length} memories
@@ -334,16 +334,14 @@ const WallOfFame = () => {
                   style={{ minHeight: '320px', maxHeight: '60vh', flex: 1 }}
                   onClick={() => setLightboxImage(selectedItem.memories[activeMemory].image)}
                 >
-                <img
-                  key={activeMemory}
-                  src={selectedItem.memories[activeMemory].image}
-                  alt={selectedItem.memories[activeMemory].caption}
-                  className={`w-full h-full transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
-                  style={{ objectFit: 'cover', maxHeight: '60vh' }}
-                />
+                  <img
+                    key={activeMemory}
+                    src={selectedItem.memories[activeMemory].image}
+                    alt={selectedItem.memories[activeMemory].caption}
+                    className={`w-full h-full transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
+                    style={{ objectFit: 'cover', maxHeight: '60vh' }}
+                  />
                 </div>
-
-
 
                 {/* Image counter */}
                 <div className="absolute top-3 left-3 bg-black/50 text-white text-xs px-2 py-1 rounded-full pointer-events-none">

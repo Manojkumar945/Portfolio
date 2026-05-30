@@ -37,6 +37,7 @@ const Skills = () => {
   const { isDarkMode } = useTheme();
   const [selectedCertificate, setSelectedCertificate] = useState<typeof certifications[0] | null>(null);
   const [placementLightbox, setPlacementLightbox] = useState(false);
+  const [coordinatorIdLightbox, setCoordinatorIdLightbox] = useState(false);
   const [pdfViewer, setPdfViewer] = useState(false);
 
   const openCertificate = (cert: typeof certifications[0]) => {
@@ -53,9 +54,8 @@ const Skills = () => {
     >
       <div className="container mx-auto px-6 relative z-10">
 
-        {/* ── Section Header ── */}
         <div className="flex flex-col items-center mb-16">
-          <h2 className={`text-4xl font-bold mb-4 ${dm ? 'text-white' : 'text-gray-900'}`}>Skills & Certifications</h2>
+          <h2 className={`text-4xl font-bold mb-4 ${dm ? 'text-white' : 'text-gray-900'}`}>Skills &amp; Certifications</h2>
           <div className="flex items-center gap-4 mb-6">
             <div className={`h-px w-16 ${dm ? 'bg-gradient-to-r from-transparent to-cyan-400' : 'bg-gradient-to-r from-transparent to-blue-600'}`} />
             <div className={`w-3 h-3 rounded-full ${dm ? 'bg-cyan-400' : 'bg-blue-600'}`} />
@@ -68,7 +68,6 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
 
-          {/* ── Technical Skills Orbit ── */}
           <div>
             <div className="flex items-center gap-3 mb-10">
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
@@ -113,7 +112,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* ── Certifications ── */}
           <div>
             <div className="flex items-center gap-3 mb-10">
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
@@ -172,14 +170,13 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* ── Awards & Achievements ── */}
         <div className="mt-20 border-t pt-20" style={{ borderColor: dm ? 'rgba(100,116,139,0.3)' : 'rgba(59,130,246,0.3)' }}>
           <div className="flex flex-col items-center mb-16">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl shadow-lg">
                 <Trophy size={28} className="text-white" />
               </div>
-              <h2 className={`text-3xl sm:text-4xl font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>Awards & Achievements</h2>
+              <h2 className={`text-3xl sm:text-4xl font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>Awards &amp; Achievements</h2>
             </div>
             <div className="flex items-center gap-4 mb-6">
               <div className={`h-px w-16 ${dm ? 'bg-gradient-to-r from-transparent to-cyan-400' : 'bg-gradient-to-r from-transparent to-blue-600'}`} />
@@ -193,7 +190,6 @@ const Skills = () => {
 
           <div className="max-w-5xl mx-auto space-y-8">
 
-            {/* ── Award 1: Techfinix-25 ── */}
             <div className="group">
               <div className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-1 ${dm ? 'bg-slate-800/80' : 'bg-white/80'}`}>
                 <div className="flex flex-col sm:flex-row">
@@ -209,7 +205,7 @@ const Skills = () => {
                     <div className="mb-4">
                       <p className={`text-xs font-medium uppercase tracking-wide mb-1 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>Project Title</p>
                       <p className={`text-sm font-semibold leading-snug ${dm ? 'text-purple-400' : 'text-purple-600'}`}>
-                        Brainwave Monitoring & Stress Alert System with AI Smart Therapy
+                        Brainwave Monitoring &amp; Stress Alert System with AI Smart Therapy
                       </p>
                     </div>
                     <p className={`text-sm leading-relaxed mb-4 ${dm ? 'text-slate-300' : 'text-gray-700'}`}>
@@ -234,8 +230,6 @@ const Skills = () => {
                       <span className="text-xs sm:text-sm font-medium">Official Award Winner</span>
                     </div>
                   </div>
-
-                  {/* Right — money visual */}
                   <div className={`sm:w-52 flex items-center justify-center p-6 ${dm ? 'bg-gradient-to-br from-slate-700/60 to-slate-800/60' : 'bg-gradient-to-br from-yellow-50 to-orange-50'}`}>
                     <div className="flex flex-col items-center gap-3">
                       <div className="text-5xl">🏆</div>
@@ -252,7 +246,7 @@ const Skills = () => {
                               <div key={i} className="w-full h-px bg-white" style={{ marginTop: `${12 + i * 12}px` }} />
                             ))}
                           </div>
-                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">₹</div>
+                          <div className="text-white/30 text-4xl font-black absolute right-2 top-0">&#8377;</div>
                           <div className="relative z-10 text-center">
                             <div className="text-white text-xs font-bold tracking-widest">RUPEES</div>
                             <div className="text-white text-2xl font-black">12,500</div>
@@ -265,7 +259,6 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* ── Award 2: Journal Publication ── */}
             <div className="group">
               <div className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-1 ${dm ? 'bg-slate-800/80' : 'bg-white/80'}`}>
                 <div className="flex flex-col sm:flex-row">
@@ -325,7 +318,6 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  {/* Right — journal visual with buttons */}
                   <div className={`sm:w-52 flex flex-col items-center justify-center p-6 gap-4 ${dm ? 'bg-gradient-to-br from-blue-900/40 to-indigo-900/40' : 'bg-gradient-to-br from-blue-50 to-indigo-50'}`}>
                     <div className="text-5xl">📄</div>
                     <div className="text-center">
@@ -333,20 +325,16 @@ const Skills = () => {
                       <p className={`text-xs font-semibold mt-0.5 ${dm ? 'text-slate-300' : 'text-gray-700'}`}>JISMAC Journal</p>
                       <p className={`text-xs mt-0.5 ${dm ? 'text-slate-500' : 'text-gray-400'}`}>March 2026</p>
                     </div>
-
-                    {/* View Journal button */}
-                    <a
-                      href="https://irojournals.com/iroismac/article/view/8/1/2"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
+                      onClick={() => window.open('https://irojournals.com/iroismac/article/view/8/1/2', '_blank', 'noopener,noreferrer')}
                       className="flex items-center justify-center gap-1.5 w-full px-3 py-2 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition-all shadow hover:shadow-lg"
                     >
                       <ExternalLink size={12} />
                       View Journal
-                    </a>
-
-                    {/* View PDF button */}
+                    </button>
                     <button
+                      type="button"
                       onClick={() => setPdfViewer(true)}
                       className={`flex items-center justify-center gap-1.5 w-full px-3 py-2 rounded-lg text-xs font-semibold transition-all shadow hover:shadow-lg ${dm ? 'bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-500' : 'bg-white hover:bg-gray-50 text-gray-700 border border-gray-200'}`}
                     >
@@ -360,60 +348,98 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* ── Award 3: Placement Coordinator ── */}
             <div className="group">
               <div className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-1 ${dm ? 'bg-slate-800/80' : 'bg-white/80'}`}>
-                <div className="p-5 sm:p-8">
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${dm ? 'text-white' : 'text-gray-900'}`}>
-                      Placement Coordinator
-                    </h3>
-                    <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">2023 - 2026</span>
-                  </div>
-                  <p className={`text-sm font-semibold mb-0.5 ${dm ? 'text-cyan-400' : 'text-blue-600'}`}>Department of Information Technology</p>
-                  <p className={`text-sm mb-4 ${dm ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College, Namakkal</p>
-                  <p className={`text-sm leading-relaxed mb-5 ${dm ? 'text-slate-300' : 'text-gray-700'}`}>
-                    Served as the Student Placement Coordinator for the Department of IT, actively bridging students and recruiters. Organized placement drives, mock interviews, and resume workshops to prepare students for industry opportunities. Successfully facilitated campus recruitment for multiple batches achieving a strong placement rate through consistent coordination and leadership.
-                  </p>
-                  <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
-                    <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                      <Clock size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
-                      <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>3 Years</p>
-                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Experience</p>
+                <div className="flex flex-col sm:flex-row">
+                  <div className="flex-1 p-5 sm:p-8">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <h3 className={`text-base sm:text-xl font-bold group-hover:text-cyan-400 transition-colors leading-snug ${dm ? 'text-white' : 'text-gray-900'}`}>
+                        Placement Coordinator
+                      </h3>
+                      <span className="text-xs px-3 py-1 rounded-full text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 flex-shrink-0 mt-1">2023 - 2026</span>
                     </div>
-                    <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                      <TrendingUp size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
-                      <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>80.3%</p>
-                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Placement Acheived</p>
+                    <p className={`text-sm font-semibold mb-0.5 ${dm ? 'text-cyan-400' : 'text-blue-600'}`}>Department of Information Technology</p>
+                    <p className={`text-sm mb-4 ${dm ? 'text-slate-400' : 'text-gray-600'}`}>Paavai Engineering College, Namakkal</p>
+                    <p className={`text-sm leading-relaxed mb-5 ${dm ? 'text-slate-300' : 'text-gray-700'}`}>
+                      Served as the Student Placement Coordinator for the Department of IT, actively bridging students and recruiters. Organized placement drives, mock interviews, and resume workshops to prepare students for industry opportunities. Successfully facilitated campus recruitment for multiple batches achieving a strong placement rate through consistent coordination and leadership.
+                    </p>
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
+                      <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                        <Clock size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
+                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>3 Years</p>
+                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Experience</p>
+                      </div>
+                      <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                        <TrendingUp size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
+                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>80.3%</p>
+                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Placement Achieved</p>
+                      </div>
+                      <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
+                        <Users size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
+                        <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>IT</p>
+                        <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Department</p>
+                      </div>
                     </div>
-                    <div className={`rounded-xl p-2 sm:p-3 text-center ${dm ? 'bg-slate-700/60 border border-slate-600/30' : 'bg-blue-50 border border-blue-100'}`}>
-                      <Users size={14} className={`mx-auto mb-1 ${dm ? 'text-cyan-400' : 'text-blue-500'}`} />
-                      <p className={`text-base sm:text-lg font-bold ${dm ? 'text-white' : 'text-gray-900'}`}>IT</p>
-                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Department</p>
+                    <div className="flex items-center gap-2 text-green-400 mb-5">
+                      <Medal size={16} />
+                      <span className="text-xs sm:text-sm font-medium">Leadership Role</span>
+                    </div>
+                    <div
+                      className={`relative rounded-xl cursor-pointer w-full overflow-hidden ${dm ? 'bg-slate-800' : 'bg-gray-100'}`}
+                      onClick={() => setPlacementLightbox(true)}
+                    >
+                      <img
+                        src="/Placement_Coordinators_Group_Photo.jpeg"
+                        alt="Placement Coordinators Group Photo"
+                        className="w-full h-auto rounded-xl transition-transform duration-500 hover:scale-105"
+                        style={{ display: 'block' }}
+                      />
+                      <div className="absolute inset-0 rounded-xl bg-black/0 hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                        <div className="opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                          <ExternalLink size={16} className="text-white" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-green-400 mb-6">
-                    <Medal size={16} />
-                    <span className="text-xs sm:text-sm font-medium">Leadership Role</span>
+
+                  <div className={`sm:w-52 flex-shrink-0 flex flex-col items-center justify-center gap-5 p-6 ${dm ? 'bg-gradient-to-br from-green-900/30 to-slate-800/60' : 'bg-gradient-to-br from-green-50 to-teal-50'}`}>
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg ${dm ? 'bg-gradient-to-br from-green-500/30 to-teal-500/30 border border-green-500/30' : 'bg-gradient-to-br from-green-100 to-teal-100 border border-green-200'}`}>
+                      <svg className={`w-8 h-8 ${dm ? 'text-green-400' : 'text-green-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0M9 12h6m-3-3v6" />
+                      </svg>
+                    </div>
+                    <div className="text-center space-y-1">
+                      <p className={`text-xs font-bold uppercase tracking-widest ${dm ? 'text-green-400' : 'text-green-700'}`}>Coordinator ID</p>
+                      <p className={`text-sm font-semibold ${dm ? 'text-white' : 'text-gray-800'}`}>Manoj Kumar. S</p>
+                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Batch 2022 - 2026</p>
+                      <p className={`text-xs ${dm ? 'text-slate-400' : 'text-gray-500'}`}>B.Tech - IT</p>
+                      <p className={`text-xs font-medium ${dm ? 'text-slate-300' : 'text-gray-600'}`}>Paavai Engineering College</p>
+                    </div>
+                    <div className={`w-full h-px ${dm ? 'bg-slate-600/50' : 'bg-gray-200'}`} />
+                    <div className={`w-full rounded-xl px-3 py-2 text-center ${dm ? 'bg-green-500/10 border border-green-500/20' : 'bg-green-50 border border-green-200'}`}>
+                      <p className={`text-xs font-bold ${dm ? 'text-green-400' : 'text-green-700'}`}>Student Coordinator</p>
+                      <p className={`text-xs mt-0.5 ${dm ? 'text-slate-400' : 'text-gray-500'}`}>Dept. of IT Placements</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setCoordinatorIdLightbox(true)}
+                      className={`flex items-center justify-center gap-2 w-full px-3 py-2.5 rounded-xl text-xs font-semibold transition-all shadow hover:shadow-lg hover:-translate-y-0.5 ${dm ? 'bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-500 hover:to-teal-500 text-white' : 'bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white'}`}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0" />
+                      </svg>
+                      Coordinator ID
+                    </button>
                   </div>
-                  <div
-                    className="relative rounded-xl overflow-hidden cursor-pointer w-full"
-                    onClick={() => setPlacementLightbox(true)}
-                  >
-                    <img
-                      src="/Placement_Coordinators_Group_Photo.jpeg"
-                      alt="Placement Coordinators Group Photo"
-                      className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* ── Certificate Modal ── */}
       {selectedCertificate && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
           <div className={`relative max-w-5xl max-h-[95vh] w-full rounded-2xl shadow-2xl overflow-hidden ${dm ? 'bg-slate-900' : 'bg-white'}`}>
@@ -422,14 +448,23 @@ const Skills = () => {
                 <h3 className={`text-xl font-bold mb-1 ${dm ? 'text-white' : 'text-gray-900'}`}>{selectedCertificate.name}</h3>
                 <p className={`text-sm ${dm ? 'text-slate-400' : 'text-gray-600'}`}>{selectedCertificate.issuer} - {selectedCertificate.year}</p>
               </div>
-              <button onClick={closeCertificate} className={`p-2 rounded-full transition-all duration-300 hover:scale-110 ${dm ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white' : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 hover:text-gray-900'}`}>
+              <button
+                type="button"
+                onClick={closeCertificate}
+                className={`p-2 rounded-full transition-all duration-300 hover:scale-110 ${dm ? 'bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white' : 'bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 hover:text-gray-900'}`}
+              >
                 <X size={24} />
               </button>
             </div>
             <div className="p-6 overflow-auto max-h-[calc(95vh-120px)]">
               <div className="flex flex-col items-center">
                 <div className="w-full max-w-4xl">
-                  <img src={selectedCertificate.image} alt={selectedCertificate.name} className="w-full h-auto rounded-lg shadow-lg" style={{ maxHeight: '75vh', objectFit: 'contain' }} />
+                  <img
+                    src={selectedCertificate.image}
+                    alt={selectedCertificate.name}
+                    className="w-full h-auto rounded-lg shadow-lg"
+                    style={{ maxHeight: '75vh', objectFit: 'contain' }}
+                  />
                 </div>
                 <div className="mt-6 w-full max-w-2xl">
                   <div className={`rounded-xl p-6 ${dm ? 'bg-slate-800/50' : 'bg-gray-50/50'}`}>
@@ -463,7 +498,6 @@ const Skills = () => {
         </div>
       )}
 
-      {/* ── Placement Photo Lightbox ── */}
       {placementLightbox && (
         <div
           className="fixed inset-0 z-[60] flex items-center justify-center cursor-zoom-out"
@@ -471,6 +505,7 @@ const Skills = () => {
           onClick={() => setPlacementLightbox(false)}
         >
           <button
+            type="button"
             onClick={() => setPlacementLightbox(false)}
             className="absolute top-4 right-4 w-10 h-10 rounded-full text-white flex items-center justify-center z-10"
             style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
@@ -488,7 +523,31 @@ const Skills = () => {
         </div>
       )}
 
-      {/* ── PDF Viewer Modal ── */}
+      {coordinatorIdLightbox && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center cursor-zoom-out"
+          style={{ backgroundColor: '#000000' }}
+          onClick={() => setCoordinatorIdLightbox(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setCoordinatorIdLightbox(false)}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full text-white flex items-center justify-center z-10"
+            style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.3)')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)')}
+          >
+            <X size={22} />
+          </button>
+          <img
+            src="/Coordinator_ID.jpeg"
+            alt="Placement Coordinator ID Card"
+            style={{ maxWidth: '95vw', maxHeight: '95vh', objectFit: 'contain', display: 'block' }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
       {pdfViewer && (
         <div
           className="fixed inset-0 z-[60] flex items-center justify-center p-4"
@@ -496,7 +555,7 @@ const Skills = () => {
           onClick={() => setPdfViewer(false)}
         >
           <div
-            className={`relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col`}
+            className="relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col"
             style={{ height: '90vh' }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -510,16 +569,16 @@ const Skills = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
-                <a
-                  href="https://irojournals.com/iroismac/article/view/8/1/2"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => window.open('https://irojournals.com/iroismac/article/view/8/1/2', '_blank', 'noopener,noreferrer')}
                   className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition-all"
                 >
                   <ExternalLink size={12} />
                   Open in Browser
-                </a>
+                </button>
                 <button
+                  type="button"
                   onClick={() => setPdfViewer(false)}
                   className={`p-1.5 rounded-lg transition-colors ${dm ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'}`}
                 >
@@ -529,9 +588,13 @@ const Skills = () => {
             </div>
             <div className="flex-1 bg-gray-200">
               <iframe
-                src="/Published_Journal.pdf"
+                src={
+                  /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)
+                    ? `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(window.location.origin + '/Published_Journal.pdf')}`
+                    : '/Published_Journal.pdf'
+                }
                 className="w-full h-full border-0"
-                title="Published Journal PDF"
+                title="Published Journal"
               />
             </div>
           </div>
