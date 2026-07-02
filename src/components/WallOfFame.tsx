@@ -98,7 +98,7 @@ const WallOfFame = () => {
       memories: [
         {
           id: 1,
-          image: '/Isha_Gang.jpeg',
+          image: '/Isha_Gang.jpeg', 
           caption: 'Our gang together — memories that last a lifetime! 🎓',
           date: 'Jul 2024',
         },
