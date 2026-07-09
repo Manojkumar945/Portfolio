@@ -102,24 +102,6 @@ const WallOfFame = () => {
           caption: 'Our gang together — memories that last a lifetime! 🎓',
           date: 'Jul 2024',
         },
-        {
-          id: 2,
-          image: '/TS2.jpeg',
-          caption: 'Workshop on AI & ML — the future is now and we are ready.',
-          date: 'Jul 2024',
-        },
-        {
-          id: 3,
-          image: '/TS3.jpeg',
-          caption: 'Demo day presentations — our project stole the show! 🎯',
-          date: 'Aug 2024',
-        },
-        {
-          id: 4,
-          image: '/Tech_Session.jpeg',
-          caption: 'Networking with industry leaders — invaluable connections made.',
-          date: 'Aug 2024',
-        },
       ],
     },
   ];
