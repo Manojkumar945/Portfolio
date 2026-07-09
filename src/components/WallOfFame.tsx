@@ -93,7 +93,7 @@ const WallOfFame = () => {
       title: 'College Memories',
       coverImage: '/Isha_Gang.jpeg',
       year: '2024',
-      location: 'Tech Hub, Malaysia',
+      location: 'Isha Temple, Coimbatore',
       description: 'Deep dives into the world of technology — workshops, hackathons, and knowledge-sharing sessions that sparked innovation.',
       memories: [
         {
