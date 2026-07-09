@@ -248,7 +248,7 @@ const Hero = () => {
       <ResumeViewer
         isOpen={isResumeViewerOpen}
         onClose={() => setIsResumeViewerOpen(false)}
-        resumeUrl="/My_ATS_Resume.pdf"
+        resumeUrl="/2026_Updated_Resume.pdf"
         resumeName="Resume"
       />
     </section>
