@@ -13,7 +13,7 @@ const experiences = [
     ]
   },
   {
-    title: "FullStack Developer Intern",
+    title: "Full Stack Developer Intern",
     company: "Inspire AI",
     location: "Bangalore, India",
     period: "06/2025 - 09/2025",
@@ -30,16 +30,6 @@ const experiences = [
     description: "Completed a 6-month internship focused on Python development and project execution.",
     achievements: [
       "Successfully delivered all project requirements with recognized technical excellence."
-    ]
-  },
-  {
-    title: "Chief Marketing Officer",
-    company: "VCZ RECRUITMENT",
-    location: "Remote",
-    period: "04/2025 - 06/2025",
-    description: "A Company focused on Sales and Marketing Technologies.",
-    achievements: [
-      "Training Period enhances the Knowledgeable experiences."
     ]
   },
   {
